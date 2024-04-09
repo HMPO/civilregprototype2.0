@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Appoinment information
+          </h1>
+  
+          <form class="form" action="/task-list" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDDateMedicalCertificateIssued-hint" id="MCCDDateMedicalCertificateIssued-fieldset">
+                
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date medical certificate was received
+                </legend>
+                <div id="MCCDDateMedicalCertificateIssued-hint" class="govuk-hint">
+                  For example, 12 11 2007
+                </div>
+                <div class="govuk-date-input" id="MCCDDateMedicalCertificateIssued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateMedicalCertificateIssued-day">
+                        Day
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateMedicalCertificateIssued-day" name="MCCDDateMedicalCertificateIssued-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateMedicalCertificateIssued-month">
+                        Month
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateMedicalCertificateIssued-month" name="MCCDDateMedicalCertificateIssued-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateMedicalCertificateIssued-year">
+                        Year
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDDateMedicalCertificateIssued-year" name="MCCDDateMedicalCertificateIssued-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="coverSheetPriority-hint" id="coverSheetPriority-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Is this registration urgent?
+                </legend>
+                <div id="coverSheetPriority-hint" class="govuk-hint">
+                  For example, for faith deaths
+                </div>
+                <div class="govuk-radios govuk-radios">   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="coverSheetPriority-true" name="coverSheetPriority" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" id="coverSheetPriority-true-label" for="coverSheetPriority-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" value="false">
+                    <label class="govuk-label govuk-radios__label" id="coverSheetPriority-false-label" for="coverSheetPriority-false">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <h2 class="govuk-heading-s">Informant contact details</h2>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantFullName-label" for="coverSheetInformantFullName">
+                Full name
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantFullName" name="coverSheetInformantFullName" type="text" aria-required="false">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantPhoneNumber-label" for="coverSheetInformantPhoneNumber">
+                Phone number
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantPhoneNumber" name="coverSheetInformantPhoneNumber" type="text" aria-required="false">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantEmailAddress-label" for="coverSheetInformantEmailAddress">
+                Email address
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantEmailAddress" name="coverSheetInformantEmailAddress" type="text" aria-required="false">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="more-detail">
+                  Notes
+                </label>
+              <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+            
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

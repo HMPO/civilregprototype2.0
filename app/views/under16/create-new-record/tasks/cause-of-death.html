@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            Cause of death
+          </h1>
+
+          <form class="form" action="/task-list" method="post">
+            <h2 class="govuk-heading-m">
+              Side 1
+            </h2>
+
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Place of death
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                    Communal establishment address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" autocapitalize="words">
+                </div>
+
+                {{ govukButton({
+                  text: "Find address",
+                  classes: "govuk-button--secondary"
+                }) }}
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
+                </p>
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
+                </p>
+              </fieldset>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-hint" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date certifying practitioner last saw them alive
+                </legend>
+                <div id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-hint" class="govuk-hint">
+                  For example, 12 11 2007
+                </div>
+                <div class="govuk-date-input" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day">
+                        Day
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month">
+                        Month
+                      </label>  
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year">
+                        Year
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDLetterCircledOnMCCD-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Which letter is circled on the MCCD?
+                </legend>
+                <div class="govuk-radios govuk-radios">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-a" name="MCCDLetterCircledOnMCCD" type="radio" value="a">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-a-label" for="MCCDLetterCircledOnMCCD-a">
+                      A – "Seen after death by me"
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-b" name="MCCDLetterCircledOnMCCD" type="radio" value="b">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-b-label" for="MCCDLetterCircledOnMCCD-b">
+                    B – "Seen after death by another medical practitioner but not by me"
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-c" name="MCCDLetterCircledOnMCCD" type="radio" value="c">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-c-label" for="MCCDLetterCircledOnMCCD-c">
+                    C – "Not seen after death by a medical practitioner"
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+              <div class="govuk-form-group">
+                <h2 class="govuk-heading-s">Cause of death</h2>
+                <label class="govuk-label govuk-fieldset__legend--s" id="MCCDCauseOfDeathReason1-label" for="MCCDCauseOfDeathReason1">
+                  1(a) Main disease or conditions in infant
+                </label>
+                <textarea class="govuk-textarea govuk-!-width-three-quarters" id="MCCDCauseOfDeathReason1" name="MCCDCauseOfDeathReason1" rows="5" aria-required="false">
+                </textarea>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--xs" id="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath-label" for="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath">
+                  Time between onset and death
+                </label>
+              <input class="govuk-input govuk-input--width-2" id="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath" name="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath" type="text" aria-required="false">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-visually-hidden" id="MCCDCauseOfDeathReason1TimeUnit-label" for="MCCDCauseOfDeathReason1TimeUnit">
+                  Choose time unit
+                </label>
+                <select class="govuk-select" id="MCCDCauseOfDeathReason1TimeUnit" name="MCCDCauseOfDeathReason1TimeUnit" aria-required="false">
+                    <option value="" selected="">Choose time unit</option>
+                    <option value="Minutes">Minutes</option>
+                    <option value="Hours">Hours</option>
+                    <option value="Days">Days</option>
+                    <option value="Weeks">Weeks</option>
+                    <option value="Months">Months</option>
+                    <option value="Years">Years</option>
+                    <option value="Not stated">Not stated</option>
+                </select>
+              </div>
+
+                <div class="govuk-form-group">
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition in infant</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">2. Add maternal diseases or conditions affecting infant</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">3. Add other relevant causes</a>
+                  </p>
+                </div>
+            </fieldset>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="MCCDCertifyingPractitionerFullName-label" for="MCCDCertifyingPractitionerFullName">
+                Certifying practitioner’s full name and qualifications
+              </label>
+              <input class="govuk-input govuk-!-width-one-full" id="MCCDCertifyingPractitionerFullName" name="MCCDCertifyingPractitionerFullName" type="text" aria-required="false">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="MCCDCertifyingPractitionerGMCNumber-label" for="MCCDCertifyingPractitionerGMCNumber">
+                GMC number
+              </label> 
+              <input class="govuk-input govuk-input--width-10" id="MCCDCertifyingPractitionerGMCNumber" name="MCCDCertifyingPractitionerGMCNumber" type="text" aria-required="false">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDDiedInHospital-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Died in a hospital?
+                </legend>
+                <div class="govuk-radios govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDDiedInHospital-true" name="MCCDDiedInHospital" type="radio" value="true" aria-controls="conditional-MCCDDiedInHospital-true" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-true-label" for="MCCDDiedInHospital-true">
+                      Yes
+                    </label>
+                  </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-MCCDDiedInHospital-true">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--s" id="MCCDConsultantFullName-label" for="MCCDConsultantFullName">
+                      Consultant’s full name
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false">
+                  </div>
+                </div> 
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="MCCDDiedInHospital-false" name="MCCDDiedInHospital" type="radio" value="false">
+                  <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-false-label" for="MCCDDiedInHospital-false">
+                    No
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDWillAttendingPractitionerProvideFurtherInformation-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Might the attending practitioner apply to give further information later (box B)?
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDWillAttendingPractitionerProvideFurtherInformation-true" name="MCCDWillAttendingPractitionerProvideFurtherInformation" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" id="MCCDWillAttendingPractitionerProvideFurtherInformation-true-label" for="MCCDWillAttendingPractitionerProvideFurtherInformation-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="MCCDWillAttendingPractitionerProvideFurtherInformation-false" name="MCCDWillAttendingPractitionerProvideFurtherInformation" type="radio" value="false">
+                    <label class="govuk-label govuk-radios__label" id="MCCDWillAttendingPractitionerProvideFurtherInformation-false-label" for="MCCDWillAttendingPractitionerProvideFurtherInformation-false">
+                      No
+                    </label>  
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            
+
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

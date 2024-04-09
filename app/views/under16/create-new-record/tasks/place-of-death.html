@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Place of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <form class="form" action="/task-list" method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Place of death
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="communal-establishment">
+                    <label class="govuk-label govuk-radios__label" for="place-of-death">
+                      Communal establishment
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="home">
+                    <label class="govuk-label govuk-radios__label" for="place-of-death">
+                      Home
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="in-transit">
+                    <label class="govuk-label govuk-radios__label" for="place-of-death">
+                      In transit
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="elsewhere">
+                    <label class="govuk-label govuk-radios__label" for="place-of-death">
+                      Elsewhere
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+            </div>
+
+
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
