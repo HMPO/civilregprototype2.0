@@ -44,7 +44,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-middle-name">
-                Middle names
+                Middle names (optional)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddletName" type="text" value="{{data['deceasedMiddleName']}}">
             </div>
@@ -79,14 +79,14 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="prefix">
-                Prefix
+                Prefix (optional)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="prefix" name="prefix" type="text">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="suffix">
-                Suffix
+                Suffix (optional)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="suffix" name="suffix" type="text">
             </div>
@@ -139,7 +139,17 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-          
+            <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Other known names
+              </legend>
+              <div class="govuk-form-group">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Add another known name
+                </button>
+              </div>
+            </fieldset>
+
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death">
@@ -183,7 +193,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
   
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Save"
+                text: "Check for duplicates"
               }) }}
             </div>
   

@@ -16,7 +16,7 @@
 
 {{ govukBackLink({
   text: "Back to create record",
-  href: "javascript:window.history.back()"
+  href: "create-new-record.html"
 }) }}
 {% endblock %}
 
@@ -41,7 +41,7 @@
       {% set optionalStatus = {
         tag: {
           text: "Optional",
-          classes: "govuk-tag--purple"
+          classes: "govuk-tag--green"
         }
       } %}
       {% set cannotstartStatus = {
@@ -105,7 +105,7 @@
             title: {
               text: "Informant’s details"
             },
-            href: "#",
+            href: "tasks/informant-details.html",
             status: incompleteStatus
           }
         ]
@@ -125,16 +125,8 @@
           },
           {
             title: {
-              text: "Other known names"
-            },
-            href: "tasks/other-known-names",
-            status: incompleteStatus
-          },
-          {
-            title: {
               text: "Personal details"},
               hint: {
-                text: "Including sex, address, nationality, and occupation."
               },
             href: "tasks/personal-details.html",
             status: incompleteStatus
@@ -143,16 +135,9 @@
             title: {
               text: "Parents’ details"
             },
-            href: "#",
+            href: "tasks/parents-details.html",
             status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Relationship details"
-            },
-            href: "#",
-            status: incompleteStatus
-          } 
+          }
         ]
       }) }}
 
@@ -165,7 +150,7 @@
             title: {
               text: "Voluntary statistics"
             },
-            href: "#",
+            href: "tasks/voluntary-statistics.html",
             status: cannotstartStatus
           }
         ]
@@ -178,7 +163,14 @@
         items: [
           {
             title: {
-              text: "View final registration"
+              text: "Registrar’s designation"
+            },
+            href: "tasks/registrars-designation.html",
+            status: cannotstartStatus
+          },
+          {
+            title: {
+              text: "Register page and signature"
             },
             href: "#",
             status: cannotstartStatus
