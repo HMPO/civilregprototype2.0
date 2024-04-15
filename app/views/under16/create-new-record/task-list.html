@@ -28,155 +28,87 @@
 
       <h2 class="govuk-heading-m">Appointment</h2>
 
-      {% set completedStatus = {
-        text: "Completed"
-      } %}
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/appointment-information.html" aria-describedby="company-details-1-status">
+              Appointment information
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-3-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Optional
+            </strong>
+          </div>
+        </li>
 
-      {% set incompleteStatus = {
-        tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
-        }
-      } %}
-      {% set optionalStatus = {
-        tag: {
-          text: "Optional",
-          classes: "govuk-tag--green"
-        }
-      } %}
-      {% set cannotstartStatus = {
-        tag: {
-          text: "Cannot start yet",
-          classes: "govuk-tag--grey"
-        }
-      } %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/uploads.html" aria-describedby="company-details-1-status">
+              Uploads
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-3-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Optional
+            </strong>
+          </div>
+        </li>
+      </ul>
 
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+      <h2 class="govuk-heading-m">Circumstances of death</h2>
 
-      {{ govukTaskList({
-        idPrefix: "first-section",
-        items: [
-          {
-            title: {
-              text: "Appointment information"
-            },
-            href: "tasks/appointment-information.html",
-            status: optionalStatus
-          },
-          {
-            title: {
-              text: "Uploads"
-            },
-            href: "tasks/uploads.html",
-            status: optionalStatus
-          }
-        ]
-      }) }}
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/place-of-death.html" aria-describedby="company-details-1-status">
+              Place of death
+            </a>
+          </div>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Circumstances of death</h2>
+          {% if (data['place-of-death'] and data['MCCDAddressLine1']) %}
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Place of death"
-            },
-            href: "tasks/place-of-death.html",
-            status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Cause of death"
-            },
-            href: "tasks/cause-of-death.html",
-            status: incompleteStatus
-          }
-          
-        ]
-      }) }}
+          <div class="govuk-task-list__status" id="place-of-death-status1">
+            Completed
+          </div>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Informant’s details</h2>
+          {% else %}
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Informant’s details"
-            },
-            href: "tasks/informant-details.html",
-            status: incompleteStatus
-          }
-        ]
-      }) }}
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Deceased's details</h2>
+          {% endif %}
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Name, age and date of death"
-            },
-            href: "tasks/name-age-date-of-death.html",
-            status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Personal details"},
-              hint: {
-              },
-            href: "tasks/personal-details.html",
-            status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Parents’ details"
-            },
-            href: "tasks/parents-details.html",
-            status: incompleteStatus
-          }
-        ]
-      }) }}
+        </li>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Statistical information</h2>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/cause-of-death.html" aria-describedby="company-details-1-status">
+              Cause of death
+            </a>
+          </div>
+          {% if (data['MCCDAlive-day'] and data['MCCDDAlive-month']) 
+          and data['MCCDAlive-year'] and data['MCCDLetter'] %}
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Voluntary statistics"
-            },
-            href: "tasks/voluntary-statistics.html",
-            status: cannotstartStatus
-          }
-        ]
-      }) }}
+          <div class="govuk-task-list__status" id="place-of-death-status1">
+            Completed
+          </div>
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Submit the registration</h2>
+          {% else %}
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Registrar’s designation"
-            },
-            href: "tasks/registrars-designation.html",
-            status: cannotstartStatus
-          },
-          {
-            title: {
-              text: "Register page and signature"
-            },
-            href: "#",
-            status: cannotstartStatus
-          }
-        ]
-      }) }}
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+
+          {% endif %}
+        </li>
+      </ul>
+
 
       <div class="govuk-!-margin-top-5">
         {{ govukButton({ text: "Submit", href: "#" }) }}
