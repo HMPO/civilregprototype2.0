@@ -39,62 +39,37 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               Side 1
             </h2>
 
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Place of death (optional)
-                </legend>
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
-                    Communal establishment address
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-half" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" autocapitalize="words">
-                </div>
-
-                {{ govukButton({
-                  text: "Find address",
-                  classes: "govuk-button--secondary"
-                }) }}
-
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
-                </p>
-
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
-                </p>
-              </fieldset>
-
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-hint" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-fieldset">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDAlive-hint" id="MCCDAlive-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Date certifying practitioner last saw them alive
                 </legend>
                 <div class="govuk-form-group">
-                  <div id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-hint" class="govuk-hint">
+                  <div id="MCCDDAlive-hint" class="govuk-hint">
                     For example, 12 11 2007
                   </div>
-                  <div class="govuk-date-input" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive">
+                  <div class="govuk-date-input" id="MCCDAlive">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDAlive-day">
                           Day
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-day" name="MCCDAlive-day" value="{{data['MCCDAlive-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDAlive-month">
                           Month
                         </label>  
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-month" name="MCCDAlive-month" value="{{data['MCCDAlive-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDDAlive-year">
                           Year
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year" name="MCCDDateCertifyingPractitionerLastSawDeceasedAlive-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDAlive-year" name="MCCDAlive-year" value="{{data['MCCDAlive-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
                       </div>
                     </div>
                   </div>
@@ -102,26 +77,26 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="MCCDLetterCircledOnMCCD-fieldset" aria-required="false">
+              <fieldset class="govuk-fieldset" id="MCCDLetter-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Which letter is circled on the medical certificate?
                 </legend>
                 <div class="govuk-radios govuk-radios">  
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-a" name="MCCDLetterCircledOnMCCD" type="radio" value="a">
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-a-label" for="MCCDLetterCircledOnMCCD-a">
+                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" value="a">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-a-label" for="MCCDLetter-a">
                       A – "Seen after death by me"
                     </label>      
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-b" name="MCCDLetterCircledOnMCCD" type="radio" value="b">
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-b-label" for="MCCDLetterCircledOnMCCD-b">
+                    <input class="govuk-radios__input" id="MCCDLetter-b" name="MCCDLetter" type="radio" value="b">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-b-label" for="MCCDLetter-b">
                     B – "Seen after death by another medical practitioner but not by me"
                     </label>
                   </div> 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetterCircledOnMCCD-c" name="MCCDLetterCircledOnMCCD" type="radio" value="c">
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetterCircledOnMCCD-c-label" for="MCCDLetterCircledOnMCCD-c">
+                    <input class="govuk-radios__input" id="MCCDLetter-c" name="MCCDLetter" type="radio" value="c">
+                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-c-label" for="MCCDLetter-c">
                     C – "Not seen after death by a medical practitioner"
                     </label>
                   </div>
@@ -132,25 +107,25 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
               <div class="govuk-form-group">
                 <h2 class="govuk-heading-s">Cause of death - in infant</h2>
-                <label class="govuk-label" id="MCCDCauseOfDeathReason1-label" for="MCCDCauseOfDeathReason1">
+                <label class="govuk-label" id="CauseOfDeath1a" for="CauseOfDeath1a">
                   1(a) Main disease or conditions in infant
                 </label>
-                <textarea class="govuk-textarea govuk-!-width-three-quarters" id="MCCDCauseOfDeathReason1" name="MCCDCauseOfDeathReason1" rows="5" aria-required="false">
+                <textarea class="govuk-textarea govuk-!-width-three-quarters" id="CauseOfDeath1a" name="CauseOfDeath1a" rows="5" aria-required="false">
                 </textarea>
               </div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label" id="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath-label" for="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath">
+                <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
                   Time between onset and death
                 </label>
-              <input class="govuk-input govuk-input--width-2" id="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath" name="MCCDCauseOfDeathReason1TimeBetweenOnsetAndDeath" type="text" aria-required="false">
+              <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" aria-required="false">
               </div>
 
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-visually-hidden" id="MCCDCauseOfDeathReason1TimeUnit-label" for="MCCDCauseOfDeathReason1TimeUnit">
+                <label class="govuk-label govuk-visually-hidden" id="TimeBetweenOnsetAndDeathUnit-label" for="TimeBetweenOnsetAndDeathUnit">
                   Choose time unit
                 </label>
-                <select class="govuk-select" id="MCCDCauseOfDeathReason1TimeUnit" name="MCCDCauseOfDeathReason1TimeUnit" aria-required="false">
+                <select class="govuk-select" id="TimeBetweenOnsetAndDeathUnit" name="TimeBetweenOnsetAndDeathUnit" aria-required="false">
                     <option value="" selected="">Choose time unit</option>
                     <option value="Minutes">Minutes</option>
                     <option value="Hours">Hours</option>
