@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Place of death – {{ serviceName }} – GOV.UK Prototype Kit
+Select the registrar’s designation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,37 +28,34 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">
-            Place of death
+            Select the registrar’s designation 
           </h1>
           <form class="form" action="/task-list" method="post">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Where did the deceased die?
-                </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="communal-establishment">
-                    <label class="govuk-label govuk-radios__label" for="place-of-death">
-                      Communal establishment
+                    <input class="govuk-radios__input" id="designation-registrar" name="designation" type="radio" value="registrar">
+                    <label class="govuk-label govuk-radios__label" for="designation-registrar">
+                      Registrar
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="home">
-                    <label class="govuk-label govuk-radios__label" for="place-of-death">
-                      Home
+                    <input class="govuk-radios__input" id="designation-interim-egistrar" name="designation" type="radio" value="interim-registrar">
+                    <label class="govuk-label govuk-radios__label" for="designation-interim-registrar">
+                      Interim Registrar
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="in-transit">
-                    <label class="govuk-label govuk-radios__label" for="place-of-death">
-                      In transit
+                    <input class="govuk-radios__input" id="designation-deputy-registrar" name="designation" type="radio" value="deputy-registrar">
+                    <label class="govuk-label govuk-radios__label" for="designation-deputy-registrar">
+                      Deputy Registrar
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="place-of-death" name="place-of-death" type="radio" value="elsewhere">
-                    <label class="govuk-label govuk-radios__label" for="place-of-death">
-                      Elsewhere
+                    <input class="govuk-radios__input" id="designation-deputy-interim-registrar" name="designation" type="radio" value="deputy-interim-registrar">
+                    <label class="govuk-label govuk-radios__label" for="designation-deputy-interim-registrar">
+                      Deputy Interim Registrar
                     </label>
                   </div>
                   

@@ -35,6 +35,35 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
           </h1>
   
           <form class="form" action="/task-list" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="deceasedSex-fieldset" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Sex
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Female" name="deceasedSex" type="radio" value="Female" aria-controls="conditional-deceasedSex-Female" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Female-label" for="deceasedSex-Female">
+                    Female
+                  </label>   
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Male" name="deceasedSex" type="radio" value="Male">
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Male-label" for="deceasedSex-Male">
+                    Male
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="Intersex">
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
+                    Intersex
+                  </label>
+                </div> 
+              </div>
+            </fieldset>
+            </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedUsualAddress-fieldset" aria-required="false">              
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
@@ -191,15 +220,6 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="deceasedOccupation-label" for="deceasedOccupation">
-                Occupation
-              </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceasedOccupation" name="deceasedOccupation" type="text" aria-required="false">
-            </div>
-
-            {% from "govuk/components/button/macro.njk" import govukButton %}
-  
             <div class="govuk-button-group">
               {{ govukButton({
                 text: "Save"
