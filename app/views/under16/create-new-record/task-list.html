@@ -90,8 +90,9 @@
               Cause of death
             </a>
           </div>
-          {% if (data['MCCDAlive-day'] and data['MCCDDAlive-month']) 
-          and data['MCCDAlive-year'] and data['MCCDLetter'] %}
+          {% if (data['MCCDAlive-day'] and data['MCCDAlive-month']) and data['MCCDAlive-year']
+          and data['MCCDLetter'] and data['CauseOfDeath-a'] and data['TimeBetweenOnsetAndDeath'] 
+          and data['CauseOfDeath-c'] and data['CertifyingPractitioner'] and data['FurtherInformation'] %}
 
           <div class="govuk-task-list__status" id="place-of-death-status1">
             Completed
@@ -108,6 +109,139 @@
           {% endif %}
         </li>
       </ul>
+
+      <h2 class="govuk-heading-m">Informant’s details</h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/informant-details.html" aria-describedby="company-details-1-status">
+              Informant’s details
+            </a>
+          </div>
+
+          {% if (data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] and data['informantLiveWithDeceased'])%}
+
+          <div class="govuk-task-list__status" id="place-of-death-status1">
+            Completed
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+
+          {% endif %}
+
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Deceased’s details</h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/name-age-date-of-death.html" aria-describedby="company-details-1-status">
+              Name and date of death
+            </a>
+          </div>
+
+          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data['name-order'] and data['day-of-death'] and data['month-of-death'] and data['year-of-death'])%}
+
+          <div class="govuk-task-list__status" id="place-of-death-status1">
+            Completed
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+
+          {% endif %}
+
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/personal-details.html" aria-describedby="company-details-1-status">
+              Personal details
+            </a>
+          </div>
+
+          {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['age']
+          and data['deceasedCountryOfBirth'] and data['SpanishNational'])%}
+
+          <div class="govuk-task-list__status" id="place-of-death-status1">
+            Completed
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+
+          {% endif %}
+
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/parents-details.html" aria-describedby="company-details-1-status">
+              Parents’ details
+            </a>
+          </div>
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--green">
+              Optional
+            </strong>
+          </div>
+
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Statistical information</h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+          {% if (data['motherName'] or data['fatherName']) %}
+
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/place-of-death.html" aria-describedby="company-details-1-status">
+              Voluntary statistics
+            </a>
+          </div>
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--green">
+              Optional
+            </strong>
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__name-and-hint">
+              Voluntary statistics
+          </div>
+
+          <div class="govuk-task-list__status" id="place-of-death-status2">
+            <strong class="govuk-tag govuk-tag--grey">
+              Cannot start yet
+            </strong>
+          </div>
+
+          {% endif %}
+
+        </li>
 
 
       <div class="govuk-!-margin-top-5">

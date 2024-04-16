@@ -81,21 +81,21 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Which letter is circled on the medical certificate?
                 </legend>
-                <div class="govuk-radios govuk-radios">  
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" value="a">
+                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" value="a" {{ checked("MCCDLetter", "a") }}>
                     <label class="govuk-label govuk-radios__label" id="MCCDLetter-a-label" for="MCCDLetter-a">
                       A – "Seen after death by me"
                     </label>      
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-b" name="MCCDLetter" type="radio" value="b">
+                    <input class="govuk-radios__input" id="MCCDLetter-b" name="MCCDLetter" type="radio" value="b" {{ checked("MCCDLetter", "b") }}>
                     <label class="govuk-label govuk-radios__label" id="MCCDLetter-b-label" for="MCCDLetter-b">
                     B – "Seen after death by another medical practitioner but not by me"
                     </label>
                   </div> 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-c" name="MCCDLetter" type="radio" value="c">
+                    <input class="govuk-radios__input" id="MCCDLetter-c" name="MCCDLetter" type="radio" value="c" {{ checked("MCCDLetter", "c") }}>
                     <label class="govuk-label govuk-radios__label" id="MCCDLetter-c-label" for="MCCDLetter-c">
                     C – "Not seen after death by a medical practitioner"
                     </label>
@@ -105,69 +105,95 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
-              <div class="govuk-form-group">
-                <h2 class="govuk-heading-s">Cause of death - in infant</h2>
-                <label class="govuk-label" id="CauseOfDeath1a" for="CauseOfDeath1a">
-                  1(a) Main disease or conditions in infant
-                </label>
-                <textarea class="govuk-textarea govuk-!-width-three-quarters" id="CauseOfDeath1a" name="CauseOfDeath1a" rows="5" aria-required="false">
-                </textarea>
-              </div>
+
+              {{ govukTextarea({
+                name: "CauseOfDeath-a",
+                value: data['CauseOfDeath-a'],
+                id: "CauseOfDeath-a",
+                label: {
+                  text: "(a) Main disease or conditions in infant",
+                  classes: "govuk-label--xs",
+                  isPageHeading: true
+                }
+              }) }}
 
               <div class="govuk-form-group">
                 <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
                   Time between onset and death
                 </label>
-              <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" aria-required="false">
+              <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
               </div>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-visually-hidden" id="TimeBetweenOnsetAndDeathUnit-label" for="TimeBetweenOnsetAndDeathUnit">
-                  Choose time unit
-                </label>
-                <select class="govuk-select" id="TimeBetweenOnsetAndDeathUnit" name="TimeBetweenOnsetAndDeathUnit" aria-required="false">
-                    <option value="" selected="">Choose time unit</option>
-                    <option value="Minutes">Minutes</option>
-                    <option value="Hours">Hours</option>
-                    <option value="Days">Days</option>
-                    <option value="Not stated">Not stated</option>
-                </select>
-              </div>
+              {{ govukSelect({
+                id: "TimeBetweenOnsetAndDeathUnit",
+                name: "TimeBetweenOnsetAndDeathUnit",
+                value: data['TimeBetweenOnsetAndDeathUnit'],
+                label: {
+                  text: "Choose time unit"
+                },
+                items: [
+                  {
+                    value: "choose",
+                    text: "Choose time unit",
+                    selected: true
+                  },
+                  {
+                    value: "minutes",
+                    text: "Minutes"
+                  },
+                  {
+                    value: "hours",
+                    text: "Hours"
+                  },
+                  {
+                    value: "days",
+                    text: "Days"
+                  },
+                  {
+                    value: "not-stated",
+                    text: "Not stated"
+                  }
+                ]
+              }) }}
 
-                <div class="govuk-form-group">
-                  <p class="govuk-body">
+                <p class="govuk-body">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
-                  </p>
+                </p>
 
-                  <div class="govuk-form-group">
-                    <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions</h2>
-                    <label class="govuk-label" id="MCCDCauseOfDeathReason1-label" for="MCCDCauseOfDeathReason1">
-                      (c) Maternal disease or condition affecting infant
-                    </label>
-                    <textarea class="govuk-textarea govuk-!-width-three-quarters" id="MCCDCauseOfDeathReason1" name="MCCDCauseOfDeathReason1" rows="5" aria-required="false">
-                    </textarea>
-                  </div>
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant (optional)</a>
-                  </p>
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes (optional)</a>
-                  </p>
-                </div>
+                <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions</h2>
+                
+                {{ govukTextarea({
+                  name: "CauseOfDeath-c",
+                  value: data['CauseOfDeath-c'],
+                  id: "CauseOfDeath-c",
+                  label: {
+                    text: "(c) Maternal disease or condition affecting infant",
+                    classes: "govuk-label--xs",
+                    isPageHeading: true
+                  }
+                }) }}
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant (optional)</a>
+                </p>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes (optional)</a>
+                </p>
+                
             </fieldset>
 
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="MCCDCertifyingPractitionerFullName-label" for="MCCDCertifyingPractitionerFullName">
+              <label class="govuk-label govuk-label--s" id="CertifyingPractitioner" for="CertifyingPractitioner">
                 Certifying practitioner’s full name and qualifications
               </label>
-              <input class="govuk-input govuk-!-width-one-full" id="MCCDCertifyingPractitionerFullName" name="MCCDCertifyingPractitionerFullName" type="text" aria-required="false">
+              <input class="govuk-input govuk-!-width-one-full" id="CertifyingPractitioner" name="CertifyingPractitioner" type="text" aria-required="false" value="{{data['CertifyingPractitioner']}}">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="MCCDCertifyingPractitionerGMCNumber-label" for="MCCDCertifyingPractitionerGMCNumber">
+              <label class="govuk-label govuk-label--s" id="GMCNumber" for="GMCNumber">
                 GMC number (optional)
               </label> 
-              <input class="govuk-input govuk-input--width-10" id="MCCDCertifyingPractitionerGMCNumber" name="MCCDCertifyingPractitionerGMCNumber" type="text" aria-required="false">
+              <input class="govuk-input govuk-input--width-10" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
             </div>
 
             <div class="govuk-form-group">
@@ -177,7 +203,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDDiedInHospital-true" name="MCCDDiedInHospital" type="radio" value="true" aria-controls="conditional-MCCDDiedInHospital-true" aria-expanded="false">
+                    <input class="govuk-radios__input" id="MCCDDiedInHospital-true" name="MCCDDiedInHospital" type="radio" value="true" aria-controls="conditional-MCCDDiedInHospital-true" aria-expanded="false" {{ checked("MCCDDiedInHospital", "true") }}>
                     <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-true-label" for="MCCDDiedInHospital-true">
                       Yes
                     </label>
@@ -187,11 +213,11 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-label--s" id="MCCDConsultantFullName-label" for="MCCDConsultantFullName">
                       Consultant’s full name
                     </label>
-                    <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false">
+                    <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false" value="{{data['MCCDConsultantFullName']}}">
                   </div>
                 </div> 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="MCCDDiedInHospital-false" name="MCCDDiedInHospital" type="radio" value="false">
+                  <input class="govuk-radios__input" id="MCCDDiedInHospital-false" name="MCCDDiedInHospital" type="radio" value="false" {{ checked("MCCDDiedInHospital", "false") }}>
                   <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-false-label" for="MCCDDiedInHospital-false">
                     No
                   </label>
@@ -199,21 +225,25 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
+            <h2 class="govuk-heading-m">
+              Side 2
+            </h2>
+
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="MCCDWillAttendingPractitionerProvideFurtherInformation-fieldset" aria-required="false">
+              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Might the attending practitioner apply to give further information later (box B)?
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDWillAttendingPractitionerProvideFurtherInformation-true" name="MCCDWillAttendingPractitionerProvideFurtherInformation" type="radio" value="true">
-                    <label class="govuk-label govuk-radios__label" id="MCCDWillAttendingPractitionerProvideFurtherInformation-true-label" for="MCCDWillAttendingPractitionerProvideFurtherInformation-true">
+                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDWillAttendingPractitionerProvideFurtherInformation-false" name="MCCDWillAttendingPractitionerProvideFurtherInformation" type="radio" value="false">
-                    <label class="govuk-label govuk-radios__label" id="MCCDWillAttendingPractitionerProvideFurtherInformation-false-label" for="MCCDWillAttendingPractitionerProvideFurtherInformation-false">
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
                       No
                     </label>  
                   </div>
