@@ -43,19 +43,19 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="deceased-first-name">
                 First name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{data['deceasedFirstName']}}" type="text">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="deceased-middle-name">
               Middle names (optional)
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" value="{{data['deceasedMiddleName']}}" type="text">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="deceased-last-name">
               Last name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{data['deceasedLastName']}}" type="text">
           </div>
 
           <div class="govuk-form-group">
@@ -65,37 +65,37 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket" name="age-bracket" type="radio" value="less-than-24-hours" data-aria-controls="conditional-contact">
+                  <input class="govuk-radios__input" id="age-bracket" name="age-bracket" type="radio" value="less-than-24-hours" {{ checked("age-bracket", "less-than-24-hours") }} data-aria-controls="conditional-contact">
                   <label class="govuk-label govuk-radios__label" for="contact">
                     Less than 24 hours
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-2" name="age-bracket" type="radio" value="1-27-days" data-aria-controls="conditional-contact-2">
+                  <input class="govuk-radios__input" id="age-bracket-2" name="age-bracket" type="radio" value="1-27-days" {{ checked("age-bracket", "1-27-days") }} data-aria-controls="conditional-contact-2">
                   <label class="govuk-label govuk-radios__label" for="contact-2">
                     1 to 27 days
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-3" name="age-bracket" type="radio" value="28-days-15-years" data-aria-controls="conditional-contact-3">
+                  <input class="govuk-radios__input" id="age-bracket-3" name="age-bracket" type="radio" value="28-days-15-years" {{ checked("age-bracket", "28-days-15-years") }} data-aria-controls="conditional-contact-3">
                   <label class="govuk-label govuk-radios__label" for="contact-3">
                     28 days to 15 years
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-4" name="age-bracket" type="radio" value="16-74-years" data-aria-controls="conditional-contact-3">
+                  <input class="govuk-radios__input" id="age-bracket-4" name="age-bracket" type="radio" value="16-74-years" {{ checked("age-bracket", "16-74-years") }} data-aria-controls="conditional-contact-3">
                   <label class="govuk-label govuk-radios__label" for="contact-3">
                     16 years to 74 years
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-5" name="age-bracket" type="radio" value="75-or-older" data-aria-controls="conditional-contact-3">
+                  <input class="govuk-radios__input" id="age-bracket-5" name="age-bracket" type="radio" value="75-or-older" {{ checked("age-bracket", "75-or-older") }} data-aria-controls="conditional-contact-3">
                   <label class="govuk-label govuk-radios__label" for="contact-3">
                     75 years or older
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-6" name="age-bracket" type="radio" value="unknown" data-aria-controls="conditional-contact-3">
+                  <input class="govuk-radios__input" id="age-bracket-6" name="age-bracket" type="radio" value="unknown" {{ checked("age-bracket", "unknow") }} data-aria-controls="conditional-contact-3">
                   <label class="govuk-label govuk-radios__label" for="age-bracket-6">
                     I do not have their age
                   </label>
@@ -118,7 +118,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="day-of-death">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}" type="text" inputmode="numeric">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -126,7 +126,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="month-of-death">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}" type="text" inputmode="numeric">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -134,15 +134,13 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="year-of-death">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" type="text" inputmode="numeric">
                   </div>
                 </div>
               </div>
             </fieldset>
           </div>
           
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Continue"
