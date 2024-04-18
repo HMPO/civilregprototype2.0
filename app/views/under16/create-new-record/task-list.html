@@ -91,8 +91,9 @@
             </a>
           </div>
           {% if (data['MCCDAlive-day'] and data['MCCDAlive-month']) and data['MCCDAlive-year']
-          and data['MCCDLetter'] and data['CauseOfDeath-a'] and data['TimeBetweenOnsetAndDeath'] 
-          and data['CauseOfDeath-c'] and data['CertifyingPractitioner'] and data['FurtherInformation'] %}
+          and data['MCCDLetter'] and data['CauseOfDeath-a'] and data['CauseOfDeath-c'] and data['CertifyingPractitioner'] 
+          and data['Date-medical-certificate-signed-day'] and data['Date-medical-certificate-signed-month'] 
+          and data['Date-medical-certificate-signed-year'] and data['MCCDDiedInHospital'] and data['FurtherInformation'] %}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -174,7 +175,7 @@
             </a>
           </div>
 
-          {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['age']
+          {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
           and data['deceasedCountryOfBirth'] and data['SpanishNational'])%}
 
           <div class="govuk-task-list__status" id="">
@@ -314,11 +315,14 @@
       </ul>
 
 
-      <div class="govuk-!-margin-top-5">
+      <div class="govuk-button-group govuk-!-padding-top-9">
         {{ govukButton
           ({ 
           text: "Send to RON", 
           href: "confirmation-page.html" }) }}
+
+          <a class="govuk-link" href="#">Delete the record</a>
+
       </div>     
 
     </div>
