@@ -117,6 +117,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }
               }) }}
 
+              <!-- Not for under 16
               <div class="govuk-form-group">
                 <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
                   Time between onset and death
@@ -154,7 +155,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     text: "Not stated"
                   }
                 ]
-              }) }}
+              }) }} -->
 
                 <p class="govuk-body">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
@@ -197,9 +198,46 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date medical certificate was signed
+                </legend>
+                <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
+                  For example, 27 3 2024
+                </div>
+                <div class="govuk-date-input" id="Date-medical-certificate-signed">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day']}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month']}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year']}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="MCCDDiedInHospital-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Died in a hospital? (optional)
+                  Died in a hospital?
                 </legend>
                 <div class="govuk-radios govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
