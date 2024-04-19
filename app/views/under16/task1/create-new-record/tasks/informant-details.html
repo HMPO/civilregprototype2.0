@@ -27,22 +27,26 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
     <main class="govuk-main-wrapper " id="main-content" role="main"></main>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
+
             <h1 class="govuk-heading-l">
               Informant’s details
             </h1>
+
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantFirstName-label" for="informantFirstName">
                 First name (optional)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantFirstName" name="informantFirstName" type="text" aria-required="false" value="{{data['informantFirstName']}}">
             </div>
+
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantMiddleNames-label" for="informantMiddleNames">
                Middle names (optional)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantMiddleNames" name="informantMiddleNames" type="text" aria-required="false" value="{{data['informantMiddleNames']}}">
             </div>
+            
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantLastName-label" for="informantLastName">
                 Last name
