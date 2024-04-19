@@ -34,7 +34,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             Cause of death 
           </h1>
 
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
             <h2 class="govuk-heading-m">
               Side 1
             </h2>
@@ -53,7 +53,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="MCCDAlive-day">
                           Day
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-day" name="MCCDAlive-day" value="{{data['MCCDAlive-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-day" name="MCCDAlive-day" value="{{data['MCCDAlive-day'] or "20"}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -61,7 +61,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="MCCDAlive-month">
                           Month
                         </label>  
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-month" name="MCCDAlive-month" value="{{data['MCCDAlive-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-month" name="MCCDAlive-month" value="{{data['MCCDAlive-month'] or "04"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -69,7 +69,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="MCCDDAlive-year">
                           Year
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDAlive-year" name="MCCDAlive-year" value="{{data['MCCDAlive-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDAlive-year" name="MCCDAlive-year" value="{{data['MCCDAlive-year'] or "2024"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
                       </div>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" value="a" {{ checked("MCCDLetter", "a") }}>
+                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" checked="checked" value="a" {{ checked("MCCDLetter", "a") }}>
                     <label class="govuk-label govuk-radios__label" id="MCCDLetter-a-label" for="MCCDLetter-a">
                       A – "Seen after death by me"
                     </label>      
@@ -104,97 +104,102 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-            <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+            <h2 class="govuk-heading-s">Cause of death - in infant</h2>
 
-              {{ govukTextarea({
-                name: "CauseOfDeath-a",
-                value: data['CauseOfDeath-a'],
-                id: "CauseOfDeath-a",
-                label: {
-                  text: "(a) Main disease or conditions in infant",
-                  classes: "govuk-label--xs",
-                  isPageHeading: true
-                }
-              }) }}
 
-              <!-- Not for under 16
-              <div class="govuk-form-group">
-                <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
-                  Time between onset and death
-                </label>
-              <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
-              </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
 
-              {{ govukSelect({
-                id: "TimeBetweenOnsetAndDeathUnit",
-                name: "TimeBetweenOnsetAndDeathUnit",
-                value: data['TimeBetweenOnsetAndDeathUnit'],
-                label: {
-                  text: "Choose time unit"
-                },
-                items: [
-                  {
-                    value: "choose",
-                    text: "Choose time unit",
-                    selected: true
-                  },
-                  {
-                    value: "minutes",
-                    text: "Minutes"
-                  },
-                  {
-                    value: "hours",
-                    text: "Hours"
-                  },
-                  {
-                    value: "days",
-                    text: "Days"
-                  },
-                  {
-                    value: "not-stated",
-                    text: "Not stated"
-                  }
-                ]
-              }) }} -->
-
-                <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
-                </p>
-
-                <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions</h2>
-                
                 {{ govukTextarea({
-                  name: "CauseOfDeath-c",
-                  value: data['CauseOfDeath-c'],
-                  id: "CauseOfDeath-c",
+                  name: "CauseOfDeath-a",
+                  value: data['CauseOfDeath-a'] or "Immaturity related condition",
+                  id: "CauseOfDeath-a",
                   label: {
-                    text: "(c) Maternal disease or condition affecting infant",
+                    text: "(a) Main disease or conditions in infant",
                     classes: "govuk-label--xs",
                     isPageHeading: true
                   }
                 }) }}
 
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant (optional)</a>
-                </p>
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes (optional)</a>
-                </p>
-                
-            </fieldset>
+                <!-- Not for under 16
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
+                    Time between onset and death
+                  </label>
+                <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
+                </div>
+
+                {{ govukSelect({
+                  id: "TimeBetweenOnsetAndDeathUnit",
+                  name: "TimeBetweenOnsetAndDeathUnit",
+                  value: data['TimeBetweenOnsetAndDeathUnit'],
+                  label: {
+                    text: "Choose time unit"
+                  },
+                  items: [
+                    {
+                      value: "choose",
+                      text: "Choose time unit",
+                      selected: true
+                    },
+                    {
+                      value: "minutes",
+                      text: "Minutes"
+                    },
+                    {
+                      value: "hours",
+                      text: "Hours"
+                    },
+                    {
+                      value: "days",
+                      text: "Days"
+                    },
+                    {
+                      value: "not-stated",
+                      text: "Not stated"
+                    }
+                  ]
+                }) }} -->
+
+                  <p class="govuk-body">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
+                  </p>
+
+                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions</h2>
+                  
+                  {{ govukTextarea({
+                    name: "CauseOfDeath-c",
+                    value: data['CauseOfDeath-c'] or "None",
+                    id: "CauseOfDeath-c",
+                    label: {
+                      text: "(c) Maternal disease or condition affecting infant",
+                      classes: "govuk-label--xs",
+                      isPageHeading: true
+                    }
+                  }) }}
+
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant (optional)</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes (optional)</a>
+                  </p>
+                  
+              </fieldset>
+            </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="CertifyingPractitioner" for="CertifyingPractitioner">
                 Certifying practitioner’s full name and qualifications
               </label>
-              <input class="govuk-input govuk-!-width-one-full" id="CertifyingPractitioner" name="CertifyingPractitioner" type="text" aria-required="false" value="{{data['CertifyingPractitioner']}}">
+              <input class="govuk-input govuk-!-width-one-full" id="CertifyingPractitioner" name="CertifyingPractitioner" type="text" aria-required="false" value="{{data['CertifyingPractitioner'] or "Adam David. MB"}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="GMCNumber" for="GMCNumber">
                 GMC number (optional)
               </label> 
-              <input class="govuk-input govuk-input--width-10" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
+              <input class="govuk-input govuk-input--width-10" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber'] or "1604200"}}">
             </div>
 
             <div class="govuk-form-group">
@@ -211,7 +216,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "22"}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -219,7 +224,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "04"}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -227,7 +232,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
                     </div>
                   </div>
                 </div>
@@ -280,7 +285,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" checked="checked" value="false" {{ checked("FurtherInformation", "false") }}>
                     <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
                       No
                     </label>  

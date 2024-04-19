@@ -34,40 +34,40 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
             Appoinment information
           </h1>
   
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="MedicalCertificateIssued-hint" id="MedicalCertificateIssued-fieldset">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="MedicalCertificateReceived-hint" id="MedicalCertificateReceived-fieldset">
                 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Date medical certificate was received (optional)
                 </legend>
-                <div id="MedicalCertificateIssued-hint" class="govuk-hint">
+                <div id="MedicalCertificateReceived-hint" class="govuk-hint">
                   For example, 12 11 2007
                 </div>
-                <div class="govuk-date-input" id="MedicalCertificateIssued">
+                <div class="govuk-date-input" id="MedicalCertificateReceived">
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-day">
+                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateReceived-day">
                         Day
                       </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateIssued-day" name="MedicalCertificateIssued-day" value="{{data['MedicalCertificateIssued-day']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateReceived-day" name="MedicalCertificateReceived-day" value="{{data['MedicalCertificateReceived-day'] or "22"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-month">
+                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateReceived-month">
                         Month
                       </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateIssued-month" name="MedicalCertificateIssued-month" value="{{data['MedicalCertificateIssued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateReceived-month" name="MedicalCertificateReceived-month" value="{{data['MedicalCertificateReceived-month'] or "04"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-year">
+                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateReceived-year">
                         Year
                       </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MedicalCertificateIssued-year" name="MedicalCertificateIssued-year" value="{{data['MedicalCertificateIssued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MedicalCertificateReceived-year" name="MedicalCertificateReceived-year" value="{{data['MedicalCertificateReceived-year'] or "2024"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
                     </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" value="false" {{ checked("coverSheetPriority", "false") }}>
+                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" checked="checked" value="false" {{ checked("coverSheetPriority", "false") }}>
                     <label class="govuk-label govuk-radios__label" id="coverSheetPriority-false-label" for="coverSheetPriority-false">
                       No
                     </label>

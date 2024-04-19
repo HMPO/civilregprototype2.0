@@ -31,7 +31,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
             Place of death
           </h1>
           
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
 
             {{ govukRadios({
               name: "place-of-death",
@@ -65,30 +65,31 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             
 
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Place of death
-              </legend>
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
-                  Communal establishment address
-                </label>
-                <input class="govuk-input govuk-!-width-one-half" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1']}}">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Place of death
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                    Communal establishment address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1']}}">
+               
+
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Find address
+                </button>
               </div>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
+                </p>
 
-              {{ govukButton({
-                text: "Find address",
-                classes: "govuk-button--secondary"
-              }) }}
-
-              <p class="govuk-body">
-                <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
-              </p>
-
-              <p class="govuk-body">
-                <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
-              </p>
-            </fieldset>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
+                </p>
+              </fieldset>
+            </div>
             
             <!--
             <div class="govuk-form-group">

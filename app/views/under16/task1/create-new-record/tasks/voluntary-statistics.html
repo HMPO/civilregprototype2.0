@@ -34,7 +34,7 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
             Voluntary statistics
           </h1>
   
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="nhs-number">
@@ -173,13 +173,13 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-status-second-parent" type="radio" value="employee-not-supervising" {{checked("employment-second-parent", "employee-not-supervising")}} aria-expanded="false">
+                    <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-second-parent" type="radio" value="employee-not-supervising" {{checked("employment-second-parent", "employee-not-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-not-supervising" for="employment-status-employee-not-supervising">
                       Employee, not supervising
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-status-second-parent" type="radio" value="employee-supervising" {{checked("employment-second-parent", "employee-supervising")}} aria-expanded="false">
+                    <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-second-parent" type="radio" value="employee-supervising" {{checked("employment-second-parent", "employee-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-supervising" for="employment-status-employee-supervising">
                       Employee, supervising
                     </label>

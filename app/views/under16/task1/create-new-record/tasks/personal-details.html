@@ -34,7 +34,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             Personal details
           </h1>
   
-          <form class="form" action="/task-list" method="post">
+          <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedSex-fieldset" aria-required="false">
@@ -293,8 +293,6 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
               </fieldset>
             </div>              
-          
-           
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label" for="deceasedPlaceOfBirth">
@@ -359,13 +357,13 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio" checked="checked" value="true" {{ checked("SpanishNational", "true") }}>
+                    <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio" value="true" {{ checked("SpanishNational", "true") }}>
                     <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
                         Yes
                     </label>    
                   </div>
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" value="false" {{ checked("SpanishNational", "false") }}>
+                      <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" checked="checked" value="false" {{ checked("SpanishNational", "false") }}>
                       <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label" for="SpanishNational-false">
                         No
                       </label>
