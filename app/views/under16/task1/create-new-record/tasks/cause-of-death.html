@@ -239,32 +239,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="MCCDDiedInHospital-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Died in a hospital?
-                </legend>
-                <div class="govuk-radios govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDDiedInHospital-true" name="MCCDDiedInHospital" type="radio" value="true" aria-controls="conditional-MCCDDiedInHospital-true" aria-expanded="false" {{ checked("MCCDDiedInHospital", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-true-label" for="MCCDDiedInHospital-true">
-                      Yes
-                    </label>
-                  </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-MCCDDiedInHospital-true">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--s" id="MCCDConsultantFullName-label" for="MCCDConsultantFullName">
-                      Consultant’s full name
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false" value="{{data['MCCDConsultantFullName']}}">
-                  </div>
-                </div> 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="MCCDDiedInHospital-false" name="MCCDDiedInHospital" type="radio" value="false" {{ checked("MCCDDiedInHospital", "false") }}>
-                  <label class="govuk-label govuk-radios__label" id="MCCDDiedInHospital-false-label" for="MCCDDiedInHospital-false">
-                    No
-                  </label>
-                </div>
-              </fieldset>
+              <label class="govuk-label govuk-label--s" id="MCCDConsultantFullName-label" for="MCCDConsultantFullName">
+                Consultant’s full name (optional)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false" value="{{data['MCCDConsultantFullName']}}">
             </div>
 
             <h2 class="govuk-heading-m">
