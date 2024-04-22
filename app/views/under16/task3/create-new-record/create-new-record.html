@@ -43,7 +43,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="deceased-first-name">
                 First name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{"Thomas" or data['deceasedFirstName']}}" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{data['deceasedFirstName'] or "Emily"}}" type="text">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="deceased-middle-name">
@@ -55,7 +55,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="deceased-last-name">
               Last name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{"NICOLAOU" or data['deceasedLastName']}}" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{data['deceasedLastName'] or "BANACH"}}" type="text">
           </div>
 
           <div class="govuk-form-group">
