@@ -24,7 +24,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-width-container">
-    <main class="govuk-main-wrapper " id="main-content" role="main"></main>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form class="form" action="../task-list" method="post">
@@ -261,14 +261,14 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
           </fieldset>
         </div>
       
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Save"
-          }) }}
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Save"
+            }) }}
+          </div>
+          </form>
         </div>
-    </form>
-  </div>
-      </div>
+     </div>
   
     </main>
   </div>
