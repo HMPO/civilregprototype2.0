@@ -372,6 +372,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation3-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation3" name="registration-confirmation3" type="checkbox" value="yes" {{ checked("registration-confirmation3", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation3">
+                      This information was provided by a qualified informant during registration
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div class="govuk-button-group">
               <button type="submit" class="govuk-button" formaction="parents-details" data-module="govuk-button">
                 Save and continue

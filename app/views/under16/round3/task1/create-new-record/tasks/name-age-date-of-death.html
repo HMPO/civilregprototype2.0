@@ -192,6 +192,19 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
               
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation2-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation2" name="registration-confirmation2" type="checkbox" value="yes" {{ checked("registration-confirmation2", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation2">
+                      This information was provided by a qualified informant during registration
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div class="govuk-button-group">
               <button type="submit" class="govuk-button" formaction="personal-details" data-module="govuk-button">
                 Save and continue

@@ -220,6 +220,19 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation5-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation5" name="registration-confirmation5" type="checkbox" value="yes" {{ checked("registration-confirmation5", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation5">
+                      This information was provided by a qualified informant during registration
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div class="govuk-button-group">
               <button type="submit" class="govuk-button" formaction="registrars-designation" data-module="govuk-button">
                 Save and continue
