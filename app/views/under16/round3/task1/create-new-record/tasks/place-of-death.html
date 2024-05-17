@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Place of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Place of death
+          </h1>
+          
+          <form class="form" action="../task-list" method="post">
+
+            {{ govukRadios({
+              name: "place-of-death",
+              value: data['place-of-death'],
+              fieldset: {
+                legend: {
+                  text: "Where did the deceased die?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "communal-establishment",
+                  text: "Communal establishment"
+                },
+                {
+                  value: "home",
+                  text: "Home"
+                },
+                {
+                  value: "in-transit",
+                  text: "In transit"
+                },
+                {
+                  value: "elsewhere",
+                  text: "Elsewhere"
+                }
+              ]
+            }) }}
+
+            
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Place of death
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--xs  " id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                    Communal establishment address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half govuk-!-margin-bottom-2" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1']}}">
+
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
+                  </p>
+
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
+                  </p>
+
+              </div>
+              </fieldset>
+            </div>
+            
+            <!--
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Where did the deceased die?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment">
+                    <label class="govuk-label govuk-radios__label" for="communal-establishment">
+                      Communal establishment
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="home" name="place-of-death" type="radio" value="home">
+                    <label class="govuk-label govuk-radios__label" for="home">
+                      Home
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="in-transit" name="place-of-death" type="radio" value="in-transit">
+                    <label class="govuk-label govuk-radios__label" for="in-transit">
+                      In transit
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="elsewhere" name="place-of-death" type="radio" value="elsewhere">
+                    <label class="govuk-label govuk-radios__label" for="elsewhere">
+                      Elsewhere
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+            </div>-->
+
+
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="cause-of-death" data-module="govuk-button">
+                Save and continue
+              </button>
+             
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

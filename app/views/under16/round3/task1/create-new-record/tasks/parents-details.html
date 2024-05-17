@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Parents’ details
+          </h1>
+  
+          <form class="form" action="../task-list" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="mother-info-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Can the informant provide the deceased’s mother’s details?
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mother-info-yes" name="mother-info" type="radio" value="mother-info-yes" {{ checked("mother-info-yes", "yes") }} aria-controls="conditional-mother-info-yes" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="mother-info-yes-label" for="mother-info-yes">
+                      Yes
+                    </label>   
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mother-info-yes">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" for="mother-name">
+                        Full name (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="mother-name" name="motherName" type="text" value="{{data['motherName']}}">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" for="mother-occupation">
+                        Occupation (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="mother-occupation" name="motherOccupation" type="text" value="{{data['motherOccupation']}}">
+                    </div>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="mother-info-no" name="mother-info" type="radio" value="no" {{ checked("mother-info-no", "no") }} >
+                    <label class="govuk-label govuk-radios__label" id="mother-info-no-label" for="mother-info-no">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="second-parent" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Can the informant provide the deceased’s father or second parent’s details?
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="second-parent-info-yes" name="second-parent-info" type="radio" value="second-parent-info-yes" {{ checked("second-parent-info-yes", "yes") }} aria-controls="conditional-second-parent-info-yes" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="second-parent-info-yes-label" for="second-parent-info-yes">
+                      Yes
+                    </label>   
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-second-parent-info-yes">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" for="father-name">
+                        Full name (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="father-name" name="fatherName" type="text" value="{{data['fatherName']}}">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" for="father-occupation">
+                        Occupation (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="father-occupation" name="fatherOccupation" type="text" value="{{data['fatherOccupation']}}">
+                    </div>
+        
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" id="whichParent" aria-required="false">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Which parent were they? (optional)
+                        </legend>
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whichParent-father" name="whichParent" type="radio" value="Father" {{ checked("whichParent", "Father") }} aria-expanded="false">
+                            <label class="govuk-label govuk-radios__label" id="whichParent-father" for="whichParent-father">
+                              Father
+                            </label>   
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whichParent-secondParent" name="whichParent" type="radio" value="SecondParent" {{ checked("whichParent", "SecondParent") }}>
+                            <label class="govuk-label govuk-radios__label" id="whichParent-secondParent" for="whichParent-secondParent">
+                              Second parent
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="second-parent-info-no" name="second-parent-info" type="radio" value="no" {{ checked("second-parent-info-no", "no") }} >
+                    <label class="govuk-label govuk-radios__label" id="second-parent-info-no-label" for="second-parent-info-no">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="voluntary-statistics" data-module="govuk-button">
+                Save and continue
+              </button>
+             
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
