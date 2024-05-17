@@ -7,3 +7,15 @@
 .govuk-tag-wider {
     max-width: 200px;
 }
+
+#horizontal-wrapper {
+    display: flex;
+  }
+  
+  #left {
+    flex: 0 0 15%;
+  }
+  
+  #right {
+    flex: 1;
+  }
