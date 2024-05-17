@@ -292,7 +292,27 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   
                 </div>
               </fieldset>
-            </div>              
+            </div>
+
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Age
+              </legend>
+              <div id="horizontal-wrapper">
+                <div class="govuk-form-group" id="left">
+                  <label class="govuk-label" id="age-hours-label" for="age-hours">
+                    Hours
+                  </label>
+                  <input class="govuk-input govuk-input--width-2" id="age-hours" name="age-hours" type="text" aria-describedby="age-hours-hint" aria-required="false" value="{{data['age-hours']}}">
+                </div>
+                <div class="govuk-form-group" id="right">
+                  <label class="govuk-label" id="age-minutes-label" for="age-minutes">
+                    Minutes
+                  </label>
+                  <input class="govuk-input govuk-input--width-2" id="age-minutes" name="age-minutes" type="text" aria-describedby="age-minutes-hint" aria-required="false" value="{{data['age-minutes']}}">
+                </div>
+              </div>
+            </fieldset>              
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label" for="deceasedPlaceOfBirth">
