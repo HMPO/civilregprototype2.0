@@ -66,19 +66,26 @@
             </a>
           </div>
 
-          {% if (data['place-of-death'] and data['MCCDAddressLine1']) %}
+          {% if (data['place-of-death'] and data['MCCDAddressLine1']) and data['registration-confirmation'] %}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['place-of-death'] and data['MCCDAddressLine1']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -95,17 +102,17 @@
           and data['Date-medical-certificate-signed-day'] and data['Date-medical-certificate-signed-month'] 
           and data['Date-medical-certificate-signed-year'] and data['FurtherInformation'] %}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
         </li>
@@ -121,19 +128,27 @@
             </a>
           </div>
 
-          {% if (data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] and data['informantLiveWithDeceased'])%}
+          {% if (data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] 
+          and data['informantLiveWithDeceased']) and data['registration-confirmation1']%}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] and data['informantLiveWithDeceased']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -150,19 +165,28 @@
             </a>
           </div>
 
-          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data['name-order'] and data['day-of-death'] and data['month-of-death'] and data['year-of-death'])%}
+          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data['name-order'] and data['day-of-death'] 
+          and data['month-of-death'] and data['year-of-death'] and data['registration-confirmation2'])%}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['deceasedFirstName'] and data['deceasedLastName'] and data['name-order'] and data['day-of-death'] 
+          and data['month-of-death'] and data['year-of-death']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -176,19 +200,27 @@
           </div>
 
           {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
-          and data['deceasedCountryOfBirth'] and data['SpanishNational'])%}
+          and data['deceasedCountryOfBirth'] and data['SpanishNational']) and data['registration-confirmation3']%}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
+          and data['deceasedCountryOfBirth'] and data['SpanishNational']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -200,19 +232,26 @@
             </a>
           </div>
 
-          {% if (data['mother-info'] and data['second-parent-info'])%}
+          {% if (data['mother-info'] and data['second-parent-info'] and data['registration-confirmation4'])%}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['mother-info'] and data['second-parent-info']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -231,19 +270,27 @@
           </div>
 
           {% if (data['additional-industry-mother'] and data['employment-mother'] 
-          and data['additional-industry-second-parent'] and data['employment-second-parent'])%}
+          and data['additional-industry-second-parent'] and data['employment-second-parent'] and data['registration-confirmation5'])%}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['additional-industry-mother'] and data['employment-mother'] 
+          and data['additional-industry-second-parent'] and data['employment-second-parent']) %}
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+              For informant review</strong>
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -263,17 +310,61 @@
 
           {% if (data['designation']) %}
 
-          <div class="govuk-task-list__status" id="">
-            Completed
-          </div>
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
 
           {% else %}
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete
+              </strong>
+            </div>
+
+          {% endif %}
+
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+          {% if (data['registration-confirmation-register-page'])%}
+
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+                Register page
+              </a>
+            </div>
+
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
+
+          {% elif (data['designation']) %}
+
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+                Register page
+              </a>
+            </div>
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete 
+              </strong>
+            </div>
+
+          {% else %}
+
+            <div class="govuk-task-list__name-and-hint">
+                Register page
+            </div>
+
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--grey">
+                Cannot start yet
+              </strong>
+            </div>
 
           {% endif %}
 
@@ -283,34 +374,34 @@
 
           {% if (data['informantSignature'] and data['signature-annotation'] and data['registrarSignature'])%}
 
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
-              Register page
-            </a>
-          </div>
+            <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="tasks/signature-details.html" aria-describedby="">
+                  Signature details
+                </a>
+            </div>
 
           <div class="govuk-task-list__status" id="">
             Completed
           </div>
 
-          {% elif (data['designation']) %}
+          {% elif (data['registration-confirmation-register-page']) %}
 
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
-              Register page
-            </a>
-          </div>
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="tasks/signature-details.html" aria-describedby="">
+                Signature details
+              </a>
+            </div>
 
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete 
-            </strong>
-          </div>
-
+            <div class="govuk-task-list__status" id="">
+              <strong class="govuk-tag govuk-tag--blue">
+                Incomplete 
+              </strong>
+            </div>
+          
           {% else %}
-
+        
           <div class="govuk-task-list__name-and-hint">
-              Register page
+            Signature details
           </div>
 
           <div class="govuk-task-list__status" id="">
@@ -320,19 +411,6 @@
           </div>
 
           {% endif %}
-
-        </li>
-
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-          <div class="govuk-task-list__name-and-hint">
-            Signature details
-        </div>
-
-        <div class="govuk-task-list__status" id="">
-          <strong class="govuk-tag govuk-tag--grey">
-            Cannot start yet
-          </strong>
-        </div>
         </li>
       </ul>
 

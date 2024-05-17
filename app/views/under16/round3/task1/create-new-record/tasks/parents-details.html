@@ -43,7 +43,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="mother-info-yes" name="mother-info" type="radio" value="mother-info-yes" {{ checked("mother-info-yes", "yes") }} aria-controls="conditional-mother-info-yes" aria-expanded="false">
+                    <input class="govuk-radios__input" id="mother-info-yes" name="mother-info" type="radio" value="mother-info-yes" {{ checked("mother-info", "yes") }} aria-controls="conditional-mother-info-yes" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="mother-info-yes-label" for="mother-info-yes">
                       Yes
                     </label>   
@@ -64,7 +64,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                   
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="mother-info-no" name="mother-info" type="radio" value="no" {{ checked("mother-info-no", "no") }} >
+                    <input class="govuk-radios__input" id="mother-info-no" name="mother-info" type="radio" value="no" {{ checked("mother-info", "no") }} >
                     <label class="govuk-label govuk-radios__label" id="mother-info-no-label" for="mother-info-no">
                       No
                     </label>
@@ -81,7 +81,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="second-parent-info-yes" name="second-parent-info" type="radio" value="second-parent-info-yes" {{ checked("second-parent-info-yes", "yes") }} aria-controls="conditional-second-parent-info-yes" aria-expanded="false">
+                    <input class="govuk-radios__input" id="second-parent-info-yes" name="second-parent-info" type="radio" value="second-parent-info-yes" {{ checked("second-parent-info", "yes") }} aria-controls="conditional-second-parent-info-yes" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="second-parent-info-yes-label" for="second-parent-info-yes">
                       Yes
                     </label>   
@@ -125,12 +125,25 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                   
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="second-parent-info-no" name="second-parent-info" type="radio" value="no" {{ checked("second-parent-info-no", "no") }} >
+                    <input class="govuk-radios__input" id="second-parent-info-no" name="second-parent-info" type="radio" value="no" {{ checked("second-parent-info", "no") }} >
                     <label class="govuk-label govuk-radios__label" id="second-parent-info-no-label" for="second-parent-info-no">
                       No
                     </label>
                   </div>
 
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation4-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item ">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation4" name="registration-confirmation4" type="checkbox" value="yes" {{ checked("registration-confirmation4", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation4">
+                      This information was provided by a qualified informant during registration
+                    </label>
+                  </div>
                 </div>
               </fieldset>
             </div>

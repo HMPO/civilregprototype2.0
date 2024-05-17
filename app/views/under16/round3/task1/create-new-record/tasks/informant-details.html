@@ -260,6 +260,19 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
           </fieldset>
         </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation1-hint">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="registration-confirmation1" name="registration-confirmation1" type="checkbox" value="yes" {{ checked("registration-confirmation1", "yes") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation1">
+                  This information was provided by a qualified informant during registration
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       
         <div class="govuk-button-group">
           <button type="submit" class="govuk-button" formaction="name-age-date-of-death" data-module="govuk-button">
