@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm medical certificate – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "create-new-record.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Confirm the medical certificate
+        </h1>
+
+        <form class="form" action="age-of-deceased" method="post">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="certificate">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Select which medical certificate for this registration
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="attending-practitioner" name="certificate" type="radio" value="attending-practitioner" {{ checked("certificate", "attending-practitioner") }} data-aria-controls="conditional-attending-practitioner">
+                  <label class="govuk-label govuk-radios__label" for="attending-practitioner">
+                    Attending practitioner certificate
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-attending-practitioner">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="a-p-standard" name="a-p" type="radio" value="a-p-standard" {{ checked("a-p", "a-p-standard") }} >
+                    <label class="govuk-label govuk-radios__label" for="a-p-standard">
+                      Standard (Form 66 APC1)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="a-p-neonatal" name="a-p" type="radio" value="a-p-neonatal" {{ checked("a-p", "a-p-neonatal") }} >
+                    <label class="govuk-label govuk-radios__label" for="a-p-neonatal">
+                      Neonatal (Form 65 APC2)
+                    </label>
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="medical-examiner" name="certificate" type="radio" value="medical-examiner" {{ checked("certificate", "medical-examiner") }} data-aria-controls="conditional-medical-examiner">
+                  <label class="govuk-label govuk-radios__label" for="medical-examiner">
+                    Medical examiner certificate
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-medical-examiner">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="m-e-standard" name="m-e" type="radio" value="m-e-standard" {{ checked("m-e", "m-e-standard") }} >
+                    <label class="govuk-label govuk-radios__label" for="m-e-standard">
+                      Standard (Form 66 MEC4)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="m-e-neonatal" name="m-e" type="radio" value="m-e-neonatal" {{ checked("m-e", "m-e-neonatal") }} >
+                    <label class="govuk-label govuk-radios__label" for="m-e-neonatal">
+                      Neonatal (Form 65 MEC3)
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}
