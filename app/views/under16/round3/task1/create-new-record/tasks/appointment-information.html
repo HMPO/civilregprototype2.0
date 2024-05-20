@@ -37,44 +37,6 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
           <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="MedicalCertificateIssued-hint" id="MedicalCertificateIssued-fieldset">
-                
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was received (optional)
-                </legend>
-                <div id="MedicalCertificateIssued-hint" class="govuk-hint">
-                  For example, 12 11 2007
-                </div>
-                <div class="govuk-date-input" id="MedicalCertificateIssued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-day">
-                        Day
-                      </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateIssued-day" name="MedicalCertificateIssued-day" value="{{data['MedicalCertificateIssued-day']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-month">
-                        Month
-                      </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MedicalCertificateIssued-month" name="MedicalCertificateIssued-month" value="{{data['MedicalCertificateIssued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="MedicalCertificateIssued-year">
-                        Year
-                      </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MedicalCertificateIssued-year" name="MedicalCertificateIssued-year" value="{{data['MedicalCertificateIssued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="coverSheetPriority-hint" id="coverSheetPriority-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Is this registration urgent? (optional)
