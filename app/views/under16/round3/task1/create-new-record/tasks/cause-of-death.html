@@ -39,9 +39,46 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               Side 1
             </h2>
 
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date medical certificate was issued
+                </legend>
+                <div class="govuk-form-group">
+                  <div id="MCCDissued-hint" class="govuk-hint">
+                    For example, 12 11 2007
+                  </div>
+                  <div class="govuk-date-input" id="MCCDissued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
+                          Day
+                        </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
+                          Month
+                        </label>  
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
+                          Year
+                        </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                      </div>
+                    </div>
+                  </div>
+                 </div> 
+              </fieldset>
+
               <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDAlive-hint" id="MCCDAlive-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date certifying practitioner last saw them alive
+                  Date certifying practitioner last saw them alive 
                 </legend>
                 <div class="govuk-form-group">
                   <div id="MCCDDAlive-hint" class="govuk-hint">
@@ -53,7 +90,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="MCCDAlive-day">
                           Day
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-day" name="MCCDAlive-day" value="{{data['MCCDAlive-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-day" name="MCCDAlive-day" value="{{data['MCCDAlive-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -61,48 +98,21 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label govuk-date-input__label" for="MCCDAlive-month">
                           Month
                         </label>  
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-month" name="MCCDAlive-month" value="{{data['MCCDAlive-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDAlive-month" name="MCCDAlive-month" value="{{data['MCCDAlive-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDDAlive-year">
+                        <label class="govuk-label govuk-date-input__label" for="MCCDAlive-year">
                           Year
                         </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDAlive-year" name="MCCDAlive-year" value="{{data['MCCDAlive-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDAlive-year" name="MCCDAlive-year" value="{{data['MCCDAlive-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
                       </div>
                     </div>
                   </div>
                  </div> 
               </fieldset>
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="MCCDLetter-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Which letter is circled on the medical certificate?
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios" value="">  
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-a" name="MCCDLetter" type="radio" value="a" {{ checked("MCCDLetter", "a") }}>
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-a-label" for="MCCDLetter-a">
-                      A – "Seen after death by me"
-                    </label>      
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-b" name="MCCDLetter" type="radio" value="b" {{ checked("MCCDLetter", "b") }}>
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-b-label" for="MCCDLetter-b">
-                    B – "Seen after death by another medical practitioner but not by me"
-                    </label>
-                  </div> 
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="MCCDLetter-c" name="MCCDLetter" type="radio" value="c" {{ checked("MCCDLetter", "c") }}>
-                    <label class="govuk-label govuk-radios__label" id="MCCDLetter-c-label" for="MCCDLetter-c">
-                    C – "Not seen after death by a medical practitioner"
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
 
             <h2 class="govuk-heading-s">Cause of death - in infant</h2>
 
@@ -120,51 +130,11 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   }
                 }) }}
 
-                <!-- Not for under 16
-                <div class="govuk-form-group">
-                  <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
-                    Time between onset and death
-                  </label>
-                <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
-                </div>
-
-                {{ govukSelect({
-                  id: "TimeBetweenOnsetAndDeathUnit",
-                  name: "TimeBetweenOnsetAndDeathUnit",
-                  value: data['TimeBetweenOnsetAndDeathUnit'],
-                  label: {
-                    text: "Choose time unit"
-                  },
-                  items: [
-                    {
-                      value: "choose",
-                      text: "Choose time unit",
-                      selected: true
-                    },
-                    {
-                      value: "minutes",
-                      text: "Minutes"
-                    },
-                    {
-                      value: "hours",
-                      text: "Hours"
-                    },
-                    {
-                      value: "days",
-                      text: "Days"
-                    },
-                    {
-                      value: "not-stated",
-                      text: "Not stated"
-                    }
-                  ]
-                }) }} -->
-
                   <p class="govuk-body">
                       <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
                   </p>
 
-                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions</h2>
+                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions (optional)</h2>
                   
                   {{ govukTextarea({
                     name: "CauseOfDeath-c",
@@ -188,23 +158,133 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="CertifyingPractitioner" for="CertifyingPractitioner">
-                Certifying practitioner’s full name and qualifications
+              <label class="govuk-label govuk-label--s" id="consultant-name" for="consultant-name">
+                Consultant’s full name (optional)
               </label>
-              <input class="govuk-input govuk-!-width-one-full" id="CertifyingPractitioner" name="CertifyingPractitioner" type="text" aria-required="false" value="{{data['CertifyingPractitioner']}}">
+              <input class="govuk-input govuk-!-width-one-full" id="consultant-name" name="consultant-name" type="text" aria-required="false" value="{{data['consultant-name']}}">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="GMCNumber" for="GMCNumber">
-                GMC number (optional)
-              </label> 
-              <input class="govuk-input govuk-input--width-10" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
+              <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Ethnicity
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant" name="ethnicity" type="radio" value="white" {{ checked("ethnicity", "white") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant">
+                      White
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-mixed" name="ethnicity" type="radio" value="mixed" {{ checked("ethnicity", "mixed") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-mixed-label" for="ethnicity-mixed">
+                      Mixed or multiple ethnic groups
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-asian" name="ethnicity" type="radio" value="asian" {{ checked("ethnicity", "asian") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-asian-label" for="ethnicity-asian">
+                      Asian or Asian British
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-black" name="ethnicity" type="radio" value="black" {{ checked("ethnicity", "black") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-black-label" for="ethnicity-black">
+                      Black, Black British, Caribbean or African
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-other" name="ethnicity" type="radio" value="other" {{ checked("ethnicity", "other") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-other-label" for="ethnicity-other">
+                      Other ethnic group
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-not-known" name="ethnicity" type="radio" value="not-known" {{ checked("ethnicity", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-not-known-label" for="ethnicity-not-known">
+                      Not known
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
             </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Did the deceased have any hazardous implants? 
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="yes" {{ checked("hazardous-implant", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-yes">
+                      Yes
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" {{ checked("hazardous-implant", "no") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-no">
+                      No
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-not-known">
+                      Not known
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Might the attending practitioner apply to give further information later (box B)?
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
+                      No
+                    </label>  
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id=" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Medical examiner details
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminer" for="MedExaminer">
+                    Full name and qualifications
+                  </label> 
+                  <input class="govuk-input govuk-!-width-full" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer']}}">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="GMCNumber" for="GMCNumber">
+                    GMC number
+                  </label> 
+                  <input class="govuk-input govuk-!-width-two-thirds" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
+                </div>
+              </fieldset>
+            </div> 
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was signed
+                  Authorisation date
                 </legend>
                 <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
                   For example, 27 3 2024
@@ -238,38 +318,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="MCCDConsultantFullName-label" for="MCCDConsultantFullName">
-                Consultant’s full name (optional)
-              </label>
-              <input class="govuk-input govuk-!-width-one-half" id="MCCDConsultantFullName" name="MCCDConsultantFullName" type="text" aria-required="false" value="{{data['MCCDConsultantFullName']}}">
-            </div>
-
-            <h2 class="govuk-heading-m">
-              Side 2
-            </h2>
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Might the attending practitioner apply to give further information later (box B)?
-                </legend>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
-                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
-                      No
-                    </label>  
-                  </div>
-                </div>
-              </fieldset>
-            </div>
               
             <div class="govuk-button-group">
               <button type="submit" class="govuk-button" formaction="informant-details" data-module="govuk-button">
@@ -280,13 +328,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 Save and return
               </button>
             </div>
-  
           </form>
-  
         </div>
       </div>
-  
-      </main>
+    </main>
   </div>
 
 {% endblock %}

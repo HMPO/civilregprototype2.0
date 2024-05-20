@@ -97,10 +97,13 @@
               Cause of death
             </a>
           </div>
-          {% if (data['MCCDAlive-day'] and data['MCCDAlive-month']) and data['MCCDAlive-year']
-          and data['MCCDLetter'] and data['CauseOfDeath-a'] and data['CauseOfDeath-c'] and data['CertifyingPractitioner'] 
+
+          {% if (data['MCCDissued-day'] and data['MCCDissued-month'] and data['MCCDissued-year']
+          and data['MCCDAlive-day'] and data['MCCDAlive-month'] and data['MCCDAlive-year']
+          and data['CauseOfDeath-a'] and data['ethnicity'] and data['hazardous-implant'] 
+          and data['FurtherInformation'] and data['MedExaminer'] and data['GMCNumber']
           and data['Date-medical-certificate-signed-day'] and data['Date-medical-certificate-signed-month'] 
-          and data['Date-medical-certificate-signed-year'] and data['FurtherInformation'] %}
+          and data['Date-medical-certificate-signed-year']) %}
 
             <div class="govuk-task-list__status" id="">
               Completed
@@ -129,7 +132,7 @@
           </div>
 
           {% if (data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] 
-          and data['informantLiveWithDeceased']) and data['registration-confirmation1']%}
+          and data['informantLiveWithDeceased'] and data['registration-confirmation1'])%}
 
             <div class="govuk-task-list__status" id="">
               Completed
@@ -200,14 +203,14 @@
           </div>
 
           {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
-          and data['deceasedCountryOfBirth'] and data['SpanishNational']) and data['registration-confirmation3']%}
+          and data['deceasedCountryOfBirth'] and data['SpanishNational']) and data['age-hours'] and data['age-minutes'] and data['registration-confirmation3']%}
 
             <div class="govuk-task-list__status" id="">
               Completed
             </div>
 
           {% elif (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
-          and data['deceasedCountryOfBirth'] and data['SpanishNational']) %}
+          and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['age-hours'] and data['age-minutes']) %}
 
             <div class="govuk-task-list__status" id="">
               <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">

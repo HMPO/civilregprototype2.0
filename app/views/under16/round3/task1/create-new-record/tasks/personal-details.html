@@ -163,7 +163,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Fulldateofbirthknown" name="deceasedDateOfBirth" type="radio" value="Full date of birth known" aria-controls="conditional-deceasedDateOfBirth-Fulldateofbirthknown" aria-expanded="false">
+                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Fulldateofbirthknown" name="deceasedDateOfBirth" type="radio" value="full" {{ checked("deceasedDateOfBirth", "full") }} aria-controls="conditional-deceasedDateOfBirth-Fulldateofbirthknown" aria-expanded="false">
                       <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Fulldateofbirthknown-label" for="deceasedDateOfBirth-Fulldateofbirthknown">
                     Full date of birth known
                     </label>
@@ -210,7 +210,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="deceasedDateOfBirth-Partialdateofbirthknown" name="deceasedDateOfBirth" type="radio" value="Partial date of birth known" aria-controls="conditional-deceasedDateOfBirth-Partialdateofbirthknown" aria-expanded="false">
+                    <input class="govuk-radios__input" id="deceasedDateOfBirth-Partialdateofbirthknown" name="deceasedDateOfBirth" type="radio" value="partial" {{ checked("deceasedDateOfBirth", "partial") }} aria-controls="conditional-deceasedDateOfBirth-Partialdateofbirthknown" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Partialdateofbirthknown-label" for="deceasedDateOfBirth-Partialdateofbirthknown">
                         Partial date of birth known
                     </label>
@@ -267,7 +267,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
 
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Approximateyearofbirthonly" name="deceasedDateOfBirth" type="radio" value="Approximate year of birth only" aria-controls="conditional-deceasedDateOfBirth-Approximateyearofbirthonly" aria-expanded="false">
+                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Approximateyearofbirthonly" name="deceasedDateOfBirth" type="radio" value="approximate" {{ checked("deceasedDateOfBirth", "approximate") }} aria-controls="conditional-deceasedDateOfBirth-Approximateyearofbirthonly" aria-expanded="false">
                       <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Approximateyearofbirthonly-label" for="deceasedDateOfBirth-Approximateyearofbirthonly">
                     Approximate year of birth only
                     </label>
