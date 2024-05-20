@@ -10,18 +10,19 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // Run this code when a form is submitted to task-list
-router.post('/task-list', function (req, res) {
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('*/age-range', function (req, res) {
 
-// Make a variable and give it the value from 'ageBracket'
-var ageBracket = req.session.data['age-bracket']
+  // Make a variable and give it the value from 'how-many-balls'
+  var AgeOfDeceased = req.session.data['age-bracket']
 
-// Check whether the variable 'age' matches a condition
-if (ageBracket == "unknown"){
-    // Send the user to cannot-start page
-   res.redirect('/under16/create-new-record/cannot-start')
- } else {
-//    // Send user to ineligible page
-    res.redirect('/under16/create-new-record/task-list')
+  // Check whether the variable matches a condition
+  if (AgeOfDeceased == "unknown"){
+    // Send user to next page
+    res.redirect('cannot-start')
+  } else {
+    // Send user to ineligible page
+    res.redirect('task-list')
   }
 
 })
