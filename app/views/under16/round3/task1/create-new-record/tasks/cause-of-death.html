@@ -41,7 +41,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
               <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was issued
+                  Date medical certificate was issued (required)
                 </legend>
                 <div class="govuk-form-group">
                   <div id="MCCDissued-hint" class="govuk-hint">
@@ -78,7 +78,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
               <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDAlive-hint" id="MCCDAlive-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date certifying practitioner last saw them alive 
+                  Date certifying practitioner last saw them alive (required)
                 </legend>
                 <div class="govuk-form-group">
                   <div id="MCCDDAlive-hint" class="govuk-hint">
@@ -124,34 +124,34 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   value: data['CauseOfDeath-a'],
                   id: "CauseOfDeath-a",
                   label: {
-                    text: "(a) Main disease or conditions in infant",
+                    text: "(a) Main disease or conditions in infant (required)",
                     classes: "govuk-label--xs",
                     isPageHeading: true
                   }
                 }) }}
 
                   <p class="govuk-body">
-                      <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant (optional)</a>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant </a>
                   </p>
 
-                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions (optional)</h2>
+                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions </h2>
                   
                   {{ govukTextarea({
                     name: "CauseOfDeath-c",
                     value: data['CauseOfDeath-c'],
                     id: "CauseOfDeath-c",
                     label: {
-                      text: "(c) Maternal disease or condition affecting infant (optional)",
+                      text: "(c) Maternal disease or condition affecting infant",
                       classes: "govuk-label--xs",
                       isPageHeading: true
                     }
                   }) }}
 
                   <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant (optional)</a>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant</a>
                   </p>
                   <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes (optional)</a>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes</a>
                   </p>
                   
               </fieldset>
@@ -159,7 +159,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="consultant-name" for="consultant-name">
-                Consultant’s full name (optional)
+                Consultant’s full name
               </label>
               <input class="govuk-input govuk-!-width-one-full" id="consultant-name" name="consultant-name" type="text" aria-required="false" value="{{data['consultant-name']}}">
             </div>
@@ -167,7 +167,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Ethnicity
+                  Ethnicity (required)
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
@@ -213,7 +213,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Did the deceased have any hazardous implants? 
+                  Did the deceased have any hazardous implants? (required)
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
@@ -241,7 +241,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Might the attending practitioner apply to give further information later (box B)?
+                  Might the attending practitioner apply to give further information later (box B)? (required)
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
@@ -267,14 +267,14 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminer" for="MedExaminer">
-                    Full name and qualifications
+                    Full name and qualifications (required)
                   </label> 
                   <input class="govuk-input govuk-!-width-full" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer']}}">
                 </div>
 
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="GMCNumber" for="GMCNumber">
-                    GMC number
+                    GMC number (required)
                   </label> 
                   <input class="govuk-input govuk-!-width-two-thirds" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
                 </div>
@@ -284,7 +284,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Authorisation date
+                  Authorisation date (required)
                 </legend>
                 <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
                   For example, 27 3 2024

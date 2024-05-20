@@ -39,7 +39,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="mother-info-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Can the informant provide the deceased’s mother’s details?
+                  Can the informant provide the deceased’s mother’s details? (required)
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -51,13 +51,13 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mother-info-yes">
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" for="mother-name">
-                        Full name (optional)
+                        Full name 
                       </label>
                       <input class="govuk-input govuk-!-width-one-half" id="mother-name" name="motherName" type="text" value="{{data['motherName']}}">
                     </div>
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" for="mother-occupation">
-                        Occupation (optional)
+                        Occupation 
                       </label>
                       <input class="govuk-input govuk-!-width-one-half" id="mother-occupation" name="motherOccupation" type="text" value="{{data['motherOccupation']}}">
                     </div>
@@ -77,7 +77,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="second-parent" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Can the informant provide the deceased’s father or second parent’s details?
+                  Can the informant provide the deceased’s father or second parent’s details? (required)
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -89,13 +89,13 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-second-parent-info-yes">
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" for="father-name">
-                        Full name (optional)
+                        Full name 
                       </label>
                       <input class="govuk-input govuk-!-width-one-half" id="father-name" name="fatherName" type="text" value="{{data['fatherName']}}">
                     </div>
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" for="father-occupation">
-                        Occupation (optional)
+                        Occupation 
                       </label>
                       <input class="govuk-input govuk-!-width-one-half" id="father-occupation" name="fatherOccupation" type="text" value="{{data['fatherOccupation']}}">
                     </div>
@@ -103,7 +103,7 @@ Parents' details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset" id="whichParent" aria-required="false">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                          Which parent were they? (optional)
+                          Which parent were they? 
                         </legend>
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                           <div class="govuk-radios__item">

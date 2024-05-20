@@ -31,7 +31,7 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Appoinment information
+            Preparing the appointment
           </h1>
   
           <form class="form" action="../task-list" method="post">
@@ -40,7 +40,7 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset" role="group" aria-describedby="MedicalCertificateIssued-hint" id="MedicalCertificateIssued-fieldset">
                 
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was received (optional)
+                  Date medical certificate was received
                 </legend>
                 <div id="MedicalCertificateIssued-hint" class="govuk-hint">
                   For example, 12 11 2007
@@ -77,7 +77,7 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="coverSheetPriority-hint" id="coverSheetPriority-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Is this registration urgent? (optional)
+                  Is this registration urgent?
                 </legend>
                 <div id="coverSheetPriority-hint" class="govuk-hint">
                   For example, for faith deaths
@@ -103,19 +103,19 @@ Appoinment information – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantFullName-label" for="coverSheetInformantFullName">
-                Full name (optional)
+                Full name
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantFullName" name="coverSheetInformantFullName" type="text" aria-required="false" value="{{data['coverSheetInformantFullName']}}">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantPhoneNumber-label" for="coverSheetInformantPhoneNumber">
-                Phone number (optional)
+                Phone number 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantPhoneNumber" name="coverSheetInformantPhoneNumber" type="text" aria-required="false" value="{{data['coverSheetInformantPhoneNumber']}}">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantEmailAddress-label" for="coverSheetInformantEmailAddress">
-                Email address (optional)
+                Email address 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantEmailAddress" name="coverSheetInformantEmailAddress" type="text" aria-required="false" value="{{data['coverSheetInformantEmailAddress']}}">
             </div>

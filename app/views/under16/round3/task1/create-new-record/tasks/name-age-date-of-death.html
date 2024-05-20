@@ -31,28 +31,28 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Name, age and date of death
+            Name and date of death
           </h1>
   
           <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-first-name">
-                First name
+                First name (required)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-middle-name">
-                Middle names (optional)
+                Middle names 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-last-name">
-                Last name
+                Last name (required)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName']}}">
             </div>
@@ -60,7 +60,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="capitalise-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Capitalise last name? 
+                  Capitalise last name? (required)
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -81,14 +81,14 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="prefix">
-                Prefix (optional)
+                Prefix
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="prefix" name="prefix" type="text" value="{{data['prefix']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="suffix">
-                Suffix (optional)
+                Suffix 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="suffix" name="suffix" type="text" value="{{data['suffix']}}">
             </div>
@@ -96,7 +96,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Print order of names 
+                  Print order of names (required)
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -144,7 +144,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Other known names (optional)
+                  Other known names 
                 </legend>
                 <div class="govuk-form-group">
                   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -158,7 +158,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date of death
+                  Date of death (required)
                 </legend>
                 <div id="date-medical-certificate-hint" class="govuk-hint">
                   For example, 27 3 2024
