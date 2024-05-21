@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Select the registrar’s designation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Registrar’s designation (required)
+          </h1>
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="designation-registrar" name="designation" type="radio"  checked="checked" value="registrar" {{checked("designation", "registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="designation-registrar">
+                      Registrar
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="designation-deputy-registrar" name="designation" type="radio" value="deputy-registrar" {{checked("designation", "deputy-registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="designation-deputy-registrar">
+                      Deputy Registrar
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+            </div>
+  
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="register-page" data-module="govuk-button">
+                Save and continue
+              </button>
+             
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

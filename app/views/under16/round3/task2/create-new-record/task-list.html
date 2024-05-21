@@ -42,7 +42,7 @@
       {% endif %}
 
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or "Nicolaou"}}, {{data['deceasedFirstName'] or "Baby"}} {{data['deceasedMiddleName']}}</h1>
 
       <h2 class="govuk-heading-m">Pre-appointment information</h2>
 
@@ -98,20 +98,13 @@
               Completed
             </div>
 
-          {% elif (data['place-of-death'] and data['MCCDAddressLine1']) %}
-
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
-              For informant review</strong>
-            </div>
-
           {% else %}
 
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
+          <div class="govuk-task-list__status" id="">
+            <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+            For informant review</strong>
+          </div>
+            
 
           {% endif %}
 
@@ -124,25 +117,10 @@
             </a>
           </div>
 
-          {% if (data['CauseOfDeath-a'] and data['ethnicity'] and data['hazardous-implant'] 
-          and data['FurtherInformation'] and data['MedExaminer'] and data['MedExaminerGMCNumber']
-          and data['AttendPract'] and data['AttendPractGMCNumber']
-          and data['Date-medical-certificate-signed-day'] and data['Date-medical-certificate-signed-month'] 
-          and data['Date-medical-certificate-signed-year']) %}
-
             <div class="govuk-task-list__status" id="">
               Completed
             </div>
 
-          {% else %}
-
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
-
-          {% endif %}
         </li>
       </ul>
 
@@ -200,21 +178,13 @@
               Completed
             </div>
 
-          {% elif (data['deceasedFirstName'] and data['deceasedLastName'] and data['name-order'] and data['day-of-death'] 
-          and data['month-of-death'] and data['year-of-death']) %}
-
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
-              For informant review</strong>
-            </div>
-
           {% else %}
 
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
+          <div class="govuk-task-list__status" id="">
+            <strong class="govuk-tag govuk-tag--yellow govuk-tag-wider">
+            For informant review</strong>
+          </div>
+      
 
           {% endif %}
 
