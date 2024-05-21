@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Select the registrar’s"signature-annotation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Register page
+          </h1>
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              View and print the register page (opens in a new tab)
+            </button>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes govuk-!-padding-top-8 govuk-!-padding-bottom-8" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation-register-page" name="registration-confirmation-register-page" type="checkbox" value="yes" {{ checked("registration-confirmation-register-page", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation-register-page">
+                      The informant has confirmed the information on the register page is correct
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="signature-details" data-module="govuk-button">
+                Save and continue
+              </button>
+            
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
