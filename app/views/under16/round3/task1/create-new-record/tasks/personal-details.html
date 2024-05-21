@@ -92,18 +92,14 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
                   Usual address (required)             
                 </legend>           
-                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Sameasplaceofdeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "same") }} aria-controls="link-to-task">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Sameasplaceofdeath-label" for="deceasedUsualAddress-Sameasplaceofdeath">
                       Same as place of death
                     </label>    
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="link-to-task">
-                    <p>You need to 
-                      <a class="govuk-link govuk-task-list__link" href="place-of-death.html" aria-describedby="">add the place of death in a different section</a>
-                    </p>
-                  </div>
+                  
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
@@ -296,7 +292,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Age
+                  Age (required)
               </legend>
               <div id="horizontal-wrapper">
                 <div class="govuk-form-group" id="left">

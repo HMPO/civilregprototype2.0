@@ -116,10 +116,10 @@
             </a>
           </div>
 
-          {% if (data['MCCDissued-day'] and data['MCCDissued-month'] and data['MCCDissued-year']
-          and data['MCCDAlive-day'] and data['MCCDAlive-month'] and data['MCCDAlive-year']
+          {% if (data['MCCDAlive-day'] and data['MCCDAlive-month'] and data['MCCDAlive-year']
           and data['CauseOfDeath-a'] and data['ethnicity'] and data['hazardous-implant'] 
-          and data['FurtherInformation'] and data['MedExaminer'] and data['GMCNumber']
+          and data['FurtherInformation'] and data['MedExaminer'] and data['MedExaminerGMCNumber']
+          and data['AttendPract'] and data['AttendPractGMCNumber']
           and data['Date-medical-certificate-signed-day'] and data['Date-medical-certificate-signed-month'] 
           and data['Date-medical-certificate-signed-year']) %}
 
@@ -290,14 +290,14 @@
             </a>
           </div>
 
-          {% if (data['additional-industry-mother'] and data['employment-mother'] 
+          {% if (data['voluntary-communal-estabishment'] and data['additional-industry-mother'] and data['employment-mother'] 
           and data['additional-industry-second-parent'] and data['employment-second-parent'] and data['registration-confirmation5'])%}
 
             <div class="govuk-task-list__status" id="">
               Completed
             </div>
 
-          {% elif (data['additional-industry-mother'] and data['employment-mother'] 
+          {% elif ( data['voluntary-communal-estabishment'] and data['additional-industry-mother'] and data['employment-mother'] 
           and data['additional-industry-second-parent'] and data['employment-second-parent']) %}
 
             <div class="govuk-task-list__status" id="">
