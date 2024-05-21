@@ -39,43 +39,8 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               Side 1
             </h2>
 
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was issued (required)
-                </legend>
-                <div class="govuk-form-group">
-                  <div id="MCCDissued-hint" class="govuk-hint">
-                    For example, 12 11 2007
-                  </div>
-                  <div class="govuk-date-input" id="MCCDissued">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
-                          Day
-                        </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
-                          Month
-                        </label>  
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
-                          Year
-                        </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
-                      </div>
-                    </div>
-                  </div>
-                 </div> 
-              </fieldset>
-
+             
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDAlive-hint" id="MCCDAlive-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Date certifying practitioner last saw them alive (required)
@@ -112,7 +77,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                  </div> 
               </fieldset>
-
+            </div>
 
             <h2 class="govuk-heading-s">Cause of death - in infant</h2>
 
@@ -157,7 +122,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Ethnicity (required)
@@ -201,9 +166,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
               </fieldset>
-            </div>
+            </div>  
+          
 
-            <div class="govuk-form-group">
+        <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Did the deceased have any hazardous implants? (required)
@@ -229,9 +195,9 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
               </fieldset>
-            </div>
+        </div>
 
-            <div class="govuk-form-group">
+        <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Might the attending practitioner apply to give further information later (box B)? (required)
@@ -251,10 +217,31 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
               </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="" aria-required="false">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Attending practitioner details
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" id="AttendPract" for="AttendPract">
+                Full name and qualifications (required)
+              </label> 
+              <input class="govuk-input govuk-!-width-two-thirds" id="AttendPract" name="AttendPract" type="text" aria-required="false" value="{{data['AttendPract']}}">
             </div>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id=" aria-required="false">
+              <label class="govuk-label" id="AttendPractGMCNumber" for="AttendPractGMCNumber">
+                GMC number (required)
+              </label> 
+              <input class="govuk-input govuk-!-width-two-thirds" id="AttendPractGMCNumber" name="AttendPractGMCNumber" type="text" aria-required="false" value="{{data['AttendPractGMCNumber']}}">
+            </div>
+          </fieldset>
+        </div> 
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Medical examiner details
                 </legend>
@@ -262,19 +249,19 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label" id="MedExaminer" for="MedExaminer">
                     Full name and qualifications (required)
                   </label> 
-                  <input class="govuk-input govuk-!-width-full" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer']}}">
+                  <input class="govuk-input govuk-!-width-two-thirds" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer']}}">
                 </div>
 
                 <div class="govuk-form-group">
-                  <label class="govuk-label" id="GMCNumber" for="GMCNumber">
+                  <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
                     GMC number (required)
                   </label> 
-                  <input class="govuk-input govuk-!-width-two-thirds" id="GMCNumber" name="GMCNumber" type="text" aria-required="false" value="{{data['GMCNumber']}}">
+                  <input class="govuk-input govuk-!-width-two-thirds" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber']}}">
                 </div>
               </fieldset>
-            </div> 
+        </div> 
 
-            <div class="govuk-form-group">
+        <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Authorisation date (required)
@@ -309,10 +296,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
               </fieldset>
-            </div>
+        </div>
 
               
-            <div class="govuk-button-group">
+        <div class="govuk-button-group">
               <button type="submit" class="govuk-button" formaction="informant-details" data-module="govuk-button">
                 Save and continue
               </button>
@@ -320,10 +307,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Save and return
               </button>
-            </div>
-          </form>
         </div>
+          </form>
       </div>
+    
     </main>
   </div>
 
