@@ -35,21 +35,21 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantFirstName-label" for="informantFirstName">
-                First name (optional)
+                First name 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantFirstName" name="informantFirstName" type="text" aria-required="false" value="{{data['informantFirstName']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantMiddleNames-label" for="informantMiddleNames">
-               Middle names (optional)
+               Middle names
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantMiddleNames" name="informantMiddleNames" type="text" aria-required="false" value="{{data['informantMiddleNames']}}">
             </div>
             
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantLastName-label" for="informantLastName">
-                Last name
+                Last name (required)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantLastName" name="informantLastName" type="text" aria-required="false" value="{{data['informantLastName']}}">
             </div>
@@ -57,7 +57,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" id="informantCapitaliseLastNames-fieldset" aria-required="false">
               <legend class="govuk-label govuk-label--s">
-                Capitalise last names?
+                Capitalise last names? (required)
               </legend>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
@@ -79,7 +79,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" id="informantQualification-fieldset" aria-required="false">
               <legend class="govuk-label govuk-label--s">
-                Qualification
+                Qualification (required)
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
@@ -120,7 +120,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
 
                   <div class="govuk-form-group">
                     <label class="govuk-label govuk-label--xs" id="informantRelationshipToDeceased-label" for="informantRelationshipToDeceased">
-                      Relationship to deceased
+                      Relationship to deceased (required)
                     </label>
                     <input class="govuk-input govuk-!-width-one-half" id="informantRelationshipToDeceased" name="informantRelationshipToDeceased" type="text" aria-required="false" value="{{data['informantRelationshipToDeceased']}}">
                   </div>
@@ -199,7 +199,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" id="informantLiveWithDeceased-fieldset" aria-required="false">
             <legend class="govuk-label govuk-label--s">
-              Did the informant live with the deceased?
+              Did the informant live with the deceased? (required)
             </legend>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
