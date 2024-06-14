@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pending registrations – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper--auto-spacing">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">
+          Pending registrations
+        </h1>
+
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Create new record", 
+          href: "create-new-record/create-new-record.html"
+        }) }}
+
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Pending registrations</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Date of death</th>
+              <th scope="col" class="govuk-table__header">Age</th>
+              <th scope="col" class="govuk-table__header">MCCD received</th>
+              <th scope="col" class="govuk-table__header">Certifying practitioner</th>
+              <th scope="col" class="govuk-table__header">Place of death</th>
+              <th scope="col" class="govuk-table__header">Priority</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="create-new-record/task-list.html" class="govuk-link">BANACH, Emily</a></td>
+              <td class="govuk-table__cell">22/04/2024</td>
+              <td class="govuk-table__cell">0 years</td>
+              <td class="govuk-table__cell">22/04/2024</td>
+              <td class="govuk-table__cell">Dr Adam David</td>
+              <td class="govuk-table__cell">Central Hosptial, London</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link">SHORT, Charles</a></td>
+              <td class="govuk-table__cell">06/02/2024</td>
+              <td class="govuk-table__cell">34 years</td>
+              <td class="govuk-table__cell">08/02/2024</td>
+              <td class="govuk-table__cell">Dr Julie Marie Bowden</td>
+              <td class="govuk-table__cell">Queen Mary’s Hospital, Fulham</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link">TALL, Anne</a></td>
+              <td class="govuk-table__cell">12/10/2024</td>
+              <td class="govuk-table__cell">74 years</td>
+              <td class="govuk-table__cell">22/02/2024</td>
+              <td class="govuk-table__cell">Dr Mohammed Talon</td>
+              <td class="govuk-table__cell">Queen Mary’s Hospital, Fulham</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link">SALM, Mohammed</a></td>
+              <td class="govuk-table__cell">06/02/2024</td>
+              <td class="govuk-table__cell">0 years</td>
+              <td class="govuk-table__cell">08/02/2024</td>
+              <td class="govuk-table__cell">Dr Adam Smasher</td>
+              <td class="govuk-table__cell">Queen Elizabeth Hospital, Fulham</td>
+              <td class="govuk-table__cell">Yes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="" class="govuk-link">POTTER, Harry</a></td>
+              <td class="govuk-table__cell">15/02/2024</td>
+              <td class="govuk-table__cell">12 years</td>
+              <td class="govuk-table__cell">19/02/2024</td>
+              <td class="govuk-table__cell">Dr Craig Smith</td>
+              <td class="govuk-table__cell">Royal Alexander Hospital, Fulham</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

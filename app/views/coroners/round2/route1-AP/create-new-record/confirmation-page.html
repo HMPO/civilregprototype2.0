@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Registration sent to RON",
+        html: "RON number<br><strong>2851234333</strong>"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        Use the RON number to find the registration in RON.
+      </p>
+
+      <p>
+        <a href="../pending-registrations.html">
+          Go back to pending registrations
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
