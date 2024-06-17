@@ -36,46 +36,8 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
           <form class="form" action="../task-list" method="post">
 
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDReceived-hint" id="MCCDReceived-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date medical certificate was received
-                </legend>
-                <div class="govuk-form-group">
-                  <div id="MCCDDAlive-hint" class="govuk-hint">
-                    For example, 12 11 2007
-                  </div>
-                  <div class="govuk-date-input" id="MCCDReceived">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDReceived-day">
-                          Day
-                        </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDReceived-day" name="MCCDReceived-day" value="{{data['MCCDReceived-day'] or "22"}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-day" aria-required="false">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDReceived-month">
-                          Month
-                        </label>  
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDReceived-month" name="MCCDReceived-month" value="{{data['MCCDReceived-month'] or "04"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" autocomplete="bday-month" aria-required="false">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="MCCDReceived-year">
-                          Year
-                        </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDReceived-year" name="MCCDReceived-year" value="{{data['MCCDReceived-year'] or "2024"}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" autocomplete="bday-year" aria-required="false">
-                      </div>
-                    </div>
-                  </div>
-                 </div> 
-              </fieldset>
-
-
-
-            <h2 class="govuk-heading-s">Cause of death</h2>
+            <h2 class="govuk-heading-m">About the death</h2>
+            <h3 class="govuk-heading-s">Cause of death</h3>
 
 
             <div class="govuk-form-group">
@@ -83,7 +45,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
                 {{ govukTextarea({
                   name: "CauseOfDeath-a",
-                  value: data['CauseOfDeath-a'] or "Immaturity related condition",
+                  value: data['CauseOfDeath-a'],
                   id: "CauseOfDeath-a",
                   label: {
                     text: "1(a) Disease or condition directly leading to death",
@@ -91,12 +53,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     isPageHeading: true
                   }
                 }) }}
-            
+                
+                <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
+                  Time between onset and death
+                </label>
+                <div id="horizontal-wrapper">
                 <div class="govuk-form-group">
-                  <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
-                    Time between onset and death
-                  </label>
-                <input class="govuk-input govuk-input--width-2" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
+                <input class="govuk-input govuk-input--width-2 govuk-!-margin-right-5" id="TimeBetweenOnsetAndDeath" name="TimeBetweenOnsetAndDeath" type="text" value="{{data['TimeBetweenOnsetAndDeath']}}">
                 </div>
 
                 {{ govukSelect({
@@ -130,6 +93,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     }
                   ]
                 }) }}
+              </div>
 
                   <p class="govuk-body">
                       <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition leading to 1(a)</a>
@@ -166,7 +130,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="option-medical-cert-4" name="option-medical-cert" type="radio" value="this-death-was-reported-to-the-coroner-who-decided-not-to-investigate" {{ checked("option-medical-cert", "this-death-was-reported-to-the-coroner-who-decided-not-to-investigate") }} data-aria-controls="conditional-contact-4">
                         <label class="govuk-label govuk-radios__label" for="contact-4">
-                          This death was reported to the coroner who decided not to investigate
+                          I reported this death to the coroner before completing the MCCD
                         </label>
                       </div>
                     </div>
@@ -232,7 +196,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="EmploymentContribute-fieldset-false" name="EmploymentContribute-fieldset" type="radio" checked="checked" value="false" {{ checked("EmploymentContribute-fieldset", "false") }}>
+                        <input class="govuk-radios__input" id="EmploymentContribute-fieldset-false" name="EmploymentContribute-fieldset" type="radio" value="false" {{ checked("EmploymentContribute-fieldset", "false") }}>
                         <label class="govuk-label govuk-radios__label" id="EmploymentContribute-fieldset-false-label" for="EmploymentContribute-fieldset-false">
                           No
                         </label>  
@@ -254,7 +218,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" checked="checked" value="false" {{ checked("FurtherInformation", "false") }}>
+                        <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
                         <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
                           No
                         </label>  
@@ -325,13 +289,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="HazardousImplants-false" name="HazardousImplants" type="radio" checked="checked" value="false" {{ checked("HazardousImplants", "false") }}>
+                        <input class="govuk-radios__input" id="HazardousImplants-false" name="HazardousImplants" type="radio" value="false" {{ checked("HazardousImplants", "false") }}>
                         <label class="govuk-label govuk-radios__label" id="HazardousImplants-false-label" for="HazardousImplants-false">
                           No
                         </label>  
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="HazardousImplants-notKnown" name="HazardousImplants" type="radio" checked="checked" value="notKnown" {{ checked("HazardousImplants", "notKnown") }}>
+                        <input class="govuk-radios__input" id="HazardousImplants-notKnown" name="HazardousImplants" type="radio" value="notKnown" {{ checked("HazardousImplants", "notKnown") }}>
                         <label class="govuk-label govuk-radios__label" id="HazardousImplants-notKnown-label" for="HazardousImplants-notKnown">
                           Not known
                         </label>  
@@ -390,7 +354,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "22"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day']}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -398,7 +362,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "04"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month']}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -406,7 +370,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year']}}">
                     </div>
                   </div>
                 </div>
@@ -415,7 +379,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Save"
+                text: "Save and return"
               }) }}
             </div>
   

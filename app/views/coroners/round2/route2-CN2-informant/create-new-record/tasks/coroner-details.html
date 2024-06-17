@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Relationship details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="../task-list" method="post">
+
+          <h1 class="govuk-heading-l">
+            Coroner details
+          </h1>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerFullName-label" for="coronerFulltName">
+              Full name 
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerFullName" name="coronerFullName" type="text" aria-required="false" value="{{data['coronerFullName']}}">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerDistrict-label" for="coronerDistrict">
+             District
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerDistrict" name="coronerDistrict" type="text" aria-required="false" value="{{data['coronerDistrict']}}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerArea-label" for="coronerArea">
+              Area
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerArea" name="coronerArea" type="text" aria-required="false" value="{{data['coronerArea']}}">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" id="coronerDesignation-fieldset" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Designation
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coronerDesignation-assistantCoroner" name="coronerDesignation" type="radio" value="assistantCoroner" {{ checked("coronerDesignation", "assistantCoroner") }}>
+                  <label class="govuk-label govuk-radios__label" id="coronerDesignation-assistantCoroner-label" for="coronerDesignation-assistantCoroner">
+                    Assistant coroner
+                  </label>  
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coronerDesignation-seniorCoroner" name="coronerDesignation" type="radio" value="seniorCoroner" {{ checked("coronerDesignation", "seniorCoroner") }}>
+                  <label class="govuk-label govuk-radios__label" id="coronerDesignation-seniorCoroner-label" for="coronerDesignation-seniorCoroner">
+                    Senior coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coronerDesignation-deputyCoroner" name="coronerDesignation" type="radio" value="deputyCoroner" {{ checked("coronerDesignation", "deputyCoroner") }}>
+                  <label class="govuk-label govuk-radios__label" id="coronerDesignation-deputyCoroner-label" for="coronerDesignation-deputyCoroner">
+                    Deupty coroner
+                  </label>  
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coronerDesignation-areaCoroner" name="coronerDesignation" type="radio" value="areaCoroner" {{ checked("coronerDesignation", "areaCoroner") }}>
+                  <label class="govuk-label govuk-radios__label" id="coronerDesignation-areaCoroner-label" for="coronerDesignation-areaCoroner">
+                    Area coroner
+                  </label>  
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coronerDesignation-Coroner" name="coronerDesignation" type="radio" value="Coroner" {{ checked("coronerDesignation", "Coroner") }}>
+                  <label class="govuk-label govuk-radios__label" id="coronerDesignation-Coroner-label" for="coronerDesignation-Coroner">
+                    Coroner
+                  </label>  
+                </div>
+              </div>
+            </fieldset>
+          </div>
+  
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Save and return"
+            }) }}
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

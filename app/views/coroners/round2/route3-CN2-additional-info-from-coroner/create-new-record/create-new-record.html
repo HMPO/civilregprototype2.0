@@ -121,7 +121,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="deceased-first-name">
                 First name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{data['deceasedFirstName']}}" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{data['deceasedFirstName'] or "Emily"}}" type="text">
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="deceased-middle-name">
@@ -133,7 +133,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
             <label class="govuk-label govuk-label--s" for="deceased-last-name">
               Last name
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{data['deceasedLastName']}}" type="text">
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{data['deceasedLastName'] or "BANACH"}}" type="text">
           </div>
 
           <div class="govuk-form-group">
@@ -150,7 +150,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="day-of-death">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death'] or "19"}}" type="text" inputmode="numeric">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -158,7 +158,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="month-of-death">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death'] or "04"}}" type="text" inputmode="numeric">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -166,7 +166,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
                     <label class="govuk-label govuk-date-input__label" for="year-of-death">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death'] or "2024"}}" type="text" inputmode="numeric">
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Continue",
-              href: "/coroners/round2/route1-AP/create-new-record/tasks/confirm-medical-certificate"
+              href: "/coroners/round2/route3-CN2-additional-info-from-coroner/create-new-record/tasks/confirm-medical-certificate"
             }) }}
           </div>
 
