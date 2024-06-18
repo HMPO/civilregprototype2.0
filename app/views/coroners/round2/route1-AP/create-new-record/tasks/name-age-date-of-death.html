@@ -161,7 +161,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Date of death
                 </legend>
                 <div id="date-medical-certificate-hint" class="govuk-hint">
-                  For example, 27 3 2024
+                  For example, 12 11 2024
                 </div>
                 <div class="govuk-date-input" id="date-medical-certificate">
                   <div class="govuk-date-input__item">
@@ -169,7 +169,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="day-of-death">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" type="text" inputmode="numeric" value="{{data['day-of-death']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" type="text" inputmode="numeric" value="{{data['day-of-death'] or '12'}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -177,7 +177,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="month-of-death">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" type="text" inputmode="numeric" value="{{data['month-of-death']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" type="text" inputmode="numeric" value="{{data['month-of-death'] or '03'}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -185,7 +185,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="year-of-death">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" type="text" inputmode="numeric" value="{{data['year-of-death']}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" type="text" inputmode="numeric" value="{{data['year-of-death'] or '2024'}}">
                     </div>
                   </div>
                 </div>

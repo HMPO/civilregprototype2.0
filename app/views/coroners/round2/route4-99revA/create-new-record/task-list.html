@@ -62,8 +62,10 @@
             </a>
           </div>
           
-          {% if (data['TimeBetweenOnsetAndDeath'] and data['MCCDReceived-day'] and data['MCCDReceived-month'] and data['MCCDReceived-year']
-          and data['option-medical-cert'] and data['APNameAndQual'] and data['APGMCNumber'] and data['MENameAndQual'] and data['MENameAndQual'])%}
+          {% if (data['inquestStartDateDay'] and data['inquestStartDateMonth'] and data['inquestStartDateYear'] and data['inquestEndDateDay'] and
+          data['inquestEndDateMonth'] and data['inquestEndDateYear'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
+          data['Ethnicity'] and data['HazardousImplants'])%}
+
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -92,7 +94,8 @@
             </a>
           </div>
 
-          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data['day-of-death'] and data['month-of-death'] and data['year-of-death'])%}
+          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
+          data['day-of-death'] and data['month-of-death'] and data['year-of-death'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -117,7 +120,7 @@
             </a>
           </div>
 
-          {% if (data['placeOfDeath'])%}
+          {% if (data['place-of-death'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -143,7 +146,7 @@
           </div>
 
           {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
-          and data['deceasedCountryOfBirth'] and data['SpanishNational'])%}
+          and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -197,7 +200,7 @@
             </a>
           </div>
 
-          {% if (data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data[coronerDesignation])%}
+          {% if (data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data['coronerDesignation'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -221,24 +224,41 @@
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
+          {% if (data['employment-mother'] and data['employment-second-parent'])%}
+
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/voluntary-statistics.html" aria-describedby="">
               Voluntary statistics
             </a>
           </div>
 
-          {% if (data['additional-industry-mother'] and data['employment-mother'] 
-          and data['additional-industry-second-parent'] and data['employment-second-parent'])%}
-
           <div class="govuk-task-list__status" id="">
             Completed
           </div>
 
-          {% else %}
+          {% elif (data['relationship']) %}
+
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/voluntary-statistics.html" aria-describedby="">
+              Voluntary statistics
+            </a>
+          </div>
 
           <div class="govuk-task-list__status" id="">
             <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
+              Incomplete 
+            </strong>
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__name-and-hint">
+            Voluntary statistics
+          </div>
+
+          <div class="govuk-task-list__status" id="">
+            <strong class="govuk-tag govuk-tag--grey">
+              Cannot start yet
             </strong>
           </div>
 
@@ -250,25 +270,54 @@
       <h2 class="govuk-heading-m">Submit the registration</h2>
 
       <ul class="govuk-task-list">
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+       
+         <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+          {% if (data['designation'])%}
 
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="company-details-1-status">
+            <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">
               Register page
             </a>
           </div>
-
-          {% if (data['designation']) %}
 
           <div class="govuk-task-list__status" id="">
             Completed
           </div>
 
-          {% else %}
+          {% elif (data['inquestStartDateDay'] and data['inquestStartDateMonth'] and data['inquestStartDateYear'] and data['inquestEndDateDay'] and
+          data['inquestEndDateMonth'] and data['inquestEndDateYear'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
+          data['Ethnicity'] and data['HazardousImplants'] and 
+          data['deceasedFirstName'] and data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
+          data['day-of-death'] and data['month-of-death'] and data['year-of-death'] and 
+          data['place-of-death'] and 
+          data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
+          and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'] and 
+          data['relationship'] and 
+          data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data['coronerDesignation'] and 
+          data['employment-mother'] and data['employment-second-parent']) %}
+
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">
+              Register page
+            </a>
+          </div>
 
           <div class="govuk-task-list__status" id="">
             <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
+              Incomplete 
+            </strong>
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__name-and-hint">
+            Register page
+          </div>
+
+          <div class="govuk-task-list__status" id="">
+            <strong class="govuk-tag govuk-tag--grey">
+              Cannot start yet
             </strong>
           </div>
 

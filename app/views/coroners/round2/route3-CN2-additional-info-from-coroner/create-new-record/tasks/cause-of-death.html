@@ -63,7 +63,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <h3 class="govuk-heading-s">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
                   Is cause of death in the standard format?
                 </h3>
                 <div id="COD-hint" class="govuk-hint">
@@ -123,6 +123,9 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 "Yes": Yes,
                 "No": No,
               };
+
+              var container = document.getElementById('CODformatContainer');
+                  container.innerHTML = Yes;
   
               document.querySelectorAll('input[name="CODformat"]').forEach((element) => {
                 element.addEventListener("change", (event) => {
@@ -248,13 +251,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="HazardousImplants-false" name="HazardousImplants" type="radio" checked="checked" value="false" {{ checked("HazardousImplants", "false") }}>
+                        <input class="govuk-radios__input" id="HazardousImplants-false" name="HazardousImplants" type="radio" value="false" {{ checked("HazardousImplants", "false") }}>
                         <label class="govuk-label govuk-radios__label" id="HazardousImplants-false-label" for="HazardousImplants-false">
                           No
                         </label>  
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="HazardousImplants-notKnown" name="HazardousImplants" type="radio" checked="checked" value="notKnown" {{ checked("HazardousImplants", "notKnown") }}>
+                        <input class="govuk-radios__input" id="HazardousImplants-notKnown" name="HazardousImplants" type="radio" value="notKnown" {{ checked("HazardousImplants", "notKnown") }}>
                         <label class="govuk-label govuk-radios__label" id="HazardousImplants-notKnown-label" for="HazardousImplants-notKnown">
                           Not known
                         </label>  

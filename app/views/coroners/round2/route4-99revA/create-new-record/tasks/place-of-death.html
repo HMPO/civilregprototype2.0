@@ -40,7 +40,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communalEstablishment") }}>
+                    <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communal-establishmentq") }}>
                     <label class="govuk-label govuk-radios__label" for="communal-establishment">
                       Communal establishment
                     </label>
@@ -49,7 +49,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="home" name="place-of-death" type="radio" value="home">
+                    <input class="govuk-radios__input" id="home" name="place-of-death" type="radio" value="home" {{ checked("placeOfDeath", "home") }}>
                     <label class="govuk-label govuk-radios__label" for="home">
                       Home
                     </label>
@@ -58,7 +58,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="in-transit" name="place-of-death" type="radio" value="in-transit">
+                    <input class="govuk-radios__input" id="in-transit" name="place-of-death" type="radio" value="in-transit" {{ checked("placeOfDeath", "in-transit") }}>
                     <label class="govuk-label govuk-radios__label" for="in-transit">
                       In transit
                     </label>
@@ -67,7 +67,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="elsewhere" name="place-of-death" type="radio" value="elsewhere">
+                    <input class="govuk-radios__input" id="elsewhere" name="place-of-death" type="radio" value="elsewhere" {{ checked("placeOfDeath", "elsewhere") }}>
                     <label class="govuk-label govuk-radios__label" for="elsewhere">
                       Elsewhere
                     </label>
@@ -76,7 +76,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div> 
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="found-dead-on-arrival" name="place-of-death" type="radio" value="found-dead-on-arrival">
+                    <input class="govuk-radios__input" id="found-dead-on-arrival" name="place-of-death" type="radio" value="found-dead-on-arrival" {{ checked("placeOfDeath", "found-dead-on-arrival") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead-on-arrival">
                       Not known – found dead on arrival 
                     </label>
@@ -85,7 +85,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div> 
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="found-dead" name="place-of-death" type="radio" value="found-dead">
+                    <input class="govuk-radios__input" id="found-dead" name="place-of-death" type="radio" value="found-dead" {{ checked("placeOfDeath", "found-dead") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead">
                       Not known – found dead
                     </label>
@@ -111,10 +111,10 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
                     Communal establishment address
                   </label>
-                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['Date-medical-certificate-signed-day'] or "Central Hosptial, London Road, London, Middlesex, E1 8NB"}}">
+                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
                 
                 
-                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" data-module="govuk-button">
                  
                   Find address
                 </button>
@@ -137,9 +137,9 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
                     Postcode
                   </label>
-                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1'] or "Central Hosptial, London Road, London, Middlesex, E1 8NB "}}">
+                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
                 
-                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-5" data-module="govuk-button">
                  
                   Find address
                 </button>
@@ -165,15 +165,15 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div id="in-transit-hint" class="govuk-hint">
                   The location of their death, for example the district, town or civil parish
                 </div>
-                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1'] or "Central Hosptial, London Road, London, Middlesex, E1 8NB "}}">
+                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
                 
-                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                  <label class="govuk-label govuk-label--xs govuk-!-margin-top-5" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
                     Where was the person on the way to when they died?
                   </label>
                   <div id="in-transit-hint" class="govuk-hint">
                     Search for the communal establishment address
                 </div>
-                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1'] or "Central Hosptial, London Road, London, Middlesex, E1 8NB "}}">
+                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
                 
               </div>
                
@@ -272,46 +272,28 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Place of death
                 </legend>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="flat-number-or-name">
-                  Flat number or name
+                <label class="govuk-label" for="address-line-1">
+                  Address line 1
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="flat-number-or-name" name="flatNumberOrName" type="text" autocomplete="flat-number-or-name">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="building-name">
-                  Building name
+                <label class="govuk-label" for="address-line-2">
+                  Address line 2
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="buildingName" type="text" autocomplete="building-name">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="building-number">
-                  Building number
+                <label class="govuk-label" for="address-line-3">
+                  Address line 3
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="buildingNumber" type="text" autocomplete="building-number">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-1">
-                  Street address line 1
+                <label class="govuk-label" for="address-line-4">
+                  Address line 4
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-1" name="streetAddressLine1" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-2">
-                  Street address line 2
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-2" name="streetAddressLine2" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-3">
-                  Street address line 3
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-3" name="streetAddressLine3" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-4">
-                  Street address line 4
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-4" name="streetAddressLine4" type="text">
+                <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
               </div>
                <div class="govuk-form-group">
                 <label class="govuk-label" for="address-town">
@@ -344,46 +326,28 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Place of death
                 </legend>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="flat-number-or-name">
-                  Flat number or name
+                <label class="govuk-label" for="address-line-1">
+                  Address line 1
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="flat-number-or-name" name="flatNumberOrName" type="text" autocomplete="flat-number-or-name">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="building-name">
-                  Building name
+                <label class="govuk-label" for="address-line-2">
+                  Address line 2
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="buildingName" type="text" autocomplete="building-name">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="building-number">
-                  Building number
+                <label class="govuk-label" for="address-line-3">
+                  Address line 3
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="buildingNumber" type="text" autocomplete="building-number">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-1">
-                  Street address line 1
+                <label class="govuk-label" for="address-line-4">
+                  Address line 4
                 </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-1" name="streetAddressLine1" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-2">
-                  Street address line 2
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-2" name="streetAddressLine2" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-3">
-                  Street address line 3
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-3" name="streetAddressLine3" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="street-address-line-4">
-                  Street address line 4
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="street-address-line-4" name="streetAddressLine4" type="text">
+                <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
               </div>
                <div class="govuk-form-group">
                 <label class="govuk-label" for="address-town">
@@ -410,7 +374,6 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </p>
               `;
   
-  
               var htmlBlocks = {
                 "communal-establishment": communalEstablishment,
                 "home": atHome,
@@ -430,32 +393,6 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
               });
             </script>
             {% endraw %}
-
-            <!--<div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Place of death
-                </legend>
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
-                    Communal establishment address
-                  </label>
-                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="{{data['MCCDAddressLine1'] or "Central Hosptial, London Road, London, Middlesex, E1 8NB "}}">
-               
-
-                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Find address
-                </button>
-              </div>
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by communal establishment</a>
-                </p>
-
-                <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">I don’t the postcode</a>
-                </p>
-              </fieldset>
-            </div>  -->
 
             <div class="govuk-button-group">
               {{ govukButton({
