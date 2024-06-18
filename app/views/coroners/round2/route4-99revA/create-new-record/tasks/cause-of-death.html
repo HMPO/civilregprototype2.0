@@ -41,77 +41,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </h2>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="inquestStartDate">
-                <legend class="govuk-fieldset__legend">
-                  Start date
-                </legend>
-                <div id="inquestStartDate" class="govuk-hint">
-                  For example, 12 11 2024
-                </div>
-                <div class="govuk-date-input" id="inquestDate">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestStartDateDay">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="inquestStartDateDay" name="inquestStartDateDay" type="text" inputmode="numeric" value="{{data['inquestStartDateDay']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestStartDateMonth">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="inquestStartDateMonth" name="inquestStartDateMonth" type="text" inputmode="numeric" value="{{data['inquestStartDateMonth']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestStartDateYear">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="inquestStartDateYear" name="inquestStartDateYear" type="text" inputmode="numeric" value="{{data['inquestStartDateYear']}}">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="inquestEndDate">
-                <legend class="govuk-fieldset__legend">
-                  End date
-                </legend>
-                <div id="inquestEndDate" class="govuk-hint">
-                  For example, 12 11 2024
-                </div>
-                <div class="govuk-date-input" id="inquestDate">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestEndDateDay">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="inquestEndDateDay" name="inquestEndDateDay" type="text" inputmode="numeric" value="{{data['inquestEndDateDay']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestEndDateMonth">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="inquestEndDateMonth" name="inquestEndDateMonth" type="text" inputmode="numeric" value="{{data['inquestEndDateMonth']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="inquestEndDateYear">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="inquestEndDateYear" name="inquestEndDateYear" type="text" inputmode="numeric" value="{{data['inquestEndDateYear']}}">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
+              <label class="govuk-label" for="inquestDate">
+                Inquest date
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="inquestDate" name="inquestDate" value="{{data['inquestDate']}}" type="text">
             </div>
 
             <br>

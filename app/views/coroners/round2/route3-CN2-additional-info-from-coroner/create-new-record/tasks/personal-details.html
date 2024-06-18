@@ -87,6 +87,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             </fieldset>
             </div>
 
+            
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedUsualAddress-fieldset" aria-required="false">              
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
@@ -97,119 +98,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Sameasplaceofdeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "same") }} aria-controls="link-to-task">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Sameasplaceofdeath-label" for="deceasedUsualAddress-Sameasplaceofdeath">
                       Same as place of death
-                    </label>    
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="link-to-task">
-                    <p>You need to 
-                      <a class="govuk-link govuk-task-list__link" href="place-of-death.html" aria-describedby="">add the place of death in a different section</a>
-                    </p>
+                    </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
-                    <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                      Different to place of death (non-communal establishment)
-                    </label>
+                    <input class="govuk-radios__input" id="deceasedUsualAddress-differentPlaceOfDeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "different") }} aria-controls="link-to-task">
+                    <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-differentPlaceOfDeath-label" for="deceasedUsualAddress-differentPlaceOfDeath">
+                      Different to place of death
+                    </label>    
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        Address
-                      </legend>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine1-label" for="deceasedUsualAddressLine1">
-                        House or flat number
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine1" name="deceasedUsualAddressLine1" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine1']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine2-label" for="deceasedUsualAddressLine2">
-                          Building name
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine2" name="deceasedUsualAddressLine2" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine2']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressStreet-label" for="deceasedUsualAddressStreet">
-                          Street
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressStreet" name="deceasedUsualAddressStreet" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressStreet']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressTown-label" for="deceasedUsualAddressTown">
-                          Town or city
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressTown" name="deceasedUsualAddressTown" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressTown']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressCounty-label" for="deceasedUsualAddressCounty">
-                          County
-                        </label>            
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressCounty" name="deceasedUsualAddressCounty" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressCounty']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressPostcode-label" for="deceasedUsualAddressPostcode">
-                          Postcode
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-quarter" id="deceasedUsualAddressPostcode" name="deceasedUsualAddressPostcode" type="text" aria-required="false" autocapitalize="characters" value="{{data['deceasedUsualAddressCounty']}}">
-                      </div>
-                    </div>
-                       <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
-                    <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                      Different to place of death (communal establishment)
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        Address
-                      </legend>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine1-label" for="deceasedUsualAddressLine1">
-                        House or flat number
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine1" name="deceasedUsualAddressLine1" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine1']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine2-label" for="deceasedUsualAddressLine2">
-                          Building name
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine2" name="deceasedUsualAddressLine2" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine2']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressStreet-label" for="deceasedUsualAddressStreet">
-                          Street
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressStreet" name="deceasedUsualAddressStreet" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressStreet']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressTown-label" for="deceasedUsualAddressTown">
-                          Town or city
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressTown" name="deceasedUsualAddressTown" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressTown']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressCounty-label" for="deceasedUsualAddressCounty">
-                          County
-                        </label>            
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressCounty" name="deceasedUsualAddressCounty" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressCounty']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressPostcode-label" for="deceasedUsualAddressPostcode">
-                          Postcode
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-quarter" id="deceasedUsualAddressPostcode" name="deceasedUsualAddressPostcode" type="text" aria-required="false" autocapitalize="characters" value="{{data['deceasedUsualAddressCounty']}}">
-                      </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-sameplaceofdeathnoncommunalestablishment">
+
                     </div>
                   </div>
                 </div>
-              </fieldset>
-             
-      
-
-
-            
-
-            
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedDateOfBirth-fieldset" aria-required="false">  
@@ -429,7 +330,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Occupation
+                Occupation (if available)
               </legend>
               <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
             </div>
