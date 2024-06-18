@@ -1,0 +1,190 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create new record – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back to pending registrations",
+  href: "../pending-registrations.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Create new record
+        </h1>
+
+        <form class="form" action="task-list" method="post">
+          
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Date medical certificate was issued
+              </legend>
+              <div class="govuk-form-group">
+                <div id="MCCDissued-hint" class="govuk-hint">
+                  For example, 12 11 2024
+                </div>
+                <div class="govuk-date-input" id="MCCDissued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
+                        Day
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
+                        Month
+                      </label>  
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
+                        Year
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </fieldset>
+          </div>  
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Date medical certificate was received 
+              </legend>
+              <div class="govuk-form-group">
+                <div id="MCCDissued-hint" class="govuk-hint">
+                  For example, 12 11 2024
+                </div>
+                <div class="govuk-date-input" id="MCCDissued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
+                        Day
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
+                        Month
+                      </label>  
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
+                        Year
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </fieldset>
+          </div> 
+
+          <h2 class="govuk-heading-m">
+            Deceased’s details
+          </h2>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="deceased-first-name">
+                First name
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" value="{{data['deceasedFirstName']}}" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="deceased-middle-name">
+              Middle names
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" value="{{data['deceasedMiddleName']}}" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="deceased-last-name">
+              Last name
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" value="{{data['deceasedLastName']}}" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Date of death
+              </legend>
+              <div id="date-medical-certificate-hint" class="govuk-hint">
+                For example, 12 11 2024
+              </div>
+              <div class="govuk-date-input" id="date-medical-certificate">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="day-of-death">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="month-of-death">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="year-of-death">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "/coroners/round2/route1-AP/create-new-record/tasks/confirm-medical-certificate"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}

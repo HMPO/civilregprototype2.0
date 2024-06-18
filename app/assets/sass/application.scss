@@ -11,6 +11,10 @@
 #horizontal-wrapper {
     display: flex;
   }
+  .horizontal-wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
   
   #left {
     flex: 0 0 15%;

@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Voluntary statistics
+          </h1>
+  
+          <form class="form" action="../task-list" method="post">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="nhs-number">
+                Deceased’s NHS number (if known)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="nhs-number" name="nhs-number" type="text" value="{{data['nhs-number']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="employment-mother" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Select employment status – deceased
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-mother" type="radio" value="employee-not-supervising" {{checked("employment-mother", "employee-not-supervising")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-employee-not-supervising" for="employment-status-employee-not-supervising">
+                      Employee, not supervising
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-mother" type="radio" value="employee-supervising" {{checked("employment-mother", "employee-supervising")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-employee-supervising" for="employment-status-employee-supervising">
+                      Employee, supervising
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-self-employed-no-employees" name="employment-mother" type="radio" value="self-employed-no-employees" {{checked("employment-mother", "self-employed-no-employees")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-no-employees" for="employment-status-self-employed-no-employees">
+                      Self-employed, no employees
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-self-employed-with-employees" name="employment-mother" type="radio" value="self-employed-with-employees" {{checked("employment-mother", "self-employed-with-employees")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-with-employees" for="employment-status-self-employed-with-employees">
+                      Self-employed, with employees
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-not-employed" name="employment-mother" type="radio" value="not-employed" {{checked("employment-mother", "not-employed")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-not-employed" for="employment-status-not-employed">
+                      Not employed
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-not-known" name="employment-mother" type="radio" value="not-known" {{checked("employment-mother", "not-known")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-not-known" for="employment-status-not-known">
+                      Not known
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-refused" name="employment-mother" type="radio" value="refused" {{checked("employment-mother", "refused")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-refused" for="employment-status-refused">
+                      Refused to answer
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="employment-status-second-parent" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Select employment status – deceased's partner
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-second-parent" type="radio" value="employee-not-supervising" {{checked("employment-second-parent", "employee-not-supervising")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-employee-not-supervising" for="employment-status-employee-not-supervising">
+                      Employee, not supervising
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-second-parent" type="radio" value="employee-supervising" {{checked("employment-second-parent", "employee-supervising")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-employee-supervising" for="employment-status-employee-supervising">
+                      Employee, supervising
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-self-employed-no-employees" name="employment-second-parent" type="radio" value="self-employed-no-employees" {{checked("employment-second-parent", "self-employed-no-employees")}}  aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-no-employees" for="employment-status-self-employed-no-employees">
+                      Self-employed, no employees
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-self-employed-with-employees" name="employment-second-parent" type="radio" value="self-employed-with-employees" {{checked("employment-second-parent", "self-employed-with-employees")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-with-employees" for="employment-status-self-employed-with-employees">
+                      Self-employed, with employees
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-not-employed" name="employment-second-parent" type="radio" value="not-employed" {{checked("employment-second-parent", "not-employed")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-not-employed" for="employment-status-not-employed">
+                      Not employed
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-not-known" name="employment-second-parent" type="radio" value="not-known" {{checked("employment-second-parent", "not-known")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-not-known" for="employment-status-not-known">
+                      Not known
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-status-refused" name="employment-second-parent" type="radio" value="refused" {{checked("employment-second-parent", "refused")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="employment-status-refused" for="employment-status-refused">
+                      Refused to answer
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and return"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
