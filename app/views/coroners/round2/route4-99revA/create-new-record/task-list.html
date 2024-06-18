@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or "BANACH"}}, {{data['deceasedFirstName'] or "Emily"}} {{data['deceasedMiddleName']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
 
       <h2 class="govuk-heading-l">Pre appointment information</h2>
 
@@ -62,8 +62,7 @@
             </a>
           </div>
           
-          {% if (data['inquestStartDateDay'] and data['inquestStartDateMonth'] and data['inquestStartDateYear'] and data['inquestEndDateDay'] and
-          data['inquestEndDateMonth'] and data['inquestEndDateYear'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
+          {% if (data['inquestDate'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
           data['Ethnicity'] and data['HazardousImplants'])%}
 
 
@@ -224,7 +223,7 @@
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          {% if (data['employment-mother'] and data['employment-second-parent'])%}
+          {% if (data['contact'] and data['employment-mother'] and data['employment-second-parent'])%}
 
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/voluntary-statistics.html" aria-describedby="">
@@ -285,8 +284,7 @@
             Completed
           </div>
 
-          {% elif (data['inquestStartDateDay'] and data['inquestStartDateMonth'] and data['inquestStartDateYear'] and data['inquestEndDateDay'] and
-          data['inquestEndDateMonth'] and data['inquestEndDateYear'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
+          {% elif (data['inquestDate'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
           data['Ethnicity'] and data['HazardousImplants'] and 
           data['deceasedFirstName'] and data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
           data['day-of-death'] and data['month-of-death'] and data['year-of-death'] and 
@@ -295,7 +293,7 @@
           and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'] and 
           data['relationship'] and 
           data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data['coronerDesignation'] and 
-          data['employment-mother'] and data['employment-second-parent']) %}
+          data['contact'] and data['employment-mother'] and data['employment-second-parent']) %}
 
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">

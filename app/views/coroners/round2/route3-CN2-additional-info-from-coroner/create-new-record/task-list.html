@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or "BANACH"}}, {{data['deceasedFirstName'] or "Emily"}} {{data['deceasedMiddleName']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
 
       <h2 class="govuk-heading-l">Pre appointment information</h2>
 
@@ -202,6 +202,24 @@
               Voluntary statistics
             </a>
           </div>
+
+          {% if (data['contact'])%}
+
+          <div class="govuk-task-list__status" id="">
+            Completed
+          </div>
+
+          {% else %}
+
+          <div class="govuk-task-list__status" id="">
+            <strong class="govuk-tag govuk-tag--blue">
+              Incomplete
+            </strong>
+          </div>
+
+          {% endif %}
+
+        </li>
       </ul>
 
 
@@ -229,7 +247,8 @@
           data['place-of-death'] and 
           data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedDateOfBirth']
           and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'] and 
-          data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data['coronerDesignation'] ) %}
+          data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'] and data['coronerDesignation'] and 
+          data['contact'] ) %}
 
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">

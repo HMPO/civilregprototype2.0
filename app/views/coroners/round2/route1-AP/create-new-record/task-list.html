@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or "BANACH"}}, {{data['deceasedFirstName'] or "Emily"}} {{data['deceasedMiddleName']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
 
       <h2 class="govuk-heading-l">Pre appointment information</h2>
 
@@ -225,7 +225,7 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          {% if (data['additional-industry-mother'] and data['employment-mother'] and data['additional-industry-second-parent'] and data['employment-second-parent'])%}
+          {% if (data['contact'] and data['additional-industry-mother'] and data['employment-mother'] and data['additional-industry-second-parent'] and data['employment-second-parent'])%}
 
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/voluntary-statistics.html" aria-describedby="">
@@ -298,7 +298,7 @@
             data['relationship'] and 
             data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] and 
             data['informantLiveWithDeceased'] and 
-            data['additional-industry-mother'] and data['employment-mother'] and data['additional-industry-second-parent'] and data['employment-second-parent'] %}
+            data['contact'] and data['additional-industry-mother'] and data['employment-mother'] and data['additional-industry-second-parent'] and data['employment-second-parent'] %}
   
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">
