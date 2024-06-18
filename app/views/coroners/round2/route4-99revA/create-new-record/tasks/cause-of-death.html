@@ -193,9 +193,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Enter cause of death 
                   </p>
                 <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-              </div>
-             
-              `;
+              </div>`;
   
               var htmlBlocks = {
                 "Yes": Yes,
@@ -225,7 +223,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <p class="govuk-body">
               <a href="#" class="govuk-link govuk-link--no-visited-state" id="addNarrativeVerdict" style="display:block">Add a narrative verdict</a>
             </p>
-
             <div id="narrativeVerdict"></div>
 
             {% raw %}
@@ -241,8 +238,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </p>
                     </div> 
                     <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="conclusion" name="conclusion" value="{{data['conclusion']}}" rows="5"></textarea>
-                  </div>
-              `;
+                  </div>`;
             
               function toggleNarrativeVerdict(event) {
                 event.preventDefault();
