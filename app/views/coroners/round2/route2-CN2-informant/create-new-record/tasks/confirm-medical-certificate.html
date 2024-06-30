@@ -50,7 +50,7 @@ Confirm the source of information for this death – {{ serviceName }} – GOV.U
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-attending-practitioner">
                   <label class="govuk-label" for="AP-cert">
-                    Select type of attending practicioner certificate
+                    Select type of attending practitioner certificate
                   </label>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="a-p-standard" name="a-p" type="radio" value="a-p-standard" {{ checked("a-p", "a-p-standard") }} >
@@ -68,6 +68,9 @@ Confirm the source of information for this death – {{ serviceName }} – GOV.U
                     <label class="govuk-label" for="unique-ID"><br>
                       Enter the certificate's unique ID
                     </label>
+                    <div id="event-name-hint" class="govuk-hint">
+                      The unique ID is the 14 digit number on the first page of the form
+                    </div>
                     <input class="govuk-input govuk-input--width-10" id="unique-ID" name="uniqueID" type="text">
                   </div>
                 </div>
@@ -98,6 +101,9 @@ Confirm the source of information for this death – {{ serviceName }} – GOV.U
                     <label class="govuk-label" for="unique-ID"><br>
                       Enter the certificate's unique ID
                     </label>
+                    <div id=u"event-name-hint" class="govuk-hint">
+                      The unique ID is the 14 digit number on the first page of the form
+                    </div>
                     <input class="govuk-input govuk-input--width-10" id="unique-ID" name="uniqueID" type="text">
                   </div>
                 </div>

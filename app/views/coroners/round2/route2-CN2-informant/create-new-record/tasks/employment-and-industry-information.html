@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
+Employment and industry information – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,42 +31,40 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Voluntary statistics
+            Employment and industry information
           </h1>
   
           <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-                    Is the deceased's NHS number available?
-                  </h3>
+              <fieldset class="govuk-fieldset" id="additional-industry-mother" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Will the informant give additional industry and employment information for the deceased?
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact" value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact">
+                    <input class="govuk-radios__input" id="additional-industry-yes" name="additional-industry-mother" type="radio" value="yes" {{checked("additional-industry-mother", "yes")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-yes" for="additional-industry-yes">
                       Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        Enter NHS number
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="text" spellcheck="false" autocomplete="email">
-                    </div>
+                    </label>   
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" data-aria-controls="conditional-contact-2"  value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
+                    <input class="govuk-radios__input" id="additional-industry-not-employed" name="additional-industry-mother" type="radio" value="not-employed" {{checked("additional-industry-mother", "not-employed")}} >
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-not-employed" for="additional-industry-not-employed">
+                      Not employed
                     </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-not-known" name="additional-industry-mother" type="radio" value="not-known" {{checked("additional-industry-mother", "not-known")}} >
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-not-known" for="additional-industry-not-known">
+                      Not known
+                    </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-refused" name="additional-industry-mother" type="radio" value="refused-to-answer" {{checked("additional-industry-mother", "refused-to-answer")}} >
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-refused" for="additional-industryrefused">
+                      Refused to answer
+                    </label>
                   </div>
                 </div>
               </fieldset>
@@ -123,7 +121,41 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
               </fieldset>
             </div>
-            
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="additional-industry-second-parent" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Will the informant give additional industry and employment information for the deceased’s partner?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-yes" name="additional-industry-second-parent" type="radio" value="yes" {{checked("additional-industry-second-parent", "yes")}} aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-yes" for="additional-industry-yes">
+                      Yes
+                    </label>   
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-not-employed" name="additional-industry-second-parent" type="radio" value="not-employed" {{checked("additional-industry-second-parent", "not-employed")}}>
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-not-employed" for="additional-industry-not-employed">
+                      Not employed
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-not-known" name="additional-industry-second-parent" type="radio" value="not-known" {{checked("additional-industry-second-parent", "not-known")}}>
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-not-known" for="additional-industry-not-known">
+                      Not known
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-industry-refused" name="additional-industry-second-parent" type="radio" value="refused" {{checked("additional-industry-second-parent", "refused")}}>
+                    <label class="govuk-label govuk-radios__label" id="additional-industry-refused" for="additional-industry-refused">
+                      Refused to answer
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="employment-status-second-parent" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">

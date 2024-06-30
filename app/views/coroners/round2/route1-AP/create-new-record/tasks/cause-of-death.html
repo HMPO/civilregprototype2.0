@@ -39,6 +39,23 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-heading-m">About the death</h2>
             <h3 class="govuk-heading-s">Cause of death</h3>
 
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If cause of death is above the character limit
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Anything you enter up to the character limit will be added to the register page and sent to RON. 
+                <br>
+                <br>
+                You will need to:
+                <br>
+                1. Write the remaining information on the register page.<br>
+                2. Find and caution mark this record in RON.<br>
+                3. Complete the death certificate by hand or using the type and print function.
+              </div>
+            </details>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
@@ -55,7 +72,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }) }}
                 
                 <label class="govuk-label" id="TimeBetweenOnsetAndDeath" for="TimeBetweenOnsetAndDeath">
-                  Time between onset and death
+                  Time between onset and death (if provided)
                 </label>
                 <div id="horizontal-wrapper">
                 <div class="govuk-form-group">
@@ -308,10 +325,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Attending practitioner details
                 </h3>
                 <div class="govuk-form-group">
-                  <label class="govuk-label" for="width-10">
+                  <label class="govuk-label" for="width-20">
                     Full name and qualifications
                   </label>
-                  <input class="govuk-input govuk-input--width-10" id="APNameAndQual" name="APNameAndQual" value="{{data['APNameAndQual']}}" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="APNameAndQual" name="APNameAndQual" value="{{data['APNameAndQual']}}" type="text">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-10">
@@ -324,10 +341,10 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   Medical examiner details
                 </h3>
                 <div class="govuk-form-group">
-                  <label class="govuk-label" for="width-10">
+                  <label class="govuk-label" for="width-20">
                     Full name and qualifications
                   </label>
-                  <input class="govuk-input govuk-input--width-10" id="MENameAndQual" name="MENameAndQual" value="{{data['MENameAndQual']}}" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="MENameAndQual" name="MENameAndQual" value="{{data['MENameAndQual']}}" type="text">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-10">

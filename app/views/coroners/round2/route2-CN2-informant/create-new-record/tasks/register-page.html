@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Select the registrar’s"signature-annotation – {{ serviceName }} – GOV.UK Prototype Kit
+Select the registrar’s designation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,51 +28,43 @@ Select the registrar’s"signature-annotation – {{ serviceName }} – GOV.UK P
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">
-            Signature details
+            Register page 
           </h1>
-
           <form class="form" action="../task-list" method="post">
-
-          <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="informant-signature">
-                Informant’s signature, as written
-              </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="informant-signature" name="informantSignature" value="{{data['informantSignature']}}" type="text">
-          </div>
-      
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Signature annotation
+                  Select designation
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="signature-annotation-registrar" name="signature-annotation" type="radio" value="registrar" {{checked("signature-annotation", "registrar")}}>
-                    <label class="govuk-label govuk-radios__label" for="signature-annotation">
-                      None - signature clear 
+                    <input class="govuk-radios__input" id="designation-registrar" name="designation" type="radio" value="registrar" {{checked("designation", "registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="designation-registrar">
+                      Registrar
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="signature-annotation-deputy-registrar" name="signature-annotation" type="radio" value="deputy-registrar" {{checked("signature-annotation", "deputy-registrar")}}>
-                    <label class="govuk-label govuk-radios__label" for="signature-annotation-deputy-registrar">
-                      'Signature of' added
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="signature-annotation-registrar" name="signature-annotation" type="radio" value="registrar" {{checked("signature-annotation", "registrar")}}>
-                    <label class="govuk-label govuk-radios__label" for="signature-annotation">
-                      'Mark of' added
+                    <input class="govuk-radios__input" id="designation-deputy-registrar" name="designation" type="radio" value="deputy-registrar" {{checked("designation", "deputy-registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="designation-deputy-registrar">
+                      Deputy Registrar
                     </label>
                   </div>
                 </div>
-              </fieldset>
-            </div>
+                <br>
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  View and print the register page
+                </button>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="registrar-signature">
-                Registrar’s signature, as written
-              </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="registrar-signature" name="registrarSignature" value="{{data['registrarSignature']}}" type="text">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="signed" name="signed" type="checkbox" value="signed">
+                    <label class="govuk-label govuk-checkboxes__label" for="signed">
+                      The informant has checked and signed the register page
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
             </div>
   
             <div class="govuk-button-group">
