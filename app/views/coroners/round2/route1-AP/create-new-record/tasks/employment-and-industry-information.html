@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
+Employment and industry information – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,46 +31,10 @@ Voluntary statistics – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Voluntary statistics
+            Employment and industry information
           </h1>
   
           <form class="form" action="../task-list" method="post">
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-                    Is the deceased's NHS number available?
-                  </h3>
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact" value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        Enter NHS number
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="text" spellcheck="false" autocomplete="email">
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" data-aria-controls="conditional-contact-2"  value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">   
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">  
-                  </div>
-                </div>
-              </fieldset>
-            </div>
 
 
             <div class="govuk-form-group">

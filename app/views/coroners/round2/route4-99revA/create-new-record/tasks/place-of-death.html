@@ -241,7 +241,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </label>
                 <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
               </div>
-            </fieldset>hero
+            </fieldset>
 
             <p class="govuk-body">
                   <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
@@ -251,55 +251,25 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
               var foundDeadOnArrival = `
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Place deceased was found dead on arrival
+                  Place deceased was found dead on arrival 
                 </legend>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-1">
-                  Address line 1
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                    Communal establishment address
+                  </label>
+                  <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
+                
+                
+                  <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-top-4 govuk-!-margin-bottom-2" data-module="govuk-button">
+                  Find address
+                </button>
               </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-2">
-                  Address line 2
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-3">
-                  Address line 3
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-4">
-                  Address line 4
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
-              </div>
-               <div class="govuk-form-group">
-                <label class="govuk-label" for="address-town">
-                  Town or city
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-county">
-                  County
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-postcode">
-                  Postcode
-                </label>
-                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
-              </div>
-            </fieldset>
-
-            <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-!-margin-bottom-10 govuk-link--no-visited-state">Search by communal establishment</a>
                 </p>
+
+              </fieldset>
+            </div>
               `;
 
               var foundDead = `

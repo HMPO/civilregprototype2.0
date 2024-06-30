@@ -125,6 +125,13 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                     <input class="govuk-input govuk-!-width-one-half" id="informantRelationshipToDeceased" name="informantRelationshipToDeceased" type="text" aria-required="false" value="{{data['informantRelationshipToDeceased']}}">
                   </div>
                 </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="informantQualification-partner" name="informantQualification" type="radio" value="non-relative" aria-controls="conditional-informantQualification-partner" aria-expanded="false" {{ checked("informantQualification", "non-relative") }}>
+                  <label class="govuk-label govuk-radios__label" id="informantQualification-partner-label" for="informantQualification-partner">
+                    Partner
+                  </label>
+                </div>
                 
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantQualification-Nonrelative" name="informantQualification" type="radio" value="non-relative" aria-controls="conditional-informantQualification-Nonrelative" aria-expanded="false" {{ checked("informantQualification", "non-relative") }}>

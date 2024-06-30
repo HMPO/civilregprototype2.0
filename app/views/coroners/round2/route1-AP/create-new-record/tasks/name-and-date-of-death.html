@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Name, age and date of death
+            Name and date of death
           </h1>
   
           <form class="form" action="../task-list" method="post">
@@ -100,7 +100,7 @@ Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="name-order" name="name-order" type="radio" value="name-order-first-name" {{ checked("name-order", "name-order-first-name") }} data-aria-controls="">
+                    <input class="govuk-radios__input" id="name-order" name="name-order" type="radio" checked="checked" value="name-order-first-name" {{ checked("name-order", "name-order-first-name") }} data-aria-controls="">
                     <label class="govuk-label govuk-radios__label" for="name-order">
                       First name at the front
                     </label>

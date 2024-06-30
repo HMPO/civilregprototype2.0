@@ -86,7 +86,7 @@
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/name-age-date-of-death.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="tasks/name-and-date-of-death.html" aria-describedby="">
               Name and date of death
             </a>
           </div>
@@ -191,14 +191,14 @@
         </li>
       </ul>
       
-      <h2 class="govuk-heading-m">Statistical information</h2>
+      <h2 class="govuk-heading-m">Information for statistics</h2>
       
 
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/voluntary-statistics.html" aria-describedby="">
-              Voluntary statistics
+            <a class="govuk-link govuk-task-list__link" href="tasks/medical-information.html" aria-describedby="">
+              Medical information
             </a>
           </div>
 
@@ -231,7 +231,7 @@
           {% if (data['designation'])%}
 
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
               Register page
             </a>
           </div>
@@ -249,7 +249,7 @@
           data['contact'] ) %}
 
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/registrars-designation.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
               Register page
             </a>
           </div>
@@ -278,10 +278,10 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          {% if (data['informantSignature'] and data['signature-annotation'] and data['registrarSignature'])%}
+          {% if (data['signature-annotation'] and data['registrarSignature'])%}
 
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="tasks/signatire-details.html" aria-describedby="">
               Signature details
             </a>
           </div>
@@ -293,7 +293,7 @@
           {% elif (data['designation']) %}
 
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="tasks/signature-details.html" aria-describedby="">
               Signature details
             </a>
           </div>
@@ -326,7 +326,7 @@
         {{ govukButton
           ({ 
           text: "Complete registration", 
-          href: "confirmation-page.html" }) }}
+          href: "send-to-RON.html" }) }}
 
           <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
             Delete the record 
