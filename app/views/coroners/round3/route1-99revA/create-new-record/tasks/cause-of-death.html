@@ -1,0 +1,352 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            Cause of death 
+          </h1>
+
+          <form class="form" action="../task-list" method="post">
+
+            <h2 class="govuk-heading-m">
+              About the inquest
+            </h2>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="inquestDate">
+                Inquest date
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="inquestDate" name="inquestDate" value="{{data['inquestDate']}}" type="text">
+            </div>
+
+            <br>
+
+            <h2 class="govuk-heading-m">
+              About the death
+            </h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <h3 class="govuk-heading-s">
+                  Was a post-mortem held?
+                </h3>
+                
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="postMortemHeld" name="postMortemHeld" type="radio" value="Yes" {{checked("postMortemHeld", "true") }}>
+                    <label class="govuk-label govuk-radios__label" for="postMortemHeld">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="postMortemHeld-2" name="postMortemHeld" type="radio" value="No" {{checked("postMortemHeld", "false" )}}>
+                    <label class="govuk-label govuk-radios__label" for="postMortemHeld-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                  Is cause of death in the standard format?
+                </h3>
+                <div id="COD-hint" class="govuk-hint">
+                  For example, 1(a), 1(b), 1(c)
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="CODformat" name="CODformat" type="radio" checked="checked" value="Yes" {{checked( "CODformat", "Yes" )}}>
+                    <label class="govuk-label govuk-radios__label" id="CODformat-Yes-label" for="CODformat-Yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="CODformat-2" name="CODformat" type="radio" value="No" {{checked( "CODformat", "No" )}}>
+                    <label class="govuk-label govuk-radios__label" id="CODformat-No-label" for="CODformat-No">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+            <div id="CODformatContainer"></div>
+
+            {% raw %}
+            <script>
+              var Yes = `
+                 
+              <div class="govuk-form-group">
+
+                <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If cause of death is above the character limit
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Anything you enter up to the character limit will be added to the register page and sent to RON. 
+                <br>
+                <br>
+                You will need to:
+                <br>
+                1. Write the remaining information on the register page.<br>
+                2. Find and caution mark this record in RON.<br>
+                3. Complete the death certificate by hand or using the type and print function.
+              </div>
+            </details>
+
+
+                <p class="govuk-body-m">
+                  1(a) Disease or condition directly leading to death
+                  </p>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+
+                  <p class="govuk-body">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition leading to 1(a)</a>
+                  </p>
+
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">2. Add other significant contributory conditions </a>
+                </p>
+              `;
+  
+              var No = `
+              <div class="govuk-form-group">
+
+                <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If cause of death is above the character limit
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Anything you enter up to the character limit will be added to the register page and sent to RON. 
+                <br>
+                <br>
+                You will need to:
+                <br>
+                1. Write the remaining information on the register page.<br>
+                2. Find and caution mark this record in RON.<br>
+                3. Complete the death certificate by hand or using the type and print function.
+              </div>
+            </details>
+
+
+                <p class="govuk-body-m">
+                  Enter cause of death 
+                  </p>
+                <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>`;
+  
+              var htmlBlocks = {
+                "Yes": Yes,
+                "No": No,
+              };
+
+              var container = document.getElementById('CODformatContainer');
+                  container.innerHTML = Yes;
+  
+              document.querySelectorAll('input[name="CODformat"]').forEach((element) => {
+                element.addEventListener("change", (event) => {
+                  var selectedValue = event.target.value;
+                  var htmlBlock = htmlBlocks[selectedValue];
+                  var container = document.getElementById('CODformatContainer');
+                  container.innerHTML = htmlBlock;
+                })
+              });
+            </script>
+            {% endraw %}
+
+            <div class="govuk-form-group govuk-!-margin-bottom-2">
+              <label class="govuk-label" for="conclusion">
+                Conclusion
+              </label>
+              <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="conclusion" name="conclusion" value="{{data['conclusion']}}" rows="5"></textarea>
+            </div>
+            <p class="govuk-body">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addNarrativeVerdict" style="display:block">Add a narrative verdict</a>
+            </p>
+            <div id="narrativeVerdict"></div>
+
+            {% raw %}
+            <script>
+              var shownNarrativeVerdict = `
+                  <div class="govuk-form-group">
+                    <div class="horizontal-wrapper">
+                    <label class="govuk-label" for="conclusion">
+                      Narrative verdict
+                    </label>
+                    <p class="govuk-body govuk-!-margin-bottom-1">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeNarrativeVerdict">Remove</a>
+                    </p>
+                    </div> 
+                    <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="conclusion" name="conclusion" value="{{data['conclusion']}}" rows="5"></textarea>
+                  </div>`;
+            
+              function toggleNarrativeVerdict(event) {
+                event.preventDefault();
+                var narrativeVerdictDiv = document.getElementById('narrativeVerdict');
+                var addNarrativeVerdictLink = document.getElementById('addNarrativeVerdict');
+                if (event.target.id === 'addNarrativeVerdict') {
+                  narrativeVerdictDiv.innerHTML = shownNarrativeVerdict;
+                  addNarrativeVerdictLink.style.display = 'none';
+                  document.getElementById('removeNarrativeVerdict').addEventListener('click', toggleNarrativeVerdict);
+                } else if (event.target.id === 'removeNarrativeVerdict') {
+                  narrativeVerdictDiv.innerHTML = '';
+                  addNarrativeVerdictLink.style.display = 'block';
+                }
+              }
+            
+              document.getElementById('addNarrativeVerdict').addEventListener('click', toggleNarrativeVerdict);
+            </script>
+            {% endraw %}
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="age-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Ethnicity
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity" name="Ethnicity" type="radio" value="white" {{ checked("Ethnicity", "white") }} data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          White
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity-2" name="Ethnicity" type="radio" value="mixed-or-multiple-ethnic-groups" {{ checked("Ethnicity", "mixed-or-multiple-ethnic-groups") }} data-aria-controls="conditional-contact-2">
+                        <label class="govuk-label govuk-radios__label" for="contact-2">
+                          Mixed or multiple ethnic groups
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity-3" name="Ethnicity" type="radio" value="asian-or-asian-british" {{ checked("Ethnicity", "asian-or-asian-british") }} data-aria-controls="conditional-contact-3">
+                        <label class="govuk-label govuk-radios__label" for="contact-3">
+                          Asian or Asian British
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity-4" name="Ethnicity" type="radio" value="black-black-british-caribbean-or-african" {{ checked("Ethnicity", "black-black-british-caribbean-or-african") }} data-aria-controls="conditional-contact-4">
+                        <label class="govuk-label govuk-radios__label" for="contact-4">
+                          Black, Black British, Caribbean or African
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity-5" name="Ethnicity" type="radio" value="other-ethnic-group" {{ checked("Ethnicity", "other-ethnic-group") }} data-aria-controls="conditional-contact-5">
+                        <label class="govuk-label govuk-radios__label" for="contact-5">
+                          Other ethnic group
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="Ethnicity-6" name="Ethnicity" type="radio" value="not-known" {{ checked("Ethnicity", "not-known") }} data-aria-controls="conditional-contact-6">
+                        <label class="govuk-label govuk-radios__label" for="contact-6">
+                          Not known
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>  
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="age-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Was the deceased pregnant in the year before their death? 
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnant" name="pregnant" type="radio" value="not-applicable" {{ checked("pregnant", "not-applicable") }} data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          Not applicable
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnant-2" name="pregnant" type="radio" value="not-pregnant" {{ checked("pregnant", "not-pregnant") }} data-aria-controls="conditional-contact-2">
+                        <label class="govuk-label govuk-radios__label" for="contact-2">
+                          Not pregnant
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnantt-3" name="pregnant" type="radio" value="pregnant-at-the-time-of-death" {{ checked("pregnant", "pregnant-at-the-time-of-death") }} data-aria-controls="conditional-contact-3">
+                        <label class="govuk-label govuk-radios__label" for="contact-3">
+                          Pregnant at the time of death
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnant-4" name="pregnant" type="radio" value="pregnant-1-42-days-before-death" {{ checked("pregnant", "pregnant-1-42-days-before-death") }} data-aria-controls="conditional-contact-4">
+                        <label class="govuk-label govuk-radios__label" for="contact-4">
+                          Pregnant 1-42 days before death
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnant-5" name="pregnant" type="radio" value="pregnant-43-days-to-a-year-before-death" {{ checked("pregnant", "pregnant-43-days-to-a-year-before-death") }} data-aria-controls="conditional-contact-5">
+                        <label class="govuk-label govuk-radios__label" for="contact-5">
+                          Pregnant 43 days to a year before death 
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="pregnant-6" name="pregnant" type="radio" value="not-known" {{ checked("pregnant", "not-known") }} data-aria-controls="conditional-contact-6">
+                        <label class="govuk-label govuk-radios__label" for="contact-6">
+                          Not known
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+               
+                  
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and return"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
