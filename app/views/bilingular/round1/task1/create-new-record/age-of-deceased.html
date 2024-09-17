@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "add-deceased's-details.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-l">Create record</span>
+        <h1 class="govuk-heading-l">
+          Age of deceased
+        </h1>
+
+        <form class="form" action="age-range" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="age-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Age of deceased
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket" name="age-bracket" type="radio" value="less-than-24-hours" {{ checked("age-bracket", "less-than-24-hours") }} data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Less than 24 hours
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket-2" name="age-bracket" type="radio" value="1-27-days" {{ checked("age-bracket", "1-27-days") }} data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    1 to 27 days
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket-3" name="age-bracket" type="radio" value="28-days-15-years" {{ checked("age-bracket", "28-days-15-years") }} data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="contact-3">
+                    28 days to 15 years
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket-4" name="age-bracket" type="radio" value="16-74-years" {{ checked("age-bracket", "16-74-years") }} data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="contact-3">
+                    16 years to 74 years
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket-5" name="age-bracket" type="radio" value="75-or-older" {{ checked("age-bracket", "75-or-older") }} data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="contact-3">
+                    75 years or older
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="age-bracket-6" name="age-bracket" type="radio" value="unknown" {{ checked("age-bracket", "unknown") }} data-aria-controls="conditional-contact-3">
+                  <label class="govuk-label govuk-radios__label" for="age-bracket-6">
+                    I do not have their age
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          
+
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "/bilingular/round1/task1/create-new-record/bilingular"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}
