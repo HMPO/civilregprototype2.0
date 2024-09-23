@@ -34,7 +34,7 @@ Record information – {{ serviceName }} – GOV.UK Prototype Kit
             Registration notes
           </h1>
   
-          <form class="form" action="../task-list" method="post">
+          <form class="form" action="task-list" method="post">
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="coverSheetPriority-hint" id="coverSheetPriority-fieldset" aria-required="false">
@@ -59,6 +59,27 @@ Record information – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
               </fieldset>
+            </div>
+
+            <h2 class="govuk-heading-s">Informant contact details</h2>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantFullName-label" for="coverSheetInformantFullName">
+                Full name
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantFullName" name="coverSheetInformantFullName" type="text" aria-required="false" value="{{data['coverSheetInformantFullName']}}">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantPhoneNumber-label" for="coverSheetInformantPhoneNumber">
+                Phone number 
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantPhoneNumber" name="coverSheetInformantPhoneNumber" type="text" aria-required="false" value="{{data['coverSheetInformantPhoneNumber']}}">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--xs" id="coverSheetInformantEmailAddress-label" for="coverSheetInformantEmailAddress">
+                Email address 
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantEmailAddress" name="coverSheetInformantEmailAddress" type="text" aria-required="false" value="{{data['coverSheetInformantEmailAddress']}}">
             </div>
 
             {{ govukTextarea({

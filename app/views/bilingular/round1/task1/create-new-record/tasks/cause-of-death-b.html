@@ -64,7 +64,18 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   value: data['CauseOfDeath-a'],
                   id: "CauseOfDeath-a",
                   label: {
-                    text: "1(a) Disease or condition directly leading to death ",
+                    text: "1(a) Disease or condition directly leading to death",
+                    classes: "govuk-label--xs",
+                    isPageHeading: true
+                  }
+                }) }}
+
+                {{ govukTextarea({
+                  name: "CauseOfDeath-ab",
+                  value: data['CauseOfDeath-ab'],
+                  id: "CauseOfDeath-ab",
+                  label: {
+                    text: "1(a)  Clefyd neu gyflwr sy'n arwain yn uniongyrchol at farwolaeth (yn Cymraeg)",
                     classes: "govuk-label--xs",
                     isPageHeading: true
                   }
@@ -88,7 +99,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition leading to 1(a)</a>
                   </p>
                   <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">1(b).Ychwanegu afiechyd neu gyflwr arall sy'n arwain at 1(a) (yn Cymraeg)</a>
+                </p>
+                  <p class="govuk-body">
                     <a href="#" class="govuk-link govuk-link--no-visited-state">2. Add other significant contributory conditions</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">2. Ychwanegu amodau cyfrannol arwyddocaol eraill (yn Cymraeg)</a>
                   </p>
                   
               </fieldset>
@@ -270,6 +287,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </label> 
                   <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or "Dianne Nguyen MD"}}">
                 </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminer" for="MedExaminer">
+                    Enw llawn a chymwysterau
+                  </label> 
+                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or "Dianne Nguyen MD"}}">
+                </div>
+              
 
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
