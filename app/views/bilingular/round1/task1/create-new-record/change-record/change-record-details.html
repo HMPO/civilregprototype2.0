@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Create record - Check record details – {{ serviceName }} – GOV.UK Prototype Kit
+Check record details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
 
 {{ govukBackLink({
   text: "Back",
-  href: "bilingual.html"
+  href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -29,9 +29,8 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">Create record</span>
-       <h1 class="govuk-heading-l">Check record details</h1>
-       <p class="govuk-body">These must match the details on the medical certificate or coroner's form.</p>
+       <h1 class="govuk-heading-l">Record details</h1>
+       <p class="govuk-body">The record was created using these details. Change the record details to update the information required for the registration.</p>
                 
          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -59,41 +58,6 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                       <a class="govuk-link" href="medical-information.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                     </dd>
             </div>
-
-            <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Deceased name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>{{ data['deceasedLastName'] }}, {{ data['deceasedFirstName'] }} {{data ['deceasedMiddleName'] }}</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="deceased's-details.html">Change<span class="govuk-visually-hidden"> customer reference</span></a>
-                    </dd>
-            </div>
-
-            <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Is the deceased's date of death known?
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Yes, their full or partial date of death
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="deceased's-details.html">Change<span class="govuk-visually-hidden"> address</span></a>
-                    </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Date of death                        
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p class="govuk-body">{{ data['MCCDissued-day'] }} {{data ['MCCDissued-month'] }} {{ data['MCCDissued-year'] }}</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="deceased's-details.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
-                    </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Age               
@@ -113,16 +77,16 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                 <p class="govuk-body">{{ data['bilingular'] }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="bilingular.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
               </dd>
             </div>
             
           </dl>
 
-          <form action="tasks/task-list" method="post" novalidate>
+          <form action="../tasks/task-list" method="post" novalidate>
             <input type="hidden" name="answers-checked" value="true">
             <button type="submit" class="govuk-button" data-module="govuk-button">
-              Create record
+              Save changes
             </button>
           </form>
       </div>

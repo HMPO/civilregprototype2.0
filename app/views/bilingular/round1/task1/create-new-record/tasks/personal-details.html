@@ -1,0 +1,226 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name, age and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Name and date of death
+          </h1>
+  
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-first-name">
+                First name (required)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or "Baby"}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-middle-name">
+                Middle names 
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-last-name">
+                Last name (required)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or "Nicolaou"}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="capitalise-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Capitalise last name? (required)
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="capitalise-yes" name="capitalise" type="radio" checked="checked" value="capitalise-yes" data-aria-controls="" {{ checked("capitalise", "capitalise-yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="capitalise-no" name="capitalise" type="radio" value="capitalise-no" data-aria-controls="" {{ checked("capitalise", "capitalise-no") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No - print as typed
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="prefix">
+                Prefix
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="prefix" name="prefix" type="text" value="{{data['prefix']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="suffix">
+                Suffix 
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="suffix" name="suffix" type="text" value="{{data['suffix']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Print order of names (required)
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order" name="name-order" type="radio" checked="checked" value="name-order-first-name" {{ checked("name-order", "name-order-first-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order">
+                      First name at the front
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-1" name="name-order" type="radio" value="name-order-last-name" {{ checked("name-order", "name-order-last-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-1">
+                      Last name at the front
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-2" name="name-order" type="radio" value="name-order-only-last" {{ checked("name-order", "name-order-only-last") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-2">
+                      Only print last name
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-3" name="name-order" type="radio" value="name-order-no-name" {{ checked("name-order", "name-order-no-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-3">
+                      Print no name
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-4" name="name-order" type="radio" value="name-order-other" {{ checked("name-order", "name-order-other") }} data-aria-controls="conditional-name-order-other">
+                    <label class="govuk-label govuk-radios__label" for="name-order-4">
+                      Print names in other order
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-name-order-other">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label" id="custom-order" for="custom-order">
+                        Order of names
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="custom-order" name="custom-order" type="text" aria-required="false" value="{{data['custom-order']}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Other known names 
+                </legend>
+                <div class="govuk-form-group">
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add another known name
+                  </button>
+                </div>
+              </fieldset>
+            </div>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date of death (required)
+                </legend>
+                <div id="date-medical-certificate-hint" class="govuk-hint">
+                  For example, 27 3 2024
+                </div>
+                <div class="govuk-date-input" id="date-medical-certificate">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="day-of-death">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" type="text" inputmode="numeric" value="{{data['day-of-death'] or "20"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="month-of-death">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" type="text" inputmode="numeric" value="{{data['month-of-death'] or "05"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="year-of-death">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" type="text" inputmode="numeric" value="{{data['year-of-death'] or "2024"}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+              
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="registration-confirmation2-hint">
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="registration-confirmation2" name="registration-confirmation2" type="checkbox" value="yes" {{ checked("registration-confirmation2", "yes") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="registration-confirmation2">
+                      This information was provided by a qualified informant during registration
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="personal-details" data-module="govuk-button">
+                Save and continue
+              </button>
+             
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

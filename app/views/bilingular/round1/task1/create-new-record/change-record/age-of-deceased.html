@@ -15,9 +15,10 @@ Create record - Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 
 {{ govukBackLink({
-  text: "Back",
-  href: "deceased's-details.html"
+  text: "Back to record",
+  href: "javascript:window.history.back()"
 }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -34,7 +35,7 @@ Create record - Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
           Age of deceased
         </h1>
 
-        <form class="form" action="bilingual" method="post">
+        <form class="form" action="change-record-details" method="post">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="age-hint">

@@ -15,9 +15,10 @@ Create record - Medical information about this death – {{ serviceName }} – G
 }) }}
 
 {{ govukBackLink({
-  text: "Back to pending registrations",
-  href: "../pending-registrations.html"
+  text: "Back to record",
+  href: "javascript:window.history.back()"
 }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -34,7 +35,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
           Medical information about this death
         </h1>
 
-        <form class="form" action="deceased's-details" method="post">
+        <form class="form" action="change-record-details" method="post">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="certificate">
@@ -64,14 +65,14 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       Neonatal (Form 65 APC2)
                     </label>
                   </div>
-                  <div class="govuk-form-group govuk-!-margin-top-6">
-                    <label class="govuk-label" for="certificateID">
-                      Enter the certificate's unique ID
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="certificateID-AP"><br>
+                      Enter the certificate's certificate ID
                     </label>
                     <div id="event-name-hint" class="govuk-hint">
-                      The unique ID is the 14 digit number on the first page of the form
+                      The certificate ID is the 14 digit number on the first page of the form
                     </div>
-                    <input class="govuk-input govuk-input--width-10" id="certificateID-AP" name="certificateID" type="text" value="{{data['certificateID']}}">
+                    <input class="govuk-input govuk-input--width-10" id="certificateID-AP" name="certificateID-AP" type="text" value="{{data['certificateID-AP']}}">
                   </div>
                 </div>
 
@@ -97,12 +98,12 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       Neonatal (Form 65 MEC3)
                     </label>
                   </div>
-                  <div class="govuk-form-group govuk-!-margin-top-6">
-                    <label class="govuk-label" for="certificateID-ME">
-                      Enter the certificate's unique ID
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="certificateID-ME"><br>
+                      Enter the certificate's certificate ID
                     </label>
                     <div id="event-name-hint" class="govuk-hint">
-                      The unique ID is the 14 digit number on the first page of the form
+                      The certificate ID is the 14 digit number on the first page of the form
                     </div>
                     <input class="govuk-input govuk-input--width-10" id="certificateID-ME" name="certificateID-ME" type="text" value="{{data['certificateID-ME']}}">
                   </div>

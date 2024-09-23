@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
+Age of deceased – bilingual {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +29,7 @@ Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="age-range" method="post">
+        <form class="form" action="check-record-details" method="post">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="age-hint">
@@ -41,20 +41,20 @@ Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket" name="age-bracket" type="radio" value="less-than-24-hours" {{ checked("age-bracket", "less-than-24-hours") }} data-aria-controls="conditional-contact">
-                  <label class="govuk-label govuk-radios__label" for="contact">
+                  <input class="govuk-radios__input" id="bilingual-1" name="bilingual" type="radio" value="English" {{ checked("bilingual", "English") }} >
+                  <label class="govuk-label govuk-radios__label"  for="bilingual-1">
                     No, it’s in English only
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-2" name="age-bracket" type="radio" value="1-27-days" {{ checked("age-bracket", "1-27-days") }} data-aria-controls="conditional-contact-2">
-                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                  <input class="govuk-radios__input" id="bilingual-2" name="bilingual" type="radio" value="Welsh and English" {{ checked("bilingual", "Welsh and English") }} >
+                  <label class="govuk-label govuk-radios__label"  for="bilingual-2">
                     Yes, it’s in Welsh and English
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-3" name="age-bracket" type="radio" value="28-days-15-years" {{ checked("age-bracket", "28-days-15-years") }} data-aria-controls="conditional-contact-3">
-                  <label class="govuk-label govuk-radios__label" for="contact-3">
+                  <input class="govuk-radios__input" id="bilingual-3" name="bilingual" type="radio" value="I don't know yet" {{ checked("bilingual", "I don't know yet") }} >
+                  <label class="govuk-label govuk-radios__label" id="bilingual-3-label" for="bilingual-3">
                     I don’t know yet
                   </label>
                 </div> 
@@ -66,8 +66,7 @@ Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
           
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Continue",
-              href: "/bilingular/round1/task1/create-new-record/check-record-details"
+              text: "Continue"
             }) }}
           </div>
 
