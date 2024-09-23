@@ -1,0 +1,277 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            Cause of death 
+          </h1>
+
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+            <h2 class="govuk-heading-m">
+              Side 1
+            </h2>
+
+            <h2 class="govuk-heading-s">Cause of death - in infant</h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+
+                {{ govukTextarea({
+                  name: "CauseOfDeath-a",
+                  value: data['CauseOfDeath-a'] or "Immaturity related condition",
+                  id: "CauseOfDeath-a",
+                  label: {
+                    text: "(a) Main disease or conditions in infant (required)",
+                    classes: "govuk-label--xs",
+                    isPageHeading: true
+                  }
+                }) }}
+
+                  <p class="govuk-body">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">(b). Add another disease or condition in infant </a>
+                  </p>
+
+                  <h2 class="govuk-heading-s">Cause of death - maternal diseases or conditions </h2>
+                  
+                  {{ govukTextarea({
+                    name: "CauseOfDeath-c",
+                    value: data['CauseOfDeath-c'] or "None ",
+                    id: "CauseOfDeath-c",
+                    label: {
+                      text: "(c) Maternal disease or condition affecting infant",
+                      classes: "govuk-label--xs",
+                      isPageHeading: true
+                    }
+                  }) }}
+
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(d). Add other maternal diseases or conditions affecting infant</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">(e). Add other relevant causes</a>
+                  </p>
+                  
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Ethnicity (required)
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant" name="ethnicity" type="radio" value="white" checked="checked" {{ checked("ethnicity", "white") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant">
+                      White
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-mixed" name="ethnicity" type="radio" value="mixed" {{ checked("ethnicity", "mixed") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-mixed-label" for="ethnicity-mixed">
+                      Mixed or multiple ethnic groups
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-asian" name="ethnicity" type="radio" value="asian" {{ checked("ethnicity", "asian") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-asian-label" for="ethnicity-asian">
+                      Asian or Asian British
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-black" name="ethnicity" type="radio" value="black" {{ checked("ethnicity", "black") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-black-label" for="ethnicity-black">
+                      Black, Black British, Caribbean or African
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-other" name="ethnicity" type="radio" value="other" {{ checked("ethnicity", "other") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-other-label" for="ethnicity-other">
+                      Other ethnic group
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-not-known" name="ethnicity" type="radio" value="not-known" {{ checked("ethnicity", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-not-known-label" for="ethnicity-not-known">
+                      Not known
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>  
+          
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Did the deceased have any hazardous implants? (required)
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="yes" {{ checked("hazardous-implant", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-yes">
+                      Yes
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" checked="checked" {{ checked("hazardous-implant", "no") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-no">
+                      No
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-not-known">
+                      Not known
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Might the attending practitioner apply to give further information later (box B)? (required)
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" checked="checked" {{ checked("FurtherInformation", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
+                      No
+                    </label>  
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="" aria-required="false">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Attending practitioner details
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" id="AttendPract" for="AttendPract">
+                Full name and qualifications (required)
+              </label> 
+              <input class="govuk-input govuk-!-width-two-thirds" id="AttendPract" name="AttendPract" type="text" aria-required="false" value="{{data['AttendPract'] or "Adam David MD "}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" id="AttendPractGMCNumber" for="AttendPractGMCNumber">
+                GMC number (required)
+              </label> 
+              <input class="govuk-input govuk-!-width-two-thirds" id="AttendPractGMCNumber" name="AttendPractGMCNumber" type="text" aria-required="false" value="{{data['AttendPractGMCNumber'] or "1604200 "}}">
+            </div>
+          </fieldset>
+        </div> 
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Medical examiner details
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminer" for="MedExaminer">
+                    Full name and qualifications (required)
+                  </label> 
+                  <input class="govuk-input govuk-!-width-two-thirds" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or "Dianne Nguyen MD"}}">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
+                    GMC number (required)
+                  </label> 
+                  <input class="govuk-input govuk-!-width-two-thirds" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or "2715311"}}">
+                </div>
+              </fieldset>
+        </div> 
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Authorisation date (required)
+                </legend>
+                <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
+                  For example, 27 3 2024
+                </div>
+                <div class="govuk-date-input" id="Date-medical-certificate-signed">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "20"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "05"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+              
+        <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" formaction="informant-details" data-module="govuk-button">
+                Save and continue
+              </button>
+             
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and return
+              </button>
+        </div>
+          </form>
+      </div>
+    
+    </main>
+  </div>
+
+{% endblock %}

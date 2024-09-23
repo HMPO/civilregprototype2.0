@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Record information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Registration notes
+          </h1>
+  
+          <form class="form" action="../task-list" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="coverSheetPriority-hint" id="coverSheetPriority-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Is this registration urgent? 
+                </legend>
+                <div id="coverSheetPriority-hint" class="govuk-hint">
+                  For example, for faith deaths
+                </div>
+                <div class="govuk-radios govuk-radios">   
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="coverSheetPriority-true" name="coverSheetPriority" type="radio" value="true" {{ checked("coverSheetPriority", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="coverSheetPriority-true-label" for="coverSheetPriority-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" value="false" {{ checked("coverSheetPriority", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="coverSheetPriority-false-label" for="coverSheetPriority-false">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            {{ govukTextarea({
+              name: "notes",
+              value: data['notes'],
+              id: "notes",
+              label: {
+                text: "Notes",
+                classes: "govuk-label--s",
+                isPageHeading: true
+              }
+            }) }}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and return"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
