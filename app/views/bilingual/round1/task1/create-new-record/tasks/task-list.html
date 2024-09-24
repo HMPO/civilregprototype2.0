@@ -57,9 +57,22 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
+
+            {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/cause-of-death.html" aria-describedby="">
+              Cause of death
+            </a>
+
+            {% else %}
+
             <a class="govuk-link govuk-task-list__link" href="english/cause-of-death.html" aria-describedby="">
               Cause of death
             </a>
+
+            {% endif %}
+
+
           </div>
           
           {% if (data['inquestDate'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
@@ -88,9 +101,20 @@
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="english/personal-details.html" aria-describedby="">
+
+            {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/personal-details.html" aria-describedby="">
              Personal details
             </a>
+
+            {% else %}
+         
+          <a class="govuk-link govuk-task-list__link" href="english/personal-details.html" aria-describedby="">
+            Personal details
+           </a>
+
+           {% endif %}
           </div>
 
           {% if (data['deceasedLastName'] and data ['capitalise'] and data['name-order'])%}
@@ -113,7 +137,7 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="english/place-of-death.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="">
               Place of death
             </a>
           </div>
