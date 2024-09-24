@@ -36,7 +36,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
           <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
 
-            <h2 class="govuk-heading-s">Cause of death</h2>
+            <h2 class="govuk-heading-s">Cause of death | Achos marwolaeth</h2>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
@@ -70,9 +70,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
                   <select class="govuk-select" id="sort" name="sort">
                     <option value="published" selected>Choose time unit</option>
+                    <option value="updated">Minutes</option>
+                    <option value="views">Hours</option>
+                    <option value="comments">Days</option>
                     <option value="updated">Weeks</option>
                     <option value="views">Months</option>
                     <option value="comments">Years</option>
+                    <option value="comments">Not stated</option>
                   </select>
                 </div>
 
@@ -266,14 +270,21 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label" id="MedExaminer" for="MedExaminer">
                     Full name and qualifications 
                   </label> 
-                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or "Dianne Nguyen MD"}}">
+                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer']}}">
                 </div>
 
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminer-welsh" for="MedExaminer-welsh">
+                    Enw llawn a chymwysterau
+                  </label> 
+                  <input class="govuk-input" id="MedExaminer-welsh" name="MedExaminer-welsh" type="text" aria-required="false" value="{{data['MedExaminer-welsh']}}">
+                </div>
+                
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
                     GMC number 
                   </label> 
-                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or "2715311"}}">
+                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber']}}">
                 </div>
               </fieldset>
         </div> 
@@ -292,7 +303,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "20"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] }}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -300,7 +311,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "05"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] }}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -308,7 +319,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] }}">
                     </div>
                   </div>
                 </div>
