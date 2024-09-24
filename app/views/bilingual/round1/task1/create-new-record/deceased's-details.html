@@ -67,7 +67,7 @@ Create record - Deceased's details – {{ serviceName }} – GOV.UK Prototype Ki
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="yes" {{ checked("date-of-death-known", "yes") }} data-aria-controls="conditional-date-of-death-known-1">
+                  <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their full or partial date of death" {{ checked("date-of-death-known", "Yes, their full or partial date of death") }} data-aria-controls="conditional-date-of-death-known-1">
                   <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
                     Yes, their full or partial date of death
                   </label>
@@ -101,14 +101,14 @@ Create record - Deceased's details – {{ serviceName }} – GOV.UK Prototype Ki
                       </fieldset>
                     </div>
                     <div class="govuk-form-group">
-                     <fieldset class="govuk-fieldset" role="group"  id="date-of-death1-fieldset" aria-describedby="date-of-death1">
+                     <fieldset class="govuk-fieldset" role="group"  id="date-of-death-fieldset" aria-describedby="date-of-death1">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                       Enter the date of death
                       </legend>
-                      <div id="date-medical-certificate-hint" class="govuk-hint">
+                      <div id="date-of-death1-hint" class="govuk-hint">
                         For example, 12 11 2024
                       </div>
-                      <div class="govuk-date-input" id="date-medical-certificate">
+                      <div class="govuk-date-input" id="date-of-death1">
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
                             <label class="govuk-label govuk-date-input__label" for="day-of-death">
@@ -138,7 +138,7 @@ Create record - Deceased's details – {{ serviceName }} – GOV.UK Prototype Ki
                     </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="date-of-death-known-2" name="date-of-death-known" type="radio" value="no" {{ checked("date-of-death-known", "no") }} data-aria-controls="conditional-date-of-death-known-2">
+                  <input class="govuk-radios__input" id="date-of-death-known-2" name="date-of-death-known" type="radio" value="No, only the date when their body was found" {{ checked("date-of-death-known", "No, only the date when their body was found") }} data-aria-controls="conditional-date-of-death-known-2">
                   <label class="govuk-label govuk-radios__label" for="date-of-death-known-2">
                     No, only the date when their body was found
                   </label>
@@ -176,32 +176,32 @@ Create record - Deceased's details – {{ serviceName }} – GOV.UK Prototype Ki
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                       Enter the date the body was found on
                       </legend>
-                      <div id="date-medical-certificate-hint" class="govuk-hint">
+                      <div id="date-of-death2-hint" class="govuk-hint">
                         For example, 23 11 2024
                       </div>
-                      <div class="govuk-date-input" id="date-medical-certificate">
+                      <div class="govuk-date-input" id="date-of-death2">
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="day-of-death">
+                            <label class="govuk-label govuk-date-input__label" for="day-of-death2">
                               Day
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}" >
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death2" name="day-of-death2" value="{{data['day-of-death2']}}" >
                           </div>
                         </div>
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="month-of-death">
+                            <label class="govuk-label govuk-date-input__label" for="month-of-death2">
                               Month
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}" >
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death2" name="month-of-death2" value="{{data['month-of-death2']}}" >
                           </div>
                         </div>
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
-                            <label class="govuk-label govuk-date-input__label" for="year-of-death">
+                            <label class="govuk-label govuk-date-input__label" for="year-of-death2">
                               Year
                             </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" >
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death2" name="year-of-death2" value="{{data['year-of-death2']}}" >
                           </div>
                         </div>
                       </div>
