@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Information in this registration may change – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../tasks/task-list" method="post" novalidate>
+          <h1 class="govuk-heading-l">Information in this registration may change</h1>
+          <p class="govuk-body">Updating the record details may:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>change type of information required for the registration </li>
+            <li>remove information which is no longer needed</li>
+          </ul>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Why information might change
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Information required for each registration depends on the record details entered when the record was created.</p>
+              <p class="govuk-body">Some of the information in this registration might be removed if it’s no longer needed. You may need to enter new information.</p>
+            </div>
+          </details>
+
+      
+        <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          </form>
+          <a class="govuk-link" href="../tasks/task-list.html">Cancel</a>
+        </div>
+      </div>
+   </div> 
+
+    </main>
+</div>
+{% endblock %}
