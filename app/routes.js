@@ -24,3 +24,19 @@ router.post('*/age-range', function (req, res) {
   }
 
 })
+
+// Run this code when a form is submitted to the next page in the create record journey (bilingual)
+router.post('*/bilingual', function (req, res) {
+
+  var AgeOfDeceased = req.session.data['age-bracket']
+
+  // Check whether the variable matches a condition
+  if (AgeOfDeceased == "I do not have their age"){
+    // Send user to next page
+    res.redirect('cannot-start')
+  } else {
+
+    res.redirect('bilingual')
+  }
+
+})
