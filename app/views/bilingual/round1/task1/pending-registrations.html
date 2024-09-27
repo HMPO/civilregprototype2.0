@@ -19,7 +19,7 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper--auto-spacing">
+  <main class="govuk-main-wrapper--autospacing">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
@@ -36,7 +36,8 @@
 
         {{ govukButton({
           text: "Create new record", 
-          href: "create-new-record/medical-information"
+          href: "create-new-record/medical-information",
+          classes: "button-wide"
         }) }}
 
       </div>

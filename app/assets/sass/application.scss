@@ -27,3 +27,12 @@
   #delete-link {
     color: govuk-colour("red");
   }
+ 
+  .button-wide {
+    width: 100%;
+  }
+
+  .accented-characters-link{
+    align-items: flex-end;
+    justify-content: end;
+  }
