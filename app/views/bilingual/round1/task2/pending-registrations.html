@@ -19,7 +19,18 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper--auto-spacing">
+  <main class="govuk-main">
+
+    <div class="gro-create-new-record-container">
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Create new record", 
+        href: "create-new-record/medical-information"
+      }) }}
+
+    </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
@@ -30,17 +41,6 @@
 
       </div>
 
-      <div class="govuk-grid-column-one-quarter">
-
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        {{ govukButton({
-          text: "Create new record", 
-          href: "create-new-record/medical-information",
-          classes: "button-wide"
-        }) }}
-
-      </div>
     </div>
 
     <div class="govuk-grid-row">
