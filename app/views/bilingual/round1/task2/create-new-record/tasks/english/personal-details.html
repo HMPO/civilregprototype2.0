@@ -32,7 +32,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-grid-column-two-thirds">
   
           <h1 class="govuk-heading-l">
-            Personal details
+            Name and date of death
           </h1>
   
           <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
@@ -41,7 +41,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--s" for="deceased-first-name">
                 First name  (if available)
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or "Baby"}}">
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or ['Nicholas']}}">
             </div>
 
             <div class="govuk-form-group">
@@ -58,7 +58,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--s" for="deceased-last-name">
                 Last name
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or "Nicolaou"}}">
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or ['McDermott']}}">
             </div>
 
             <div class="govuk-form-group">
