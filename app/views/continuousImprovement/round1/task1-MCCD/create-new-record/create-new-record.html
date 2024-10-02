@@ -1,0 +1,210 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create new record – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Create new record
+        </h1>
+
+        <form class="form" action="task-list" method="post">
+          
+          <form class="form" action="age-of-deceased" method="post">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="certificate">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Confirm the source of information for this death
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="attending-practitioner" name="certificate" type="radio" value="attending-practitioner" {{ checked("certificate", "attending-practitioner") }} data-aria-controls="conditional-attending-practitioner">
+                    <label class="govuk-label govuk-radios__label" for="attending-practitioner">
+                      Attending practitioner certificate
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-attending-practitioner">
+                    <label class="govuk-label" for="AP-cert">
+                      Select type of attending practitioner certificate
+                    </label>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="a-p-standard" name="a-p" type="radio" value="a-p-standard" {{ checked("a-p", "a-p-standard") }} >
+                      <label class="govuk-label govuk-radios__label" for="a-p-standard">
+                        Standard (Form 66 APC1)
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="a-p-neonatal" name="a-p" type="radio" value="a-p-neonatal" {{ checked("a-p", "a-p-neonatal") }} >
+                      <label class="govuk-label govuk-radios__label" for="a-p-neonatal">
+                        Neonatal (Form 65 APC2)
+                      </label>
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="unique-ID"><br>
+                        Enter the certificate's unique ID
+                      </label>
+                      <div id="event-name-hint" class="govuk-hint">
+                        The unique ID is the 14 digit number on the first page of the form
+                      </div>
+                      <input class="govuk-input govuk-input--width-10" id="unique-ID" name="uniqueID" type="text">
+                    </div>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="medical-examiner" name="certificate" type="radio" value="medical-examiner" {{ checked("certificate", "medical-examiner") }} data-aria-controls="conditional-medical-examiner">
+                    <label class="govuk-label govuk-radios__label" for="medical-examiner">
+                      Medical examiner certificate
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-medical-examiner">
+                    <label class="govuk-label" for="ME-cert">
+                      Select type of medical examiner certificate
+                    </label>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="m-e-standard" name="m-e" type="radio" value="m-e-standard" {{ checked("m-e", "m-e-standard") }} >
+                      <label class="govuk-label govuk-radios__label" for="m-e-standard">
+                        Standard (Form 66 MEC4)
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="m-e-neonatal" name="m-e" type="radio" value="m-e-neonatal" {{ checked("m-e", "m-e-neonatal") }} >
+                      <label class="govuk-label govuk-radios__label" for="m-e-neonatal">
+                        Neonatal (Form 65 MEC3)
+                      </label>
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="unique-ID"><br>
+                        Enter the certificate's unique ID
+                      </label>
+                      <div id="event-name-hint" class="govuk-hint">
+                        The unique ID is the 14 digit number on the first page of the form
+                      </div>
+                      <input class="govuk-input govuk-input--width-10" id="unique-ID" name="uniqueID" type="text">
+                    </div>
+                  </div>
+  
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="CN2" name="certificate" type="radio" value="CN2" {{ checked("certificate", "CN2") }} data-aria-controls="conditional-CN2">
+                      <label class="govuk-label govuk-radios__label" for="CN2">
+                        Coroner notification 2 (CN2)
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-CN2">
+                      <label class="govuk-label" for="informant-present">
+                        Will an informant be present to register the death?
+                      </label>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cn2-informant-present" name="cn2" type="radio" value="cn2-informant-present" {{ checked("a-p", "cn2-informant-present") }} >
+                        <label class="govuk-label govuk-radios__label" for="cn2-informant-present">
+                          Yes - informant will be present
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cn2-additional-information" name="cn2" type="radio" value="cn2-additional-information" {{ checked("a-p", "cn2-additional-information") }} >
+                        <label class="govuk-label govuk-radios__label" for="cn2-additional-information">
+                          No - additional information from the coroner
+                        </label>
+                      </div> 
+                    </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="120A" name="certificate" type="radio" value="120A" {{ checked("certificate", "120A") }}>
+                    <label class="govuk-label govuk-radios__label" for="120A">
+                      Coroner's certificate after inquest adjourned (120A)
+                    </label>
+                  </div>
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="99revA" name="certificate" type="radio" value="99revA" {{ checked("certificate", "99revA") }}>
+                    <label class="govuk-label govuk-radios__label" for="99revA">
+                      Coroner's certificate after inquest (99revA)
+                    </label>
+                  </div>
+  
+                </div>
+              </fieldset>
+            </div>
+  
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="MCCDissued-hint" id="MCCDissued-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Date source of information was received 
+              </legend>
+              <div class="govuk-form-group">
+                <div id="MCCDissued-hint" class="govuk-hint">
+                  For example, 23 11 2024.
+                </div>
+                <div class="govuk-date-input" id="MCCDissued">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
+                        Day
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
+                        Month
+                      </label>  
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
+                        Year
+                      </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </fieldset>
+          </div> 
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "/continuousImprovement/round1/task1-MCCD/create-new-record/tasks/deceased's-details"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Select the registrar’s"signature-annotation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Signature details
+          </h1>
+
+          <form class="form" action="../task-list" method="post">
+
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="informant-signature">
+                Informant’s signature, as written
+              </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="informant-signature" name="informantSignature" value="{{data['informantSignature']}}" type="text">
+          </div>
+      
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Signature annotation
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="signature-annotation-registrar" name="signature-annotation" type="radio" checked="checked" value="registrar" {{checked("signature-annotation", "registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="signature-annotation">
+                      None - signature clear 
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="signature-annotation-deputy-registrar" name="signature-annotation" type="radio" value="deputy-registrar" {{checked("signature-annotation", "deputy-registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="signature-annotation-deputy-registrar">
+                      'Signature of' added
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="signature-annotation-registrar" name="signature-annotation" type="radio" value="registrar" {{checked("signature-annotation", "registrar")}}>
+                    <label class="govuk-label govuk-radios__label" for="signature-annotation">
+                      'Mark of' added
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="registrar-signature">
+                Registrar’s signature, as written
+              </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="registrar-signature" name="registrarSignature" value="{{data['registrarSignature']}}" type="text">
+            </div>
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and return"
+              }) }}
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
