@@ -81,13 +81,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="CODformat" name="CODformat" type="radio" checked="checked" value="Yes" {{checked( "CODformat", "Yes" )}}>
+                    <input class="govuk-radios__input" id="CODformat" name="CODformat" type="radio" checked="checked" value="Yes">
                     <label class="govuk-label govuk-radios__label" id="CODformat-Yes-label" for="CODformat-Yes">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="CODformat-2" name="CODformat" type="radio" value="No" {{checked( "CODformat", "No" )}}>
+                    <input class="govuk-radios__input" id="CODformat-2" name="CODformat" type="radio" value="No" checked="checked">
                     <label class="govuk-label govuk-radios__label" id="CODformat-No-label" for="CODformat-No">
                       No
                     </label>
@@ -178,8 +178,8 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               <p class="govuk-body-m">
                 Enter cause of death
                   </p>
-              <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
-              <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+              <textarea class="govuk-textarea govuk-js-character-count" id="with-hint2" name="withHint" rows="5" aria-describedby="with-hint2-info with-hint2-hint"></textarea>
+              <div id="with-hint2-info" class="govuk-hint govuk-character-count__message">
                 You can enter up to 879 characters
               </div>
             </div>
@@ -191,7 +191,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               };
 
               var container = document.getElementById('CODformatContainer');
-                  container.innerHTML = Yes;
+                  container.innerHTML = No;
   
               document.querySelectorAll('input[name="CODformat"]').forEach((element) => {
                 element.addEventListener("change", (event) => {
@@ -233,6 +233,8 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   narrativeVerdictDiv.innerHTML = shownNarrativeVerdict;
                   addNarrativeVerdictLink.style.display = 'none';
                   document.getElementById('removeNarrativeVerdict').addEventListener('click', toggleNarrativeVerdict);
+                        var newTextarea = document.getElementById('conclusion');
+      new GOVUKFrontend.CharacterCount(newTextarea).init();
                 } else if (event.target.id === 'removeNarrativeVerdict') {
                   narrativeVerdictDiv.innerHTML = '';
                   addNarrativeVerdictLink.style.display = 'block';
@@ -242,6 +244,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               document.getElementById('addNarrativeVerdict').addEventListener('click', toggleNarrativeVerdict);
             </script>
             {% endraw %}
+
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="age-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
