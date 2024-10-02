@@ -1,0 +1,299 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back to create record",
+  href: "create-new-record.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
+
+    <h2 class="govuk-heading-l">Supporting information</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/record-information.html" aria-describedby="">
+            Registration notes
+          </a>
+        </div>
+      </li>
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/uploads.html" aria-describedby="">
+            Upload documents
+          </a>
+        </div>
+      </li>
+    </ul>
+    
+    <br>
+
+    <h2 class="govuk-heading-l">Registration</h2>
+
+    <h2 class="govuk-heading-m">Source of information</h2>
+
+    <ul class="govuk-task-list">
+      
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/cause-of-death.html" aria-describedby="">
+            Cause of death
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Deceased’s details</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/name-and-date-of-death-2.html" aria-describedby="">
+            Name and date of death
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+      
+      </li>
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/place-of-death-2.html" aria-describedby="">
+            Place of death
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>
+
+      </li>
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/personal-details.html" aria-describedby="">
+            Personal details
+          </a>
+        </div>
+
+        {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'])%}
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+        {% else %}
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>
+
+        {% endif %}
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/relationship-details.html" aria-describedby="">
+            Relationship details
+          </a>
+        </div>
+
+        {% if (data['relationship'])%}
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+        {% else %}
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>
+
+        {% endif %}
+
+      </li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m">Coroner's details</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/coroner-details.html" aria-describedby="">
+            Coroner's details
+          </a>
+        </div>
+
+        {% if (data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'])%}
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+        {% else %}
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </div>
+
+        {% endif %}
+
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Submit the registration</h2>
+
+    <ul class="govuk-task-list">
+     
+       <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+        {% if (data['designation'])%}
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+            Register page
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+        {% elif (data['inquestDate'] and data['conclusion'] and data['postMortemHeld'] and data['pregnant'] and 
+        data['Ethnicity'] and
+        data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
+        data['place-of-death'] and 
+        data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'] and 
+        data['relationship'] and 
+        data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea']) %}
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/register-page.html" aria-describedby="">
+            Register page
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete 
+          </strong>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-task-list__name-and-hint">
+          Register page
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--grey">
+            Cannot start yet
+          </strong>
+        </div>
+
+        {% endif %}
+
+      </li>
+
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+        {% if (data['registrarSignature'])%}
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/signature-details.html" aria-describedby="">
+            Signature details
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          Completed
+        </div>
+
+        {% elif (data['designation']) %}
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="tasks/signature-details.html" aria-describedby="">
+            Signature details
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete 
+          </strong>
+        </div>
+
+        {% else %}
+
+        <div class="govuk-task-list__name-and-hint">
+          Signature details
+        </div>
+
+        <div class="govuk-task-list__status" id="">
+          <strong class="govuk-tag govuk-tag--grey">
+            Cannot start yet
+          </strong>
+        </div>
+
+        {% endif %}
+
+      </li>
+    </ul>
+
+
+    <div class="govuk-button-group govuk-!-padding-top-9">
+      {{ govukButton
+        ({ 
+        text: "Complete registration", 
+        href: "send-to-RON.html" }) }}
+
+        <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Delete the record 
+        </button>
+
+       
+    </div>     
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Place of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">
+            Place of death
+          </h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Place deceased was found dead 
+              </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Flat number or name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                Building name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-3">
+                Building number
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-4">
+                Street address line 1
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
+            </div>
+             <div class="govuk-form-group">
+              <label class="govuk-label" for="address-town">
+                Street address line 2
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Street address line 3
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Street address line 4
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                County
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+            </div>
+          </fieldset>
+
+            <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+            </p>
+              
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s govuk-!-margin-top-7" for="width-20"></p>
+                  Any other available address details
+               </label>
+               <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+              </div>
+              <br>
+
+          </div>
+          
+        
+        
+           
+            
+
+
+
+
+           
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Save and continue",
+                href: "/continuousImprovement/round1/task2-99revA/create-new-record/task-list-2"
+              }) }} 
+            </div>
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
