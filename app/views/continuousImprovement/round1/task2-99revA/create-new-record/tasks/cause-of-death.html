@@ -24,9 +24,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-width-container">
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-  
-  
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
@@ -245,7 +242,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               document.getElementById('addNarrativeVerdict').addEventListener('click', toggleNarrativeVerdict);
             </script>
             {% endraw %}
-
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="age-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -336,26 +332,18 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       </div>
                     </div>
                   </fieldset>
-                </div>  
-                  
+                </div>   
               </fieldset>
-
-
               <div class="govuk-button-group">
                 {{ govukButton({
                   text: "Save and continue",
                   href: "/continuousImprovement/round1/task2-99revA/create-new-record/tasks/cause-of-death-LCOD"
                 }) }} 
               </div>
-              
             </div>
-  
           </form>
-  
         </div>
       </div>
-  
-      </main>
   </div>
 
 {% endblock %}
