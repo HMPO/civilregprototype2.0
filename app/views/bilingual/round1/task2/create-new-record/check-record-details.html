@@ -38,12 +38,12 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                 Source of information  
               </dt>
               <dd class="govuk-summary-list__value">
-                <p>{{ data["certificate"] }}</p>
-                <p>{{ data["certificate-type"] }}</p>
-                <p>{{ data["certificateID-ME"] }}</p>
+                <p>{{ data["certificate"] or ['Medical examiner certificate']}}</p>
+                <p>{{ data["certificate-type"] or ['Standard (Form 66 MEC4)']}}</p>
+                <p>{{ data["certificateID-ME"] or ['123456789']}}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="medical-information-change.html">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="change-record/medical-information.html">Change<span class="govuk-visually-hidden"> name</span></a>
               </dd>
             </div>
 
@@ -52,10 +52,10 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                       Date source of information received
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      <p>{{ data['MCCDissued-day'] }} {{ data['MCCDissued-month'] }} {{ data['MCCDissued-year'] }}</p>
+                      <p>{{ data['MCCDissued-day'] }} {{ data['MCCDissued-month'] }} {{ data['MCCDissued-year'] or ['03 10 2024'] }}</p>
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="medical-information-change.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                      <a class="govuk-link" href="change-record/medical-information.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                     </dd>
             </div>
 
@@ -64,10 +64,10 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                 Age               
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['age-bracket'] }}</p>
+                <p class="govuk-body">{{ data['age-bracket'] or ['16 years to 74 years'] }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="age-of-deceased-change.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="change-record/age-of-deceased.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -75,10 +75,10 @@ Create record - Check record details – {{ serviceName }} – GOV.UK Prototype 
                 Registration language         
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['bilingual'] }}</p>
+                <p class="govuk-body">{{ data['bilingual'] or ['I don’t know yet'] }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="change-record/bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
               </dd>
             </div>
             

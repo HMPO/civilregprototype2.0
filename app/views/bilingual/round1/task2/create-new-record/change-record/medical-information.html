@@ -46,7 +46,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="certificate-1" name="certificate" type="radio" value="Attending practitioner" {{ checked("certificate", "Attending practitioner") }} data-aria-controls="conditional-attending-practitioner">
+                  <input class="govuk-radios__input" id="certificate-1" name="certificate" type="radio" value="Attending practitioner certificate" {{ checked("certificate", "Attending practitioner certificate") }} data-aria-controls="conditional-attending-practitioner">
                   <label class="govuk-label govuk-radios__label" for="certificate-1">
                     Attending practitioner certificate
                   </label>
@@ -79,7 +79,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="certificate-2" name="certificate" type="radio" value="Medical examiner" {{ checked("certificate", "Medical examiner") }} data-aria-controls="conditional-medical-examiner">
+                  <input class="govuk-radios__input" id="certificate-2" name="certificate" type="radio" value="Medical examiner certificate" checked {{ checked("certificate", "Medical examiner certificate") }} data-aria-controls="conditional-medical-examiner">
                   <label class="govuk-label govuk-radios__label" for="certificate-2">
                     Medical examiner certificate
                   </label>
@@ -89,7 +89,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                     Select type of medical examiner certificate
                   </label>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="m-e-standard" name="certificate-type" type="radio" value="Standard (Form 66 MEC4)" {{ checked("certificate-type", "Standard (Form 66 MEC4)") }} >
+                    <input class="govuk-radios__input" id="m-e-standard" name="certificate-type" type="radio" value="Standard (Form 66 MEC4)"  checked {{ checked("certificate-type", "Standard (Form 66 MEC4)") }} >
                     <label class="govuk-label govuk-radios__label" for="m-e-standard">
                       Standard (Form 66 MEC4)
                     </label>
@@ -107,7 +107,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                     <div id="event-name-hint" class="govuk-hint">
                       The certificate ID is the 14 digit number on the first page of the form
                     </div>
-                    <input class="govuk-input govuk-input--width-10" id="certificateID-ME" name="certificateID-ME" type="text" value="{{data['certificateID-ME']}}">
+                    <input class="govuk-input govuk-input--width-10" id="certificateID-ME" name="certificateID-ME" type="text" value="{{data['certificateID-ME'] or ['123456789']}}">
                   </div>
                 </div>
 
@@ -169,7 +169,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       <label class="govuk-label govuk-date-input__label" for="MCCDissued-day">
                         Day
                       </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-day" name="MCCDissued-day" value="{{data['MCCDissued-day'] or ['03']}}"  type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -177,7 +177,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       <label class="govuk-label govuk-date-input__label" for="MCCDissued-month">
                         Month
                       </label>  
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="MCCDissued-month" name="MCCDissued-month" value="{{data['MCCDissued-month'] or ['10']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -185,7 +185,7 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       <label class="govuk-label govuk-date-input__label" for="MCCDissued-year">
                         Year
                       </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="MCCDissued-year" name="MCCDissued-year" value="{{data['MCCDissued-year'] or ['2024']}}" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
                     </div>
                   </div>
                 </div>
