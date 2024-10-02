@@ -228,38 +228,82 @@ Deceased's details – {{ serviceName }} – GOV.UK Prototype Kit
               </div>
             </fieldset>
           </div>
-          
- 
-          
           <div class="govuk-button-group">
             {{ govukButton({
               text: "Continue",
               href: "/continuousImprovement/round1/task2-99revA/create-new-record/tasks/age-of-deceased"
             }) }}
           </div>
-
         </form>
-
       </div>
     </div>
-
-    </main>
+  </main>
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-       const dayInput = document.getElementById('day-of-death2');
-       const monthInput = document.getElementById('month-of-death2');
-       const yearInput = document.getElementById('year-of-death2');    
+        const dayInput = document.getElementById('day-of-death2');
+        const monthInput = document.getElementById('month-of-death2');
+        const yearInput = document.getElementById('year-of-death2');
+        const humanReadableDateInput = document.getElementById('readableDate');
+
       
       const updateHumanReadableDate = async () => {
-        const day = dayInput.value;
-        console.log(day)
+         const day = dayInput.value;
+        const month = monthInput.value;
+        const year = yearInput.value;
+
+        const humanReadableDate = formatHumanReadableDate(day, month, year);
+        humanReadableDateInput.value = humanReadableDate;
+      };
+
+      dayInput.addEventListener('input', updateHumanReadableDate);
+      monthInput.addEventListener('input', updateHumanReadableDate);
+      yearInput.addEventListener('input', updateHumanReadableDate);
+
+      });
+      
+    function formatHumanReadableDate(day, month, year) {
+      const daySuffix = day ? getDaySuffix(day) : '';
+      const monthNames = [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      const monthIndex = parseInt(month, 10) - 1;
+      const monthName = (month && monthIndex >= 0 && monthIndex < 12) ? monthNames[monthIndex] : '';
+
+      let humanReadableDate = '';
+      if (day) {
+          day = parseInt(day, 10);
+          humanReadableDate += `${day}${daySuffix}`;
       }
-      dayInput.addEventListener("change",updateHumanReadableDate)
+      if (month) {
+          month = parseInt(month, 10);
+          humanReadableDate += ` ${monthName}`;
+      }
+      if (year) {
+          humanReadableDate += ` ${year}`;
+      }
 
-      })
+      return humanReadableDate.trim();
+  }
+
+function getDaySuffix(day) {
+    if (day === 0) {
+      return '';
+    }
+    const j = day % 10;
+    const k = day % 100;
+    if (j === 1 && k != 11) {
+        return 'st';
+    }
+    if (j === 2 && k !== 12) {
+        return 'nd';
+    }
+    if (j === 3 && k !== 13) {
+        return 'rd';
+    }
+    return 'th';
+}
     </script>
-
-
 </div>
 {% endblock %}
