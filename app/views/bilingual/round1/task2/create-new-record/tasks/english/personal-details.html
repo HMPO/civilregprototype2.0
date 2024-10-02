@@ -167,7 +167,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their full or partial date of death" {{ checked("date-of-death-known", "Yes, their full or partial date of death") }} data-aria-controls="conditional-date-of-death-known-1">
+                    <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their full or partial date of death" checked {{ checked("date-of-death-known", "Yes, their full or partial date of death") }} data-aria-controls="conditional-date-of-death-known-1">
                     <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
                       Yes, their full or partial date of death
                     </label>
@@ -180,7 +180,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           </legend>
                           <div class="govuk-radios" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="qualifier-1" name="qualifier" type="radio" value="No-qualifier" {{ checked("qualifier", "No-qualifier") }} >
+                              <input class="govuk-radios__input" id="qualifier-1" name="qualifier" type="radio" value="No-qualifier" checked {{ checked("qualifier", "No-qualifier") }} >
                               <label class="govuk-label govuk-radios__label" for="qualifier-1">
                                 No qualifier
                               </label>
@@ -214,7 +214,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="day-of-death">
                               Day
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death'] or ['03']}}">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
@@ -222,7 +222,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="month-of-death">
                               Month
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death'] or ['10']}}">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
@@ -230,7 +230,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="year-of-death">
                             Year
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" >
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death'] or ['2024']}}" >
                             </div>
                           </div>
                         </div>
