@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Create new record – {{ serviceName }} – GOV.UK Prototype Kit
+Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,7 +30,7 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">
-          Select the age of deceased
+          Age of deceased
         </h1>
 
         <form class="form" action="task-list" method="post">
@@ -81,8 +81,8 @@ Create new record – {{ serviceName }} – GOV.UK Prototype Kit
           
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Continue",
-              href: "/coroners/round2/route1-AP/create-new-record/task-list"
+              text: "Create record",
+              href: "/continuousImprovement/round1/task1-MCCD/create-new-record/task-list"
             }) }} 
           </div>
 

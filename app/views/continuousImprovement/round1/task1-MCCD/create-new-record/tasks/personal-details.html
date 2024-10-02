@@ -111,12 +111,6 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   </div>
                 </div>
              
-      
-
-
-            
-
-            
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedDateOfBirth-fieldset" aria-required="false">  
@@ -261,7 +255,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 Place of birth (if available)
               </label>
               <div id="deceasedPlaceOfBirth-hint" class="govuk-hint">
-                Town and county if in UK, country if outside the UK
+                Town and county if in UK, country if outside the UK.
               </div>
               <input class="govuk-input govuk-!-width-one-half" id="deceasedPlaceOfBirth" name="deceasedPlaceOfBirth" type="text" aria-describedby="deceasedPlaceOfBirth-hint" aria-required="false" value="{{data['deceasedPlaceOfBirth']}}">
             </div>
@@ -330,6 +324,12 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                         No
                       </label>
                   </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="SpanishNational-unknown" name="SpanishNational" type="radio" value="unknown" {{ checked("SpanishNational", "unknown") }}>
+                    <label class="govuk-label govuk-radios__label" id="SpanishNational-unknown-label" for="SpanishNational-unknown">
+                      Unknown
+                    </label>
+                </div>
                 </div>
               </fieldset>
             </div>

@@ -40,7 +40,7 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="tasks/uploads.html" aria-describedby="">
-              Upload certificates and documents
+              Upload documents
             </a>
           </div>
         </li>
@@ -62,7 +62,7 @@
             </a>
           </div>
           
-          {% if (data['CauseOfDeath-a'] and data['option-medical-cert'] and
+          {% if (data['option-medical-cert'] and
           data['pregnant'] and data['EmploymentContribute-fieldset'] and data['FurtherInformation'] and data['Ethnicity'] and data['HazardousImplants'] and
           data['APNameAndQual'] and data['APGMCNumber'] and data['MENameAndQual'] and data['MENameAndQual'] and data['Date-medical-certificate-signed-month'] and
           data['Date-medical-certificate-signed-year'])%}
@@ -94,8 +94,7 @@
             </a>
           </div>
 
-          {% if (data['deceasedFirstName'] and data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
-          data['day-of-death'] and data['month-of-death'] and data['year-of-death'])%}
+          {% if (data['deceasedLastName'] and data ['capitalise'] and data['name-order'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -120,7 +119,7 @@
             </a>
           </div>
 
-          {% if (data['place-of-death'])%}
+          {% if (data['placeOfDeath'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -331,13 +330,12 @@
               Completed
             </div>
   
-            {% elif (data['CauseOfDeath-a'] and data['option-medical-cert'] and
+            {% elif (data['option-medical-cert'] and
             data['pregnant'] and data['EmploymentContribute-fieldset'] and data['FurtherInformation'] and data['Ethnicity'] and data['HazardousImplants'] and
             data['APNameAndQual'] and data['APGMCNumber'] and data['MENameAndQual'] and data['MENameAndQual'] and data['Date-medical-certificate-signed-month'] and
             data['Date-medical-certificate-signed-year']) and 
-            data['deceasedFirstName'] and data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and 
-            data['day-of-death'] and data['month-of-death'] and data['year-of-death'] and
-            data['place-of-death'] and 
+            data['deceasedLastName'] and data ['capitalise'] and data['name-order'] and
+            
             data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'] and 
             data['relationship'] and 
             data['informantLastName'] and data['informantCapitaliseLastNames'] and data['informantQualification'] and 

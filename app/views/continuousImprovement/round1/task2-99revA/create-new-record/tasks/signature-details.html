@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Relationship details – {{ serviceName }} – GOV.UK Prototype Kit
+Select the registrar’s"signature-annotation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,32 +25,24 @@ Relationship details – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-  
-  
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-  
           <h1 class="govuk-heading-l">
-            Send record to RON to complete registration
+            Signature details
           </h1>
 
-          <p class="govuk-body">
-            After you send it, you’ll need to submit this registration in RON. 
-            <br>
-            <br>
-            You’ll get the RON number.
-            <br>
-            <br>
-            You cannot return to this registration in the Digital Registration Service.
-          </p>
-          <br>
-  
-          
+          <form class="form" action="../task-list" method="post">
 
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="registrar-signature">
+                Registrar’s signature, as written
+              </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="registrar-signature" name="registrarSignature" value="{{data['registrarSignature']}}" type="text">
+            </div>
+  
             <div class="govuk-button-group">
               {{ govukButton({
-                text: "Send to RON",
-                href: "/coroners/round2/route1-AP/create-new-record/confirmation-page"
+                text: "Save and return"
               }) }}
             </div>
   

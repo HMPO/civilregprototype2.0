@@ -35,14 +35,14 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantFirstName-label" for="informantFirstName">
-                First name (if known)
+                First name (if available)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantFirstName" name="informantFirstName" type="text" aria-required="false" value="{{data['informantFirstName']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantMiddleNames-label" for="informantMiddleNames">
-               Middle names (if known)
+               Middle names (if availanle)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantMiddleNames" name="informantMiddleNames" type="text" aria-required="false" value="{{data['informantMiddleNames']}}">
             </div>
@@ -133,6 +133,36 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                   </label>
                 </div>
 
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-informantQualification-partner">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" id="informantQualificationAdditional-fieldset" aria-required="false">
+                      <legend class="govuk-fieldset__legend govuk-label--s govuk-visually-hidden">
+                        Partner
+                      </legend>
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="informantQualificationAdditional-partnerpresentatdeath" name="informantQualificationAdditional" type="radio" value="non-relative-present-at-death" {{ checked("informantQualificationAdditional", "relative-in-attendance") }}>
+                          <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-partnerpresentatdeath-label" for="informantQualificationAdditional-partnerpresentatdeath">
+                            Present at death
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="informantQualificationAdditional-partneroccupier" name="informantQualificationAdditional" type="radio" value="non-relative-occupier" {{ checked("informantQualificationAdditional", "non-relative-occupier") }}>
+                          <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-partneroccupier-label" for="informantQualificationAdditional-partneroccupier">
+                            In attendance
+                          </label> 
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="informantQualificationAdditional-partnerinmate" name="informantQualificationAdditional" type="radio" value="non-relative-inmate" {{ checked("informantQualificationAdditional", "non-relative-inmate") }}>
+                          <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-partnerinmate-label" for="informantQualificationAdditional-partnerinmate">
+                            Not present at death
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantQualification-Nonrelative" name="informantQualification" type="radio" value="non-relative" aria-controls="conditional-informantQualification-Nonrelative" aria-expanded="false" {{ checked("informantQualification", "non-relative") }}>
                   <label class="govuk-label govuk-radios__label" id="informantQualification-Nonrelative-label" for="informantQualification-Nonrelative">
@@ -152,6 +182,12 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativepresentatdeath-label" for="informantQualificationAdditional-Nonrelativepresentatdeath">
                             Present at death
                           </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeoccupier" name="informantQualificationAdditional" type="radio" value="non-relative-occupier" {{ checked("informantQualificationAdditional", "non-relative-occupier") }}>
+                          <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeoccupier-label" for="informantQualificationAdditional-Nonrelativeoccupier">
+                            Who found the body
+                          </label> 
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeoccupier" name="informantQualificationAdditional" type="radio" value="non-relative-occupier" {{ checked("informantQualificationAdditional", "non-relative-occupier") }}>
