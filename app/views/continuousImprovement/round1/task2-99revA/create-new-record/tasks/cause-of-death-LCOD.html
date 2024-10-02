@@ -24,9 +24,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
   <div class="govuk-width-container">
-    <main class="govuk-main-wrapper " id="main-content" role="main">
-  
-  
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
@@ -99,13 +96,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="CODformat" name="CODformat" type="radio" value="Yes" {{checked( "CODformat", "Yes" )}}>
+                    <input class="govuk-radios__input" id="CODformat" name="CODformat" type="radio" value="Yes"}>
                     <label class="govuk-label govuk-radios__label" id="CODformat-Yes-label" for="CODformat-Yes">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="CODformat-2" name="CODformat" type="radio" checked="checked" value="No" {{checked( "CODformat", "No" )}}>
+                    <input class="govuk-radios__input" id="CODformat-2" name="CODformat" type="radio" checked="checked" value="No" checked="checked">
                     <label class="govuk-label govuk-radios__label" id="CODformat-No-label" for="CODformat-No">
                       No
                     </label>
@@ -214,7 +211,7 @@ The deceased passed away due to complications arising from end-stage renal disea
               };
 
               var container = document.getElementById('CODformatContainer');
-                  container.innerHTML = Yes;
+                  container.innerHTML = No;
   
               document.querySelectorAll('input[name="CODformat"]').forEach((element) => {
                 element.addEventListener("change", (event) => {
@@ -371,8 +368,6 @@ The deceased passed away due to complications arising from end-stage renal disea
   
         </div>
       </div>
-  
-      </main>
   </div>
 
 {% endblock %}
