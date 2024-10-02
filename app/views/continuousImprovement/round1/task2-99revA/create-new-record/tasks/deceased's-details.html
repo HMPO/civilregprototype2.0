@@ -263,7 +263,12 @@ Deceased's details – {{ serviceName }} – GOV.UK Prototype Kit
       });
       
     function formatHumanReadableDate(day, month, year) {
-      const daySuffix = day ? getDaySuffix(day) : '';
+      const dayWords = [
+        'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth',
+        'Eleventh', 'Twelfth', 'Thirteenth', 'Fourteenth', 'Fifteenth', 'Sixteenth', 'Seventeenth', 'Eighteenth', 'Nineteenth', 'Twentieth',
+        'Twenty first', 'Twenty second', 'Twenty third', 'Twenty fourth', 'Twenty fifth', 'Twenty sixth', 'Twenty seventh', 'Twenty eighth', 'Twenty ninth', 'Thirtieth',
+        'Thirty first'
+      ];
       const monthNames = [
           'January', 'February', 'March', 'April', 'May', 'June',
           'July', 'August', 'September', 'October', 'November', 'December'
@@ -272,9 +277,11 @@ Deceased's details – {{ serviceName }} – GOV.UK Prototype Kit
       const monthName = (month && monthIndex >= 0 && monthIndex < 12) ? monthNames[monthIndex] : '';
 
       let humanReadableDate = '';
-      if (day) {
-          day = parseInt(day, 10);
-          humanReadableDate += `${day}${daySuffix}`;
+       if (day) {
+        day = parseInt(day, 10);
+        if (day > 0 && day <= 31) {
+          humanReadableDate += `${dayWords[day - 1]}`;
+        }
       }
       if (month) {
           month = parseInt(month, 10);
