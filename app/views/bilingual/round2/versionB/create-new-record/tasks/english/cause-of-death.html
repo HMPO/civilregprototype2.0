@@ -1,0 +1,484 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l">
+            Cause of death 
+          </h1>
+
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+
+            <h2 class="govuk-heading-s">Cause of death</h2>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If cause of death is above the character limit
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">Anything you enter up to the character limit will be added to the register page and sent to RON.</p>
+                <p class="govuk-body">You will need to:</p>
+                <ol>
+                  <li>Write the remaining information on the register page.</li>
+                  <li>Find and caution mark this record in RON.</li>
+                  <li>Complete the death certificate by hand or using the type and print function.</li>
+                </ol>
+              </div>
+            </details>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+
+                {{ govukTextarea({
+                  name: "CauseOfDeath-a",
+                  value: data['CauseOfDeath-a'],
+                  id: "CauseOfDeath-a",
+                  label: {
+                    text: "1(a) Disease or condition directly leading to death",
+                    classes: "govuk-label--xs",
+                    isPageHeading: true
+                  }
+                }) }}
+
+                <div class="govuk-form-group govuk-!-margin-bottom-6">
+                  <label class="govuk-label" for="sort">
+                    Time between onset and death (if provided)
+                  </label>
+                  <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+                  <select class="govuk-select" id="sort" name="sort">
+                    <option value="published" selected>Choose time unit</option>
+                    <option value="updated">Minutes</option>
+                    <option value="views">Hours</option>
+                    <option value="comments">Days</option>
+                    <option value="updated">Weeks</option>
+                    <option value="views">Months</option>
+                    <option value="comments">Years</option>
+                    <option value="comments">Not stated</option>
+                  </select>
+                </div>
+
+                  <p class="govuk-body">
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition leading to 1(a)</a>
+                  </p>
+                  <p class="govuk-body">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">2. Add other significant contributory conditions</a>
+                </p>
+                  
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="employment-contribution" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Could the deceased’s former or current employment have contributed to the death?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-contribution-yes" name="employment-contribution" type="radio" value="yes" {{ checked("employment-contribution", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" id="employment-contribution-label" for="employment-contribution-yes">
+                      Yes
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="employment-contribution-no" name="employment-contribution" type="radio" value="no" {{ checked("employment-contribution", "no") }}>
+                    <label class="govuk-label govuk-radios__label" id="employment-contribution-label" for="employment-contribution-no">
+                      No
+                    </label>
+                  </div> 
+              </fieldset>
+          </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Ethnicity
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-white" name="ethnicity" type="radio" value="white" {{ checked("ethnicity", "white") }} data-aria-controls="conditional-ethnicity-white">
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-white-label" for="ethnicity-white">
+                      White
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-white">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                              English, Welsh, Scottish, Northern Irish or British
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                              Irish
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                              Gypsy or Irish Traveller
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                              Any other White background
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-mixed" name="ethnicity" type="radio" value="mixed" {{ checked("ethnicity", "mixed") }} data-aria-controls="conditional-ethnicity-mixed">
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-mixed-label" for="ethnicity-mixed">
+                      Mixed or multiple ethnic groups
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-mixed">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                              White and Black Caribbean
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                              White and Black African
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                              White and Asian
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                              Any other Mixed or multiple ethnic background
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-asian" name="ethnicity" type="radio" value="asian" {{ checked("ethnicity", "asian") }} data-aria-controls="conditional-ethnicity-asian">
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-asian-label" for="ethnicity-asian">
+                      Asian or Asian British
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-asian">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                              Indian
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                              Pakistani
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                              Bangladeshi
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                              Chinese
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-5" name="whereDoYouLive" type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-5">
+                              Any other Asian background
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-black" name="ethnicity" type="radio" value="black" {{ checked("ethnicity", "black") }} data-aria-controls="conditional-ethnicity-black">
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-black-label" for="ethnicity-black">
+                      Black, Black British, Caribbean or African
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-black">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                              Caribbean
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                              African
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                              Any other Black, Black British, or Caribbean background
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-other" name="ethnicity" type="radio" value="other" {{ checked("ethnicity", "other") }} data-aria-controls="conditional-ethnicity-other">
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-other-label" for="ethnicity-other">
+                      Other ethnic group
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-other">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                              Arab
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                              Any other ethnic group
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="ethnicity-not-known" name="ethnicity" type="radio" value="not-known" {{ checked("ethnicity", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="ethnicity-not-known-label" for="ethnicity-not-known">
+                      Not known
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+            </div>  
+          
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="hazardous-implant" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Did the deceased have any hazardous implants?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="yes" {{ checked("hazardous-implant", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-yes">
+                      Yes
+                    </label>      
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" {{ checked("hazardous-implant", "no") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-no">
+                      No
+                    </label>
+                  </div> 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-not-known">
+                      Not known
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="pregnancy" aria-required="false">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Was the deceased pregnant  in the year before their death?
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios" value="">  
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-applicable" name="pregnancy" type="radio" value="white" {{ checked("pregnancy", "white") }}>
+                <label class="govuk-label govuk-radios__label" id="not-applicable-label" for="not-applicable">
+                  Not applicable
+                </label>      
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-pregnant" name="pregnancy" type="radio" value="not-pregnant" {{ checked("pregnancy", "not-pregnant") }}>
+                <label class="govuk-label govuk-radios__label" id="not-pregnant-label" for="not-pregnant">
+                  Not pregnant
+                </label>
+              </div> 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="at-the-time" name="pregnancy" type="radio" value="at-the-time" {{ checked("pregnancy", "at-the-time") }}>
+                <label class="govuk-label govuk-radios__label" id="at-the-time-label" for="at-the-time">
+                  Pregnant at the time of death
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="1-42-days" name="pregnancy" type="radio" value="1-42-days" {{ checked("pregnancy", "1-42-days") }}>
+                <label class="govuk-label govuk-radios__label" id="1-42-days-label" for="1-42-days">
+                  Pregnant 1-42 days before death
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="43-year" name="pregnancy" type="radio" value="43-year" {{ checked("pregnancy", "43-year") }}>
+                <label class="govuk-label govuk-radios__label" id="43-year-label" for="43-year">
+                  Pregnant 43 days to a year before death
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-known" name="pregnancy" type="radio" value="not-known" {{ checked("pregnancy", "not-known") }}>
+                <label class="govuk-label govuk-radios__label" id="not-known-label" for="not-known">
+                  Not known
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>  
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Might additional information about the cause of death be available later?
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" checked="checked" {{ checked("FurtherInformation", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
+                      No
+                    </label>  
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Medical examiner details
+                </legend>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminer" for="MedExaminer">
+                    Full name and qualifications 
+                  </label> 
+                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or "Dianne Nguyen MD"}}">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
+                    GMC number 
+                  </label> 
+                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or "2715311"}}">
+                </div>
+              </fieldset>
+        </div> 
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date signed by medical examiner
+                </legend>
+                <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
+                  For example, 27 3 2024
+                </div>
+                <div class="govuk-date-input" id="Date-medical-certificate-signed">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "20"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "05"}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
+              
+        <div class="govuk-button-group">
+              <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+                Save and return
+              </button>
+        </div>
+        </form>
+      </div>
+    
+    </main>
+  </div>
+
+{% endblock %}

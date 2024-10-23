@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Age of deceased – Bilingular {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="change-record-details" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="age-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <span class="govuk-caption-l">Add record details</span>
+                  <h1 class="govuk-heading-l">
+                    Is this a bilingual registration?
+                  </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="bilingual-1" name="bilingual" type="radio" value="English" {{ checked("bilingual", "English") }} >
+                  <label class="govuk-label govuk-radios__label"  for="bilingual-1">
+                    No (English only)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="bilingual-2" name="bilingual" type="radio" value="Welsh and English" {{ checked("bilingual", "Welsh and English") }} >
+                  <label class="govuk-label govuk-radios__label"  for="bilingual-2">
+                    Yes (Welsh and English)
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="bilingual-3" name="bilingual" type="radio" value="I don't know yet" {{ checked("bilingual", "I don't know yet") }} >
+                  <label class="govuk-label govuk-radios__label" id="bilingual-3-label" for="bilingual-3">
+                    I don’t know yet
+                  </label>
+                </div> 
+              </div>
+            </fieldset>
+          </div>
+          
+
+          
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}
