@@ -88,14 +88,89 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </select>
                 </div>
 
-                  <p class="govuk-body">
-                      <a href="#" class="govuk-link govuk-link--no-visited-state">1(b). Add another disease or condition leading to 1(a)</a>
-                  </p>
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">2. Add other significant contributory conditions</a>
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">1(b). Add another disease or condition leading to 1(a)</a>
                 </p>
+                <div id="Another"></div>
+                
+                {% raw %}
+                <script>
+                var shownAnother = `
+                    <div class="govuk-form-group">
+                      <div class="horizontal-wrapper">
+                      <label class="govuk-label" for="causeOfdeath1b">
+                        1(b). Another disease or condition leading to 1(a)
+                      </label>
+                      <p class="govuk-body govuk-!-margin-bottom-1">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeAnother">Remove</a>
+                      </p>
+                      </div> 
+                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeOfdeath1b" name="causeOfdeath1b" value="{{data['causeOfdeath1b']}}" rows="5"></textarea>
+                    </div>`;
+            
+                    function toggleAnother(event) {
+                      event.preventDefault();
+                      var AnotherDiv = document.getElementById('Another');
+                      var addAnotherLink = document.getElementById('addAnother');
+                      if (event.target.id === 'addAnother') {
+                        AnotherDiv.innerHTML = shownAnother;
+                        addAnotherLink.style.display = 'none';
+                        document.getElementById('removeAnother').addEventListener('click', toggleAnother);
+                              var newTextarea = document.getElementById('causeOfdeath1b');
+                              new GOVUKFrontend.CharacterCount(newTextarea).init();
+                      } else if (event.target.id === 'removeAnother') {
+                        AnotherDiv.innerHTML = '';
+                        addAnotherLink.style.display = 'block';
+                      }
+                    }
                   
-              </fieldset>
+                    document.getElementById('addAnother').addEventListener('click', toggleAnother);
+                  </script>
+                  {% endraw %}
+
+            <p class="govuk-body">
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">2. Add other significant contributory conditions</a>
+            </p>
+
+            <div id="Other"></div>
+                
+            {% raw %}
+                <script>
+                var shownOther = `
+                    <div class="govuk-form-group">
+                      <div class="horizontal-wrapper">
+                      <label class="govuk-label" for="causeOfdeath2">
+                        2. Other significant contributory conditions
+                      </label>
+                      <p class="govuk-body govuk-!-margin-bottom-1">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeOther">Remove</a>
+                      </p>
+                      </div> 
+                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeOfdeath2" name="causeOfdeath2" value="{{data['causeOfdeath2']}}" rows="5"></textarea>
+                    </div>`;
+            
+                    function toggleOther(event) {
+                      event.preventDefault();
+                      var OtherDiv = document.getElementById('Other');
+                      var addOtherLink = document.getElementById('addOther');
+                      if (event.target.id === 'addOther') {
+                        OtherDiv.innerHTML = shownOther;
+                        addOtherLink.style.display = 'none';
+                        document.getElementById('removeOther').addEventListener('click', toggleOther);
+                              var newTextarea = document.getElementById('causeOfdeath2');
+                              new GOVUKFrontend.CharacterCount(newTextarea).init();
+                      } else if (event.target.id === 'removeOther') {
+                        OtherDiv.innerHTML = '';
+                        addOtherLink.style.display = 'block';
+                      }
+                    }
+                  
+                    document.getElementById('addOther').addEventListener('click', toggleOther);
+                  </script>
+                  {% endraw %}
+            
+                  
+            </fieldset>
             </div>
 
             <div class="govuk-form-group">
