@@ -86,10 +86,26 @@ Check record details – {{ serviceName }} – GOV.UK Prototype Kit
             
           </dl>
 
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Changing the record type may: 
+              <ul>
+                <li>
+                  change type of information required for the registration 
+                </li>
+                <li>
+                  remove questions and information which are no longer needed for registration
+                </li>
+              </ul>
+            </strong>
+          </div>
+
           <form action="../tasks/task-list" method="post" novalidate>
             <input type="hidden" name="answers-checked" value="true">
             <button type="submit" class="govuk-button" data-module="govuk-button">
-              Open record
+              Save changes
             </button>
           </form>
       </div>

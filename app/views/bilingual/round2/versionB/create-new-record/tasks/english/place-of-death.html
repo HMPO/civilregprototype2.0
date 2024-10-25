@@ -41,7 +41,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communal-establishmentq") }}>
+                    <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communal-establishment") }}>
                     <label class="govuk-label govuk-radios__label" for="communal-establishment">
                       Communal establishment
                     </label>
@@ -102,8 +102,8 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
             {% raw %}
             <script>
               var communalEstablishment = `
-                  <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
+                <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Enter place of death
                 </legend>
@@ -111,8 +111,31 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
                     Search by communal establishment name
                   </label>
+                  
                   <input class="govuk-input govuk-!-width-full" id="MCCDAddressLine1" name="MCCDAddressLine1" type="text" aria-required="false" value="">
                 </div>
+
+                <select class="govuk-select" name="choose-country" id="choose-country">
+
+                <option value="territory:AE-AZ">Abu Dhabi</option>
+
+                <option value="country:AF">Afghanistan</option>
+
+                <option value="territory:AE-AJ">Ajman</option>
+
+                <option value="territory:XQZ">Akrotiri</option>
+
+                <option value="country:AL">Albania</option>
+
+                <option value="country:ZM">Zambia</option>
+
+                <option value="country:ZW">Zimbabwe</option>
+
+                <option value="territory:AX">Åland Islands</option>
+
+              </select>
+
+
                 
                 <p class="govuk-body">
                   <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
@@ -369,6 +392,26 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
               });
             </script>
             {% endraw %}
+
+            <select class="govuk-select" name="choose-country" id="choose-country">
+
+              <option value="territory:AE-AZ">Abu Dhabi</option>
+
+              <option value="country:AF">Afghanistan</option>
+
+              <option value="territory:AE-AJ">Ajman</option>
+
+              <option value="territory:XQZ">Akrotiri</option>
+
+              <option value="country:AL">Albania</option>
+
+              <option value="country:ZM">Zambia</option>
+
+              <option value="country:ZW">Zimbabwe</option>
+
+              <option value="territory:AX">Åland Islands</option>
+
+            </select>
 
             <div class="govuk-button-group">
               {{ govukButton({
