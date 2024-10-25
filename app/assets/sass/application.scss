@@ -37,3 +37,9 @@
     align-items: flex-end;
     justify-content: end;
   }
+
+  .autocomplete__wrapper * {
+
+    @include govuk-typography-common();
+  
+  }
