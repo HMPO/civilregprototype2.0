@@ -61,12 +61,27 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"></tr>
-              <td class="govuk-table__cell"><a href="create-new-record/change-record/change-record-details.html" class="govuk-link">McDermott, Nicholas</a></td>
-              <td class="govuk-table__cell">03/10/2024</td>
-              <td class="govuk-table__cell">03/10/2024</td>
+              <td class="govuk-table__cell"><a href="create-new-record/change-record/change-record-details.html" class="govuk-link">{{data['deceasedFirstName']}} {{data['deceasedMiddleName']}} {{data['deceasedLastName']}}</a></td>
+              <td class="govuk-table__cell">{{data['day-of-death']}}/{{data['month-of-death']}}/{{data['year-of-death']}}</td>
+              <td class="govuk-table__cell">{{data['MCCDissued-day']}}/{{data['MCCDissued-month']}}/{{data['MCCDissued-year']}}</td>
               <td class="govuk-table__cell"></td>
-              <td class="govuk-table__cell">No</td>
-              <td class="govuk-table__cell">Not known</td>
+              <td class="govuk-table__cell">
+                {% if (data['coverSheetPriority'] === "true") %}
+                Yes
+                {% else %}
+                No
+                {% endif%}
+              <td class="govuk-table__cell">
+
+                {% if (data['bilingual'] === "English") %}
+                No
+                {% elseif (data['bilingual'] === "Welsh and English") %}
+                Yes 
+                {% else %}
+                Not known
+                {% endif%}
+              </td>
+              
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell"><a href="#" class="govuk-link">BANACH, Emily</a></td>
