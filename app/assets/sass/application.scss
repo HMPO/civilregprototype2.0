@@ -43,3 +43,9 @@
     @include govuk-typography-common();
   
   }
+
+  .no-border {
+    border-width: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }

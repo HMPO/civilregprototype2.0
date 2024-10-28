@@ -43,7 +43,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communal-establishment") }} data-aria-controls="conditional-communal-establishment">
                     <label class="govuk-label govuk-radios__label" for="communal-establishment">
-                      Communal establishment
+                      Communal establishment  | Sefydliad cymunedol
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in a hospital, care home, student halls or other managed residential accommodation.
@@ -52,7 +52,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="home" name="place-of-death" type="radio" value="home" {{ checked("placeOfDeath", "home") }}>
                     <label class="govuk-label govuk-radios__label" for="home">
-                      Home
+                      Home | Cartref 
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in their own home.  
@@ -61,7 +61,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="in-transit" name="place-of-death" type="radio" value="in-transit" {{ checked("placeOfDeath", "in-transit") }}>
                     <label class="govuk-label govuk-radios__label" for="in-transit">
-                      In transit
+                      In transit | Ar daith 
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in a vehicle. 
@@ -69,7 +69,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="elsewhere" name="place-of-death" type="radio" value="elsewhere" {{ checked("placeOfDeath", "elsewhere") }}>
                     <label class="govuk-label govuk-radios__label" for="elsewhere">
-                      Elsewhere
+                      Elsewhere | Mewn man arall
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died somewhere else. 
@@ -78,7 +78,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="found-dead-on-arrival" name="place-of-death" type="radio" value="found-dead-on-arrival" {{ checked("placeOfDeath", "found-dead-on-arrival") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead-on-arrival">
-                      Found dead on arrival 
+                      Found dead on arrival | Wedi'i ganfod yn farw wrth gyrraedd
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased was pronounced dead when they arrived at the hospital.
@@ -87,7 +87,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="found-dead" name="place-of-death" type="radio" value="found-dead" {{ checked("placeOfDeath", "found-dead") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead">
-                      Found dead
+                      Found dead | Wedi'i ddarganfod yn farw
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       It's not known where the deceased died, only where body was found.
@@ -124,7 +124,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </legend>
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="flat-number">
-                            Flat number or name
+                            Flat number or name | Rhif neu enw’r fflat
                           </label>
                           <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
                         </div>
@@ -135,28 +135,52 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text">
                         </div>
                         <div class="govuk-form-group">
+                          <label class="govuk-label" for="building-name-welsh">
+                            Enw'r adeilad
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name-welsh" name="building-name-welsh" type="text">
+                        </div>
+                        <div class="govuk-form-group">
                           <label class="govuk-label" for="building-number">
-                            Building number
+                            Building number | Rhif yr adeilad 
                           </label>
                           <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
                         </div>
                         <div class="govuk-form-group">
-                        <label class="govuk-label" for="address-line-1">
-                          Street address 1
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                          <label class="govuk-label" for="address-line-1">
+                            Street address 1
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1" type="text">
                         </div>
                         <div class="govuk-form-group">
-                        <label class="govuk-label" for="address-line-2">
-                          Street address 2
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+                          <label class="govuk-label" for="address-line-1-welsh">
+                            Cyfeiriad stryd llinell 1 
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1-welsh" type="text">
                         </div>
                         <div class="govuk-form-group">
-                        <label class="govuk-label" for="address-line-3">
-                          Street address 3
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                          <label class="govuk-label" for="address-line-2">
+                            Street address 2
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-2-welsh">
+                            Cyfeiriad stryd llinell 2 
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2-welsh" name="AddressLine2-welsh" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-3">
+                            Street address 3
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-3-welsh">
+                            Cyfeiriad stryd llinell 3
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3-welsh" name="AddressLine3-welsh" type="text">
                         </div>
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="address-line-4">
@@ -164,11 +188,23 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         </label>
                         <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
                       </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-line-4-welsh">
+                          Cyfeiriad stryd llinell 4 
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4-welsh" name="AddressLine-4-welsh" type="text">
+                      </div>
                        <div class="govuk-form-group">
                         <label class="govuk-label" for="address-town">
                           Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town-welsh">
+                          Tref neu ddinas 
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town-welsh" name="addressTown-welsh" type="text">
                       </div>
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="address-county">
@@ -177,8 +213,14 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
                       </div>
                       <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-county-welsh">
+                          Sir
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-county-welsh" name="address-county-welsh" type="text">
+                      </div>
+                      <div class="govuk-form-group">
                         <label class="govuk-label" for="address-postcode">
-                          Postcode
+                          Postcode | Cod post
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
                       </div>
