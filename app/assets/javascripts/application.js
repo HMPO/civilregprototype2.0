@@ -8,7 +8,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 
   accessibleAutocomplete.enhanceSelectElement({
 
-    defaultValue: '',
+    defaultValue: 'search',
 
     selectElement: selectElement
 
