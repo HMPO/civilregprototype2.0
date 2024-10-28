@@ -524,6 +524,27 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" id="" aria-required="false">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Attending practitioner details
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" id="AttendPract" for="AttendPract">
+                Full name and qualifications 
+              </label> 
+              <input class="govuk-input" id="AttendPract" name="AttendPract" type="text" aria-required="false" value="{{data['AttendPract'] }}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" id="AttendPractGMCNumber" for="AttendPractGMCNumber">
+                GMC number 
+              </label> 
+              <input class="govuk-input govuk-input--width-10" id="AttendPractGMCNumber" name="AttendPractGMCNumber" type="text" aria-required="false" value="{{data['AttendPractGMCNumber'] }}">
+            </div>
+          </fieldset>
+    </div> 
+
+        <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Medical examiner details
@@ -532,14 +553,14 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label" id="MedExaminer" for="MedExaminer">
                     Full name and qualifications 
                   </label> 
-                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or ""}}">
+                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] }}">
                 </div>
 
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
                     GMC number 
                   </label> 
-                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or ""}}">
+                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] }}">
                 </div>
               </fieldset>
         </div> 
