@@ -189,7 +189,6 @@
 
            {% endif %}
 
-           
           </div>
 
           {% if (data['deceasedSex'] and data['deceasedUsualAddress'] and data['deceasedCountryOfBirth'] and data['SpanishNational'] and data['OccupationStatus'])%}
@@ -211,9 +210,20 @@
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="english/relationship-details.html" aria-describedby="">
+
+            {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/relationship-details.html" aria-describedby="">
               Relationship details
             </a>
+
+            {% else %}
+         
+          <a class="govuk-link govuk-task-list__link" href="english/relationship-details.html" aria-describedby="">
+            Relationship details
+           </a>
+
+           {% endif %}
           </div>
 
           {% if (data['relationship'])%}
