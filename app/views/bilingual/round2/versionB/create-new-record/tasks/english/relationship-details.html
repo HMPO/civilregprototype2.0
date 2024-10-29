@@ -48,36 +48,56 @@ href: "javascript:window.history.back()"
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-WifeOf">
-                  <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                      for="partnerName_input"> Spouse or civil partner’s full name</label><input id="partnerName_input"
-                      name="partnerName" class="govuk-input govuk-!-width-one-half" value=""></div>
-                  <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                      for="partnerOccupation_input">Spouse or civil partner’s occupation</label><input
-                      id="partnerOccupation_input" name="partnerOccupation" class="govuk-input govuk-!-width-one-half"
-                      value=""></div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="partnerName_input">
+                      Spouse or civil partner’s full name
+                    </label>
+                    <input id="partnerName_input" name="partnerName" class="govuk-input govuk-!-width-one-half" value="">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="partnerOccupation_input">
+                      Spouse or civil partner’s occupation
+                    </label>
+                    <input id="partnerOccupation_input" name="partnerOccupation" class="govuk-input govuk-!-width-one-half" value="">
+                  </div>
+
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Spouse or civil partner’s
-                        occupation status</legend>
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Spouse or civil partner’s occupation status
+                      </legend>
                       <div class="govuk-radios">
-                        <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                            id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES"><label
-                            class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">Retired</label></div>
-                        <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                            id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO"><label
-                            class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">Not retired</label>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES">
+                            <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">
+                              Retired
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO">
+                          <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">
+                            Not retired
+                          </label>
                         </div>
                       </div>
                     </fieldset>
                   </div>
-                  <div class="govuk-warning-text govuk-!-margin-bottom-2"><span class="govuk-warning-text__icon"
-                      aria-hidden="true">!</span><strong class="govuk-warning-text__text"><span
-                        class="govuk-warning-text__assistive">Warning</span>Question required by the Population
-                      (Statistics) Act 1938</strong></div>
+                  <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">
+                      !
+                    </span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">
+                        Warning
+                      </span>
+                      Question required by the Population (Statistics) Act 1938
+                    </strong>
+                  </div>
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Will the informant give the date
-                        of birth of the spouse or civil partner?</legend>
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Will the informant give the date of birth of the spouse or civil partner?
+                      </legend>
                       <div class="govuk-radios">
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-1" name="reasonOfMissingDateOfBirth_WIFE_OF"
@@ -89,42 +109,64 @@ href: "javascript:window.history.back()"
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonOfMissingDateOfBirth_WIFE_OF-1">
                           <div class="govuk-form-group govuk-!-padding-bottom-5">
                             <fieldset class="govuk-fieldset">
-                              <legend class="govuk-fieldset__legend govuk-label--s">Spouse or civil partner’s date of
-                                birth</legend>
+                              <legend class="govuk-fieldset__legend govuk-label--s">
+                                Spouse or civil partner’s date of birth
+                              </legend>
                               <div id="dateOfBirthPartner_input" class="govuk-date-input">
                                 <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                      for="dateOfBirthPartner_input-day">Day</label><input
-                                      id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
-                                      class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                      value=""></div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-day">
+                                      Day
+                                    </label>
+                                    <input id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
+                                      class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"value="">
+                                    </div>
                                 </div>
                                 <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                      for="dateOfBirthPartner_input-month">Month</label><input
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-month">
+                                      Month
+                                    </label>
+                                    <input
                                       id="dateOfBirthPartner_input-month" name="dateOfBirthPartner-month"
                                       class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                      value=""></div>
+                                      value="">
+                                    </div>
                                 </div>
                                 <div class="govuk-date-input__item">
-                                  <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                      for="dateOfBirthPartner_input-year">Year</label><input
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-year">
+                                      Year
+                                    </label>
+                                    <input
                                       id="dateOfBirthPartner_input-year" name="dateOfBirthPartner-year"
                                       class="govuk-input govuk-input--width-4" inputmode="number" maxlength="4"
-                                      value=""></div>
+                                      value="">
+                                    </div>
                                 </div>
                               </div>
                             </fieldset>
                           </div>
                         </div>
-                        <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                            id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                            value="NOT_KNOWN"><label class="govuk-label govuk-radios__label"
-                            for="reasonOfMissingDateOfBirth_WIFE_OF-2">Not known</label></div>
-                        <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF"
+                            value="NOT_KNOWN">
+                            <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF-2">
+                            Not known
+                          </label>
+                          </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio"
                             id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                            value="REFUSED_TO_ANSWER"><label class="govuk-label govuk-radios__label"
-                            for="reasonOfMissingDateOfBirth_WIFE_OF-3">Refused to answer</label></div>
+                            value="REFUSED_TO_ANSWER">
+                            <label class="govuk-label govuk-radios__label"
+                            for="reasonOfMissingDateOfBirth_WIFE_OF-3">
+                            Refused to answer
+                          </label>
+                        </div>
                       </div>
                     </fieldset>
                   </div>
@@ -137,36 +179,62 @@ href: "javascript:window.history.back()"
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-HusbandOf">
-                  <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                    for="partnerName_input"> Spouse or civil partner’s full name</label><input id="partnerName_input"
-                    name="partnerName" class="govuk-input govuk-!-width-one-half" value=""></div>
-                <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                    for="partnerOccupation_input">Spouse or civil partner’s occupation</label><input
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold"
+                    for="partnerName_input">
+                    Spouse or civil partner’s full name
+                  </label>
+                  <input id="partnerName_input"
+                    name="partnerName" class="govuk-input govuk-!-width-one-half" value="">
+                  </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-!-font-weight-bold"
+                    for="partnerOccupation_input">
+                    Spouse or civil partner’s occupation
+                  </label>
+                  <input
                     id="partnerOccupation_input" name="partnerOccupation" class="govuk-input govuk-!-width-one-half"
-                    value=""></div>
+                    value="">
+                  </div>
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Spouse or civil partner’s
-                      occupation status</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Spouse or civil partner’s occupation status
+                    </legend>
                     <div class="govuk-radios">
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES"><label
-                          class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">Retired</label></div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO"><label
-                          class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">Not retired</label>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" type="radio"
+                          id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES">
+                          <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">
+                          Retired
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" type="radio"
+                          id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO">
+                          <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">Not retired</label>
                       </div>
                     </div>
                   </fieldset>
                 </div>
-                <div class="govuk-warning-text govuk-!-margin-bottom-2"><span class="govuk-warning-text__icon"
-                    aria-hidden="true">!</span><strong class="govuk-warning-text__text"><span
-                      class="govuk-warning-text__assistive">Warning</span>Question required by the Population
-                    (Statistics) Act 1938</strong></div>
+                <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                  <span class="govuk-warning-text__icon"
+                    aria-hidden="true">
+                    !
+                  </span>
+                  <strong class="govuk-warning-text__text">
+                    <span
+                      class="govuk-warning-text__assistive">
+                      Warning
+                    </span>
+                    Question required by the Population (Statistics) Act 1938
+                  </strong>
+                </div>
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Will the informant give the date
-                      of birth of the spouse or civil partner?</legend>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Will the informant give the date of birth of the spouse or civil partner?
+                    </legend>
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF"
@@ -178,42 +246,56 @@ href: "javascript:window.history.back()"
                       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonOfMissingDateOfBirth_WIFE_OF-2">
                         <div class="govuk-form-group govuk-!-padding-bottom-5">
                           <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-label--s">Spouse or civil partner’s date of
-                              birth</legend>
+                            <legend class="govuk-fieldset__legend govuk-label--s">
+                              Spouse or civil partner’s date of birth
+                            </legend>
                             <div id="dateOfBirthPartner_input" class="govuk-date-input">
                               <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-day">Day</label><input
-                                    id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
-                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                    value=""></div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="dateOfBirthPartner_input-day">
+                                    Day
+                                  </label>
+                                  <input id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
+                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"value="">
+                                  </div>
                               </div>
                               <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-month">Month</label><input
-                                    id="dateOfBirthPartner_input-month" name="dateOfBirthPartner-month"
-                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                    value=""></div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label"
+                                    for="dateOfBirthPartner_input-month">
+                                    Month
+                                  </label>
+                                  <input id="dateOfBirthPartner_input-month" name="dateOfBirthPartner-month"
+                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2" value="">
+                                  </div>
                               </div>
                               <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-year">Year</label><input
-                                    id="dateOfBirthPartner_input-year" name="dateOfBirthPartner-year"
-                                    class="govuk-input govuk-input--width-4" inputmode="number" maxlength="4"
-                                    value=""></div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="dateOfBirthPartner_input-year">
+                                    Year
+                                  </label>
+                                  <input id="dateOfBirthPartner_input-year" name="dateOfBirthPartner-year"
+                                    class="govuk-input govuk-input--width-4" inputmode="number" maxlength="4" value="">
+                                  </div>
                               </div>
                             </div>
                           </fieldset>
                         </div>
                       </div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                          value="NOT_KNOWN"><label class="govuk-label govuk-radios__label"
-                          for="reasonOfMissingDateOfBirth_WIFE_OF-2">Not known</label></div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                          value="REFUSED_TO_ANSWER"><label class="govuk-label govuk-radios__label"
-                          for="reasonOfMissingDateOfBirth_WIFE_OF-3">Refused to answer</label></div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" type="radio"
+                          id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF" value="NOT_KNOWN">
+                          <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF-2">
+                          Not known
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" type="radio"
+                          id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF" value="REFUSED_TO_ANSWER">
+                          <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF-3">
+                          Refused to answer
+                        </label>
+                      </div>
                     </div>
                   </fieldset>
                 </div>
@@ -228,85 +310,8 @@ href: "javascript:window.history.back()"
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-CivilPartnerOf">
-                  <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                    for="partnerName_input"> Spouse or civil partner’s full name</label><input id="partnerName_input"
-                    name="partnerName" class="govuk-input govuk-!-width-one-half" value=""></div>
-                <div class="govuk-form-group"><label class="govuk-label govuk-!-font-weight-bold"
-                    for="partnerOccupation_input">Spouse or civil partner’s occupation</label><input
-                    id="partnerOccupation_input" name="partnerOccupation" class="govuk-input govuk-!-width-one-half"
-                    value=""></div>
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Spouse or civil partner’s
-                      occupation status</legend>
-                    <div class="govuk-radios">
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES"><label
-                          class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">Retired</label></div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO"><label
-                          class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">Not retired</label>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-                <div class="govuk-warning-text govuk-!-margin-bottom-2"><span class="govuk-warning-text__icon"
-                    aria-hidden="true">!</span><strong class="govuk-warning-text__text"><span
-                      class="govuk-warning-text__assistive">Warning</span>Question required by the Population
-                    (Statistics) Act 1938</strong></div>
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Will the informant give the date
-                      of birth of the spouse or civil partner?</legend>
-                    <div class="govuk-radios">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                          value="YES" data-aria-controls="conditional-reasonOfMissingDateOfBirth_WIFE_OF-3">
-                          <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF">
-                            Yes
-                         </label>
-                      </div>
-                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonOfMissingDateOfBirth_WIFE_OF-3">
-                        <div class="govuk-form-group govuk-!-padding-bottom-5">
-                          <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-label--s">Spouse or civil partner’s date of
-                              birth</legend>
-                            <div id="dateOfBirthPartner_input" class="govuk-date-input">
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-day">Day</label><input
-                                    id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
-                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                    value=""></div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-month">Month</label><input
-                                    id="dateOfBirthPartner_input-month" name="dateOfBirthPartner-month"
-                                    class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
-                                    value=""></div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group"><label class="govuk-label govuk-date-input__label"
-                                    for="dateOfBirthPartner_input-year">Year</label><input
-                                    id="dateOfBirthPartner_input-year" name="dateOfBirthPartner-year"
-                                    class="govuk-input govuk-input--width-4" inputmode="number" maxlength="4"
-                                    value=""></div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF" value="NOT_KNOWN"><label
-                          class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF-2">Not known</label></div>
-                      <div class="govuk-radios__item"><input class="govuk-radios__input" type="radio"
-                          id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF"
-                          value="REFUSED_TO_ANSWER"><label class="govuk-label govuk-radios__label"
-                          for="reasonOfMissingDateOfBirth_WIFE_OF-3">Refused to answer</label></div>
-                    </div>
-                  </fieldset>
-                </div>
+                  
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-WidowOf" name="relationship" type="radio"
@@ -317,13 +322,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-WidowOf">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-WidowerOf" name="relationship" type="radio"
@@ -334,13 +333,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-WidowerOf">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-SurvivingCivilPartner" name="relationship"
@@ -352,13 +345,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-SurvivingCivilPartner">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-NeverMarried" name="relationship" type="radio"
@@ -369,13 +356,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-NeverMarried">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-Divorced" name="relationship" type="radio"
@@ -386,13 +367,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-Divorced">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="relationship-PartnershipDissolved" name="relationship"
@@ -404,13 +379,7 @@ href: "javascript:window.history.back()"
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                   id="conditional-relationship-PartnershipDissolved">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="relationship-by-text">
-                      Mobile phone number
-                    </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="relationship-by-text"
-                      name="relationshipByText" type="tel" autocomplete="tel">
-                  </div>
+                  
                 </div>
               </div>
             </fieldset>
