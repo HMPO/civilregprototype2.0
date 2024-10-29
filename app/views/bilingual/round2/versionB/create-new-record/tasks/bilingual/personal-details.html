@@ -114,7 +114,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                       Different to place of death
                     </label>
                   </div>
-                  <!--
+                   <!--
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
                     <fieldset class="govuk-fieldset">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -157,7 +157,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                         <input class="govuk-input govuk-!-width-one-quarter" id="deceasedUsualAddressPostcode" name="deceasedUsualAddressPostcode" type="text" aria-required="false" autocapitalize="characters" value="{{data['deceasedUsualAddressCounty']}}">
                       </div>
                     </fieldset>
-                  </div>-->
+                  </div> -->
               </fieldset>
             </div>
 
@@ -310,6 +310,16 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label-welsh" for="deceasedPlaceOfBirth-welsh">
+                Lle y ganwyd (if available)
+              </label>
+              <div id="deceasedPlaceOfBirth-hint-welsh" class="govuk-hint">
+                Town and county if in UK, country if outside the UK 
+              </div>
+              <input class="govuk-input govuk-!-width-one-half" id="deceasedPlaceOfBirth-welsh" name="deceasedPlaceOfBirth-welsh" type="text" aria-describedby="deceasedPlaceOfBirth-hint-welsh" aria-required="false" value="{{data['deceasedPlaceOfBirth-welsh']}}">
+            </div>
+
+            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedCountryOfBirth-fieldset" aria-required="false">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 Country of birth
@@ -378,10 +388,17 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="Occupation-label-welsh" for="Occupation-welsh">
+              <label class="govuk-label govuk-label--s" id="Occupation-label" for="Occupation">
                 Occupation
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="Occupation-welsh" name="Occupation-welsh" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['Occupation']}}">
+              <input class="govuk-input govuk-!-width-one-half" id="Occupation" name="Occupation" type="text" aria-describedby="Occupation-hint" aria-required="false" value="{{data['Occupation']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="Occupation-label-welsh" for="Occupation-welsh">
+                Gwaith
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="Occupation-welsh" name="Occupation-welsh" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['Occupation-welsh']}}">
             </div>
 
             <div class="govuk-form-group">
