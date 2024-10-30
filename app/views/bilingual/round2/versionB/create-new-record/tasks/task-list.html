@@ -251,9 +251,21 @@
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="english/informant-details.html" aria-describedby="">
+
+            {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/informant-details.html" aria-describedby="">
               Informant’s details
             </a>
+
+            {% else %}
+         
+          <a class="govuk-link govuk-task-list__link" href="english/informant-details.html" aria-describedby="">
+            Informant’s details
+           </a>
+
+           {% endif %}
+           
           </div>
 
           <div class="govuk-task-list__status" id="">
@@ -268,12 +280,22 @@
       <h2 class="govuk-heading-m">Information for statistics</h2>
 
       <ul class="govuk-task-list">
-       
          <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          <div class="govuk-task-list__name-and-hint">
+          {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/medical-information.html" aria-describedby="">
+              Medical information
+            </a>
+
+            {% else %}
+         
+          <a class="govuk-link govuk-task-list__link" href="english/medical-information.html" aria-describedby="">
             Medical information
-          </div>
+           </a>
+
+           {% endif %}
+          
 
           <div class="govuk-task-list__status" id="">
             <strong class="govuk-tag govuk-tag--grey">
@@ -285,9 +307,20 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          <div class="govuk-task-list__name-and-hint">
+          {% if (data['bilingual'] == "Welsh and English" )%}
+
+            <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
+              Employment and industry information
+            </a>
+
+            {% else %}
+         
+          <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
             Employment and industry information
-          </div>
+           </a>
+
+           {% endif %}
+          
 
           <div class="govuk-task-list__status" id="">
             <strong class="govuk-tag govuk-tag--grey">

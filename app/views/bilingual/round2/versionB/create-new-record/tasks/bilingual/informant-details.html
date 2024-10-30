@@ -18,6 +18,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
   href: "javascript:window.history.back()"
 }) }}
 
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
 
 {% endblock %}
 
@@ -109,6 +110,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                           In attendance
                           </label>
                         </div>
+
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Relativenotpresentatdeath" name="informantQualificationAdditional" type="radio" value="relative-not-present-at-death" {{ checked("informantQualificationAdditional", "relative-not-present-at-death") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Relativenotpresentatdeath-label" for="informantQualificationAdditional-Relativenotpresentatdeath">
@@ -124,6 +126,13 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                       Relationship to deceased
                     </label>
                     <input class="govuk-input govuk-!-width-one-half" id="informantRelationshipToDeceased" name="informantRelationshipToDeceased" type="text" aria-required="false" value="{{data['informantRelationshipToDeceased']}}">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--xs" id="informantRelationshipToDeceased-label-welsh" for="informantRelationshipToDeceased-welsh">
+                      Perthynas â'r ymadawedig
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="informantRelationshipToDeceased-welsh" name="informantRelationshipToDeceased-welsh" type="text" aria-required="false" value="{{data['informantRelationshipToDeceased-welsh']}}">
                   </div>
                 </div>
 
