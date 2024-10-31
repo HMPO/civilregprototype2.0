@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Cannot start registration
+      </h1>
+
+      <p class="govuk-body">
+      You need the age or date or birth to start registering a death.
+      </p>
+
+      <p class="govuk-body">
+       <a class="govuk-link" href="../pending-registrations.html">Go back to pending registrations</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
