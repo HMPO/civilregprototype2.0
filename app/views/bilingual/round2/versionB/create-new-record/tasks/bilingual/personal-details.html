@@ -40,25 +40,25 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedSex-fieldset" aria-required="false">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Sex
+                Sex | Rhyw
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Female" name="deceasedSex" type="radio" value="female" {{ checked("deceasedSex", "female") }} aria-controls="conditional-deceasedSex-Female" aria-expanded="false">
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Female-label" for="deceasedSex-Female">
-                    Female
+                    Female | Gwryw
                   </label>   
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Male" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }}>
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Male-label" for="deceasedSex-Male">
-                    Male
+                    Male | Benyw
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }} aria-controls="conditional-intersex">
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
-                    Indeterminate
+                    Indeterminate | Amhenodol
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-intersex">
@@ -99,79 +99,143 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedUsualAddress-fieldset" aria-required="false">              
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
-                  Usual address
+                  Usual address | Cyfeiriad arferol
                 </legend>           
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Sameasplaceofdeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "same") }} aria-controls="link-to-task">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Sameasplaceofdeath-label" for="deceasedUsualAddress-Sameasplaceofdeath">
-                      Same as place of death
+                      Same as place of death | Yr un fath â man marwolaeth
                     </label>    
                   </div>
                   
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                      Different to place of death
+                      Different to place of death | Gwahanol i fan marwolaeth
                     </label>
                   </div>
                    <!--
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        Address
-                      </legend>
+                    < <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-8">
+                          Address | Cyfeiriad
+                        </legend>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="flat-number">
+                            Flat number or name | Rhif neu enw’r fflat
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="building-name">
+                            Building name
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="building-name-welsh">
+                            Enw'r adeilad
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name-welsh" name="building-name-welsh" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="building-number">
+                            Building number | Rhif yr adeilad 
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-1">
+                            Street address 1
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-1-welsh">
+                            Cyfeiriad stryd llinell 1 
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1-welsh" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-2">
+                            Street address 2
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-2-welsh">
+                            Cyfeiriad stryd llinell 2 
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2-welsh" name="AddressLine2-welsh" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-3">
+                            Street address 3
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                        </div>
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="address-line-3-welsh">
+                            Cyfeiriad stryd llinell 3
+                          </label>
+                          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3-welsh" name="AddressLine3-welsh" type="text">
+                        </div>
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine1-label" for="deceasedUsualAddressLine1">
-                        House or flat number
+                        <label class="govuk-label" for="address-line-4">
+                          Street address 4
                         </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine1" name="deceasedUsualAddressLine1" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine1']}}">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
                       </div>
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressLine2-label" for="deceasedUsualAddressLine2">
-                          Building name
+                        <label class="govuk-label" for="address-line-4-welsh">
+                          Cyfeiriad stryd llinell 4 
                         </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressLine2" name="deceasedUsualAddressLine2" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressLine2']}}">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4-welsh" name="AddressLine-4-welsh" type="text">
                       </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressStreet-label" for="deceasedUsualAddressStreet">
-                          Street
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressStreet" name="deceasedUsualAddressStreet" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressStreet']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressTown-label" for="deceasedUsualAddressTown">
+                       <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-town">
                           Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressTown" name="deceasedUsualAddressTown" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressTown']}}">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text">
                       </div>
                       <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressCounty-label" for="deceasedUsualAddressCounty">
-                          County
-                        </label>            
-                        <input class="govuk-input govuk-!-width-one-half" id="deceasedUsualAddressCounty" name="deceasedUsualAddressCounty" type="text" aria-required="false" autocapitalize="words" value="{{data['deceasedUsualAddressCounty']}}">
-                      </div>
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--xs" id="deceasedUsualAddressPostcode-label" for="deceasedUsualAddressPostcode">
-                          Postcode
+                        <label class="govuk-label" for="address-town-welsh">
+                          Tref neu ddinas 
                         </label>
-                        <input class="govuk-input govuk-!-width-one-quarter" id="deceasedUsualAddressPostcode" name="deceasedUsualAddressPostcode" type="text" aria-required="false" autocapitalize="characters" value="{{data['deceasedUsualAddressCounty']}}">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town-welsh" name="addressTown-welsh" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-county">
+                          County
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-county-welsh">
+                          Sir
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-county-welsh" name="address-county-welsh" type="text">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="address-postcode">
+                          Postcode | Cod post
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
                       </div>
                     </fieldset>
-                  </div> -->
-              </fieldset>
             </div>
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedDateOfBirth-fieldset" aria-required="false">  
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date of birth
+                  Date of birth | Dyddiad geni
                 </legend>
                 <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedDateOfBirth-Fulldateofbirthknown" name="deceasedDateOfBirth" type="radio" value="full" {{ checked("deceasedDateOfBirth", "full") }} aria-controls="conditional-deceasedDateOfBirth-Fulldateofbirthknown" aria-expanded="false">
                       <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Fulldateofbirthknown-label" for="deceasedDateOfBirth-Fulldateofbirthknown">
-                    Full date of birth known
+                    Full date of birth known | Dyddiad geni llawn yn hysbys
                     </label>
                   </div>
                   
@@ -179,13 +243,13 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset" role="group" id="deceasedFullDateOfBirth-fieldset">
                         <legend class="govuk-fieldset__legend govuk-label--xs">
-                        Full date of birth
+                        Full date of birth | Dyddiad geni llawn
                         </legend>
                         <div class="govuk-date-input" id="deceasedFullDateOfBirth">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-day">
-                                Day
+                                Day | Dydd
                               </label>
                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedFullDateOfBirth-day" name="deceasedFullDateOfBirth-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                             </div>
@@ -194,7 +258,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-month">
-                                Month
+                                Month | Mis
                               </label>
                   
                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedFullDateOfBirth-month" name="deceasedFullDateOfBirth-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
@@ -204,7 +268,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-year">
-                                Year
+                                Year | Blwyddyn
                               </label>
                               <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="deceasedFullDateOfBirth-year" name="deceasedFullDateOfBirth-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
                             </div>
@@ -218,7 +282,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedDateOfBirth-Partialdateofbirthknown" name="deceasedDateOfBirth" type="radio" value="partial" {{ checked("deceasedDateOfBirth", "partial") }} aria-controls="conditional-deceasedDateOfBirth-Partialdateofbirthknown" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Partialdateofbirthknown-label" for="deceasedDateOfBirth-Partialdateofbirthknown">
-                        Partial date of birth known
+                        Partial date of birth known | Gwybod dyddiad geni rhannol
                     </label>
                   </div>
                     
@@ -226,7 +290,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset" role="group" aria-describedby="deceasedPartialDateOfBirth-hint" id="deceasedPartialDateOfBirth-fieldset">
                         <legend class="govuk-fieldset__legend govuk-label--xs">
-                          Partial date of birth
+                          Partial date of birth | Dyddiad geni rhanno 
                         </legend>
                         <div id="deceasedPartialDateOfBirth-hint" class="govuk-hint">
                           Enter as much as is known
@@ -236,7 +300,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-day">
-                                Day
+                                Day | Dydd
                               </label>
                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedPartialDateOfBirth-day" name="deceasedPartialDateOfBirth-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                             </div>
@@ -245,7 +309,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-month">
-                                Month
+                                Month | Mis
                               </label>
                               <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedPartialDateOfBirth-month" name="deceasedPartialDateOfBirth-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
                             </div>
@@ -254,7 +318,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
                               <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-year">
-                                Year
+                                Year | Blwyddyn
                               </label>
                               <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="deceasedPartialDateOfBirth-year" name="deceasedPartialDateOfBirth-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
                             </div>
@@ -265,7 +329,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" id="deceasedAge-label" for="deceasedAge">
-                        Age 
+                        Age | Oed
                       </label>
                       <input class="govuk-input govuk-input--width-3" id="deceasedAge" name="deceasedAge" type="text" aria-required="false">
                     </div>
@@ -275,7 +339,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedDateOfBirth-Approximateyearofbirthonly" name="deceasedDateOfBirth" type="radio" value="approximate" {{ checked("deceasedDateOfBirth", "approximate") }} aria-controls="conditional-deceasedDateOfBirth-Approximateyearofbirthonly" aria-expanded="false">
                       <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Approximateyearofbirthonly-label" for="deceasedDateOfBirth-Approximateyearofbirthonly">
-                    Approximate year of birth only
+                    Approximate year of birth only | Tua blwyddyn geni yn unig
                     </label>
                   </div>
 
@@ -283,14 +347,14 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" id="deceasedApproximateYearOfBirth-label" for="deceasedApproximateYearOfBirth">
-                        Approximate year of birth
+                        Approximate year of birth | Tua blwyddyn geni
                       </label>
                       <input class="govuk-input govuk-input--width-4" id="deceasedApproximateYearOfBirth" name="deceasedApproximateYearOfBirth" type="text" aria-required="false">
                     </div>
 
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" id="deceasedApproximateAge-label" for="deceasedApproximateAge">
-                        Approximate age
+                        Approximate age | Oedran yn fras
                       </label>
                       <input class="govuk-input govuk-input--width-3" id="deceasedApproximateAge" name="deceasedApproximateAge" type="text" aria-required="false">
                     </div>
