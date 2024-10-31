@@ -36,21 +36,21 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantFirstName-label" for="informantFirstName">
-                First name (if known)
+                First name | Enwau cyntaf  (if known) 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantFirstName" name="informantFirstName" type="text" aria-required="false" value="{{data['informantFirstName']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantMiddleNames-label" for="informantMiddleNames">
-               Middle names (if known)
+                Middle names | Enwau canol (if known) 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantMiddleNames" name="informantMiddleNames" type="text" aria-required="false" value="{{data['informantMiddleNames']}}">
             </div>
             
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="informantLastName-label" for="informantLastName">
-                Last name
+                Last name | Cyfenw
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="informantLastName" name="informantLastName" type="text" aria-required="false" value="{{data['informantLastName']}}">
             </div>
@@ -80,13 +80,13 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" id="informantQualification-fieldset" aria-required="false">
               <legend class="govuk-label govuk-label--s">
-                Qualification
+                Qualification | Cymhwyster
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="informantQualification-Relative" name="informantQualification" type="radio" value="relative" aria-controls="conditional-informantQualification-Relative" aria-expanded="false" {{ checked("informantQualification", "relative") }}>
                   <label class="govuk-label govuk-radios__label" id="informantQualification-Relative-label" for="informantQualification-Relative">
-                    Relative
+                    Relative  | Cymharol
                   </label>
                 </div>
 
@@ -100,21 +100,21 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Relativepresentatdeath" name="informantQualificationAdditional" type="radio" value="relative-present-at-death" {{ checked("informantQualificationAdditional", "relative-present-at-death") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Relativepresentatdeath-label" for="informantQualificationAdditional-Relativepresentatdeath">
-                            Present at death
+                            Present at death | Yn bresenol ar farwolaeth 
                           </label>
                         </div>
                         
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Relativeinattendance" name="informantQualificationAdditional" type="radio" value="relative-in-attendance" {{ checked("informantQualificationAdditional", "relative-in-attendance") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Relativeinattendance-label" for="informantQualificationAdditional-Relativeinattendance">
-                          In attendance
+                           In attendance | Yn bresennol
                           </label>
                         </div>
 
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Relativenotpresentatdeath" name="informantQualificationAdditional" type="radio" value="relative-not-present-at-death" {{ checked("informantQualificationAdditional", "relative-not-present-at-death") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Relativenotpresentatdeath-label" for="informantQualificationAdditional-Relativenotpresentatdeath">
-                            Not present at death
+                            Not present at death | Ddim yn bresennol adeg marwolaeth
                           </label>
                         </div>
                       </div>
@@ -139,7 +139,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantQualification-partner" name="informantQualification" type="radio" value="non-relative" aria-controls="conditional-informantQualification-partner" aria-expanded="false" {{ checked("informantQualification", "non-relative") }}>
                   <label class="govuk-label govuk-radios__label" id="informantQualification-partner-label" for="informantQualification-partner">
-                    Partner
+                    Partner | Partner
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-informantQualification-partner">
@@ -152,19 +152,19 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativepresentatdeath" name="informantQualificationAdditional" type="radio" value="non-relative-present-at-death" {{ checked("informantQualificationAdditional", "relative-in-attendance") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativepresentatdeath-label" for="informantQualificationAdditional-Nonrelativepresentatdeath">
-                            Present at death
+                            Present at death | Yn bresenol ar farwolaeth
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeoccupier" name="informantQualificationAdditional" type="radio" value="non-relative-occupier" {{ checked("informantQualificationAdditional", "non-relative-occupier") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeoccupier-label" for="informantQualificationAdditional-Nonrelativeoccupier">
-                            In attendence
+                            In attendance | Yn bresennol
                           </label> 
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeinmate" name="informantQualificationAdditional" type="radio" value="non-relative-inmate" {{ checked("informantQualificationAdditional", "non-relative-inmate") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeinmate-label" for="informantQualificationAdditional-Nonrelativeinmate">
-                            Inmate
+                            Not present at death | Ddim yn bresennol adeg marwolaeth
                           </label>
                         </div>
                       </div>
@@ -178,7 +178,7 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantQualification-Nonrelative" name="informantQualification" type="radio" value="non-relative" aria-controls="conditional-informantQualification-Nonrelative" aria-expanded="false" {{ checked("informantQualification", "non-relative") }}>
                   <label class="govuk-label govuk-radios__label" id="informantQualification-Nonrelative-label" for="informantQualification-Nonrelative">
-                    Non-relative
+                    Non-relative  | Di-berthynas
                   </label>
                 </div>
                 
@@ -192,55 +192,55 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativepresentatdeath" name="informantQualificationAdditional" type="radio" value="non-relative-present-at-death" {{ checked("informantQualificationAdditional", "relative-in-attendance") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativepresentatdeath-label" for="informantQualificationAdditional-Nonrelativepresentatdeath">
-                            Present at death
+                            Present at death | Yn bresenol ar farwolaeth
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativepresentatdeath" name="informantQualificationAdditional" type="radio" value="non-relative-present-at-death" {{ checked("informantQualificationAdditional", "relative-in-attendance") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativepresentatdeath-label" for="informantQualificationAdditional-Nonrelativepresentatdeath">
-                            Who found the body
+                            Who found the body | Pwy ddaeth o hyd i'r corff
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeoccupier" name="informantQualificationAdditional" type="radio" value="non-relative-occupier" {{ checked("informantQualificationAdditional", "non-relative-occupier") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeoccupier-label" for="informantQualificationAdditional-Nonrelativeoccupier">
-                            Occupier
+                            Occupier | Meddiannydd
                           </label> 
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeinmate" name="informantQualificationAdditional" type="radio" value="non-relative-inmate" {{ checked("informantQualificationAdditional", "non-relative-inmate") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeinmate-label" for="informantQualificationAdditional-Nonrelativeinmate">
-                            Inmate
+                            Inmate | Carcharor 
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativecausingthebodytobeburied" name="informantQualificationAdditional" type="radio" value="non-relative-causing-the-body-to-be-buried" {{ checked("informantQualificationAdditional", "non-relative-causing-the-body-to-be-buried") }}>
                             <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativecausingthebodytobeburied-label" for="informantQualificationAdditional-Nonrelativecausingthebodytobeburied">
-                              Causing the body to be buried
+                              Causing the body to be buried | Achosi i'r corff gael ei gladdu 
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativecausingthebodytobecremated" name="informantQualificationAdditional" type="radio" value="non-relative-causing-the-body-to-be-cremated" {{ checked("informantQualificationAdditional", "non-relative-causing-the-body-to-be-cremated") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativecausingthebodytobecremated-label" for="informantQualificationAdditional-Nonrelativecausingthebodytobecremated">
-                            Causing the body to be cremated
+                            Causing the body to be cremated | Achosi i'r corff gael ei hufenu 
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativeinchargeofthebody" name="informantQualificationAdditional" type="radio" value="non-relative-in-charge-of-the-body" {{ checked("informantQualificationAdditional", "non-relative-in-charge-of-the-body") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativeinchargeofthebody-label" for="informantQualificationAdditional-Nonrelativeinchargeofthebody">
-                            In charge of the body
+                            In charge of the body | â gofal am y corff
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativecausingthedisposalofthebody" name="informantQualificationAdditional" type="radio" value="non-relative-disposal" {{ checked("informantQualificationAdditional", "non-relative-disposal") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativecausingthedisposalofthebody-label" for="informantQualificationAdditional-Nonrelativecausingthedisposalofthebody">
-                            Causing the disposal of the body
+                            Causing the disposal of the body | Achosi gwarediad y corff 
                           </label>
                         </div>
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="informantQualificationAdditional-Nonrelativepersonalrepresentativeofthedeceased" name="informantQualificationAdditional" type="radio" value="non-relative-personal-representative" {{ checked("informantQualificationAdditional", "non-relative-personal-representative") }}>
                           <label class="govuk-label govuk-radios__label" id="informantQualificationAdditional-Nonrelativepersonalrepresentativeofthedeceased-label" for="informantQualificationAdditional-Nonrelativepersonalrepresentativeofthedeceased">
-                          Personal representative of the deceased
+                            Personal representative of the deceased | Cynrychiolydd personol yr ymadawedig 
                           </label> 
                         </div>
                       </div>
@@ -254,19 +254,19 @@ Informant details – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" id="informantLiveWithDeceased-fieldset" aria-required="false">
             <legend class="govuk-label govuk-label--s">
-              Did the informant live with the deceased?
+              Did the informant live with the deceased? | A oedd yr hysbysydd yn byw gyda'r ymadawedig?
             </legend>
             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantLiveWithDeceased-true" name="informantLiveWithDeceased" type="radio" value="true" {{ checked("informantLiveWithDeceased", "true") }}>
                   <label class="govuk-label govuk-radios__label" id="informantLiveWithDeceased-true-label" for="informantLiveWithDeceased-true">
-                    Yes
+                    Yes | Do
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="informantLiveWithDeceased-false" name="informantLiveWithDeceased" type="radio" value="false" aria-controls="conditional-informantLiveWithDeceased-false" aria-expanded="false" {{ checked("informantLiveWithDeceased", "false") }}>
                   <label class="govuk-label govuk-radios__label" id="informantLiveWithDeceased-false-label" for="informantLiveWithDeceased-false">
-                    No
+                    No | Naddo
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-informantLiveWithDeceased-false">
