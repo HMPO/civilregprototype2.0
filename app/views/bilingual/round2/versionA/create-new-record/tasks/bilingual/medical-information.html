@@ -41,20 +41,20 @@ Medical information – {{ serviceName }} – GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
-                    Is the deceased's NHS number available?
+                    Is the deceased’s NHS number available? | A yw rhif y GIG ar gael?
                   </h3>
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact" value="{{data['contact']}}">
                     <label class="govuk-label govuk-radios__label" for="contact">
-                      Yes
+                      Yes | Do
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="contact-by-email">
-                        Enter NHS number
+                        NHS number | Rhif GIG
                       </label>
                       <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="text" spellcheck="false" autocomplete="email">
                     </div>
@@ -62,7 +62,7 @@ Medical information – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" data-aria-controls="conditional-contact-2"  value="{{data['contact']}}">
                     <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
+                      No | Naddo
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">   
