@@ -37,13 +37,13 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="placeOfDeath">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s ">
-                  Where did the deceased die?
+                  Where did the deceased die? | Ble bu farw'r ymadawedig?
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="communal-establishment" name="place-of-death" type="radio" value="communal-establishment" {{ checked("placeOfDeath", "communal-establishment") }} data-aria-controls="conditional-communal-establishment">
                     <label class="govuk-label govuk-radios__label" for="communal-establishment">
-                      Communal establishment 
+                      Communal establishment | Sefydliad cymunedol
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in a hospital, care home, student halls or other managed residential accommodation.
@@ -52,7 +52,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="home" name="place-of-death" type="radio" value="home" {{ checked("placeOfDeath", "home") }}>
                     <label class="govuk-label govuk-radios__label" for="home">
-                      Home 
+                      Home | Cartref  
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in their own home.  
@@ -61,7 +61,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="in-transit" name="place-of-death" type="radio" value="in-transit" {{ checked("placeOfDeath", "in-transit") }}>
                     <label class="govuk-label govuk-radios__label" for="in-transit">
-                      In transit
+                      In transit | Ar daith 
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died in a vehicle. 
@@ -69,7 +69,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="elsewhere" name="place-of-death" type="radio" value="elsewhere" {{ checked("placeOfDeath", "elsewhere") }}>
                     <label class="govuk-label govuk-radios__label" for="elsewhere">
-                      Elsewhere 
+                      Elsewhere | Mewn man arall
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased died somewhere else. 
@@ -78,7 +78,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="found-dead-on-arrival" name="place-of-death" type="radio" value="found-dead-on-arrival" {{ checked("placeOfDeath", "found-dead-on-arrival") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead-on-arrival">
-                      Found dead on arrival 
+                      Found dead on arrival  | Wedi'i ganfod yn farw wrth gyrraedd
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       The deceased was pronounced dead when they arrived at the hospital.
@@ -87,7 +87,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="found-dead" name="place-of-death" type="radio" value="found-dead" {{ checked("placeOfDeath", "found-dead") }}>
                     <label class="govuk-label govuk-radios__label" for="found-dead">
-                      Found dead 
+                      Found dead  | Wedi'i ddarganfod yn farw
                     </label>
                     <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                       It's not known where the deceased died, only where body was found.
@@ -237,25 +237,25 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
       
                       <div class="govuk-form-group govuk-!-margin-top-8">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"> 
-                            How long did the deceased spend in a communal establishment? 
+                          How long did the deceased spend in a communal establishment? | Pa mor hir y treuliodd yr ymadawedig mewn sefydliad cymunedol? 
                         </legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                              Under 6 months
+                              Under 6 months | O dan 6 mis
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                              6 months or over
+                              6 months or over | 6 mis neu fwy Anhysbys
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                              Not known
+                              Not known | Anhysbys
                             </label>
                           </div>
                         </div>
