@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pending registrations – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main">
+
+    <div class="gro-create-new-record-container">
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Create new record", 
+        href: "create-new-record/medical-information"
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">
+          Pending registrations
+        </h1>
+
+      </div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <table class="govuk-table govuk-table--small-text-until-tablet">
+          <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Pending registrations</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Date of death</th>
+              <th scope="col" class="govuk-table__header">Medical certificate received</th>
+              
+              <th scope="col" class="govuk-table__header">Place of death</th>
+              <th scope="col" class="govuk-table__header">Priority</th>
+              <th scope="col" class="govuk-table__header">Bilingual</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row"></tr>
+              <td class="govuk-table__cell"><a href="create-new-record/change-record/change-record-details.html" class="govuk-link">{{data['deceasedFirstName']}} {{data['deceasedMiddleName']}} {{data['deceasedLastName']}}</a></td>
+              <td class="govuk-table__cell">{{data['day-of-death']}}/{{data['month-of-death']}}/{{data['year-of-death']}}</td>
+              <td class="govuk-table__cell">{{data['MCCDissued-day']}}/{{data['MCCDissued-month']}}/{{data['MCCDissued-year']}}</td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                {% if (data['coverSheetPriority'] === "true") %}
+                Yes
+                {% else %}
+                No
+                {% endif%}
+              <td class="govuk-table__cell">
+
+                {% if (data['bilingual'] === "English") %}
+                No
+                {% elseif (data['bilingual'] === "Welsh and English") %}
+                Yes 
+                {% else %}
+                Not known
+                {% endif%}
+              </td>
+              
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">BANACH, Emily</a></td>
+              <td class="govuk-table__cell">22/04/2024</td>
+              <td class="govuk-table__cell">22/04/2024</td>
+              <td class="govuk-table__cell">University Hospital of Wales, Heath Park Way, Cardiff, CF14 4XW</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">SHORT, Charles</a></td>
+              <td class="govuk-table__cell">06/02/2024</td>
+              <td class="govuk-table__cell">08/02/2024</td>
+              <td class="govuk-table__cell">Glangwili General Hospital, Dolgwili Rd, Carmarthen, SA31 2AF</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">TALL, Anne</a></td>
+              <td class="govuk-table__cell">12/10/2024</td>
+              <td class="govuk-table__cell">22/02/2024</td>
+              <td class="govuk-table__cell">Wrexham Maelor Hospital, Croesnewydd Rd, Wrexham, LL13 7TD</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">Yes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">SALM, Mohammed</a></td>
+              <td class="govuk-table__cell">06/02/2024</td>
+              <td class="govuk-table__cell">08/02/2024</td>
+              <td class="govuk-table__cell">Llanfrechfa Grange Hospital, Caerleon Rd, Llanfrechfa, Cwmbran, NP44 8YN</td>
+              <td class="govuk-table__cell">Yes</td>
+              <td class="govuk-table__cell">Yes</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">POTTER, Harry</a></td>
+              <td class="govuk-table__cell">15/02/2024</td>
+              <td class="govuk-table__cell">19/02/2024</td>
+              <td class="govuk-table__cell">Royal Glamorgan Hospital,Ynysmaerdy, Pontyclun CF72 8XR</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
