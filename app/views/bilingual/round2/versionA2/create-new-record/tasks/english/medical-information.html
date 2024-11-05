@@ -37,7 +37,7 @@ Medical information – {{ serviceName }} – GOV.UK Prototype Kit
           <form class="form" action="../task-list" method="post">
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              <fieldset class="govuk-fieldset" aria-describedby="medical-information-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
                     Is the deceased's NHS number available?
@@ -45,28 +45,28 @@ Medical information – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact" value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact">
+                    <input class="govuk-radios__input" id="medical-information" name="medical-information" type="radio" value="yes" data-aria-controls="conditional-medical-information" value="{{data['medical-information']}}">
+                    <label class="govuk-label govuk-radios__label" for="medical-information">
                       Yes
                     </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-medical-information">
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
+                      <label class="govuk-label" for="medical-information-by-email">
                         Enter NHS number
                       </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="text" spellcheck="false" autocomplete="email">
+                      <input class="govuk-input govuk-!-width-one-third" id="medical-information-by-email" name="medical-informationByEmail" type="text" spellcheck="false" autocomplete="email">
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" data-aria-controls="conditional-contact-2"  value="{{data['contact']}}">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                    <input class="govuk-radios__input" id="medical-information-2" name="medical-information" type="radio" value="No" data-aria-controls="conditional-medical-information-2"  value="{{data['medical-information']}}">
+                    <label class="govuk-label govuk-radios__label" for="medical-information-2">
                       No
                     </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">   
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-medical-information-2">   
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">  
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-medical-information-3">  
                   </div>
                 </div>
               </fieldset>
