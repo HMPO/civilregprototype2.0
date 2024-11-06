@@ -178,6 +178,9 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   Could the deceased’s former or current employment have contributed to the death?
                 </legend>
+                <div id="contribution-hint" class="govuk-hint">
+                  For example, a pacemaker or radioactive device
+                </div>
                 <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-contribution-yes" name="employment-contribution" type="radio" value="yes" {{ checked("employment-contribution", "yes") }}>
