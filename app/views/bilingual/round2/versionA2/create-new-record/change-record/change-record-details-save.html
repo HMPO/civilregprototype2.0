@@ -35,57 +35,57 @@ Check record details – {{ serviceName }} – GOV.UK Prototype Kit
        <h1 class="govuk-heading-l">Record details</h1>
        <p class="govuk-body">The record was created using these details. Change the record details to update the information required for the registration.</p>
                 
-         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Source of information  
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p>{{ data["certificate"] }}</p>
-                <p>{{ data["certificate-type"] }}</p>
-                <p>{{ data["certificateID"] }}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="medical-information.html">Change<span class="govuk-visually-hidden"> name</span></a>
-              </dd>
-            </div>
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Source of information  
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data["certificate"] or 'Attending practitioner certificate' }}</p>
+            <p>{{ data["certificate-type"] or 'Standard (Form 66 APC1)'}}</p>
+            <p>{{ data["certificateID"] or '12345678910' }} </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="medical-information.html">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
 
-            <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Date source of information received
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>{{ data['MCCDissued-day'] }} {{ data['MCCDissued-month'] }} {{ data['MCCDissued-year'] }}</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                      <a class="govuk-link" href="medical-information.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-                    </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Age               
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['age-bracket'] }}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="age-of-deceased.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Registration language         
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['bilingual'] }}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
-              </dd>
-            </div>
-            
-          </dl>
-
+        <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date source of information received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p>{{ data['MCCDissued-day'] or '07' }} {{ data['MCCDissued-month'] or '11' }} {{ data['MCCDissued-year'] or '2024'}}</p>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="medical-information.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Age               
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['age-bracket'] or '75 or older' }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="age-of-deceased.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Registration language         
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{ data['bilingual'] or 'Yes (Welsh and English)'}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+          </dd>
+        </div>
+        
+      </dl>
+      
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
