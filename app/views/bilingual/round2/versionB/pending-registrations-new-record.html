@@ -64,7 +64,7 @@
               <td class="govuk-table__cell"><a href="create-new-record/change-record/change-record-details.html" class="govuk-link">{{data['deceasedFirstName']}} {{data['deceasedMiddleName']}} {{data['deceasedLastName']}}</a></td>
               <td class="govuk-table__cell">{{data['day-of-death']}}/{{data['month-of-death']}}/{{data['year-of-death']}}</td>
               <td class="govuk-table__cell">{{data['MCCDissued-day']}}/{{data['MCCDissued-month']}}/{{data['MCCDissued-year']}}</td>
-              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">{{data['building-name']}}, {{data['AddressLine2']}}, {{data['addressTown']}}, {{data['addressPostcode']}}</td>
               <td class="govuk-table__cell">
                 {% if (data['coverSheetPriority'] === "true") %}
                 Yes
