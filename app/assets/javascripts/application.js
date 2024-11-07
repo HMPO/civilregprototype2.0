@@ -4,7 +4,7 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  let selectElement = document.querySelector('#choose-CE')
+  let selectElement = document.querySelector('#chooseCE')
 
   accessibleAutocomplete.enhanceSelectElement({
 
