@@ -150,7 +150,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <label class="govuk-label" for="building-name">
                             Building name
                           </label>
-                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="Princess of Wales Hospital">
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="{{data['building-name'] or "Princess of Wales Hospital"}}">
                         </div>
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="building-name-welsh">
@@ -216,7 +216,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-town">
                           Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="Bridgend">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="{{data['addressTown'] or "Bridgend"}}">
                       </div>
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="address-town-welsh">
@@ -240,7 +240,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-postcode">
                           Postcode | Cod post
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="CF31 1RQ">
+                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="{{data['addressPostcode'] or "CF31 1RQ"}}">
                       </div>
                     </fieldset>
                       `
@@ -261,7 +261,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <label class="govuk-label" for="building-name">
                             Building name
                           </label>
-                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="Llandaff House">
+                          <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text"  value="{{data['building-name'] or "Llandaff House"}}">
                         </div>
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="building-name-welsh">
@@ -291,7 +291,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-line-2">
                           Street address 2
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text" value="Conway Road">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text" value="{{data['AddressLine2'] or "Conway Road"}}">
                         </div>
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="address-line-2-welsh">
@@ -327,7 +327,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-town">
                           Town or city
                         </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="Cardiff">
+                        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="{{data['addressTown'] or "Cardiff"}}">
                       </div>
                       <div class="govuk-form-group">
                         <label class="govuk-label" for="address-town-welsh">
@@ -351,7 +351,7 @@ Place of death – {{ serviceName }} – GOV.UK Prototype Kit
                         <label class="govuk-label" for="address-postcode">
                           Postcode | Cod post
                         </label>
-                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="CF31 1RQ">
+                        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="{{data['addressPostcode'] or "CF11 9NT"}}">
                       </div>
                     </fieldset>
                       `
