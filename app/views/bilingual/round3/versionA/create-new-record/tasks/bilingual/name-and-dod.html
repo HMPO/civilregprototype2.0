@@ -1,0 +1,363 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "../task-list.html"
+}) }}
+
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Name and date of death
+          </h1>
+  
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-first-name">
+                First name | Enwau cyntaf (if available)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or ""}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-middle-name">
+                Middle names | Enwau canol (if available)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName']}}">
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">Add more middle names</a>
+              </p>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="deceased-last-name">
+                Last name | Cyfenw
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or ""}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="capitalise-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Capitalise last name?
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="capitalise-yes" name="capitalise" type="radio" checked="checked" value="capitalise-yes" data-aria-controls="" {{ checked("capitalise", "capitalise-yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="capitalise-no" name="capitalise" type="radio" value="capitalise-no" data-aria-controls="" {{ checked("capitalise", "capitalise-no") }}>
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No - print as typed
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="prefix">
+                Prefix | Rhagddodiad (if available)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="prefix" name="prefix" type="text" value="{{data['prefix']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" for="suffix">
+                Suffix | Ôl-ddodiad (if available)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="suffix" name="suffix" type="text" value="{{data['suffix']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Print order of names
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order" name="name-order" type="radio" checked="checked" value="name-order-first-name" {{ checked("name-order", "name-order-first-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order">
+                      First name at the front
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-1" name="name-order" type="radio" value="name-order-last-name" {{ checked("name-order", "name-order-last-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-1">
+                      Last name at the front
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-2" name="name-order" type="radio" value="name-order-only-last" {{ checked("name-order", "name-order-only-last") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-2">
+                      Only print last name
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-3" name="name-order" type="radio" value="name-order-no-name" {{ checked("name-order", "name-order-no-name") }} data-aria-controls="">
+                    <label class="govuk-label govuk-radios__label" for="name-order-3">
+                      Print no name
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="name-order-4" name="name-order" type="radio" value="name-order-other" {{ checked("name-order", "name-order-other") }} data-aria-controls="conditional-name-order-other">
+                    <label class="govuk-label govuk-radios__label" for="name-order-4">
+                      Print names in other order
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-name-order-other">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label" id="custom-order" for="custom-order">
+                        Order of names
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-half" id="custom-order" name="custom-order" type="text" aria-required="false" value="{{data['custom-order']}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Other known names | Enwau hysbys eraill (if available)
+                </legend>
+
+                <div class="govuk-form-group">
+                  <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Other known names
+                  </button>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death-known-hint" id="date-of-death-known-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                    Is the deceased’s exact date of death known? | A yw union ddyddiad y farwolaeth yn hysbys?
+                  </h3>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their exact date of death" {{ checked("date-of-death-known", "Yes, their exact date of death") }} data-aria-controls="conditional-date-of-death-known-1">
+                    <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
+                      Yes, their full or partial date of death | Ydy, eu dyddiad marwolaeth llawn neu rannol
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-of-death-known-1">
+                      <div class="govuk-form-group">
+                       <fieldset class="govuk-fieldset" role="group"  id="date-of-death-fieldset" aria-describedby="date-of-death1">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Enter the date of death | Nodwch ddyddiad y farwolaeth
+                        </legend>
+                        <div id="date-of-death1-hint" class="govuk-hint">
+                          For example, 12 11 2024
+                        </div>
+                        <div class="govuk-date-input" id="date-of-death1">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="day-of-death">
+                              Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="month-of-death">
+                              Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="year-of-death">
+                            Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" >
+                            </div>
+                          </div>
+                        </div>
+                       </fieldset>
+                      </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="date-of-death-known-2" name="date-of-death-known" type="radio" value="No, only a partial or uncertain date of death" {{ checked("date-of-death-known", "No, only a partial or uncertain date of death") }} data-aria-controls="conditional-date-of-death-known-2">
+                    <label class="govuk-label govuk-radios__label" for="date-of-death-known-2">
+                      No, only a partial or uncertain date of death | Na, dim ond dyddiad marwolaeth rhannol neu ansicr
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-of-death-known-2">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset"  role="group" id="no-qualifier-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Date of death qualifier | Cymhwyster dyddiad marwolaeth (if applicable)
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="on-or-about" name="on-or-about" type="checkbox" value="on-or-about">
+                            <label class="govuk-label govuk-checkboxes__label" for="on-or-about">
+                              On or about | Ar neu o gwmpas
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death2" id="date-of-death2-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Enter partial or uncertain date of death | Nodwch ddyddiad y farwolaeth yn rhannol neu'n ansicr
+                        </legend>
+                        <div id="date-of-death2-hint" class="govuk-hint">
+                          For example, 23 11 2024
+                        </div>
+                        <div class="govuk-date-input" id="date-of-death2">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="day-of-death2">
+                                Day 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death2" name="day-of-death2" value="{{data['day-of-death2']}}" >
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="month-of-death2">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death2" name="month-of-death2" value="{{data['month-of-death2']}}" >
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="year-of-death2">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death2" name="year-of-death2" value="{{data['year-of-death2']}}" >
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="date-of-death-known-3" name="date-of-death-known" type="radio" value="No, only the date when their body was found" {{ checked("date-of-death-known", "No, only the date when their body was found") }} data-aria-controls="conditional-date-of-death-known-3">
+                    <label class="govuk-label govuk-radios__label" for="date-of-death-known-3">
+                      No, only the date when their body was found | Na, dim ond y dyddiad y daethpwyd o hyd i'w corff
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date-of-death-known-3">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset"  role="group" id="no-qualifier-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Select date of death qualifier | Cymhwyster dyddiad marwolaeth
+                      </legend>
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="qualifier-3" name="qualifier" type="radio" value="On or about" {{ checked("qualifier", "On or about") }} aria-describedby="qualifier-item-hint">
+                          <label class="govuk-label govuk-radios__label" for="qualifier-3">
+                            On or about | Ar neu o gwmpas
+                          </label>
+                          <div id="qualifier-item-hint" class="govuk-hint govuk-radios__hint">
+                            If the place of death is known
+                          </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="qualifier-4" name="qualifier" type="radio" value="Deceased found on" {{ checked("qualifier", "Deceased found on") }} aria-describedby="qualifier-2-item-hint">
+                          <label class="govuk-label govuk-radios__label" for="qualifier-4">
+                            Deceased found on | Cafwyd hyd i'r ymadawedig ar
+                          </label>
+                          <div id="qualifier-2-item-hint" class="govuk-hint govuk-radios__hint">
+                            If only the place the body was found is known.
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-death2" id="date-of-death2-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Enter the date the body was found | Nodwch y dyddiad y daethpwyd o hyd i'r corff
+                      </legend>
+                      <div id="date-of-death2-hint" class="govuk-hint">
+                        For example, 23 11 2024
+                      </div>
+                      <div class="govuk-date-input" id="date-of-death3">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="day-of-death3">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death3" name="day-of-death3" value="{{data['day-of-death3']}}" >
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="month-of-death3">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death3" name="month-of-death3" value="{{data['month-of-death3']}}" >
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="year-of-death3">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death2" name="year-of-death3" value="{{data['year-of-death3']}}" >
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+             
+              <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}

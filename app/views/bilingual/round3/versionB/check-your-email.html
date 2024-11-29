@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "sign-in"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your email
+      </h1>
+
+      <p class="govuk-body">Enter the 6 digit code we’ve sent to your work email address. It might take a minute or so to arrive. If you do not use it within 5 minutes, you’ll need to get a new code.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="code">
+            6 digits code
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="code" name="code" type="text" autocomplete="email">
+      </div>
+
+      <p class="govuk-body">
+        <a href="" class="govuk-link">Get new code</a>
+      </p>
+
+        
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Sign in",
+        href: "pending-registrations"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
