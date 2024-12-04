@@ -42,14 +42,14 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--s" for="deceased-first-name">
                 First name  (if available)
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or ""}}">
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or ['Iain']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-middle-name">
                 Middle names  (if available)
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName']}}">
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName'] or ['James'] }}">
               <p class="govuk-body">
                 <a href="#" class="govuk-link">Add more middle names</a>
               </p>
@@ -59,7 +59,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--s" for="deceased-last-name">
                 Last name
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or ""}}">
+              <input class="govuk-input govuk-!-width-one-half" id="deceased-last-name" name="deceasedLastName" type="text" value="{{data['deceasedLastName'] or ['Evans']}}">
             </div>
 
             <div class="govuk-form-group">
@@ -169,7 +169,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their exact date of death" {{ checked("date-of-death-known", "Yes, their exact date of death") }} data-aria-controls="conditional-date-of-death-known-1">
+                    <input class="govuk-radios__input" id="date-of-death-known-1" name="date-of-death-known" type="radio" value="Yes, their exact date of death" checked="checked" {{ checked("date-of-death-known", "Yes, their exact date of death") }} data-aria-controls="conditional-date-of-death-known-1">
                     <label class="govuk-label govuk-radios__label" for="date-of-death-known-1">
                       Yes, their exact date of death
                     </label>
@@ -189,7 +189,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="day-of-death">
                               Day
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death']}}">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-of-death" name="day-of-death" value="{{data['day-of-death'] or ['08']}}">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
@@ -197,7 +197,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="month-of-death">
                               Month
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death']}}">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-of-death" name="month-of-death" value="{{data['month-of-death'] or ['12']}}">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
@@ -205,7 +205,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                               <label class="govuk-label govuk-date-input__label" for="year-of-death">
                             Year
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death']}}" >
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-of-death" name="year-of-death" value="{{data['year-of-death'] or ['2024']}}" >
                             </div>
                           </div>
                         </div>

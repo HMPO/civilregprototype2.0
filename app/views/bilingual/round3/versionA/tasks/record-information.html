@@ -53,7 +53,7 @@ Registration notes – {{ serviceName }} – GOV.UK Prototype Kit
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" value="false" {{ checked("coverSheetPriority", "false") }}>
+                    <input class="govuk-radios__input" id="coverSheetPriority-false" name="coverSheetPriority" type="radio" value="false" checked="checked" {{ checked("coverSheetPriority", "false") }}>
                     <label class="govuk-label govuk-radios__label" id="coverSheetPriority-false-label" for="coverSheetPriority-false">
                       No
                     </label>
@@ -68,13 +68,13 @@ Registration notes – {{ serviceName }} – GOV.UK Prototype Kit
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantFullName-label" for="coverSheetInformantFullName">
                 Full name
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantFullName" name="coverSheetInformantFullName" type="text" aria-required="false" value="{{data['coverSheetInformantFullName']}}">
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantFullName" name="coverSheetInformantFullName" type="text" aria-required="false" value="{{data['coverSheetInformantFullName'] or ['Adam Smith']}}">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantPhoneNumber-label" for="coverSheetInformantPhoneNumber">
                 Phone number 
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantPhoneNumber" name="coverSheetInformantPhoneNumber" type="text" aria-required="false" value="{{data['coverSheetInformantPhoneNumber']}}">
+              <input class="govuk-input govuk-!-width-one-half" id="coverSheetInformantPhoneNumber" name="coverSheetInformantPhoneNumber" type="text" aria-required="false" value="{{data['coverSheetInformantPhoneNumber'] or ['07832559948']}}">
             </div>
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--xs" id="coverSheetInformantEmailAddress-label" for="coverSheetInformantEmailAddress">
