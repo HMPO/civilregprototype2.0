@@ -16,7 +16,7 @@
 
 {{ govukBackLink({
   text: "Back to pending registrations",
-  href: "./../../pending-registrations-new-record.html"
+  href: "/../pending-registrations.html"
 }) }}
 {% endblock %}
 
@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName']}}, {{data['deceasedFirstName']}} {{data['deceasedMiddleName']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or ['EVANS']}}, {{data['deceasedFirstName'] or ['Iain']}} {{data['deceasedMiddleName'] or ['James']}}</h1>
 
       <h2 class="govuk-heading-l">Supporting information</h2>
 
@@ -58,15 +58,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/cause-of-death.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/cause-of-death.html" aria-describedby="">
               Cause of death
             </a>
 
             {% else %}
 
-            <a class="govuk-link govuk-task-list__link" href="english/cause-of-death.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="bilingual/cause-of-death.html" aria-describedby="">
               Cause of death
             </a>
 
@@ -102,15 +102,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/name-and-dod.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/name-and-dod.html" aria-describedby="">
              Name and date of death
             </a>
 
             {% else %}
          
-          <a class="govuk-link govuk-task-list__link" href="english/name-and-dod.html" aria-describedby="">
+          <a class="govuk-link govuk-task-list__link" href="bilingual/name-and-dod.html" aria-describedby="">
             Name and date of death
            </a>
 
@@ -138,15 +138,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/place-of-death.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/place-of-death.html" aria-describedby="">
               Place of death
             </a>
 
             {% else %}
          
-          <a class="govuk-link govuk-task-list__link" href="english/place-of-death.html" aria-describedby="">
+          <a class="govuk-link govuk-task-list__link" href="bilingual/place-of-death.html" aria-describedby="">
             Place of death
            </a>
 
@@ -175,15 +175,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/personal-details.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/personal-details.html" aria-describedby="">
               Personal details
             </a>
 
             {% else %}
          
-          <a class="govuk-link govuk-task-list__link" href="english/personal-details.html" aria-describedby="">
+          <a class="govuk-link govuk-task-list__link" href="bilingual/personal-details.html" aria-describedby="">
             Personal details
            </a>
 
@@ -211,15 +211,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/relationship-details.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/relationship-details.html" aria-describedby="">
               Relationship details
             </a>
 
             {% else %}
          
-          <a class="govuk-link govuk-task-list__link" href="english/relationship-details.html" aria-describedby="">
+          <a class="govuk-link govuk-task-list__link" href="bilingual/relationship-details.html" aria-describedby="">
             Relationship details
            </a>
 
@@ -252,15 +252,15 @@
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
 
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-            <a class="govuk-link govuk-task-list__link" href="bilingual/informant-details.html" aria-describedby="">
+            <a class="govuk-link govuk-task-list__link" href="english/informant-details.html" aria-describedby="">
               Informant’s details
             </a>
 
             {% else %}
          
-          <a class="govuk-link govuk-task-list__link" href="english/informant-details.html" aria-describedby="">
+          <a class="govuk-link govuk-task-list__link" href="bilingual/informant-details.html" aria-describedby="">
             Informant’s details
            </a>
 
@@ -291,79 +291,21 @@
       <h2 class="govuk-heading-m">Information for statistics</h2>
 
       <ul class="govuk-task-list">
-         <li class="govuk-task-list__item govuk-task-list__item--with-link">
-
-          {% if (data['medical-information'])%}
-          
-              {% if (data['bilingual'] == "Welsh and English" ) %}
-
-                <a class="govuk-link govuk-task-list__link" href="bilingual/medical-information.html" aria-describedby="">
-                  Medical information
-                </a>
-
-                {% else %}
-            
-                <a class="govuk-link govuk-task-list__link" href="english/medical-information.html" aria-describedby="">
-                  Medical information
-                </a>
-
-              {% endif %}
-
-              <div class="govuk-task-list__status" id="">
-                Completed
-              </div>
-            
-          {% elif (data['place-of-death'] and ['relationship'] and ['deceasedDateOfBirth']) %}
-
-              {% if (data['bilingual'] == "Welsh and English" )%}
-
-              <a class="govuk-link govuk-task-list__link" href="bilingual/medical-information.html" aria-describedby="">
-                Medical information
-              </a>
-
-              {% else %}
-          
-              <a class="govuk-link govuk-task-list__link" href="english/medical-information.html" aria-describedby="">
-                Medical information
-              </a>
-
-              {% endif %}
-
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--blue">
-                Incomplete
-              </strong>
-            </div>
-
-          {% else %}
-
-            <div class="govuk-task-list__name-and-hint">
-              Medical information
-            </div>
-
-            <div class="govuk-task-list__status" id="">
-              <strong class="govuk-tag govuk-tag--grey">
-                Cannot start yet
-              </strong>
-            </div>
-
-          {% endif %}
-        </li>
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
           {% if (data['additional-industry-deceased'] and data['employment-deceased'] 
           and data['additional-industry-partner'] and data['employment-partner'] )%}
           
-            {% if (data['bilingual'] == "Welsh and English" )%}
+            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-                <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
+                <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
                   Employment and industry information
                 </a>
 
                 {% else %}
             
-                <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
+                <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
                   Employment and industry information
                 </a>
 
@@ -375,15 +317,15 @@
             
           {% elif (data['place-of-death'] and data['relationship'] and data['deceasedDateOfBirth']) %}
 
-              {% if (data['bilingual'] == "Welsh and English" )%}
+              {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-              <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
+              <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
                 Employment and industry information
               </a>
 
               {% else %}
           
-              <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
+              <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
                 Employment and industry information
               </a>
 
@@ -429,23 +371,8 @@
             Completed
           </div>
 
-          {% else %}
 
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="register-page.html" aria-describedby="">
-              Register page
-            </a>
-          </div>
-
-          <div class="govuk-task-list__status" id="">
-            <strong class="govuk-tag govuk-tag--blue">
-              Incomplete
-            </strong>
-          </div>
-
-          {% endif %}
-
-          {# {% elif (data['medical-information'] and data['additional-industry-deceased'] and data['employment-deceased'] 
+          {% elif (data['medical-information'] and data['additional-industry-deceased'] and data['employment-deceased'] 
           and data['additional-industry-partner'] and data['employment-partner']) %}
 
           <div class="govuk-task-list__name-and-hint">
@@ -472,7 +399,7 @@
             </strong>
           </div>
 
-          {% endif %} #}
+          {% endif %}
 
         </li>
 

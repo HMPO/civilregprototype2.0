@@ -15,7 +15,7 @@ Age of deceased – Bilingular {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
 
 {{ govukBackLink({
-  text: "Back to record",
+  text: "Back",
   href: "javascript:window.history.back()"
 }) }}
 
@@ -51,7 +51,7 @@ Age of deceased – Bilingular {{ serviceName }} – GOV.UK Prototype Kit
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="bilingual-2" name="bilingual" type="radio" value="Welsh and English" {{ checked("bilingual", "Welsh and English") }} >
+                  <input class="govuk-radios__input" id="bilingual-2" name="bilingual" type="radio" value="Welsh and English" checked="checked" {{ checked("bilingual", "Welsh and English") }} >
                   <label class="govuk-label govuk-radios__label"  for="bilingual-2">
                     Yes (Welsh and English)
                   </label>
