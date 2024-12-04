@@ -1,0 +1,253 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Relationship details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+tag: {
+text: "Prototype"
+},
+html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+text: "Back to record",
+href: "../task-list.html"
+}) }}
+
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" action="../task-list" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="relationship-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Relationship details
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship" name="relationship" type="radio" value="WifeOf" data-aria-controls="conditional-relationship-WifeOf">
+                  <label class="govuk-label govuk-radios__label" for="relationship">
+                    Married or in a civil partnership
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-WifeOf">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Deceased’s relationship to their partner
+                      </legend>
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="relatinship-to-partner-1" name="relatinship-to-partner" value="YES">
+                            <label class="govuk-label govuk-radios__label" for="relatinship-to-partner-1">
+                              Wife of their partner
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="relatinship-to-partner-2" name="relatinship-to-partner" value="NO">
+                          <label class="govuk-label govuk-radios__label" for="relatinship-to-partner-2">
+                            Husband of their partner
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="relatinship-to-partner-2" name="relatinship-to-partner" value="NO">
+                          <label class="govuk-label govuk-radios__label" for="relatinship-to-partner-2">
+                            Civil partner
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="partnerName_input">
+                      Full name of deceased’s partner
+                    </label>
+                    <input id="partnerName_input" name="partnerName" class="govuk-input govuk-!-width-two-thirds" value="">
+                  </div>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="partnerOccupation_input">
+                      Occupation of deceased’s partner (if available)
+                    </label>
+                    <input id="partnerOccupation_input" name="partnerOccupation" class="govuk-input govuk-!-width-two-thirds" value="">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Occupation status of deceased’s partner
+                      </legend>
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="partnerRetired_WIFE_OF-1" name="partnerRetired_WIFE_OF" value="YES">
+                            <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-1">
+                              Retired
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="partnerRetired_WIFE_OF-2" name="partnerRetired_WIFE_OF" value="NO">
+                          <label class="govuk-label govuk-radios__label" for="partnerRetired_WIFE_OF-2">
+                            Not retired
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="govuk-warning-text govuk-!-margin-bottom-2">
+                    
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!
+                      </span>
+                      Surviving spouse or civil partner’s age is required by the Population (Statistics) Act 1938
+                    </strong>
+                  </div>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Will the informant give the date of birth of the spouse or civil partner of the deceased's partner?
+                      </legend>
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-1" name="reasonOfMissingDateOfBirth_WIFE_OF"
+                            value="YES" data-aria-controls="conditional-reasonOfMissingDateOfBirth_WIFE_OF-1">
+                            <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF">
+                              Yes
+                           </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reasonOfMissingDateOfBirth_WIFE_OF-1">
+                          <div class="govuk-form-group govuk-!-padding-bottom-5">
+                            <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-label--s">
+                                Spouse or civil partner’s date of birth
+                              </legend>
+                              <div id="dateOfBirthPartner_input" class="govuk-date-input">
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-day">
+                                      Day
+                                    </label>
+                                    <input id="dateOfBirthPartner_input-day" name="dateOfBirthPartner-day"
+                                      class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-month">
+                                      Month
+                                    </label>
+                                    <input
+                                      id="dateOfBirthPartner_input-month" name="dateOfBirthPartner-month"
+                                      class="govuk-input govuk-input--width-2" inputmode="number" maxlength="2"
+                                      value="">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label"
+                                      for="dateOfBirthPartner_input-year">
+                                      Year
+                                    </label>
+                                    <input
+                                      id="dateOfBirthPartner_input-year" name="dateOfBirthPartner-year"
+                                      class="govuk-input govuk-input--width-4" inputmode="number" maxlength="4"
+                                      value="">
+                                    </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio" id="reasonOfMissingDateOfBirth_WIFE_OF-2" name="reasonOfMissingDateOfBirth_WIFE_OF"
+                            value="NOT_KNOWN">
+                            <label class="govuk-label govuk-radios__label" for="reasonOfMissingDateOfBirth_WIFE_OF-2">
+                              No
+                          </label>
+                          </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" type="radio"
+                            id="reasonOfMissingDateOfBirth_WIFE_OF-3" name="reasonOfMissingDateOfBirth_WIFE_OF"
+                            value="REFUSED_TO_ANSWER">
+                            <label class="govuk-label govuk-radios__label"
+                            for="reasonOfMissingDateOfBirth_WIFE_OF-3">
+                            Date of birth not known
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-HusbandOf" name="relationship" type="radio"
+                    value="HusbandOf" data-aria-controls="conditional-relationship-HusbandOf">
+                  <label class="govuk-label govuk-radios__label" for="relationship-HusbandOf">
+                    Widowed or surviving civil partner
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-HusbandOf">
+                  
+          
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-CivilPartnerOf" name="relationship" type="radio"
+                    value="CivilPartnerOf" data-aria-controls="conditional-relationship-CivilPartnerOf">
+                  <label class="govuk-label govuk-radios__label" for="relationship-CivilPartnerOf">
+                    Single, divorced or civil partnership dissolved 
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-relationship-CivilPartnerOf">
+                  
+                  
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-WidowOf" name="relationship" type="radio"
+                    value="WidowOf" data-aria-controls="conditional-relationship-WidowOf">
+                  <label class="govuk-label govuk-radios__label" for="relationship-WidowOf">
+                    Not known
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-relationship-WidowOf">
+                </div>
+            </fieldset>
+          </div>
+
+
+
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+            text: "Save and return"
+            }) }}
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

@@ -32,7 +32,7 @@ Create record - Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form class="form" action="bilingual" method="post">
+        <form class="form" action="change-record-details-save" method="post">
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="age-hint">
@@ -41,7 +41,7 @@ Create record - Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 Age of deceased
               </legend>
-              <h1>
+              </h1>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="age-bracket-1" name="age-bracket" type="radio" value="Less than 24 hours" {{ checked("age-bracket", "Less than 24 hours") }}>
@@ -62,7 +62,7 @@ Create record - Age of deceased – {{ serviceName }} – GOV.UK Prototype Kit
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-bracket-4" name="age-bracket" type="radio" value="16 years to 74 years" {{ checked("age-bracket", "16 years to 74 years") }} >
+                  <input class="govuk-radios__input" id="age-bracket-4" name="age-bracket" type="radio" value="16 years to 74 years" checked="checked" {{ checked("age-bracket", "16 years to 74 years") }} >
                   <label class="govuk-label govuk-radios__label" for="age-bracket-4">
                     16 years to 74 years
                   </label>
