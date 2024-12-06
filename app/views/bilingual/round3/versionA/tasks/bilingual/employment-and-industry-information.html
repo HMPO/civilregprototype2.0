@@ -39,13 +39,13 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="additional-industry-deceased" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Will the informant give additional industry and employment information for the deceased? | A fydd yr hysbysydd yn rhoi gwybodaeth ychwanegol am ddiwydiant a chyflogaeth ar gyfer yr ymadawedig?
+                  Will the informant give additional industry and employment information for the deceased? | A wnaiff yr hysbysydd roi gwybodaeth ychwanegol am ddiwydiant a chyflogaeth i'r ymadawedig? 
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="additional-industry-yes" name="additional-industry-deceased" type="radio" value="yes" {{checked("additional-industry-deceased", "yes")}} aria-expanded="false" data-aria-controls="conditional-industry-deceased">
                     <label class="govuk-label govuk-radios__label" id="additional-industry-yes" for="additional-industry-yes">
-                      Yes | Do
+                      Yes | Gwnaiff 
                     </label>   
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-industry-deceased">
@@ -67,13 +67,13 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="additional-industry-not-known" name="additional-industry-deceased" type="radio" value="not-known" {{checked("additional-industry-deceased", "not-known")}} >
                     <label class="govuk-label govuk-radios__label" id="additional-industry-not-known" for="additional-industry-not-known">
-                      Not known | Anhysbys 
+                      Not known | Ddim yn hysbys  
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="additional-industry-refused" name="additional-industry-deceased" type="radio" value="refused-to-answer" {{checked("additional-industry-deceased", "refused-to-answer")}} >
                     <label class="govuk-label govuk-radios__label" id="additional-industry-refused" for="additional-industryrefused">
-                      Refused to answer | Gwrthod ateb
+                      Refused to answer | Amherthnasol 
                     </label>
                   </div>
                 </div>
@@ -83,31 +83,31 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="employment-deceased" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Select employment status – deceased | Dewiswch statws cyflogaeth – ymadawedig
+                  Select employment status – deceased | Dewis statws cyflogaeth – wedi marw 
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-deceased" type="radio" value="employee-not-supervising" {{checked("employment-deceased", "employee-not-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-not-supervising" for="employment-status-employee-not-supervising">
-                      Employee, not supervising | Gweithiwr, nid goruchwylio
+                      Employee, not supervising | Gweithiwr, ddim yn goruchwylio
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-deceased" type="radio" value="employee-supervising" {{checked("employment-deceased", "employee-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-supervising" for="employment-status-employee-supervising">
-                      Employee, supervising | Gweithiwr, goruchwylio
+                      Employee, supervising | Awaiting Welsh content
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-self-employed-no-employees" name="employment-deceased" type="radio" value="self-employed-no-employees" {{checked("employment-deceased", "self-employed-no-employees")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-no-employees" for="employment-status-self-employed-no-employees">
-                      Self-employed, no employees | Hunan-gyflogedig, dim gweithwyr
+                      Self-employed, no employees | Hunangyflogedig, dim gweithwyr 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-self-employed-with-employees" name="employment-deceased" type="radio" value="self-employed-with-employees" {{checked("employment-deceased", "self-employed-with-employees")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-with-employees" for="employment-status-self-employed-with-employees">
-                      Self-employed, with employees | Hunan-gyflogedig, gyda gweithwyr
+                      Self-employed, with employees | Hunangyflogedig, gyda gweithwyr 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -119,13 +119,13 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-not-known" name="employment-deceased" type="radio" value="not-known" {{checked("employment-deceased", "not-known")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-not-known" for="employment-status-not-known">
-                      Not known |  Anhysbys
+                      Not known |  Ddim yn hysbys 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-refused" name="employment-deceased" type="radio" value="refused" {{checked("employment-deceased", "refused")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-refused" for="employment-status-refused">
-                      Refused to answer | Gwrthod ateb
+                      Refused to answer | Gwrthod ateb 
                     </label>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="additional-industry-partner" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Will the informant give additional industry and employment information for the deceased’s partner? | A fydd yr hysbysydd yn rhoi gwybodaeth ychwanegol am ddiwydiant a chyflogaeth ar gyfer partner yr ymadawedig?
+                  Will the informant give additional industry and employment information for the deceased’s partner? | A wnaiff yr hysbyswr roi gwybodaeth ychwanegol am ddiwydiant a chyflogaeth partner yr ymadawedig? 
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
@@ -157,13 +157,13 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="additional-industry-not-employed" name="additional-industry-partner" type="radio" value="not-employed" {{checked("additional-industry-partner", "not-employed")}}>
                     <label class="govuk-label govuk-radios__label" id="additional-industry-not-employed" for="additional-industry-not-employed">
-                      Not employed | Not employed | Ddim yn gyflogedig
+                      Not employed | Ddim yn gyflogedig 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="additional-industry-not-known" name="additional-industry-partner" type="radio" value="not-known" {{checked("additional-industry-partner", "not-known")}}>
                     <label class="govuk-label govuk-radios__label" id="additional-industry-not-known" for="additional-industry-not-known">
-                      Not known | Anhysbys 
+                      Not known | Ddim yn hysbys  
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -179,49 +179,49 @@ Employment and industry information – {{ serviceName }} – GOV.UK Prototype K
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="employment-status-partner" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Select employment status – deceased's partner | Dewiswch statws cyflogaeth – partner yr ymadawedig
+                  Select employment status – deceased's partner | Dewiswch statws cyflogaeth – partner yr ymadawedig 
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-employee-not-supervising" name="employment-partner" type="radio" value="employee-not-supervising" {{checked("employment-partner", "employee-not-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-not-supervising" for="employment-status-employee-not-supervising">
-                      Employee, not supervising | Gweithiwr, nid goruchwylio
+                      Employee, not supervising | Gweithiwr, ddim yn goruchwylio 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-employee-supervising" name="employment-partner" type="radio" value="employee-supervising" {{checked("employment-partner", "employee-supervising")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-employee-supervising" for="employment-status-employee-supervising">
-                      Employee, supervising | Gweithiwr, goruchwyliot
+                      Employee, supervising | Awaiting Welsh Content
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-self-employed-no-employees" name="employment-partner" type="radio" value="self-employed-no-employees" {{checked("employment-partner", "self-employed-no-employees")}}  aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-no-employees" for="employment-status-self-employed-no-employees">
-                      Self-employed, no employees | Hunan-gyflogedig, dim gweithwyr
+                      Self-employed, no employees | Hunangyflogedig, dim gweithwyr 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-self-employed-with-employees" name="employment-partner" type="radio" value="self-employed-with-employees" {{checked("employment-partner", "self-employed-with-employees")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-self-employed-with-employees" for="employment-status-self-employed-with-employees">
-                      Self-employed, with employees | Hunan-gyflogedig, gyda gweithwyr
+                      Self-employed, with employees | Hunangyflogedig, gyda gweithwyr 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-not-employed" name="employment-partner" type="radio" value="not-employed" {{checked("employment-partner", "not-employed")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-not-employed" for="employment-status-not-employed">
-                      Not employed | Ddim yn gyflogedig
+                      Not employed | Ddim yn gyflogedig 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-not-known" name="employment-partner" type="radio" value="not-known" {{checked("employment-partner", "not-known")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-not-known" for="employment-status-not-known">
-                      Not known | Anhysbys
+                      Not known | Ddim yn hysbys 
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="employment-status-refused" name="employment-partner" type="radio" value="refused" {{checked("employment-partner", "refused")}} aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="employment-status-refused" for="employment-status-refused">
-                      Refused to answer | Gwrthod ateb
+                      Refused to answer | Gwrthod ateb 
                     </label>
                   </div>
                 </div>

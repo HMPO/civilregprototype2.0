@@ -46,19 +46,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Female" name="deceasedSex" type="radio" value="female" {{ checked("deceasedSex", "female") }} aria-controls="conditional-deceasedSex-Female" aria-expanded="false">
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Female-label" for="deceasedSex-Female">
-                    Female | Gwryw
+                    Female | Benyw 
                   </label>   
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Male" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }}>
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Male-label" for="deceasedSex-Male">
-                    Male | Benyw
+                    Male | Gwryw 
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }} aria-controls="conditional-intersex">
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
-                    Indeterminate | Amhenodol
+                    Indeterminate | Amhendefynadwy  
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-intersex">
@@ -105,14 +105,14 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Sameasplaceofdeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "same") }} aria-controls="link-to-task">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Sameasplaceofdeath-label" for="deceasedUsualAddress-Sameasplaceofdeath">
-                      Same as place of death | Yr un fath â man marwolaeth
+                      Same as place of death | Yr un lle â’r farwolaeth 
                     </label>    
                   </div>
                   
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
-                      Different to place of death | Gwahanol i fan marwolaeth
+                      Different to place of death | Yn wahanol i le y farwolaeth
                     </label>
                   </div>
 
@@ -121,19 +121,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                          Did the deceased live in a communal establishment? 
+                          Did the deceased live in a communal establishment? | A oedd yr ymadawedig yn byw mewn sefydliad cymunedol
                         </legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="usualaddress-CE" name="usualaddress-CE" type="radio" value="CE-yes" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-CE-yes">
                             <label class="govuk-label govuk-radios__label" for="usualaddress-CE">
-                              Yes
+                              Yes | Do
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="usualaddress-CE-no" name="usualaddress-CE" type="radio" value="CE-no">
                             <label class="govuk-label govuk-radios__label" for="usualaddress-CE-no">
-                              No
+                              No | Naddo
                             </label>
                           </div>
 
@@ -587,7 +587,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="deceasedDateOfBirth-Partialdateofbirthknown" name="deceasedDateOfBirth" type="radio" value="partial" {{ checked("deceasedDateOfBirth", "partial") }} aria-controls="conditional-deceasedDateOfBirth-Partialdateofbirthknown" aria-expanded="false">
                     <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Partialdateofbirthknown-label" for="deceasedDateOfBirth-Partialdateofbirthknown">
-                        Partial date of birth known | Gwybod dyddiad geni rhannol
+                        Partial date of birth known | Dyddiad geni rhannol yn hysbys
                     </label>
                   </div>
                     
@@ -595,7 +595,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset" role="group" aria-describedby="deceasedPartialDateOfBirth-hint" id="deceasedPartialDateOfBirth-fieldset">
                         <legend class="govuk-fieldset__legend govuk-label--xs">
-                          Partial date of birth | Dyddiad geni rhanno 
+                          Partial date of birth | Dyddiad geni rhannol 
                         </legend>
                         <div id="deceasedPartialDateOfBirth-hint" class="govuk-hint">
                           Enter as much as is known
@@ -644,7 +644,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedDateOfBirth-Approximateyearofbirthonly" name="deceasedDateOfBirth" type="radio" value="approximate" {{ checked("deceasedDateOfBirth", "approximate") }} aria-controls="conditional-deceasedDateOfBirth-Approximateyearofbirthonly" aria-expanded="false">
                       <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Approximateyearofbirthonly-label" for="deceasedDateOfBirth-Approximateyearofbirthonly">
-                    Approximate year of birth only | Tua blwyddyn geni yn unig
+                    Approximate year of birth only | Brasamcan o flwyddyn geni yn unig
                     </label>
                   </div>
 
@@ -652,7 +652,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     
                     <div class="govuk-form-group">
                       <label class="govuk-label govuk-label--xs" id="deceasedApproximateYearOfBirth-label" for="deceasedApproximateYearOfBirth">
-                        Approximate year of birth | Tua blwyddyn geni
+                        Approximate year of birth | Brasamcan o flwyddyn Geni
                       </label>
                       <input class="govuk-input govuk-input--width-4" id="deceasedApproximateYearOfBirth" name="deceasedApproximateYearOfBirth" type="text" aria-required="false">
                     </div>
@@ -710,7 +710,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedCountryOfBirth-Scotland" name="deceasedCountryOfBirth" type="radio" value="scotland" {{ checked("deceasedCountryOfBirth", "scotland") }}>
                       <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-Scotland-label" for="deceasedCountryOfBirth-Scotland">
-                    Scotland | Alban
+                    Scotland | Yr Alban
                   </label>          
                     </div>
                     <div class="govuk-radios__item">
@@ -722,13 +722,13 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedCountryOfBirth-OutsidetheUK" name="deceasedCountryOfBirth" type="radio" value="outside-the-UK" {{ checked("deceasedCountryOfBirth", "outside-the-UK") }}>
                       <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-OutsidetheUK-label" for="deceasedCountryOfBirth-OutsidetheUK">
-                        Outside the UK |  Y tu allan i'r DU
+                        Outside the UK | Y tu allan i'r Deyrnas Unedig 
                       </label>
                     </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="deceasedCountryOfBirth-Notknown" name="deceasedCountryOfBirth" type="radio" value="not-known" {{ checked("deceasedCountryOfBirth", "not-known") }}>
                       <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-Notknown-label" for="deceasedCountryOfBirth-Notknown">
-                      Not known | Anhysbys
+                      Not known | Ddim yn hysbys
                       </label>
                     </div>
               </div>
@@ -738,19 +738,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Spanish national | Cenedlaethol Sbaeneg
+                  Spanish national | Yn wladolyn o Sbaen?
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio" value="true" {{ checked("SpanishNational", "true") }}>
                     <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
-                       Yes | Do 
+                       Yes | Ydy
                     </label>    
                   </div>
                   <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" checked="checked" value="false" {{ checked("SpanishNational", "false") }}>
                       <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label" for="SpanishNational-false">
-                        No | Naddo
+                        No | Nac ydy
                       </label>
                   </div>
                 </div>
@@ -759,21 +759,21 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="nhs-number" for="nhs-number">
-                NHS number | Welsh content (if available)
+                NHS number | Rhif GIG (if available)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="nhs-number" name="nhs-number" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['nhs-number']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="Occupation-label" for="Occupation">
-                Occupation
+                Occupation 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="Occupation" name="Occupation" type="text" aria-describedby="Occupation-hint" aria-required="false" value="{{data['Occupation']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="Occupation-label-welsh" for="Occupation-welsh">
-                Gwaith
+                Swydd
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="Occupation-welsh" name="Occupation-welsh" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['Occupation-welsh']}}">
             </div>
@@ -781,19 +781,19 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Occupation status | Statws galwedigaeth
+                  Occupation status | Statws swydd
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="OccupationStatus-true" name="OccupationStatus" type="radio" value="true" {{ checked("OccupationStatus", "true") }}>
                     <label class="govuk-label govuk-radios__label" id="OccupationStatus-true-label" for="OccupationStatus-true">
-                      Retired | Ymddeol 
+                      Retired | Wedi ymddeol 
                     </label>    
                   </div>
                   <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="OccupationStatus-false" name="OccupationStatus" type="radio" value="false" {{ checked("OccupationStatus", "false") }}>
                       <label class="govuk-label govuk-radios__label" id="OccupationStatus-false-label" for="OccupationStatus-false">
-                        Not retired | Heb ymddeol
+                        Not retired | Heb ymddeol 
                       </label>
                   </div>
                 </div>
