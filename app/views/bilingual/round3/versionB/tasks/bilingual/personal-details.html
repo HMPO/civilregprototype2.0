@@ -1,0 +1,817 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Personal details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "../task-list.html"
+}) }}
+
+<a class="govuk-link govuk-link--no-visited-state" href="" style="display: inline-block; position: relative; float: right; top: 15px;">View accented characters (opens in new window)</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+  
+          <h1 class="govuk-heading-l">
+            Personal details
+          </h1>
+  
+          <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="deceasedSex-fieldset" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Sex | Rhyw
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Female" name="deceasedSex" type="radio" value="female" {{ checked("deceasedSex", "female") }} aria-controls="conditional-deceasedSex-Female" aria-expanded="false">
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Female-label" for="deceasedSex-Female">
+                    Female | Benyw 
+                  </label>   
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Male" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }}>
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Male-label" for="deceasedSex-Male">
+                    Male | Gwryw 
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }} aria-controls="conditional-intersex">
+                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
+                    Indeterminate | Amhendefynadwy  
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-intersex">
+                  <div class="govuk-form-group">
+                    <div class="govuk-warning-text">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                      <strong class="govuk-warning-text__text">
+                        <span class="govuk-visually-hidden">Warning</span>
+                        You cannot complete this registration until GRO confirms you can register sex as ‘indeterminate’.
+                      </strong>
+                    </div>
+
+                    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend-xs">
+                        Did GRO confirm you can register sex as ‘indeterminate’?
+                      </legend>
+                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="changedName">
+                            Yes
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="changedName-2">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="deceasedUsualAddress-fieldset" aria-required="false">              
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
+                  Usual address | Cyfeiriad arferol
+                </legend>           
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="deceasedUsualAddress-Sameasplaceofdeath" name="deceasedUsualAddress" type="radio" value="same" {{ checked("deceasedUsualAddress", "same") }} aria-controls="link-to-task">
+                    <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Sameasplaceofdeath-label" for="deceasedUsualAddress-Sameasplaceofdeath">
+                      Same as place of death | Yr un lle â’r farwolaeth 
+                    </label>    
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" name="deceasedUsualAddress" type="radio" value="different" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment-label" for="deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
+                      Different to place of death | Yn wahanol i le y farwolaeth
+                    </label>
+                  </div>
+
+                  
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedUsualAddress-Differenttoplaceofdeathnoncommunalestablishment">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Did the deceased live in a communal establishment? | A oedd yr ymadawedig yn byw mewn sefydliad cymunedol
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="usualaddress-CE" name="usualaddress-CE" type="radio" value="CE-yes" {{ checked("deceasedUsualAddress", "different") }} aria-controls="conditional-CE-yes">
+                            <label class="govuk-label govuk-radios__label" for="usualaddress-CE">
+                              Yes | Do
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="usualaddress-CE-no" name="usualaddress-CE" type="radio" value="CE-no">
+                            <label class="govuk-label govuk-radios__label" for="usualaddress-CE-no">
+                              No | Naddo
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden no-border" id="conditional-CE-yes">
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-6">
+                                Enter place of death
+                              </legend>
+                              <div class="govuk-form-group govuk-!-margin-bottom-3">
+                                <label class="govuk-label govuk-label--xs" id="MCCDAddressLine1-label" for="MCCDAddressLine1">
+                                  Search by communal establishment name
+                                </label>
+                                
+                                <select class="govuk-select" name="choose" id="choose">
+                                  <option value="territory1"></option>
+                                  <option value="territory1">University Hospital of Wales, Heath Park Way, Cardiff CF14 4XW</option>
+                                  <option value="territory1">The Grange University Hospital, Caerleon Rd, Llanfrechfa, Cwmbran NP44 8YN</option>
+                                  <option value="territory1">Glangwili Hospital, Dolgwili Rd, Carmarthen SA31 2AF</option>
+                                  <option value="territory1">Withybush General Hospital, Fishguard Rd, Haverfordwest SA61 2PZ</option>
+                                  <option value="territory1">Glan Clwyd Hospital,Rhuddlan Rd, Bodelwyddan, Rhyl LL18 5UJ</option>
+                                  <option value="territory1">Royal Glamorgan Hospital, Ynysmaerdy, Pontyclun CF72 8XR</option>
+                                  <option value="territory1">Neath Port Talbot Hospital, Baglan Way, Port Talbot SA12 7BX</option>
+                                  <option value="territory1">University Hospital Llandough, Penlan Rd, Llandough, Penarth CF64 2XX</option>
+                                  <option value="territory9">Princess of Wales Hospital, Bridgend, CF31 1RQ</option>
+                                  <option value="territory10">Llandaff House, Conway Road, Cardiff, CF11 9NT</option>
+                                </select>
+                              </div>
+        
+                              <div id="addressContainer"></div> 
+
+                              <script>
+
+                                const selectElement = document.getElementById('choose');
+                                console.log(selectElement);
+                                selectElement.addEventListener('change', (event) => {
+                                  const selectedValue = event.target.value;
+                                  console.log(selectedValue);
+          
+                                  var htmlBlock = htmlBlocks[selectedValue];
+                                  var container = document.getElementById('addressContainer');
+                                  container.innerHTML = htmlBlock;
+                                })
+                              
+                                var PrincessOfWales =  `
+                                <fieldset class="govuk-fieldset">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-8">
+                                    Address | Cyfeiriad
+                                  </legend>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="flat-number">
+                                      Flat number or name | Rhif neu enw’r fflat
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name">
+                                      Building name
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="{{data['building-name'] or "Princess of Wales Hospital"}}">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name-welsh">
+                                      Enw'r adeilad
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name-welsh" name="building-name-welsh" type="text" value="Ysbyty Tywysoges Cymru">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-number">
+                                      Building number | Rhif yr adeilad 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-1">
+                                    Street address 1
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-1-welsh">
+                                      Cyfeiriad stryd llinell 1 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1-welsh" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-2">
+                                    Street address 2
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-2-welsh">
+                                      Cyfeiriad stryd llinell 2 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2-welsh" name="AddressLine2-welsh" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-3">
+                                    Street address 3
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-3-welsh">
+                                      Cyfeiriad stryd llinell 3
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3-welsh" name="AddressLine3-welsh" type="text">
+                                  </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4">
+                                    Street address 4
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4-welsh">
+                                    Cyfeiriad stryd llinell 4 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4-welsh" name="AddressLine-4-welsh" type="text">
+                                </div>
+                                 <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town">
+                                    Town or city
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="{{data['addressTown'] or "Bridgend"}}">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town-welsh">
+                                    Tref neu ddinas 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town-welsh" name="addressTown-welsh" type="text" value="Pen-y-bont ar Ogwr">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county">
+                                    County
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county-welsh">
+                                    Sir
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county-welsh" name="address-county-welsh" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-postcode">
+                                    Postcode | Cod post
+                                  </label>
+                                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="{{data['addressPostcode'] or "CF31 1RQ"}}">
+                                </div>
+                              </fieldset>
+                                `
+                                ;
+          
+                                var llandaffHouse =  `
+                                <fieldset class="govuk-fieldset">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-8">
+                                    Address | Cyfeiriad
+                                  </legend>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="flat-number">
+                                      Flat number or name | Rhif neu enw’r fflat
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name">
+                                      Building name
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text"  value="{{data['building-name'] or "Llandaff House"}}">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name-welsh">
+                                      Enw'r adeilad
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name-welsh" name="building-name-welsh" type="text" value="Ty Llandaf">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-number">
+                                      Building number | Rhif yr adeilad 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-1">
+                                    Street address 1
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-1-welsh">
+                                      Cyfeiriad stryd llinell 1 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1-welsh" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-2">
+                                    Street address 2
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text" value="{{data['AddressLine2'] or "Conway Road"}}">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-2-welsh">
+                                      Cyfeiriad stryd llinell 2 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2-welsh" name="AddressLine2-welsh" type="text" value="Ffordd Conwy">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-3">
+                                    Street address 3
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-3-welsh">
+                                      Cyfeiriad stryd llinell 3
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3-welsh" name="AddressLine3-welsh" type="text">
+                                  </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4">
+                                    Street address 4
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4-welsh">
+                                    Cyfeiriad stryd llinell 4 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4-welsh" name="AddressLine-4-welsh" type="text">
+                                </div>
+                                 <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town">
+                                    Town or city
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="{{data['addressTown'] or "Cardiff"}}">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town-welsh">
+                                    Tref neu ddinas 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town-welsh" name="addressTown-welsh" type="text" value="Caerdydd">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county">
+                                    County
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county-welsh">
+                                    Sir
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county-welsh" name="address-county-welsh" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-postcode">
+                                    Postcode | Cod post
+                                  </label>
+                                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="{{data['addressPostcode'] or "CF11 9NT"}}">
+                                </div>
+                              </fieldset>
+                                `
+                                ;
+          
+                                var empty =  `
+                                <fieldset class="govuk-fieldset">
+                                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-8">
+                                    Address | Cyfeiriad
+                                  </legend>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="flat-number">
+                                      Flat number or name | Rhif neu enw’r fflat
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name">
+                                      Building name
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-name-welsh">
+                                      Enw'r adeilad
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-name-welsh" name="building-name-welsh" type="text" value="">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="building-number">
+                                      Building number | Rhif yr adeilad 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-1">
+                                    Street address 1
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-1-welsh">
+                                      Cyfeiriad stryd llinell 1 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1-welsh" name="AddressLine1-welsh" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-2">
+                                    Street address 2
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text" value="">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-2-welsh">
+                                      Cyfeiriad stryd llinell 2 
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2-welsh" name="AddressLine2-welsh" type="text" value="">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-3">
+                                    Street address 3
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                                  </div>
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label" for="address-line-3-welsh">
+                                      Cyfeiriad stryd llinell 3
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3-welsh" name="AddressLine3-welsh" type="text">
+                                  </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4">
+                                    Street address 4
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-line-4-welsh">
+                                    Cyfeiriad stryd llinell 4 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4-welsh" name="AddressLine-4-welsh" type="text">
+                                </div>
+                                 <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town">
+                                    Town or city
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-town-welsh">
+                                    Tref neu ddinas 
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town-welsh" name="addressTown-welsh" type="text" value="">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county">
+                                    County
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-county-welsh">
+                                    Sir
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="address-county-welsh" name="address-county-welsh" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="address-postcode">
+                                    Postcode | Cod post
+                                  </label>
+                                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="">
+                                </div>
+                              </fieldset>
+                                `
+                                ;
+                                var htmlBlocks = {
+                                "territory9": PrincessOfWales,
+                                "territory10": llandaffHouse,
+                                "territory1": empty,  
+                                  };
+                      
+                                </script>
+
+                              <p class="govuk-body govuk-!-margin-top-6">
+                                <a href="#" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+                              </p>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div> 
+                    
+                  </div>
+                </div>
+               </fieldset>
+               </div> 
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="deceasedDateOfBirth-fieldset" aria-required="false">  
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Date of birth | Dyddiad geni
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Fulldateofbirthknown" name="deceasedDateOfBirth" type="radio" value="full" {{ checked("deceasedDateOfBirth", "full") }} aria-controls="conditional-deceasedDateOfBirth-Fulldateofbirthknown" aria-expanded="false">
+                      <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Fulldateofbirthknown-label" for="deceasedDateOfBirth-Fulldateofbirthknown">
+                    Full date of birth known | Dyddiad geni llawn yn hysbys
+                    </label>
+                  </div>
+                  
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedDateOfBirth-Fulldateofbirthknown">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" id="deceasedFullDateOfBirth-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-label--xs">
+                        Full date of birth | Dyddiad geni llawn
+                        </legend>
+                        <div class="govuk-date-input" id="deceasedFullDateOfBirth">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-day">
+                                Day 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedFullDateOfBirth-day" name="deceasedFullDateOfBirth-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                            </div>
+                          </div>
+              
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-month">
+                                Month
+                              </label>
+                  
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedFullDateOfBirth-month" name="deceasedFullDateOfBirth-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                            </div>
+                          </div>
+              
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedFullDateOfBirth-year">
+                                Year 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="deceasedFullDateOfBirth-year" name="deceasedFullDateOfBirth-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                            </div>
+                          </div>
+              
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="deceasedDateOfBirth-Partialdateofbirthknown" name="deceasedDateOfBirth" type="radio" value="partial" {{ checked("deceasedDateOfBirth", "partial") }} aria-controls="conditional-deceasedDateOfBirth-Partialdateofbirthknown" aria-expanded="false">
+                    <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Partialdateofbirthknown-label" for="deceasedDateOfBirth-Partialdateofbirthknown">
+                        Partial date of birth known | Dyddiad geni rhannol yn hysbys
+                    </label>
+                  </div>
+                    
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedDateOfBirth-Partialdateofbirthknown">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="deceasedPartialDateOfBirth-hint" id="deceasedPartialDateOfBirth-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-label--xs">
+                          Partial date of birth | Dyddiad geni rhannol 
+                        </legend>
+                        <div id="deceasedPartialDateOfBirth-hint" class="govuk-hint">
+                          Enter as much as is known
+                        </div>
+                        <div class="govuk-date-input" id="deceasedPartialDateOfBirth">
+                  
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-day">
+                                Day 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedPartialDateOfBirth-day" name="deceasedPartialDateOfBirth-day" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                            </div>
+                          </div>
+                
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-month">
+                                Month 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="deceasedPartialDateOfBirth-month" name="deceasedPartialDateOfBirth-month" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="2" aria-required="false">
+                            </div>
+                          </div>
+                
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="deceasedPartialDateOfBirth-year">
+                                Year 
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="deceasedPartialDateOfBirth-year" name="deceasedPartialDateOfBirth-year" type="text" pattern="[0-9]*" inputmode="numeric" maxlength="4" aria-required="false">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" id="deceasedAge-label" for="deceasedAge">
+                        Age | Oed
+                      </label>
+                      <input class="govuk-input govuk-input--width-3" id="deceasedAge" name="deceasedAge" type="text" aria-required="false">
+                    </div>
+
+                  </div>
+
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedDateOfBirth-Approximateyearofbirthonly" name="deceasedDateOfBirth" type="radio" value="approximate" {{ checked("deceasedDateOfBirth", "approximate") }} aria-controls="conditional-deceasedDateOfBirth-Approximateyearofbirthonly" aria-expanded="false">
+                      <label class="govuk-label govuk-radios__label" id="deceasedDateOfBirth-Approximateyearofbirthonly-label" for="deceasedDateOfBirth-Approximateyearofbirthonly">
+                    Approximate year of birth only | Brasamcan o flwyddyn geni yn unig
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedDateOfBirth-Approximateyearofbirthonly">
+                    
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" id="deceasedApproximateYearOfBirth-label" for="deceasedApproximateYearOfBirth">
+                        Approximate year of birth | Brasamcan o flwyddyn Geni
+                      </label>
+                      <input class="govuk-input govuk-input--width-4" id="deceasedApproximateYearOfBirth" name="deceasedApproximateYearOfBirth" type="text" aria-required="false">
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--xs" id="deceasedApproximateAge-label" for="deceasedApproximateAge">
+                        Approximate age | Oedran yn fras
+                      </label>
+                      <input class="govuk-input govuk-input--width-3" id="deceasedApproximateAge" name="deceasedApproximateAge" type="text" aria-required="false">
+                    </div>
+                  </div>
+                  
+                </div>
+              </fieldset>
+            </div> 
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label" for="deceasedPlaceOfBirth">
+                Place of birth (if available)
+              </label>
+              <div id="deceasedPlaceOfBirth-hint" class="govuk-hint">
+                Town and county if in UK, country if outside the UK 
+              </div>
+              <input class="govuk-input govuk-!-width-one-half" id="deceasedPlaceOfBirth" name="deceasedPlaceOfBirth" type="text" aria-describedby="deceasedPlaceOfBirth-hint" aria-required="false" value="{{data['deceasedPlaceOfBirth']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label-welsh" for="deceasedPlaceOfBirth-welsh">
+                Lle y ganwyd (if available)
+              </label>
+              <div id="deceasedPlaceOfBirth-hint-welsh" class="govuk-hint">
+                Town and county if in UK, country if outside the UK 
+              </div>
+              <input class="govuk-input govuk-!-width-one-half" id="deceasedPlaceOfBirth-welsh" name="deceasedPlaceOfBirth-welsh" type="text" aria-describedby="deceasedPlaceOfBirth-hint-welsh" aria-required="false" value="{{data['deceasedPlaceOfBirth-welsh']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="deceasedCountryOfBirth-fieldset" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+               Country of birth | Gwlad geni
+              </legend>
+              <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-England" name="deceasedCountryOfBirth" type="radio" value="england" {{ checked("deceasedCountryOfBirth", "england") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-England-label" for="deceasedCountryOfBirth-England">
+                   England | Lloegr
+                  </label>  
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-NorthernIreland" name="deceasedCountryOfBirth" type="radio" value="northern-ireland" {{ checked("deceasedCountryOfBirth", "northern-ireland") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-NorthernIreland-label" for="deceasedCountryOfBirth-NorthernIreland">
+                    Northern Ireland | Gogledd Iwerddon
+                  </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-Scotland" name="deceasedCountryOfBirth" type="radio" value="scotland" {{ checked("deceasedCountryOfBirth", "scotland") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-Scotland-label" for="deceasedCountryOfBirth-Scotland">
+                    Scotland | Yr Alban
+                  </label>          
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-Wales" name="deceasedCountryOfBirth" type="radio" value="wales" {{ checked("deceasedCountryOfBirth", "wales") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-Wales-label" for="deceasedCountryOfBirth-Wales">
+                    Wales | Cymru
+                  </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-OutsidetheUK" name="deceasedCountryOfBirth" type="radio" value="outside-the-UK" {{ checked("deceasedCountryOfBirth", "outside-the-UK") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-OutsidetheUK-label" for="deceasedCountryOfBirth-OutsidetheUK">
+                        Outside the UK | Y tu allan i'r Deyrnas Unedig 
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="deceasedCountryOfBirth-Notknown" name="deceasedCountryOfBirth" type="radio" value="not-known" {{ checked("deceasedCountryOfBirth", "not-known") }}>
+                      <label class="govuk-label govuk-radios__label" id="deceasedCountryOfBirth-Notknown-label" for="deceasedCountryOfBirth-Notknown">
+                      Not known | Ddim yn hysbys
+                      </label>
+                    </div>
+              </div>
+            </fieldset>
+            </div>
+            
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Spanish national | Yn wladolyn o Sbaen?
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio" value="true" {{ checked("SpanishNational", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
+                       Yes | Ydy
+                    </label>    
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" checked="checked" value="false" {{ checked("SpanishNational", "false") }}>
+                      <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label" for="SpanishNational-false">
+                        No | Nac ydy
+                      </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="nhs-number" for="nhs-number">
+                NHS number | Rhif GIG (if available)
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="nhs-number" name="nhs-number" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['nhs-number']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="Occupation-label" for="Occupation">
+                Occupation 
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="Occupation" name="Occupation" type="text" aria-describedby="Occupation-hint" aria-required="false" value="{{data['Occupation']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--s" id="Occupation-label-welsh" for="Occupation-welsh">
+                Swydd
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="Occupation-welsh" name="Occupation-welsh" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['Occupation-welsh']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Occupation status | Statws swydd
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="OccupationStatus-true" name="OccupationStatus" type="radio" value="true" {{ checked("OccupationStatus", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="OccupationStatus-true-label" for="OccupationStatus-true">
+                      Retired | Wedi ymddeol 
+                    </label>    
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="OccupationStatus-false" name="OccupationStatus" type="radio" value="false" {{ checked("OccupationStatus", "false") }}>
+                      <label class="govuk-label govuk-radios__label" id="OccupationStatus-false-label" for="OccupationStatus-false">
+                        Not retired | Heb ymddeol 
+                      </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and return
+              </button>
+            </div>
+  
+          </form>
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
