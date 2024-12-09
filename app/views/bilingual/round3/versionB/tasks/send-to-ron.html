@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Uploads – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+  
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Send record to RON to complete registration</h1>
+
+              <p>After you send it, you’ll need to submit this registration in RON. </p>
+              <p>You’ll get the RON number.</p>
+              <p>You cannot return to this registration in the Digital Registration Service.</p>
+              
+              {{ govukButton({
+                text: "Send to RON",
+                href: "confirmation-page.html"
+              }) }}
+  
+        </div>
+      </div>
+  
+      </main>
+  </div>
+
+{% endblock %}
