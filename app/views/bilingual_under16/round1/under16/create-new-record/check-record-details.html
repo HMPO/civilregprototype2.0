@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create record - Check record details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "bilingual.html"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Add record details</span>
+       <h1 class="govuk-heading-l">Check record details</h1>
+       <p class="govuk-body">These must match the details on the medical certificate or coroner's form.</p>
+                
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Source of information  
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>{{ data["certificate"] }}</p>
+                <p>{{ data["certificate-type"] }}</p>
+                <p>{{ data["certificateID"] }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="medical-information-change.html">Change<span class="govuk-visually-hidden"> name</span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Date source of information received
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <p>{{ data['MCCDissued-day'] }} {{ data['MCCDissued-month'] }} {{ data['MCCDissued-year'] }}</p>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="medical-information-change.html">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                    </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Deceased name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <p>{{ data['deceasedLastName'] }}, {{ data['deceasedFirstName'] }} {{data ['deceasedMiddleName'] }}</p>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="deceased's-details-change.html">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+                    </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Is the deceased's date of death known?
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data['date-of-death-known'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="deceased's-details-change.html">Change<span class="govuk-visually-hidden"> address</span></a>
+                    </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Date of death                        
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      <p class="govuk-body">{{ data['day-of-death'] }} {{data ['month-of-death'] }} {{ data['year-of-death'] }}</p>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="deceased's-details-change.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                    </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Age               
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">{{ data['age-bracket'] }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="age-of-deceased-change.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Registration language         
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">{{ data['bilingual'] }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="bilingual.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </dd>
+            </div>
+            
+          </dl>
+
+          <form action="../tasks/task-list" method="post" novalidate>
+            <input type="hidden" name="answers-checked" value="true">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Create record
+            </button>
+          </form>
+      </div>
+    </div>
+
+    </main>
+</div>
+{% endblock %}
