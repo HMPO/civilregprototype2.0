@@ -38,7 +38,32 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
           <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
 
-            <h2 class="govuk-heading-s">Cause of death  | Achos marwolaeth</h2>
+            <h2 class="govuk-heading-m">About the death</h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Is cause of death in the standard format?
+                </legend>
+                <div id="changedName-hint" class="govuk-hint">
+                  For example, 1(a), 1(b), 1(c)
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="COD_standard" name="COD_standard" type="radio" value="yes" checked="checked" {{ checked("COD_standard", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="COD_standard">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="COD_standard-2" name="COD_standard" type="radio" value="no" {{ checked("COD_standard", "no") }}>
+                    <label class="govuk-label govuk-radios__label" for="COD_standard-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
 
             <details class="govuk-details">
               <summary class="govuk-details__summary">
@@ -59,98 +84,43 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    Cause of death - in infant
+                  </h3>
+              </legend>
 
                 {{ govukTextarea({
                   name: "CauseOfDeath-a",
-                  value: data['CauseOfDeath-a'] or ['Cerebral Hemorrhage'],
+                  value: data['CauseOfDeath-a'] or [''],
                   id: "CauseOfDeath-a",
                   label: {
-                    text: "1(a) Disease or condition directly leading to death",
-                    classes: "govuk-label--xs",
+                    text: "(a) Main disease or conditions in infant ",
+                    classes: "govuk-label-xs",
                     isPageHeading: true
                   }
                 }) }}
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                    1(a)  Ychwanegwch Clefyd neu gyflwr sy'n arwain yn uniongyrchol at farwolaeth (yn Cymraeg)
-                  </a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(a)......... ( yn Cymraeg)</a>
                 </p>
-                <div id="CauseWelsh"></div>
-
-                {% raw %}
-                <script>
-                var shownCauseWelsh = `
-                    <div class="govuk-form-group">
-                      <div class="horizontal-wrapper">
-                      <label class="govuk-label" for="causeWelsh">
-                        1(a) Clefyd neu gyflwr sy'n arwain yn uniongyrchol at farwolaeth
-                      </label>
-                      <p class="govuk-body govuk-!-margin-bottom-1">
-                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeCauseWelsh">Remove</a>
-                      </p>
-                      </div> 
-                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeWelsh" name="causeWelsh" value="{{data['causeWelsh']}}" rows="5"></textarea>
-                    </div>`;
-            
-                    function toggleCauseWelsh(event) {
-                      event.preventDefault();
-                      var CauseWelshDiv = document.getElementById('CauseWelsh');
-                      var addCauseWelshLink = document.getElementById('addCauseWelsh');
-                      if (event.target.id === 'addCauseWelsh') {
-                        CauseWelshDiv.innerHTML = shownCauseWelsh;
-                        addCauseWelshLink.style.display = 'none';
-                        document.getElementById('removeCauseWelsh').addEventListener('click', toggleCauseWelsh);
-                              var newTextarea = document.getElementById('causeWelsh');
-                              new GOVUKFrontend.CharacterCount(newTextarea).init();
-                      } else if (event.target.id === 'removeCauseWelsh') {
-                        CauseWelshDiv.innerHTML = '';
-                        addCauseWelshLink.style.display = 'block';
-                      }
-                    }
-                  
-                    document.getElementById('addCauseWelsh').addEventListener('click', toggleCauseWelsh);
-                  </script>
-                  {% endraw %}
-
-
-                <div class="govuk-form-group govuk-!-margin-bottom-6">
-                  <label class="govuk-label" for="sort">
-                    Time between onset and death (if provided)
-                  </label>
-                  <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
-                  <select class="govuk-select" id="sort" name="sort">
-                    <option value="published" selected>Choose time unit</option>
-                    <option value="updated">Minutes</option>
-                    <option value="views">Hours</option>
-                    <option value="comments">Days</option>
-                    <option value="updated">Weeks</option>
-                    <option value="views">Months</option>
-                    <option value="comments">Years</option>
-                    <option value="comments">Not stated</option>
-                  </select>
-                </div>
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">
-                    1(b). Add another disease or condition leading to 1(a) (In English)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b). Add another disease or condition in infant</a>
                 </p>
                 <div id="Another"></div>
-
+                
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                    1(b). Ychwanegwch glefyd neu gyflwr arall sy'n arwain at 1(a) (yn Cymraeg)
-                  </a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b) ......... ( yn Cymraeg)</a>
                 </p>
-                
-                
+
                 {% raw %}
                 <script>
                 var shownAnother = `
                     <div class="govuk-form-group">
                       <div class="horizontal-wrapper">
                       <label class="govuk-label" for="causeOfdeath1b">
-                        1(b). Another disease or condition leading to 1(a)
+                        (b). Another disease or condition in infant
                       </label>
                       <p class="govuk-body govuk-!-margin-bottom-1">
                         <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeAnother">Remove</a>
@@ -179,17 +149,86 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   </script>
                   {% endraw %}
 
+                  
+            </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    Cause of death - maternal diseases or conditions
+                  </h3>
+              </legend>
+
+                {{ govukTextarea({
+                  name: "CauseOfDeath-c",
+                  value: data['CauseOfDeath-c'] or [''],
+                  id: "CauseOfDeath-a",
+                  label: {
+                    text: "(c) Maternal disease or condition affecting infant (if provided)",
+                    classes: "govuk-label-xs",
+                    isPageHeading: true
+                  }
+                }) }}
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(c). ......... ( yn Cymraeg)</a>
+                </p>
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d). Add other maternal diseases or conditions affecting infant</a>
+                </p>
+            
+                <div id="AnotherD"></div>
+
+                <p class="govuk-body">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d). .......... ( yn Cymraeg)</a>
+                </p>
+                
+                {% raw %}
+                <script>
+                var shownAnotherD = `
+                    <div class="govuk-form-group">
+                      <div class="horizontal-wrapper">
+                      <label class="govuk-label" for="causeOfdeathd">
+                        (d). Other maternal diseases or conditions affecting infant
+                      </label>
+                      <p class="govuk-body govuk-!-margin-bottom-1">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeAnotherD">Remove</a>
+                      </p>
+                      </div> 
+                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeOfdeathd" name="causeOfdeathd" value="{{data['causeOfdeathd']}}" rows="5"></textarea>
+                    </div>`;
+            
+                    function toggleAnotherD(event) {
+                      event.preventDefault();
+                      var AnotherDivD = document.getElementById('AnotherD');
+                      var addAnotherDLink = document.getElementById('addAnotherD');
+                      if (event.target.id === 'addAnotherD') {
+                        AnotherDivD.innerHTML = shownAnotherD;
+                        addAnotherDLink.style.display = 'none';
+                        document.getElementById('removeAnotherD').addEventListener('click', toggleAnotherD);
+                              var newTextarea = document.getElementById('causeOfdeathd');
+                              new GOVUKFrontend.CharacterCount(newTextarea).init();
+                      } else if (event.target.id === 'removeAnotherD') {
+                        AnotherDivD.innerHTML = '';
+                        addAnotherDLink.style.display = 'block';
+                      }
+                    }
+                  
+                    document.getElementById('addAnotherD').addEventListener('click', toggleAnotherD);
+                  </script>
+                  {% endraw %}
+
             <p class="govuk-body">
-              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">
-                2. Add other significant contributory conditions (In English)</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e). Add other relevant causes</a>
             </p>
 
             <div id="Other"></div>
 
             <p class="govuk-body">
-              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                2. Ychwanegwch amodau cyfrannol sylweddol eraill (yn Cymraeg)
-              </a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e).  .......... ( yn Cymraeg)</a>
             </p>
                 
             {% raw %}
@@ -198,7 +237,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     <div class="govuk-form-group">
                       <div class="horizontal-wrapper">
                       <label class="govuk-label" for="causeOfdeath2">
-                        2. Other significant contributory conditions
+                        (e). Other relevant causes 
                       </label>
                       <p class="govuk-body govuk-!-margin-bottom-1">
                         <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeOther">Remove</a>
@@ -232,36 +271,74 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="employment-contribution" aria-required="false">
+              <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Could the deceased’s former or current employment have contributed to the death?
+                  <h1 class="govuk-fieldset__heading">
+                    What option is circled on the medical certificate?
+                  </h1>
                 </legend>
-                <div class="govuk-radios" data-module="govuk-radios" value="">  
+                <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="employment-contribution-yes" name="employment-contribution" type="radio" value="yes" {{ checked("employment-contribution", "yes") }}>
-                    <label class="govuk-label govuk-radios__label" id="employment-contribution-label" for="employment-contribution-yes">
-                      Yes
-                    </label>      
+                    <input class="govuk-radios__input" id="option_circled" name="option_circled" type="radio" value="post_mortem" {{ checked("option_circled", "post_mortem") }}>
+                    <label class="govuk-label govuk-radios__label" for="option_circled">
+                      The cause of death includes information from the post-mortem
+                    </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="employment-contribution-no" name="employment-contribution" type="radio" value="no" checked="checked" {{ checked("employment-contribution", "no") }}>
-                    <label class="govuk-label govuk-radios__label" id="employment-contribution-label" for="employment-contribution-no">
-                      No
+                    <input class="govuk-radios__input" id="option_circled-2" name="option_circled" type="radio" value="available_later" {{ checked("option_circled", "available_later") }}>
+                    <label class="govuk-label govuk-radios__label" for="option_circled-2">
+                      Information from the post-mortem may be available later
                     </label>
-                  </div> 
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="option_circled-3" name="option_circled" type="radio" value="no_post_mortem" {{ checked("option_circled", "no_post_mortem") }}>
+                    <label class="govuk-label govuk-radios__label" for="option_circled-3">
+                      Post-mortem is not being held
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="option_circled-4" name="option_circled" type="radio" value="coroner_investigation" {{ checked("option_circled", "coroner_investigation") }}>
+                    <label class="govuk-label govuk-radios__label" for="option_circled-4">
+                      This death was reported to the coroner who decided not to investigate
+                    </label>
+                  </div>
+                </div>
               </fieldset>
-          </div>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Might additional information about the cause of death be available later?  | A allai gwybodaeth ychwanegol am achos y farwolaeth fod ar gael yn nes ymlaen?
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
+                      Yes | Do 
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" {{ checked("FurtherInformation", "false") }}>
+                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
+                      No | Naddo
+                    </label>  
+                  </div>
+                </div>
+              </fieldset>
+        </div>
+
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="ethnicity" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Ethnicity 
+                  Ethnicity | Ethnigrwydd
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios" value="">  
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="ethnicity-white" name="ethnicity" type="radio" value="white" {{ checked("ethnicity", "white") }} data-aria-controls="conditional-ethnicity-white">
+                    <input class="govuk-radios__input" id="ethnicity-white" name="ethnicity" type="radio" value="white"  {{ checked("ethnicity", "white") }} data-aria-controls="conditional-ethnicity-white">
                     <label class="govuk-label govuk-radios__label" id="ethnicity-white-label" for="ethnicity-white">
-                      White 
+                      White | Gwyn
                     </label>      
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-white">
@@ -271,25 +348,25 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="ethnicity-white-more" name="ethnicity-white-more" type="radio" value="ethnicity-white-more" {{ checked("ethnicity-white-more") }}>
                             <label class="govuk-label govuk-radios__label" for="ethnicity-white-more">
-                              English, Welsh, Scottish, Northern Irish or British 
+                              English, Welsh, Scottish, Northern Irish or British | Saesneg, Cymraeg, Albanaidd, Gogledd Iwerddon neu Brydeinig 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="ethnicity-white-more-2" name="ethnicity-white-more" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-white-more-2">
-                              Irish
+                              Irish | Gwyddelig 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="ethnicity-white-more-3" name="ethnicity-white-more" type="radio" value="wales">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-white-more-3">
-                              Gypsy or Irish Traveller
+                              Gypsy or Irish Traveller | Sipsiwn neu Deithwyr Gwyddelig 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="ethnicity-white-more-4" name="ethnicity-white-more" type="radio" value="northern-ireland">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-white-more-4">
-                              Any other White background
+                              Any other White background | Unrhyw gefndir Gwyn arall 
                             </label>
                           </div>
                         </div>
@@ -297,9 +374,9 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="ethnicity-mixed" name="ethnicity" type="radio" value="mixed" checked="checked" {{ checked("ethnicity", "mixed") }} data-aria-controls="conditional-ethnicity-mixed">
+                    <input class="govuk-radios__input" id="ethnicity-mixed" name="ethnicity" type="radio" value="mixed" {{ checked("ethnicity", "mixed") }} data-aria-controls="conditional-ethnicity-mixed">
                     <label class="govuk-label govuk-radios__label" id="ethnicity-mixed-label" for="ethnicity-mixed">
-                      Mixed or multiple ethnic groups 
+                      Mixed or multiple ethnic groups | Grwpiau ethnig cymysg neu lluosog 
                     </label>
                   </div> 
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-mixed">
@@ -307,27 +384,27 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <fieldset class="govuk-fieldset">
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="ethnicity-mix-more" name="ethnicity-mix-more" type="radio" value="ethnicity-mix-more" checked="checked" {{ checked("ethnicity-mix-more") }}>
+                            <input class="govuk-radios__input" id="ethnicity-mix-more" name="ethnicity-mix-more" type="radio" value="ethnicity-mix-more" {{ checked("ethnicity-mix-more") }}>
                             <label class="govuk-label govuk-radios__label" for="ethnicity-mix-more">
-                              White and Black Caribbean
+                              White and Black Caribbean | Gwyn a Du Caribïaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="ethnicity-mix-mored-2" name="ethnicity-mix-more" type="radio" value="scotland">
+                            <input class="govuk-radios__input" id="ethnicity-mix-more-2" name="ethnicity-mix-more" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-mix-more-2">
-                              White and Black African 
+                              White and Black African | Gwyn a Du Affricanaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="ethnicity-mix-more-3" name="ethnicity-mix-more" type="radio" value="wales">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-mix-more-3">
-                              White and Asian
+                              White and Asian | Gwyn ac Asiaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="ethnicity-mix-mored-4" name="ethnicity-mix-more" type="radio" value="northern-ireland">
+                            <input class="govuk-radios__input" id="ethnicity-mix-more-4" name="ethnicity-mix-more" type="radio" value="northern-ireland">
                             <label class="govuk-label govuk-radios__label" for="ethnicity-mix-more-4">
-                              Any other Mixed or multiple ethnic background
+                              Any other Mixed or multiple ethnic background | Unrhyw gefndir ethnig cymysg neu aml-ethnig arall 
                             </label>
                           </div>
                         </div>
@@ -337,7 +414,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="ethnicity-asian" name="ethnicity" type="radio" value="asian" {{ checked("ethnicity", "asian") }} data-aria-controls="conditional-ethnicity-asian">
                     <label class="govuk-label govuk-radios__label" id="ethnicity-asian-label" for="ethnicity-asian">
-                      Asian or Asian British
+                      Asian or Asian British | Asiaidd neu Asiaidd Prydeinig 
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-asian">
@@ -347,31 +424,31 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="england">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved">
-                              Indian
+                              Indian | Indiaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-2">
-                              Pakistani
+                              Pakistani | Pacistanaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="wales">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-3">
-                              Bangladeshi
+                              Bangladeshi | Bangladeshaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-4" name="deviceRemoved" type="radio" value="northern-ireland">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-4">
-                              Chinese
+                              Chinese | Tseiniaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-5" name="deviceRemoved" type="radio" value="northern-ireland">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-5">
-                              Any other Asian background 
+                              Any other Asian background | Unrhyw gefndir Asiaidd arall 
                             </label>
                           </div>
                         </div>
@@ -381,7 +458,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="ethnicity-black" name="ethnicity" type="radio" value="black" {{ checked("ethnicity", "black") }} data-aria-controls="conditional-ethnicity-black">
                     <label class="govuk-label govuk-radios__label" id="ethnicity-black-label" for="ethnicity-black">
-                      Black, Black British, Caribbean or African 
+                      Black, Black British, Caribbean or African | Du, Du Prydeinig, Caribïaidd neu Affricanaidd 
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-black">
@@ -391,19 +468,19 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="england">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved">
-                              Caribbean
+                              Caribbean | Caribïaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-2">
-                              African 
+                              African | Affricanaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="wales">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-3">
-                              Any other Black, Black British, or Caribbean background 
+                              Any other Black, Black British, or Caribbean background | Unrhyw gefndir Du, Du Prydeinig neu Garibïaidd arall 
                             </label>
                           </div>
                         </div>
@@ -413,7 +490,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="ethnicity-other" name="ethnicity" type="radio" value="other" {{ checked("ethnicity", "other") }} data-aria-controls="conditional-ethnicity-other">
                     <label class="govuk-label govuk-radios__label" id="ethnicity-other-label" for="ethnicity-other">
-                      Other ethnic group 
+                      Other ethnic group | Grŵp ethnig arall 
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ethnicity-other">
@@ -423,13 +500,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="england">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved">
-                              Arab 
+                              Arab | Arabaidd 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="scotland">
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-2">
-                              Any other ethnic group 
+                              Any other ethnic group | Unrhyw grŵp ethnig arall 
                             </label>
                           </div>
                         </div>
@@ -439,7 +516,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="ethnicity-not-known" name="ethnicity" type="radio" value="not-known" {{ checked("ethnicity", "not-known") }}>
                     <label class="govuk-label govuk-radios__label" id="ethnicity-not-known-label" for="ethnicity-not-known">
-                      Not known 
+                      Not known | Ddim yn hysbys 
                     </label>
                   </div>
                   
@@ -450,46 +527,46 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="hazardous-implant-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Did the deceased have any hazardous implants? 
+                  Did the deceased have any hazardous implants? | A oedd gan yr ymadawedig unrhyw fewnblaniadau peryglus? 
                 </legend>
                 <div id="contribution-hint" class="govuk-hint">
                   For example, a pacemaker or radioactive device
                 </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="email" data-aria-controls="conditional-hazardous-implant-yes"  {{ checked("hazardous-implant", "yes") }}>
+                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="yes"  data-aria-controls="conditional-hazardous-implant-yes"  {{ checked("hazardous-implant", "yes") }}>
                     <label class="govuk-label govuk-radios__label" for="hazardous-implant-yes">
-                      Yes 
+                      Yes | Do
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hazardous-implant-yes">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="device-type">
-                        What type of device was it?  
+                        What type of device was it? | Pa fath o ddyfais oedd hi? 
                       </label>
-                      <input class="govuk-input govuk-input--width-20" id="device-type" name="device-type" type="text" spellcheck="false" value="{{data['device-type'] or ['Pacemaker, chest']}}">
+                      <input class="govuk-input govuk-input--width-20" id="device-type" name="device-type" type="text" spellcheck="false" value="{{data['device-type'] or ['']}}">
                     </div>
                     <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                            Was the device removed? 
+                          Was the device removed? | A gafodd y ddyfais ei dynnu oddi arno? 
                         </legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="england" >
+                            <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="yes" {{ checked("deviceRemoved", "yes") }} >
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved">
-                              Yes 
+                              Yes | Do
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="scotland" >
+                            <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="no" {{ checked("deviceRemoved", "no") }}>
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-2">
-                              No 
+                              No | Naddo
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="wales">
+                            <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="not-known" {{ checked("deviceRemoved", "not-known") }}>
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-3">
-                              Not known 
+                              Not known | Anhysbys
                             </label>
                           </div>
                           
@@ -498,16 +575,16 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no"  checked="checked"  {{ checked("hazardous-implant-no", "no") }} >
-                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-no">
-                      No 
+                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" {{ checked("hazardous-implant", "no") }} >
+                    <label class="govuk-label govuk-radios__label"  for="hazardous-implant-no">
+                      No | Naddo 
                     </label>      
                   </div>
                   
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant-not-known", "not-known") }}>
-                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-not-known">
-                      Not known 
+                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label"  for="hazardous-implant-not-known">
+                      Not known | Anhysbys
                     </label>      
                   </div>
                   
@@ -515,121 +592,91 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
               </fieldset>
             </div>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" id="pregnancy" aria-required="false">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Was the deceased pregnant in the year before their death? 
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios" value="">  
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="not-applicable" name="pregnancy" type="radio" value="white"  {{ checked("pregnancy", "white") }}>
-                <label class="govuk-label govuk-radios__label" id="not-applicable-label" for="not-applicable">
-                  Not applicable 
-                </label>      
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="not-pregnant" name="pregnancy" type="radio" value="not-pregnant" checked="checked" {{ checked("pregnancy", "not-pregnant") }}>
-                <label class="govuk-label govuk-radios__label" id="not-pregnant-label" for="not-pregnant">
-                  Not pregnant 
-                </label>
-              </div> 
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="at-the-time" name="pregnancy" type="radio" value="at-the-time" {{ checked("pregnancy", "at-the-time") }}>
-                <label class="govuk-label govuk-radios__label" id="at-the-time-label" for="at-the-time">
-                  Pregnant at the time of death 
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="1-42-days" name="pregnancy" type="radio" value="1-42-days" {{ checked("pregnancy", "1-42-days") }}>
-                <label class="govuk-label govuk-radios__label" id="1-42-days-label" for="1-42-days">
-                  Pregnant 1-42 days before death 
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="43-year" name="pregnancy" type="radio" value="43-year" {{ checked("pregnancy", "43-year") }}>
-                <label class="govuk-label govuk-radios__label" id="43-year-label" for="43-year">
-                  Pregnant 43 days to a year before death
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="not-known" name="pregnancy" type="radio" value="not-known" {{ checked("pregnancy", "not-known") }}>
-                <label class="govuk-label govuk-radios__label" id="not-known-label" for="not-known">
-                  Not known  
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>  
-
-        <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Might additional information about the cause of death be available later? 
-                </legend>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="FurtherInformation-true" name="FurtherInformation" type="radio" value="true" {{ checked("FurtherInformation", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-true-label" for="FurtherInformation-true">
-                      Yes 
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="FurtherInformation-false" name="FurtherInformation" type="radio" value="false" checked="checked" {{ checked("FurtherInformation", "false") }}>
-                    <label class="govuk-label govuk-radios__label" id="FurtherInformation-false-label" for="FurtherInformation-false">
-                      No 
-                    </label>  
-                  </div>
-                </div>
-              </fieldset>
-        </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" id="" aria-required="false">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Attending practioner details 
+              Attending practitioner details 
             </legend>
             <div class="govuk-form-group">
-              <label class="govuk-label" id="AP-name" for="AP-name">
-                Full name and qualification 
+              <label class="govuk-label" id="AttendPract" for="AttendPract">
+                Full name and qualifications | Enw llawn a chymwysterau
               </label> 
-              <input class="govuk-input" id="AP-name" name="AP-name" type="text" aria-required="false" value="{{data['AP-name'] or 'Poppy Denerson MD'}}">
+              <input class="govuk-input" id="AttendPract" name="AttendPract" type="text" aria-required="false" value="{{data['AttendPract'] or ['']}}">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" id="AP-nameGMCNumber" for="AP-nameGMCNumber">
-                GMC number 
+              <label class="govuk-label" id="AttendPractGMCNumber" for="AttendPractGMCNumber">
+                GMC number | Rif GMC
               </label> 
-              <input class="govuk-input govuk-input--width-10" id="AP-nameGMCNumber" name="AP-nameGMCNumber" type="text" aria-required="false" value="{{data['AttendPractGMCNumber'] or ['987654321'] }}">
+              <input class="govuk-input govuk-input--width-10" id="AttendPractGMCNumber" name="AttendPractGMCNumber" type="text" aria-required="false" value="{{data['AttendPractGMCNumber'] or [''] }}">
             </div>
           </fieldset>
     </div> 
 
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed_2">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+          Date signed by attending practitioner | Dyddiad llofnodwyd gan ymarferydd sy'n mynychu 
+        </legend>
+        <div id="Date-medical-certificate-signed_2-hint" class="govuk-hint">
+          For example, 27 3 2024
+        </div>
+        <div class="govuk-date-input" id="Date-medical-certificate-signed_2">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day_2">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day_2" name="Date-medical-certificate-signed-day_2" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day_2'] or ""}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month_2">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month_2" name="Date-medical-certificate-signed-month_2" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month_2'] or ""}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year_2">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year_2" name="Date-medical-certificate-signed-year_2" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year_2'] or ""}}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+</div>
+
+
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Medical examiner details 
+                  Medical examiner details
                 </legend>
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminer" for="MedExaminer">
-                    Full name and qualifications 
+                    Full name and qualifications | Enw llawn a chymwysterau 
                   </label> 
-                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or 'Nuri Sahind MD'}}">
+                  <input class="govuk-input" id="MedExaminer" name="MedExaminer" type="text" aria-required="false" value="{{data['MedExaminer'] or ['']}}">
                 </div>
 
                 <div class="govuk-form-group">
                   <label class="govuk-label" id="MedExaminerGMCNumber" for="MedExaminerGMCNumber">
-                    GMC number
+                    GMC number | Rif GMC
                   </label> 
-                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or '1122334455'}}">
+                  <input class="govuk-input govuk-input--width-10" id="MedExaminerGMCNumber" name="MedExaminerGMCNumber" type="text" aria-required="false" value="{{data['MedExaminerGMCNumber'] or ['']}}">
                 </div>
               </fieldset>
         </div> 
 
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" role="group" aria-describedby="Date-medical-certificate-signed">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Date signed by medical examiner
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xs">
+                  Date signed by medical examiner | Dyddiad llofnodwyd gan yr arholwr meddygol  
                 </legend>
                 <div id="Date-medical-certificate-signed-hint" class="govuk-hint">
                   For example, 27 3 2024
@@ -640,7 +687,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-day">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or "08"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-day" name="Date-medical-certificate-signed-day" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-day'] or ""}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -648,7 +695,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-month">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or "12"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="Date-medical-certificate-signed-month" name="Date-medical-certificate-signed-month" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-month'] or ""}}">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -656,7 +703,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       <label class="govuk-label govuk-date-input__label" for="Date-medical-certificate-signed-year">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or "2024"}}">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="Date-medical-certificate-signed-year" name="Date-medical-certificate-signed-year" type="text" inputmode="numeric" value="{{data['Date-medical-certificate-signed-year'] or ""}}">
                     </div>
                   </div>
                 </div>

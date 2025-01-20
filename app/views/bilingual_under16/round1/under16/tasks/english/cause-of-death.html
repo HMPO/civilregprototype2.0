@@ -515,37 +515,37 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="email"  data-aria-controls="conditional-hazardous-implant-yes"  {{ checked("hazardous-implant", "yes") }}>
+                    <input class="govuk-radios__input" id="hazardous-implant-yes" name="hazardous-implant" type="radio" value="yes"  data-aria-controls="conditional-hazardous-implant-yes"  {{ checked("hazardous-implant", "yes") }}>
                     <label class="govuk-label govuk-radios__label" for="hazardous-implant-yes">
-                      Yes
+                      Yes 
                     </label>
                   </div>
                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hazardous-implant-yes">
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="device-type">
-                        What type of device was it?
+                        What type of device was it? 
                       </label>
-                      <input class="govuk-input govuk-input--width-20" id="device-type" name="device-type" type="text" spellcheck="false" value="{{data['device-type'] or ['Pacemaker, chest']}}">
+                      <input class="govuk-input govuk-input--width-20" id="device-type" name="device-type" type="text" spellcheck="false" value="{{data['device-type'] or ['']}}">
                     </div>
                     <div class="govuk-form-group">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                          Was the device removed?
+                          Was the device removed? 
                         </legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="england" >
+                            <input class="govuk-radios__input" id="deviceRemoved" name="deviceRemoved" type="radio" value="yes" {{ checked("deviceRemoved", "yes") }} >
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved">
                               Yes
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="scotland">
+                            <input class="govuk-radios__input" id="deviceRemoved-2" name="deviceRemoved" type="radio" value="no" {{ checked("deviceRemoved", "no") }}>
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-2">
                               No
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="wales">
+                            <input class="govuk-radios__input" id="deviceRemoved-3" name="deviceRemoved" type="radio" value="not-known" {{ checked("deviceRemoved", "not-known") }}>
                             <label class="govuk-label govuk-radios__label" for="deviceRemoved-3">
                               Not known
                             </label>
@@ -556,16 +556,16 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     </div>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" {{ checked("hazardous-implant-no", "no") }} >
-                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-no">
-                      No
+                    <input class="govuk-radios__input" id="hazardous-implant-no" name="hazardous-implant" type="radio" value="no" {{ checked("hazardous-implant", "no") }} >
+                    <label class="govuk-label govuk-radios__label"  for="hazardous-implant-no">
+                      No | Naddo 
                     </label>      
                   </div>
                   
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant-not-known", "not-known") }}>
-                    <label class="govuk-label govuk-radios__label" id="hazardous-implant-label" for="hazardous-implant-not-known">
-                      Not known
+                    <input class="govuk-radios__input" id="hazardous-implant-not-known" name="hazardous-implant" type="radio" value="not-known" {{ checked("hazardous-implant", "not-known") }}>
+                    <label class="govuk-label govuk-radios__label"  for="hazardous-implant-not-known">
+                      Not known | Anhysbys
                     </label>      
                   </div>
                   

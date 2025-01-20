@@ -38,65 +38,6 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
           <form class="form" action="../task-list?cannot-sent-to-ron-banner" method="post">
 
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="deceasedSex-fieldset" aria-required="false">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                Sex | Rhyw
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="deceasedSex-Female" name="deceasedSex" type="radio" value="female" {{ checked("deceasedSex", "female") }} aria-controls="conditional-deceasedSex-Female" aria-expanded="false">
-                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Female-label" for="deceasedSex-Female">
-                    Female | Benyw 
-                  </label>   
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="deceasedSex-Male" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }}>
-                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Male-label" for="deceasedSex-Male">
-                    Male | Gwryw 
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }} aria-controls="conditional-intersex">
-                  <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
-                    Indeterminate | Amhendefynadwy  
-                  </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-intersex">
-                  <div class="govuk-form-group">
-                    <div class="govuk-warning-text">
-                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                      <strong class="govuk-warning-text__text">
-                        <span class="govuk-visually-hidden">Warning</span>
-                        You cannot complete this registration until GRO confirms you can register sex as ‘indeterminate’.
-                      </strong>
-                    </div>
-
-                    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend-xs">
-                        Did GRO confirm you can register sex as ‘indeterminate’?
-                      </legend>
-                      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                          <label class="govuk-label govuk-radios__label" for="changedName">
-                            Yes
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-                          <label class="govuk-label govuk-radios__label" for="changedName-2">
-                            No
-                          </label>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            </div>
-
-            <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="deceasedUsualAddress-fieldset" aria-required="false">              
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">              
                   Usual address | Cyfeiriad arferol
@@ -582,6 +523,16 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                         </div>
                       </fieldset>
                     </div>
+
+                    <div class="govuk-form-group govuk-!-margin-bottom-6">
+                      <label class="govuk-label" for="sort">Age</label>
+                      <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+                      <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Choose time unit</option>
+                        <option value="updated">Minutes</option>
+                        <option value="views">Hours</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div class="govuk-radios__item">
@@ -632,11 +583,14 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                       </fieldset>
                     </div>
 
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-label--xs" id="deceasedAge-label" for="deceasedAge">
-                        Age | Oed
-                      </label>
-                      <input class="govuk-input govuk-input--width-3" id="deceasedAge" name="deceasedAge" type="text" aria-required="false">
+                    <div class="govuk-form-group govuk-!-margin-bottom-6">
+                      <label class="govuk-label" for="sort">Age</label>
+                      <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+                      <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Choose time unit</option>
+                        <option value="updated">Minutes</option>
+                        <option value="views">Hours</option>
+                      </select>
                     </div>
 
                   </div>
@@ -657,11 +611,14 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                       <input class="govuk-input govuk-input--width-4" id="deceasedApproximateYearOfBirth" name="deceasedApproximateYearOfBirth" type="text" aria-required="false">
                     </div>
 
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-label--xs" id="deceasedApproximateAge-label" for="deceasedApproximateAge">
-                        Approximate age | Oedran yn fras
-                      </label>
-                      <input class="govuk-input govuk-input--width-3" id="deceasedApproximateAge" name="deceasedApproximateAge" type="text" aria-required="false">
+                    <div class="govuk-form-group govuk-!-margin-bottom-6">
+                      <label class="govuk-label" for="sort">Age</label>
+                      <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+                      <select class="govuk-select" id="sort" name="sort">
+                        <option value="published" selected>Choose time unit</option>
+                        <option value="updated">Minutes</option>
+                        <option value="views">Hours</option>
+                      </select>
                     </div>
                   </div>
                   
@@ -681,7 +638,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="deceasedPlaceOfBirth-label-welsh" for="deceasedPlaceOfBirth-welsh">
-                Lle y ganwyd (if available)
+                Man geni (os yw ar gae)
               </label>
               <div id="deceasedPlaceOfBirth-hint-welsh" class="govuk-hint">
                 Town and county if in UK, country if outside the UK 
@@ -738,66 +695,36 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="SpanishNational-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Spanish national 
+                  Spanish national
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="SpanishNational-true" name="SpanishNational" type="radio" value="true" {{ checked("SpanishNational", "true") }}>
                     <label class="govuk-label govuk-radios__label" id="SpanishNational-true-label" for="SpanishNational-true">
-                       Yes 
+                        Yes
                     </label>    
                   </div>
                   <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" checked="checked" value="false" {{ checked("SpanishNational", "false") }}>
+                      <input class="govuk-radios__input" id="SpanishNational-false" name="SpanishNational" type="radio" value="false" {{ checked("SpanishNational", "false") }}>
                       <label class="govuk-label govuk-radios__label" id="SpanishNational-false-label" for="SpanishNational-false">
                         No
                       </label>
                   </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="SpanishNational-unknown" name="SpanishNational" type="radio" value="unknown" {{ checked("SpanishNational", "unknown") }}>
+                    <label class="govuk-label govuk-radios__label" id="SpanishNational-unknown-label" for="SpanishNational-unknown">
+                      Unknown
+                    </label>
+                </div>
                 </div>
               </fieldset>
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" id="nhs-number" for="nhs-number">
-                NHS number (if available)
+                NHS number | Rhif GIG (if available | os yw ar gae)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="nhs-number" name="nhs-number" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['nhs-number']}}">
-            </div>
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="Occupation-label" for="Occupation">
-                Occupation 
-              </label>
-              <input class="govuk-input govuk-!-width-one-half" id="Occupation" name="Occupation" type="text" aria-describedby="Occupation-hint" aria-required="false" value="{{data['Occupation']}}">
-            </div>
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" id="Occupation-label-welsh" for="Occupation-welsh">
-                Swydd
-              </label>
-              <input class="govuk-input govuk-!-width-one-half" id="Occupation-welsh" name="Occupation-welsh" type="text" aria-describedby="Occupation-hint-welsh" aria-required="false" value="{{data['Occupation-welsh']}}">
-            </div>
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" id="OccupationStatus-fieldset" aria-required="false">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Occupation status
-                </legend>
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="OccupationStatus-true" name="OccupationStatus" type="radio" value="true" {{ checked("OccupationStatus", "true") }}>
-                    <label class="govuk-label govuk-radios__label" id="OccupationStatus-true-label" for="OccupationStatus-true">
-                      Retired 
-                    </label>    
-                  </div>
-                  <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="OccupationStatus-false" name="OccupationStatus" type="radio" value="false" {{ checked("OccupationStatus", "false") }}>
-                      <label class="govuk-label govuk-radios__label" id="OccupationStatus-false-label" for="OccupationStatus-false">
-                        Not retired 
-                      </label>
-                  </div>
-                </div>
-              </fieldset>
             </div>
 
             <div class="govuk-button-group">

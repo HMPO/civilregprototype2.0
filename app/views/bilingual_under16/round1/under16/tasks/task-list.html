@@ -295,40 +295,20 @@
 
           {% if (data['additional-industry-deceased'] and data['employment-deceased'] 
           and data['additional-industry-partner'] and data['employment-partner'] )%}
-          
-            {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
 
-                <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
-                  Employment and industry information
-                </a>
+            <a class="govuk-link govuk-task-list__link" href="employment-and-industry-information.html" aria-describedby="">
+              Employment and industry information
+            </a>
 
-                {% else %}
+            <div class="govuk-task-list__status" id="">
+              Completed
+            </div>
             
-                <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
-                  Employment and industry information
-                </a>
+          {% elif (data['place-of-death']) %}
 
-              {% endif %}
-
-              <div class="govuk-task-list__status" id="">
-                Completed
-              </div>
-            
-          {% elif (data['place-of-death'] and data['relationship'] and data['deceasedDateOfBirth']) %}
-
-              {% if (data['bilingual'] == "English") or  (data['bilingual'] == "I don't know yet")%}
-
-              <a class="govuk-link govuk-task-list__link" href="english/employment-and-industry-information.html" aria-describedby="">
-                Employment and industry information
-              </a>
-
-              {% else %}
-          
-              <a class="govuk-link govuk-task-list__link" href="bilingual/employment-and-industry-information.html" aria-describedby="">
-                Employment and industry information
-              </a>
-
-              {% endif %}
+            <a class="govuk-link govuk-task-list__link" href="employment-and-industry-information.html" aria-describedby="">
+              Employment and industry information
+            </a>
 
             <div class="govuk-task-list__status" id="">
               <strong class="govuk-tag govuk-tag--blue">
