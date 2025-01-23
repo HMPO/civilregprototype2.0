@@ -1,0 +1,167 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Coroner's details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype, not the real service.'
+}) }}
+
+  {{ govukBackLink({
+  text: "Back to record",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+  
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="task-list" method="post">
+
+          <h1 class="govuk-heading-l">
+            Coroner details
+          </h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="si-by-coroner-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <label class="govuk-label govuk-label--s" id="coronerFullName-label" for="coronerFulltName">
+                  Date signed by coroner
+                </label>
+              </legend>
+              <div id="sig-by-coroner-hint" class="govuk-hint">
+                For example, 12 11 2024
+              </div>
+              <div class="govuk-date-input" id="sig-by-coroner">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="signed-by-coroner-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="signed-by-coroner-day" name="signed-by-coroner-day" type="text" inputmode="numeric" value="{{data['signed-by-coroner-day'] or ""}}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="signed-by-coroner-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="signed-by-coroner-month" name="signed-by-coroner-month" type="text" inputmode="numeric" value="{{data['signed-by-coroner-month'] or ""}}">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="signed-by-coroner-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="signed-by-coroner-year" name="signed-by-coroner-year" type="text" inputmode="numeric" value="{{data['signed-by-coroner-year'] or ""}}">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerFullName-label" for="coronerFulltName">
+              Full name 
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerFullName" name="coronerFullName" type="text" aria-required="false" value="{{data['coronerFullName']}}">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerDistrict-label" for="coronerDistrict">
+             District
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerDistrict" name="coronerDistrict" type="text" aria-required="false" value="{{data['coronerDistrict']}}">
+          </div>
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" id="coronerArea-label" for="coronerArea">
+              Area
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="coronerArea" name="coronerArea" type="text" aria-required="false" value="{{data['coronerArea']}}">
+          </div>
+
+         
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set designation %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contactByEmail",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter designation"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "coronerDesignation",
+  fieldset: {
+    legend: {
+      text: "Designation",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+ 
+  items: [
+  
+    {
+      value: data["assistant"],
+      text: "Assistant coroner"
+    },
+    {
+      value: "seniorCoroner",
+      text: "Senior coroner"
+    },
+    {
+      value: "deputyCoroner",
+      text: "Deputy coroner"
+    },
+    {
+      value: "areaCoroner",
+      text: "Area coroner"
+    },
+    {
+      value: "coroner",
+      text: "Coroner"
+    },
+    {
+      value: "text",
+      text: "Other",
+      conditional: {
+        html: designation
+      }
+    }
+  ]
+}) }}
+  
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Save and return"
+            }) }}
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
