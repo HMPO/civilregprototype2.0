@@ -65,23 +65,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </fieldset>
             </div>
 
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  If cause of death is above the character limit
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body">Anything you enter up to the character limit will be added to the register page and sent to RON.</p>
-                <p class="govuk-body">You will need to:</p>
-                <ol>
-                  <li>Write the remaining information on the register page.</li>
-                  <li>Find and caution mark this record in RON.</li>
-                  <li>Complete the death certificate by hand or using the type and print function.</li>
-                </ol>
-              </div>
-            </details>
-
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="MCCDcause-of-death" aria-required="false">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -89,6 +72,23 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     Cause of death - in infant
                   </h3>
               </legend>
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    If cause of death is above the character limit
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Anything you enter up to the character limit will be added to the register page and sent to RON.</p>
+                  <p class="govuk-body">You will need to:</p>
+                  <ol>
+                    <li>Write the remaining information on the register page.</li>
+                    <li>Find and caution mark this record in RON.</li>
+                    <li>Complete the death certificate by hand or using the type and print function.</li>
+                  </ol>
+                </div>
+              </details>
 
                 {{ govukTextarea({
                   name: "CauseOfDeath-a",

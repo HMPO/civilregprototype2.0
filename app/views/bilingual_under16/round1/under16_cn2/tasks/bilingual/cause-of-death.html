@@ -104,49 +104,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                     }
                   }) }}
   
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                      1(a)  Ychwanegwch Clefyd neu gyflwr sy'n arwain yn uniongyrchol at farwolaeth (yn Cymraeg)
-                    </a>
-                  </p>
-                  <div id="CauseWelsh"></div>
-  
-                  {% raw %}
-                  <script>
-                  var shownCauseWelsh = `
-                      <div class="govuk-form-group">
-                        <div class="horizontal-wrapper">
-                        <label class="govuk-label" for="causeWelsh">
-                          1(a) Clefyd neu gyflwr sy'n arwain yn uniongyrchol at farwolaeth
-                        </label>
-                        <p class="govuk-body govuk-!-margin-bottom-1">
-                          <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeCauseWelsh">Remove</a>
-                        </p>
-                        </div> 
-                        <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeWelsh" name="causeWelsh" value="{{data['causeWelsh']}}" rows="5"></textarea>
-                      </div>`;
-              
-                      function toggleCauseWelsh(event) {
-                        event.preventDefault();
-                        var CauseWelshDiv = document.getElementById('CauseWelsh');
-                        var addCauseWelshLink = document.getElementById('addCauseWelsh');
-                        if (event.target.id === 'addCauseWelsh') {
-                          CauseWelshDiv.innerHTML = shownCauseWelsh;
-                          addCauseWelshLink.style.display = 'none';
-                          document.getElementById('removeCauseWelsh').addEventListener('click', toggleCauseWelsh);
-                                var newTextarea = document.getElementById('causeWelsh');
-                                new GOVUKFrontend.CharacterCount(newTextarea).init();
-                        } else if (event.target.id === 'removeCauseWelsh') {
-                          CauseWelshDiv.innerHTML = '';
-                          addCauseWelshLink.style.display = 'block';
-                        }
-                      }
-                    
-                      document.getElementById('addCauseWelsh').addEventListener('click', toggleCauseWelsh);
-                    </script>
-                    {% endraw %}
-  
-  
                   <div class="govuk-form-group govuk-!-margin-bottom-6">
                     <label class="govuk-label" for="sort">
                       Time between onset and death (if provided)
@@ -169,13 +126,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                       1(b). Add another disease or condition leading to 1(a) (In English)</a>
                   </p>
                   <div id="Another"></div>
-  
-                  <p class="govuk-body">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                      1(b). Ychwanegwch glefyd neu gyflwr arall sy'n arwain at 1(a) (yn Cymraeg)
-                    </a>
-                  </p>
-                  
                   
                   {% raw %}
                   <script>
@@ -218,12 +168,6 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               </p>
   
               <div id="Other"></div>
-  
-              <p class="govuk-body">
-                <a href="#" class="govuk-link govuk-link--no-visited-state" id="addCauseWelsh" style="display:block">
-                  2. Ychwanegwch amodau cyfrannol sylweddol eraill (yn Cymraeg)
-                </a>
-              </p>
                   
               {% raw %}
                   <script>
