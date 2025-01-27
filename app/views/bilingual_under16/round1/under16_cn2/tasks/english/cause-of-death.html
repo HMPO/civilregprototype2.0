@@ -43,6 +43,28 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Was a post-mortem held? 
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="post-moretem" name="post-moretem" type="radio" value="yes" checked="checked" {{ checked("post-moretem", "yes") }}>
+                    <label class="govuk-label govuk-radios__label" for="post-moretem">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="post-moretem-2" name="post-moretem" type="radio" value="no" {{ checked("post-moretem", "no") }}>
+                    <label class="govuk-label govuk-radios__label" for="post-moretem-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                     Is cause of death in the standard format?
                 </legend>
                 <div id="changedName-hint" class="govuk-hint">
