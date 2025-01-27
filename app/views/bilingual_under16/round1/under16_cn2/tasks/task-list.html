@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or ['MACDENT']}}, {{data['deceasedFirstName'] or ['Joan']}} {{data['deceasedMiddleName'] or ['Iris']}}</h1>
+      <h1 class="govuk-heading-xl">{{data['deceasedLastName'] or ['']}}, {{data['deceasedFirstName'] or ['']}} {{data['deceasedMiddleName'] or ['']}}</h1>
 
       <h2 class="govuk-heading-l">Pre-appointment information</h2>
 
@@ -75,8 +75,7 @@
 
           </div>
 
-          {% if (data['CauseOfDeath-a'] and data['ethnicity'] and data['hazardous-implant'] and data['FurtherInformation'] and data ['MedExaminer'] and data ['MedExaminerGMCNumber'] 
-          and data ['Date-medical-certificate-signed-day'] and data ['Date-medical-certificate-signed-month'] and data ['Date-medical-certificate-signed-year'])%}
+          {% if (data['CauseOfDeath-a'] and data['ethnicity'])%}
 
           <div class="govuk-task-list__status" id="">
             Completed
@@ -250,8 +249,8 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          {% if (data['additional-industry-deceased'] and data['employment-deceased'] 
-          and data['additional-industry-partner'] and data['employment-partner'] )%}
+          {% if (data['signed-by-coroner-month'] and data['signed-by-coroner-day'] and data['signed-by-coroner-year']
+          and data['coronerFullName'] and data['coronerDistrict'] and data['coronerArea'])%}
 
             <a class="govuk-link govuk-task-list__link" href="coroner-details.html" aria-describedby="">
               Coroner’s details
@@ -327,8 +326,7 @@
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
 
-          {% if (data['additional-industry-deceased'] and data['employment-deceased'] 
-          and data['additional-industry-partner'] and data['employment-partner'] )%}
+          {% if (data['mother'] and data ['relationship'] and data['second-parent'])%}
 
             <a class="govuk-link govuk-task-list__link" href="employment-and-industry-information.html" aria-describedby="">
               Employment and industry information
@@ -385,8 +383,7 @@
           </div>
 
 
-          {% elif (data['additional-industry-deceased'] and data['employment-deceased'] 
-          and data['additional-industry-partner'] and data['employment-partner']) %}
+          {% elif (data['additional-industry-deceased'] and data['employment-deceased']) %}
 
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="register-page.html" aria-describedby="">
