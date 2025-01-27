@@ -71,7 +71,7 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="usualaddress-CE-no" name="usualaddress-CE" type="radio" value="CE-no">
+                            <input class="govuk-radios__input" id="usualaddress-CE-no" name="usualaddress-CE" type="radio" value="CE-no" {{ checked("deceasedUsualAddress-not-CE", "CE-no") }} aria-controls="conditional-CE-no">
                             <label class="govuk-label govuk-radios__label" for="usualaddress-CE-no">
                               No
                             </label>
@@ -461,6 +461,90 @@ Personal details – {{ serviceName }} – GOV.UK Prototype Kit
                               <p class="govuk-body govuk-!-margin-top-6">
                                 <a href="#" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
                               </p>
+                          </div>
+                         </div>
+
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden no-border" id="conditional-CE-no">
+                          <div class="govuk-form-group">
+                           
+                           
+
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-padding-top-6">
+                                  Enter deceased's usual address
+                                </legend>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="flat-number">
+                                    Flat number or name
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="flat-number" name="flat-number" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="building-name">
+                                    Building name
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="building-name" name="building-name" type="text" value="{{data['building-name'] or ""}}">
+                                </div>
+                                
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="building-number">
+                                    Building number
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-two-thirds" id="building-number" name="building-number" type="text">
+                                </div>
+                                <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-line-1">
+                                  Street address 1
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="AddressLine1" type="text">
+                                </div>
+                                
+                                <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-line-2">
+                                  Street address 2
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="AddressLine2" type="text">
+                                </div>
+                                
+                                <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-line-3">
+                                  Street address 3
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="address-line-3" name="AddressLine3" type="text">
+                                </div>
+                               
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-line-4">
+                                  Street address 4
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="-address-line-4" name="AddressLine4" type="text">
+                              </div>
+                              
+                               <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-town">
+                                  Town or city
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" value="{{data['addressTown'] or ""}}">
+                              </div>
+                              
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-county">
+                                  County
+                                </label>
+                                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="addressCounty" type="text">
+                              </div>
+                              
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-postcode">
+                                  Postcode
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" value="{{data['addressPostcode'] or ""}}">
+                              </div>
+                            </fieldset>
+
+                            <p class="govuk-body govuk-!-margin-top-6">
+                              <a href="#" class="govuk-link govuk-link--no-visited-state">Search by postcode</a>
+                            </p>
                           </div>
                         </div>
                       </fieldset>
