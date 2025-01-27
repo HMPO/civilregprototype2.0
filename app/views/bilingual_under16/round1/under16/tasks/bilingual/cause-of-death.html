@@ -102,16 +102,16 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }) }}
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherA" style="display:block">(a)......... ( yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherA" style="display:block">(a) Prif afiechyd neu gyflyrau yn y baban (yn Cymraeg)</a>
                 </p>
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b). Add another disease or condition in infant</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b) Add another disease or condition in infant</a>
                 </p>
                 <div id="Another"></div>
                 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b) ......... ( yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b) Ychwanegu afiechyd neu gyflwr arall yn y baban (yn Cymraeg)</a>
                 </p>
 
                 {% raw %}
@@ -173,17 +173,17 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }) }}
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherC" style="display:block">(c). ......... ( yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherC" style="display:block">(c) Clefyd neu gyflwr y fam sy’n effeithio ar y baban (os yw’n cael ei ddarparu yn Cymraeg)</a>
                 </p>
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d). Add other maternal diseases or conditions affecting infant</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d) Add other maternal diseases or conditions affecting infant</a>
                 </p>
             
                 <div id="AnotherD"></div>
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d). .......... ( yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d) Ychwanegu afiechydon neu gyflyrau eraill y fam sy'n effeithio ar y baban (yn Cymraeg)</a>
                 </p>
                 
                 {% raw %}
@@ -222,13 +222,13 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                   {% endraw %}
 
             <p class="govuk-body">
-              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e). Add other relevant causes</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e) Add other relevant causes</a>
             </p>
 
             <div id="Other"></div>
 
             <p class="govuk-body">
-              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e).  .......... ( yn Cymraeg)</a>
+              <a href="#" class="govuk-link govuk-link--no-visited-state" id="addOther" style="display:block">(e) Ychwanegu achosion perthnasol eraill (yn Cymraeg)</a>
             </p>
                 
             {% raw %}
@@ -274,32 +274,32 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                   <h1 class="govuk-fieldset__heading">
-                    What option is circled on the medical certificate?
+                    What option is circled on the medical certificate? | Pa opsiwn sy'n cael ei gylchu ar y tystysgrif feddygol?
                   </h1>
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled" name="option_circled" type="radio" value="post_mortem" {{ checked("option_circled", "post_mortem") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled">
-                      The cause of death includes information from the post-mortem
+                      The cause of death includes information from the post-mortem | Mae achos y farwolaeth yn cynnwys gwybodaeth o'r post-mortem
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled-2" name="option_circled" type="radio" value="available_later" {{ checked("option_circled", "available_later") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-2">
-                      Information from the post-mortem may be available later
+                      Information from the post-mortem may be available later | Mae'n bosibl y bydd gwybodaeth o'r post-mortem ar gael yn ddiweddarach
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled-3" name="option_circled" type="radio" value="no_post_mortem" {{ checked("option_circled", "no_post_mortem") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-3">
-                      Post-mortem is not being held
+                      Post-mortem is not being held | Nid yw post-mortem yn cael ei gynnal
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="option_circled-4" name="option_circled" type="radio" value="coroner_investigation" {{ checked("option_circled", "coroner_investigation") }}>
                     <label class="govuk-label govuk-radios__label" for="option_circled-4">
-                      This death was reported to the coroner who decided not to investigate
+                      This death was reported to the coroner who decided not to investigate | Adroddwyd am y farwolaeth hon i'r crwner a benderfynodd beidio ag ymchwilio
                     </label>
                   </div>
                 </div>
@@ -309,7 +309,7 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" id="FurtherInformation-fieldset" aria-required="false">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Might additional information about the cause of death be available later?  | A allai gwybodaeth ychwanegol am achos y farwolaeth fod ar gael yn nes ymlaen?
+                  Might additional information about the cause of death be available later? | A allai gwybodaeth ychwanegol am achos y farwolaeth fod ar gael yn nes ymlaen?
                 </legend>
                 <div class="govuk-radios govuk-radios">
                   <div class="govuk-radios__item">

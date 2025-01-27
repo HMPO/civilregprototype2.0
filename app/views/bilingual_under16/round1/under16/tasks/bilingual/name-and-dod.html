@@ -40,14 +40,14 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-first-name">
-                First name | Enwau cyntaf (if available)
+                First name | Enw cyntaf (if available | os yw ar gael) 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-first-name" name="deceasedFirstName" type="text" value="{{data['deceasedFirstName'] or ['']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="deceased-middle-name">
-                Middle names | Enwau canol (if available)
+                Middle name 1 | Enwau canol (if available | os yw ar gael) 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="deceased-middle-name" name="deceasedMiddleName" type="text" value="{{data['deceasedMiddleName'] or [''] }}">
               <p class="govuk-body">
@@ -86,14 +86,14 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="prefix">
-                Prefix | Rhagddodiad (if available)
+                Prefix | Rhagddodiad (if available | os yw ar gael)
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="prefix" name="prefix" type="text" value="{{data['prefix']}}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="suffix">
-                Suffix | Ôl-ddodiad (if available)
+                Suffix | Ôl-ddodiad (if available | os yw ar gael) 
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="suffix" name="suffix" type="text" value="{{data['suffix']}}">
             </div>
@@ -161,7 +161,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-deceasedSex-Female">
                   <div class="govuk-form-group">
                       <label class="govuk-label" for="maiden-name">
-                        Maiden last name | ... (if available)
+                        Maiden last name | Cyfenw morwynol (if available | os yw ar gael)
                       </label>
                       <input class="govuk-input govuk-input--width-20" id="maiden-name" name="maiden-name" type="text">
                   </div>
@@ -197,7 +197,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="deceasedSex-Intersex" name="deceasedSex" type="radio" value="male" {{ checked("deceasedSex", "male") }} aria-controls="conditional-intersex">
                   <label class="govuk-label govuk-radios__label" id="deceasedSex-Intersex-label" for="deceasedSex-Intersex">
-                    Indeterminate | Amhendefynadwy  
+                    Indeterminate | Amhenodol  
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-intersex">
@@ -238,7 +238,7 @@ Name and date of death – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset" aria-describedby="name-order-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  Other known names | Enwau eraill a wyddys (if available)
+                  Other known names | Enwau eraill a wyddys (if available | os yw ar gael)
                 </legend>
 
                 <div class="govuk-form-group">
