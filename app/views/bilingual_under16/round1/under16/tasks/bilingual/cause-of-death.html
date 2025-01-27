@@ -102,8 +102,44 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }) }}
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherA" style="display:block">(a) Prif afiechyd neu gyflyrau yn y baban (yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherAWelsh" style="display:block">(a) Prif afiechyd neu gyflyrau yn y baban (yn Cymraeg)</a>
                 </p>
+                <div id="AnotherAWelsh"></div>
+
+                {% raw %}
+                <script>
+                var shownAnotherAWelsh = `
+                    <div class="govuk-form-group">
+                      <div class="horizontal-wrapper">
+                      <label class="govuk-label" for="causeOfdeath1aW">
+                        (a) Prif afiechyd neu gyflyrau yn y baban (yn Cymraeg)
+                      </label>
+                      <p class="govuk-body govuk-!-margin-bottom-1">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="causeOfdeath1aW-remove">Remove</a>
+                      </p>
+                      </div> 
+                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeOfdeath1aW" name="causeOfdeath1aW" value="{{data['causeOfdeath1aW']}}" rows="5"></textarea>
+                    </div>`;
+            
+                    function toggleAnotherAWelsh(event) {
+                      event.preventDefault();
+                      var AnotherAWelshDiv = document.getElementById('AnotherAWelsh');
+                      var addAnotherAWelshLink = document.getElementById('addAnotherAWelsh');
+                      if (event.target.id === 'addAnotherAWelsh') {
+                        AnotherAWelshDiv.innerHTML = shownAnotherAWelsh;
+                        addAnotherAWelshLink.style.display = 'none';
+                        document.getElementById('causeOfdeath1aW-remove').addEventListener('click', toggleAnotherAWelsh);
+                              var newTextarea = document.getElementById('causeOfdeath1aW');
+                              new GOVUKFrontend.CharacterCount(newTextarea).init();
+                      } else if (event.target.id === 'causeOfdeath1aW-remove') {
+                        AnotherAWelshDiv.innerHTML = '';
+                        addAnotherAWelshLink.style.display = 'block';
+                      }
+                    }
+                  
+                    document.getElementById('addAnotherAWelsh').addEventListener('click', toggleAnotherAWelsh);
+                  </script>
+                  {% endraw %}
 
                 <p class="govuk-body">
                   <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnother" style="display:block">(b) Add another disease or condition in infant</a>
