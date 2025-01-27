@@ -123,13 +123,13 @@ Create record - Medical information about this death – {{ serviceName }} – G
                       Will an informant be present to register the death?
                     </label>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="cn2-informant-present" name="cn2" type="radio" value="Informant will be present" {{ checked("cn2", "Informant will be present") }} >
+                      <input class="govuk-radios__input" id="cn2-informant-present" name="certificate-type" type="radio" value="Informant present" {{ checked("certificate-type", "Informant present") }}  >
                       <label class="govuk-label govuk-radios__label" for="cn2-informant-present">
                         Yes - informant will be present
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="cn2-additional-information" name="cn2" type="radio" value="Informant will not be present" {{ checked("cn2", "Informant will not be present") }} >
+                      <input class="govuk-radios__input" id="cn2-additional-information" name="certificate-type" type="radio" value="Information from the coroner" {{ checked("certificate-type", "Information from the coroner") }} >
                       <label class="govuk-label govuk-radios__label" for="cn2-additional-information">
                         No - additional information from the coroner
                       </label>

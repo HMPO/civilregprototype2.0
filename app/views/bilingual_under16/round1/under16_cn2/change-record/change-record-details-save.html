@@ -42,7 +42,7 @@ Check record details – {{ serviceName }} – GOV.UK Prototype Kit
               </dt>
               <dd class="govuk-summary-list__value">
                 <p>{{ data["certificate"] or ['CN2'] }}</p>
-                <p>{{ data["cn2"] or ['Informant will be present'] }}</p>
+                <p>{{ data["certificate-type"] or ['Informant will be present'] }}</p>
                 <p>{{ data["certificateID"] or ['987654321'] }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
