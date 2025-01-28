@@ -15,7 +15,7 @@ Register page – {{ serviceName }} – GOV.UK Prototype Kit
 
   {{ govukBackLink({
   text: "Back to record",
-  href: "task-list.html"
+  href: "../task-list.html"
 }) }}
 
 
@@ -31,7 +31,7 @@ Register page – {{ serviceName }} – GOV.UK Prototype Kit
             Register page 
           </h1>
 
-          <form class="form" action="task-list" method="post">
+          <form class="form" action="../task-list" method="post">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -41,25 +41,25 @@ Register page – {{ serviceName }} – GOV.UK Prototype Kit
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="designation-registrar" name="designation" type="radio" value="registrar" {{checked("designation", "registrar")}}>
                     <label class="govuk-label govuk-radios__label" for="designation-registrar">
-                      Registrar
+                      Registrar | Cofrestrydd
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="designation-interim-registrar" name="designation" type="radio" value="interim-registrar" {{checked("designation", "interim-registrar")}}>
                     <label class="govuk-label govuk-radios__label" for="designation-interim-registrar">
-                      Interim Registrar
+                      Interim Registrar | Cofrestrydd Dros Dro
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="designation-deputy-registrar" name="designation" type="radio" value="deputy-registrar" {{checked("designation", "deputy-registrar")}}>
                     <label class="govuk-label govuk-radios__label" for="designation-deputy-registrar">
-                      Deputy Registrar
+                      Deputy Registrar | Dirprwy Gofrestrydd
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="designation-deputy-interim-registrar" name="designation" type="radio" value="deputy-interim-registrar" {{checked("designation", "deputy-interim-registrar")}}>
                     <label class="govuk-label govuk-radios__label" for="designation-deputy-interim-registrar">
-                      Deputy Interim Registrar
+                      Deputy Interim Registrar | Dirprwy Gofrestrydd Dros Dro
                     </label>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ Register page – {{ serviceName }} – GOV.UK Prototype Kit
             </div>
 
             <div class="govuk-!-margin-bottom-5"> 
-              <a class="govuk-body"  target="_blank" href="/public/dummy_docs/reg_page_2.pdf">View and print the register page (open in new tab)</a>
+              <a class="govuk-body" href="#">View and print the register page (open in new tab)</a>
             </div>
 
             
