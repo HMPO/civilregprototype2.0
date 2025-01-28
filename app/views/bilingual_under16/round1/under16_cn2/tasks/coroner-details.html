@@ -94,62 +94,57 @@ Coroner's details – {{ serviceName }} – GOV.UK Prototype Kit
             <input class="govuk-input govuk-!-width-one-half" id="coronerArea" name="coronerArea" type="text" aria-required="false" value="{{data['coronerArea']}}">
           </div>
 
-         
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
 
-{% set designation %}
-{{ govukInput({
-  id: "contact-by-email",
-  name: "contactByEmail",
-  type: "text",
-  classes: "govuk-!-width-one-third",
-  label: {
-    text: "Enter designation"
-  }
-}) }}
-{% endset -%}
 
-{{ govukRadios({
-  name: "coronerDesignation",
-  fieldset: {
-    legend: {
-      text: "Designation",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Designation
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation" name="coroner-designation" type="radio" value="assistant" {{checked("coroner-designation", "assistant")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation">
+                    Assistant coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation-2" name="coroner-designation" type="radio" value="senior" {{checked("coroner-designation", "senior")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation-2">
+                    Senior coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation-3" name="coroner-designation" type="radio" value="deputy" {{checked("coroner-designation", "deputy")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation-3">
+                    Deputy coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation-4" name="coroner-designation" type="radio" value="area-coroner" {{checked("coroner-designation", "area-coroner")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation-4">
+                    Area coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation-5" name="coroner-designation" type="radio" value="coroner" {{checked("coroner-designation", "coroner")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation-5">
+                    Coroner
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="coroner-designation-6" name="coroner-designation" type="radio" value="other" {{checked("coroner-designation", "other")}}>
+                  <label class="govuk-label govuk-radios__label" for="coroner-designation-6">
+                    Other
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
  
-  items: [
   
-    {
-      value: data["assistant"],
-      text: "Assistant coroner"
-    },
-    {
-      value: "seniorCoroner",
-      text: "Senior coroner"
-    },
-    {
-      value: "deputyCoroner",
-      text: "Deputy coroner"
-    },
-    {
-      value: "areaCoroner",
-      text: "Area coroner"
-    },
-    {
-      value: "coroner",
-      text: "Coroner"
-    },
-    {
-      value: "text",
-      text: "Other",
-      conditional: {
-        html: designation
-      }
-    }
-  ]
-}) }}
   
           <div class="govuk-button-group">
             {{ govukButton({
