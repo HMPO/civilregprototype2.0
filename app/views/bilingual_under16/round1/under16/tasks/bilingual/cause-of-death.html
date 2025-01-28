@@ -209,8 +209,44 @@ Cause of death – {{ serviceName }} – GOV.UK Prototype Kit
                 }) }}
 
                 <p class="govuk-body">
-                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherC" style="display:block">(c) Clefyd neu gyflwr y fam sy’n effeithio ar y baban (os yw’n cael ei ddarparu yn Cymraeg)</a>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherCW" style="display:block">(c) Clefyd neu gyflwr y fam sy’n effeithio ar y baban (os yw’n cael ei ddarparu yn Cymraeg)</a>
                 </p>
+                <div id="AnotherCW"></div>
+
+                {% raw %}
+                <script>
+                var shownAnotherCW = `
+                    <div class="govuk-form-group">
+                      <div class="horizontal-wrapper">
+                      <label class="govuk-label" for="causeOfdeathCW">
+                        (c) Clefyd neu gyflwr y fam sy’n effeithio ar y baban (os yw’n cael ei ddarparu yn Cymraeg)
+                      </label>
+                      <p class="govuk-body govuk-!-margin-bottom-1">
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" id="removeAnotherCW">Remove</a>
+                      </p>
+                      </div> 
+                      <textarea class="govuk-textarea govuk-!-margin-bottom-2" id="causeOfdeathCW" name="causeOfdeathCW" value="{{data['causeOfdeathCW']}}" rows="5"></textarea>
+                    </div>`;
+            
+                    function toggleAnotherCW(event) {
+                      event.preventDefault();
+                      var AnotherDivCW = document.getElementById('AnotherCW');
+                      var addAnotherCWLink = document.getElementById('addAnotherCW');
+                      if (event.target.id === 'addAnotherCW') {
+                        AnotherDivCW.innerHTML = shownAnotherCW;
+                        addAnotherCWLink.style.display = 'none';
+                        document.getElementById('removeAnotherCW').addEventListener('click', toggleAnotherCW);
+                              var newTextarea = document.getElementById('causeOfdeathCW');
+                              new GOVUKFrontend.CharacterCount(newTextarea).init();
+                      } else if (event.target.id === 'removeAnotherCW') {
+                        AnotherDivCW.innerHTML = '';
+                        addAnotherCWLink.style.display = 'block';
+                      }
+                    }
+                  
+                    document.getElementById('addAnotherCW').addEventListener('click', toggleAnotherCW);
+                  </script>
+                  {% endraw %}
 
                 <p class="govuk-body">
                   <a href="#" class="govuk-link govuk-link--no-visited-state" id="addAnotherD" style="display:block">(d) Add other maternal diseases or conditions affecting infant</a>
